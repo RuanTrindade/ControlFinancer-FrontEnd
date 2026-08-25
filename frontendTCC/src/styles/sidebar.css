@@ -4,14 +4,14 @@
 .sidebar {
     --sidebar-width: 250px;
     --sidebar-width-closed: 78px;
-    --sidebar-bg: #ffffff;
-    --sidebar-text: #6b7280;
-    --sidebar-text-strong: #111827;
-    --sidebar-active-bg: #eef2f7;
-    --sidebar-green: #22c55e;
-    --sidebar-green-dark: #16a34a;
-    --sidebar-border: #e5e7eb;
-    --sidebar-danger: #ef4444;
+    --sidebar-bg: var(--branco);
+    --sidebar-text: var(--cinza-500);
+    --sidebar-text-strong: var(--cinza-900);
+    --sidebar-active-bg: var(--cinza-divisor);
+    --sidebar-green: var(--verde-500);
+    --sidebar-green-dark: var(--verde-600);
+    --sidebar-border: var(--cinza-200);
+    --sidebar-danger: var(--vermelho-500);
     position: fixed;
     top: 0;
     left: 0;
@@ -32,10 +32,10 @@
 ========================================================= */
 .dark .sidebar {
     --sidebar-bg: #0b1220;
-    --sidebar-text: #9ca3af;
-    --sidebar-text-strong: #ffffff;
-    --sidebar-active-bg: #0f172a;
-    --sidebar-border: #1f2937;
+    --sidebar-text: var(--cinza-400);
+    --sidebar-text-strong: var(--branco);
+    --sidebar-active-bg: var(--slate-900);
+    --sidebar-border: var(--cinza-800);
 }
 /* =========================================================
    SIDEBAR FECHADA
@@ -362,5 +362,50 @@
     }
     .sidebar.close {
         width: 78px;
+    }
+}
+/* =========================================================
+   CELULAR — a sidebar vira um menu retrátil (drawer)
+   em vez de empurrar o conteúdo. Reaproveita o mesmo
+   estado "fechado"/"aberto" que já existia: em telas
+   largas ele alterna entre 250px e 78px (ícones); aqui
+   embaixo de 600px ele alterna entre escondida fora da
+   tela e um menu de largura cheia por cima do conteúdo.
+========================================================= */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 250px;
+        transform: translateX(-100%);
+        box-shadow:
+            18px 0 40px
+            rgba(15, 23, 42, 0.25);
+    }
+    .sidebar:not(.close) {
+        transform: translateX(0);
+    }
+    .sidebar.close {
+        width: 250px;
+    }
+}
+/* =========================================================
+   FUNDO ESCURECIDO (BACKDROP) — só aparece no celular,
+   atrás do menu, quando ele está aberto. Clicar nele
+   fecha o menu.
+========================================================= */
+.sidebar-backdrop {
+    display: none;
+}
+@media (max-width: 600px) {
+    .sidebar-backdrop {
+        display: none;
+
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+
+        background: rgba(15, 23, 42, 0.45);
+    }
+    .sidebar-backdrop.visivel {
+        display: block;
     }
 }

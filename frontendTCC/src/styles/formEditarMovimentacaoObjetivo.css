@@ -30,10 +30,10 @@
 
     overflow: hidden;
 
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--cinza-200);
     border-radius: 22px;
 
-    background: #ffffff;
+    background: var(--branco);
 
     box-shadow:
         0 25px 60px
@@ -43,9 +43,9 @@
 
 .dark
 .editar-movimentacao-objetivo-modal {
-    border-color: #1f2937;
+    border-color: var(--cinza-800);
 
-    background: #0f172a;
+    background: var(--slate-900);
 }
 
 
@@ -63,7 +63,7 @@
     padding: 24px 26px 20px;
 
     border-bottom:
-        1px solid #eef2f7;
+        1px solid var(--cinza-divisor);
 }
 
 
@@ -77,19 +77,19 @@
     width: 100%;
     height: 4px;
 
-    background: #22c55e;
+    background: var(--verde-500);
 }
 
 
 .editar-movimentacao-objetivo-modal.retirada
 > header::before {
-    background: #ef4444;
+    background: var(--vermelho-500);
 }
 
 
 .dark
 .editar-movimentacao-objetivo-modal > header {
-    border-color: #1f2937;
+    border-color: var(--cinza-800);
 }
 
 
@@ -101,7 +101,7 @@
 
     margin-bottom: 4px;
 
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 12px;
     font-weight: 600;
@@ -116,7 +116,7 @@
 > header
 > div
 > span {
-    color: #94a3b8;
+    color: var(--slate-400);
 }
 
 
@@ -125,7 +125,7 @@
 h2 {
     margin: 0;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 23px;
     font-weight: 750;
@@ -136,7 +136,7 @@ h2 {
 .editar-movimentacao-objetivo-modal
 > header
 h2 {
-    color: #f8fafc;
+    color: var(--slate-50);
 }
 
 
@@ -159,9 +159,9 @@ button {
     border: none;
     border-radius: 12px;
 
-    background: #f3f4f6;
+    background: var(--cinza-100);
 
-    color: #4b5563;
+    color: var(--cinza-600);
 
     font-size: 23px;
 
@@ -176,9 +176,9 @@ button {
 .editar-movimentacao-objetivo-modal
 > header
 button:hover:not(:disabled) {
-    background: #e5e7eb;
+    background: var(--cinza-200);
 
-    color: #111827;
+    color: var(--cinza-900);
 }
 
 
@@ -186,9 +186,9 @@ button:hover:not(:disabled) {
 .editar-movimentacao-objetivo-modal
 > header
 button {
-    background: #1e293b;
+    background: var(--slate-800);
 
-    color: #cbd5e1;
+    color: var(--slate-300);
 }
 
 
@@ -220,7 +220,7 @@ button {
 
     background: #f0fdf4;
 
-    color: #15803d;
+    color: var(--verde-700);
 
     font-size: 13px;
 }
@@ -228,9 +228,9 @@ button {
 
 .editar-movimentacao-objetivo-modal.retirada
 .editar-movimentacao-destaque {
-    background: #fef2f2;
+    background: var(--vermelho-50);
 
-    color: #dc2626;
+    color: var(--vermelho-600);
 }
 
 
@@ -246,7 +246,7 @@ button {
     background:
         rgba(22, 163, 74, .12);
 
-    color: #86efac;
+    color: var(--verde-300);
 }
 
 
@@ -256,7 +256,7 @@ button {
     background:
         rgba(220, 38, 38, .12);
 
-    color: #fca5a5;
+    color: var(--vermelho-300);
 }
 
 
@@ -269,7 +269,7 @@ button {
 
     margin-bottom: 9px;
 
-    color: #374151;
+    color: var(--cinza-700);
 
     font-size: 13px;
     font-weight: 600;
@@ -278,7 +278,7 @@ button {
 
 .dark
 .editar-movimentacao-campo label {
-    color: #cbd5e1;
+    color: var(--slate-300);
 }
 
 
@@ -299,7 +299,7 @@ button {
     border: 1px solid #dbe1e8;
     border-radius: 13px;
 
-    background: #f9fafb;
+    background: var(--cinza-50);
 
     transition:
         border-color .2s ease,
@@ -309,9 +309,9 @@ button {
 
 
 .editar-movimentacao-input:focus-within {
-    border-color: #22c55e;
+    border-color: var(--verde-500);
 
-    background: #ffffff;
+    background: var(--branco);
 
     box-shadow:
         0 0 0 4px
@@ -321,7 +321,7 @@ button {
 
 .editar-movimentacao-objetivo-modal.retirada
 .editar-movimentacao-input:focus-within {
-    border-color: #ef4444;
+    border-color: var(--vermelho-500);
 
     box-shadow:
         0 0 0 4px
@@ -330,14 +330,14 @@ button {
 
 
 .editar-movimentacao-input > svg {
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 20px;
 }
 
 
 .editar-movimentacao-input > span {
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 13px;
     font-weight: 600;
@@ -353,7 +353,7 @@ button {
 
     background: transparent;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-family: inherit;
     font-size: 16px;
@@ -363,15 +363,15 @@ button {
 
 .dark
 .editar-movimentacao-input {
-    border-color: #293548;
+    border-color: var(--marinho-800);
 
-    background: #111c2e;
+    background: var(--marinho-900);
 }
 
 
 .dark
 .editar-movimentacao-input input {
-    color: #f8fafc;
+    color: var(--slate-50);
 }
 
 
@@ -387,9 +387,9 @@ button {
     border: 1px solid #fecaca;
     border-radius: 11px;
 
-    background: #fef2f2;
+    background: var(--vermelho-50);
 
-    color: #b91c1c;
+    color: var(--vermelho-700);
 
     font-size: 12px;
 }
@@ -403,7 +403,7 @@ button {
     background:
         rgba(127, 29, 29, .2);
 
-    color: #fca5a5;
+    color: var(--vermelho-300);
 }
 
 
@@ -422,14 +422,14 @@ footer {
     padding-top: 20px;
 
     border-top:
-        1px solid #eef2f7;
+        1px solid var(--cinza-divisor);
 }
 
 
 .dark
 .editar-movimentacao-objetivo-modal
 footer {
-    border-color: #1f2937;
+    border-color: var(--cinza-800);
 }
 
 
@@ -455,16 +455,16 @@ footer {
 
 
 .editar-movimentacao-cancelar {
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--cinza-300);
 
     background: transparent;
 
-    color: #4b5563;
+    color: var(--cinza-600);
 }
 
 
 .editar-movimentacao-cancelar:hover:not(:disabled) {
-    background: #f3f4f6;
+    background: var(--cinza-100);
 
     transform: translateY(-1px);
 }
@@ -472,24 +472,24 @@ footer {
 
 .dark
 .editar-movimentacao-cancelar {
-    border-color: #334155;
+    border-color: var(--slate-700);
 
-    color: #cbd5e1;
+    color: var(--slate-300);
 }
 
 
 .dark
 .editar-movimentacao-cancelar:hover:not(:disabled) {
-    background: #1e293b;
+    background: var(--slate-800);
 }
 
 
 .editar-movimentacao-salvar {
     border: none;
 
-    background: #22c55e;
+    background: var(--verde-500);
 
-    color: #ffffff;
+    color: var(--branco);
 
     box-shadow:
         0 8px 18px
@@ -499,7 +499,7 @@ footer {
 
 .editar-movimentacao-objetivo-modal.retirada
 .editar-movimentacao-salvar {
-    background: #ef4444;
+    background: var(--vermelho-500);
 
     box-shadow:
         0 8px 18px

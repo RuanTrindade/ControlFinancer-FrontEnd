@@ -23,7 +23,7 @@
     animation:modalPlanejamento .25s;
 }
 .dark .planejamento-modal{
-    background:#1f2937;
+    background:var(--cinza-800);
 }
 .planejamento-fechar{
     position:absolute;
@@ -33,7 +33,7 @@
     height:44px;
     border:none;
     border-radius:14px;
-    background:#f3f4f6;
+    background:var(--cinza-100);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -41,7 +41,7 @@
     transition:.25s;
 }
 .dark .planejamento-fechar{
-    background:#111827;
+    background:var(--cinza-900);
     color:white;
 }
 .planejamento-fechar svg{

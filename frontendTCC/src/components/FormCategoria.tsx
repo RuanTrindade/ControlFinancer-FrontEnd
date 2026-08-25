@@ -12,6 +12,8 @@ import {
 } from "react-icons/ri";
 
 import "../styles/formCategoria.css";
+
+import useFecharComEsc from "../hooks/useFecharComEsc";
 import { iconesCategorias } from "../utils/iconesCategorias";
 
 type TipoCategoria =
@@ -138,44 +140,12 @@ function FormCategoria({
         dadosEdicao
     ]);
 
-    useEffect(() => {
-        if (!aberto) {
-            return;
-        }
-
-        function fecharComEscape(
-            evento: KeyboardEvent
-        ) {
-            if (
-                evento.key === "Escape" &&
-                !carregando
-            ) {
-                onFechar();
-            }
-        }
-
-        document.addEventListener(
-            "keydown",
-            fecharComEscape
-        );
-
-        document.body.style.overflow =
-            "hidden";
-
-        return () => {
-            document.removeEventListener(
-                "keydown",
-                fecharComEscape
-            );
-
-            document.body.style.overflow =
-                "";
-        };
-    }, [
-        aberto,
-        carregando,
-        onFechar
-    ]);
+    useFecharComEsc({
+        ativo: aberto,
+        bloqueado: carregando,
+        travarScroll: true,
+        onFechar: onFechar
+    });
 
     function fecharModal() {
         if (carregando) {

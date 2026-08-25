@@ -28,9 +28,9 @@
         7px solid
         rgba(34,197,94,0.12);
     border-top:
-        7px solid #22c55e;
+        7px solid var(--verde-500);
     border-right:
-        7px solid #16a34a;
+        7px solid var(--verde-600);
     animation:
         girar 0.8s linear infinite;
     box-shadow:

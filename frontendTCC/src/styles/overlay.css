@@ -27,7 +27,7 @@
         rgba(0,0,0,.20);
 }
 .dark .overlay-card{
-    background:#1f2937;
+    background:var(--cinza-800);
 }
 /* ==========================
    TOPO
@@ -41,7 +41,7 @@
 .overlay-topo h2{
     font-size:28px;
     font-weight:700;
-    color:#111827;
+    color:var(--cinza-900);
 }
 .dark .overlay-topo h2{
     color:white;
@@ -54,7 +54,7 @@
     height:42px;
     border:none;
     border-radius:14px;
-    background:#f3f4f6;
+    background:var(--cinza-100);
     cursor:pointer;
     display:flex;
     align-items:center;
@@ -62,7 +62,7 @@
     transition:.25s;
 }
 .dark .overlay-fechar{
-    background:#111827;
+    background:var(--cinza-900);
 }
 .overlay-fechar svg{
     font-size:24px;
@@ -72,10 +72,10 @@
 }
 .overlay-fechar:hover{
     transform:rotate(90deg);
-    background:#e5e7eb;
+    background:var(--cinza-200);
 }
 .dark .overlay-fechar:hover{
-    background:#374151;
+    background:var(--cinza-700);
 }
 /* ==========================
    CONTEÚDO

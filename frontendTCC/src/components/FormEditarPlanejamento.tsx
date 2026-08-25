@@ -1,5 +1,4 @@
 import {
-    useEffect,
     useState
 } from "react";
 
@@ -13,6 +12,8 @@ import {
 } from "../services/planejamentoService";
 
 import "../styles/formEditarPlanejamento.css";
+
+import useFecharComEsc from "../hooks/useFecharComEsc";
 
 
 type Props = {
@@ -110,36 +111,10 @@ function FormEditarPlanejamento({
     }
 
 
-    useEffect(() => {
-
-        function fecharComEsc(
-            evento: KeyboardEvent
-        ) {
-
-            if (
-                evento.key === "Escape" &&
-                !salvando
-            ) {
-                onClose();
-            }
-
-        }
-
-        document.addEventListener(
-            "keydown",
-            fecharComEsc
-        );
-
-        return () =>
-            document.removeEventListener(
-                "keydown",
-                fecharComEsc
-            );
-
-    }, [
-        onClose,
-        salvando
-    ]);
+    useFecharComEsc({
+        bloqueado: salvando,
+        onFechar: onClose
+    });
 
 
     return (

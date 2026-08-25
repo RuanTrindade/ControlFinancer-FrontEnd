@@ -27,7 +27,7 @@
     animation: subirModal .25s;
 }
 .dark .modal-categorias {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 /* =========================
    TOPO
@@ -40,7 +40,7 @@
 }
 .modal-categorias-topo h2 {
     font-size: 24px;
-    color: #111827;
+    color: var(--cinza-900);
 }
 .dark .modal-categorias-topo h2 {
     color: white;
@@ -51,11 +51,11 @@
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    background: #f3f4f6;
+    background: var(--cinza-100);
     transition: .25s;
 }
 .dark .modal-categorias-topo button {
-    background: #111827;
+    background: var(--cinza-900);
     color: white;
 }
 .modal-categorias-topo button:hover {
@@ -69,18 +69,18 @@
     align-items: center;
     gap: 12px;
     height: 48px;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--cinza-300);
     border-radius: 14px;
     padding: 0 16px;
     margin-bottom: 22px;
 }
 .dark .pesquisa-categoria {
-    background: #111827;
-    border-color: #374151;
+    background: var(--cinza-900);
+    border-color: var(--cinza-700);
 }
 .pesquisa-categoria svg {
     font-size: 20px;
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 .pesquisa-categoria input {
     flex: 1;
@@ -114,12 +114,12 @@
     padding: 14px;
     border: none;
     border-radius: 16px;
-    background: #f9fafb;
+    background: var(--cinza-50);
     cursor: pointer;
     transition: .25s;
 }
 .dark .categoria-lista {
-    background: #111827;
+    background: var(--cinza-900);
 }
 .categoria-lista:hover {
     background: #22c55e15;
@@ -161,7 +161,7 @@
 ========================= */
 .categoria-lista > svg{
     margin-left:auto;
-    color:#22c55e;
+    color:var(--verde-500);
     font-size:22px;
 }
     /* =========================
@@ -171,7 +171,7 @@
         width: 7px;
     }
     .lista-categorias::-webkit-scrollbar-thumb {
-        background: #d1d5db;
+        background: var(--cinza-300);
         border-radius: 999px;
     }
     /* =========================
@@ -182,7 +182,7 @@
         height: 42px;
         border: none;
         border-radius: 14px;
-        background: #f3f4f6;
+        background: var(--cinza-100);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -190,7 +190,7 @@
         transition: .25s;
     }
     .dark .btn-fechar-modal {
-        background: #111827;
+        background: var(--cinza-900);
     }
     .btn-fechar-modal:hover {
         transform: rotate(90deg);

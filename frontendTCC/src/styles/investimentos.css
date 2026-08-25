@@ -35,7 +35,7 @@
 .titulo-investimentos h1 {
     margin: 0;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 29px;
     font-weight: 750;
@@ -60,13 +60,13 @@
 
 .dark
 .titulo-investimentos h1 {
-    color: #f9fafb;
+    color: var(--cinza-50);
 }
 
 
 .dark
 .titulo-investimentos p {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
@@ -90,8 +90,8 @@
 
     gap: 8px;
 
-    background: #16a34a;
-    color: #ffffff;
+    background: var(--verde-600);
+    color: var(--branco);
 
     font-family: inherit;
     font-size: 14px;
@@ -116,7 +116,7 @@
 
 
 .botao-novo-investimento:hover {
-    background: #15803d;
+    background: var(--verde-700);
 
     transform:
         translateY(-1px);
@@ -129,7 +129,7 @@
 
 .dark
 .botao-novo-investimento {
-    background: #16a34a;
+    background: var(--verde-600);
 
     box-shadow:
         0 6px 18px
@@ -139,7 +139,7 @@
 
 .dark
 .botao-novo-investimento:hover {
-    background: #15803d;
+    background: var(--verde-700);
 }
 
 
@@ -165,9 +165,9 @@
 
     gap: 10px;
 
-    background: #fef2f2;
+    background: var(--vermelho-50);
 
-    color: #b91c1c;
+    color: var(--vermelho-700);
 
     font-size: 13px;
     font-weight: 600;
@@ -189,7 +189,7 @@
     background:
         rgba(127, 29, 29, .16);
 
-    color: #fca5a5;
+    color: var(--vermelho-300);
 }
 
 
@@ -226,9 +226,9 @@
     background:
         linear-gradient(
             120deg,
-            #15803d 0%,
-            #16a34a 52%,
-            #22c55e 100%
+            var(--verde-700) 0%,
+            var(--verde-600) 52%,
+            var(--verde-500) 100%
         );
 
     box-shadow:
@@ -280,8 +280,8 @@
         linear-gradient(
             120deg,
             #14532d 0%,
-            #15803d 52%,
-            #16a34a 100%
+            var(--verde-700) 52%,
+            var(--verde-600) 100%
         );
 
     box-shadow:
@@ -316,7 +316,7 @@
 .texto-resumo-investimentos h2 {
     margin: 0;
 
-    color: #ffffff;
+    color: var(--branco);
 
     font-size: 22px;
     font-weight: 650;
@@ -370,7 +370,7 @@
 
     border:
         1px solid
-        #e5e7eb;
+        var(--cinza-200);
 
     border-radius: 18px;
 
@@ -378,7 +378,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    background: #ffffff;
+    background: var(--branco);
 
     box-shadow:
         0 14px 35px
@@ -388,9 +388,9 @@
 
 .dark
 .card-saldo-carteira {
-    border-color: #374151;
+    border-color: var(--cinza-700);
 
-    background: #1f2937;
+    background: var(--cinza-800);
 
     box-shadow:
         0 14px 35px
@@ -425,7 +425,7 @@
     background:
         rgba(22, 163, 74, .09);
 
-    color: #16a34a;
+    color: var(--verde-600);
 }
 
 
@@ -439,7 +439,7 @@
     background:
         rgba(34, 197, 94, .12);
 
-    color: #4ade80;
+    color: var(--verde-400);
 }
 
 
@@ -462,7 +462,7 @@
 .texto-saldo-carteira > strong {
     margin-top: 3px;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 31px;
     font-weight: 750;
@@ -476,7 +476,7 @@
 .texto-saldo-carteira > small {
     margin-top: 4px;
 
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 10px;
 }
@@ -484,19 +484,19 @@
 
 .dark
 .texto-saldo-carteira > span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
 .dark
 .texto-saldo-carteira > strong {
-    color: #f9fafb;
+    color: var(--cinza-50);
 }
 
 
 .dark
 .texto-saldo-carteira > small {
-    color: #6b7280;
+    color: var(--cinza-500);
 }
 
 
@@ -519,7 +519,7 @@
 
 .dark
 .divisor-saldo-carteira {
-    background: #374151;
+    background: var(--cinza-700);
 }
 
 
@@ -543,7 +543,7 @@
 
 
 .rendimento-saldo-carteira span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 11px;
 }
@@ -552,7 +552,7 @@
 .rendimento-saldo-carteira strong {
     margin-top: 2px;
 
-    color: #16a34a;
+    color: var(--verde-600);
 
     font-size: 17px;
     font-weight: 700;
@@ -561,13 +561,13 @@
 
 .dark
 .rendimento-saldo-carteira span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
 .dark
 .rendimento-saldo-carteira strong {
-    color: #4ade80;
+    color: var(--verde-400);
 }
 
 
@@ -584,7 +584,7 @@
     background:
         rgba(22, 163, 74, .09);
 
-    color: #16a34a;
+    color: var(--verde-600);
 }
 
 
@@ -598,7 +598,7 @@
     background:
         rgba(34, 197, 94, .12);
 
-    color: #4ade80;
+    color: var(--verde-400);
 }
 
 
@@ -618,7 +618,7 @@
 
     border:
         1px solid
-        #e5e7eb;
+        var(--cinza-200);
 
     border-radius: 15px;
 
@@ -626,7 +626,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    background: #ffffff;
+    background: var(--branco);
 
     box-shadow:
         0 7px 20px
@@ -651,9 +651,9 @@
 
 .dark
 .card-lateral-carteira {
-    border-color: #374151;
+    border-color: var(--cinza-700);
 
-    background: #1f2937;
+    background: var(--cinza-800);
 
     box-shadow:
         0 7px 20px
@@ -663,7 +663,7 @@
 
 .dark
 .card-lateral-carteira:hover {
-    border-color: #4b5563;
+    border-color: var(--cinza-600);
 
     box-shadow:
         0 10px 25px
@@ -681,7 +681,7 @@
 
 
 .topo-card-lateral > span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 11px;
     font-weight: 550;
@@ -690,7 +690,7 @@
 
 .dark
 .topo-card-lateral > span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
@@ -715,7 +715,7 @@
     background:
         rgba(22, 163, 74, .09);
 
-    color: #16a34a;
+    color: var(--verde-600);
 }
 
 
@@ -724,7 +724,7 @@
     background:
         rgba(34, 197, 94, .12);
 
-    color: #4ade80;
+    color: var(--verde-400);
 }
 
 
@@ -732,7 +732,7 @@
     background:
         rgba(239, 68, 68, .08);
 
-    color: #ef4444;
+    color: var(--vermelho-500);
 }
 
 
@@ -763,7 +763,7 @@
 .conteudo-card-lateral strong {
     margin-top: 2px;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 22px;
     font-weight: 700;
@@ -774,13 +774,13 @@
 
 .dark
 .conteudo-card-lateral span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
 .dark
 .conteudo-card-lateral strong {
-    color: #f9fafb;
+    color: var(--cinza-50);
 }
 
 
@@ -817,13 +817,13 @@
 
     border-radius: 11px;
 
-    background: #f3f4f6;
+    background: var(--cinza-100);
 }
 
 
 .dark
 .abas-investimentos {
-    background: #111827;
+    background: var(--cinza-900);
 }
 
 
@@ -839,7 +839,7 @@
 
     background: transparent;
 
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-family: inherit;
     font-size: 12px;
@@ -855,14 +855,14 @@
 
 
 .aba-investimento:hover {
-    color: #16a34a;
+    color: var(--verde-600);
 }
 
 
 .aba-investimento.ativa {
-    background: #ffffff;
+    background: var(--branco);
 
-    color: #16a34a;
+    color: var(--verde-600);
 
     box-shadow:
         0 2px 7px
@@ -872,21 +872,21 @@
 
 .dark
 .aba-investimento {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
 .dark
 .aba-investimento:hover {
-    color: #4ade80;
+    color: var(--verde-400);
 }
 
 
 .dark
 .aba-investimento.ativa {
-    background: #1f2937;
+    background: var(--cinza-800);
 
-    color: #4ade80;
+    color: var(--verde-400);
 
     box-shadow:
         0 2px 7px
@@ -927,11 +927,11 @@
 
     border:
         1px solid
-        #e5e7eb;
+        var(--cinza-200);
 
     border-radius: 15px;
 
-    background: #ffffff;
+    background: var(--branco);
 
     text-align: left;
 
@@ -966,9 +966,9 @@
 
 .dark
 .card-investimento-novo {
-    border-color: #374151;
+    border-color: var(--cinza-700);
 
-    background: #1f2937;
+    background: var(--cinza-800);
 
     box-shadow:
         0 5px 16px
@@ -1038,7 +1038,7 @@
     background:
         rgba(22, 163, 74, .085);
 
-    color: #16a34a;
+    color: var(--verde-600);
 }
 
 
@@ -1052,7 +1052,7 @@
     background:
         rgba(34, 197, 94, .12);
 
-    color: #4ade80;
+    color: var(--verde-400);
 }
 
 
@@ -1067,7 +1067,7 @@
 .identificacao-investimento strong {
     overflow: hidden;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 15px;
     font-weight: 650;
@@ -1081,7 +1081,7 @@
 .identificacao-investimento span {
     margin-top: 3px;
 
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 11px;
 }
@@ -1089,20 +1089,20 @@
 
 .dark
 .identificacao-investimento strong {
-    color: #f9fafb;
+    color: var(--cinza-50);
 }
 
 
 .dark
 .identificacao-investimento span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
 .seta-investimento {
     flex-shrink: 0;
 
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 23px;
 
@@ -1114,7 +1114,7 @@
 
 .card-investimento-novo:hover
 .seta-investimento {
-    color: #16a34a;
+    color: var(--verde-600);
 
     transform:
         translateX(3px);
@@ -1123,14 +1123,14 @@
 
 .dark
 .seta-investimento {
-    color: #6b7280;
+    color: var(--cinza-500);
 }
 
 
 .dark
 .card-investimento-novo:hover
 .seta-investimento {
-    color: #4ade80;
+    color: var(--verde-400);
 }
 
 
@@ -1153,7 +1153,7 @@
 
 
 .saldo-investimento span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 11px;
 }
@@ -1162,7 +1162,7 @@
 .saldo-investimento strong {
     margin-top: 3px;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 24px;
     font-weight: 700;
@@ -1173,19 +1173,19 @@
 
 .dark
 .saldo-investimento {
-    border-color: #374151;
+    border-color: var(--cinza-700);
 }
 
 
 .dark
 .saldo-investimento span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
 .dark
 .saldo-investimento strong {
-    color: #f9fafb;
+    color: var(--cinza-50);
 }
 
 
@@ -1213,7 +1213,7 @@
 
 .informacoes-investimento
 > div:first-child span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 10px;
 }
@@ -1222,14 +1222,14 @@
 .dark
 .informacoes-investimento
 > div:first-child span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
 .rendimento-investimento {
     margin-top: 3px;
 
-    color: #16a34a;
+    color: var(--verde-600);
 
     font-size: 13px;
     font-weight: 650;
@@ -1238,14 +1238,14 @@
 
 .dark
 .rendimento-investimento {
-    color: #4ade80;
+    color: var(--verde-400);
 }
 
 
 .sem-rendimento {
     margin-top: 3px;
 
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 13px;
 }
@@ -1253,7 +1253,7 @@
 
 .dark
 .sem-rendimento {
-    color: #6b7280;
+    color: var(--cinza-500);
 }
 
 
@@ -1324,7 +1324,7 @@
 ========================================================= */
 
 .status-atualizado {
-    color: #15803d;
+    color: var(--verde-700);
 
     background:
         rgba(22, 163, 74, .09);
@@ -1333,7 +1333,7 @@
 
 .dark
 .status-atualizado {
-    color: #4ade80;
+    color: var(--verde-400);
 
     background:
         rgba(34, 197, 94, .11);
@@ -1345,7 +1345,7 @@
 ========================================================= */
 
 .status-encerrado {
-    color: #6b7280;
+    color: var(--cinza-500);
 
     background:
         rgba(107, 114, 128, .10);
@@ -1354,7 +1354,7 @@
 
 .dark
 .status-encerrado {
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     background:
         rgba(156, 163, 175, .10);
@@ -1432,7 +1432,7 @@
 
     border-radius: 14px;
 
-    background: #ffffff;
+    background: var(--branco);
 
     color: #8a919d;
 
@@ -1443,11 +1443,11 @@
 
 .dark
 .mensagem-investimentos {
-    border-color: #4b5563;
+    border-color: var(--cinza-600);
 
-    background: #111827;
+    background: var(--cinza-900);
 
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
@@ -1477,13 +1477,13 @@
 
     border:
         1px solid
-        #e5e7eb;
+        var(--cinza-200);
 
     border-radius: 9px;
 
-    background: #ffffff;
+    background: var(--branco);
 
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-family: inherit;
     font-size: 12px;
@@ -1499,9 +1499,9 @@
 
 
 .botao-paginacao-investimento:hover:not(:disabled) {
-    border-color: #16a34a;
+    border-color: var(--verde-600);
 
-    color: #16a34a;
+    color: var(--verde-600);
 }
 
 
@@ -1514,22 +1514,22 @@
 
 .dark
 .botao-paginacao-investimento {
-    border-color: #374151;
+    border-color: var(--cinza-700);
 
-    background: #1f2937;
+    background: var(--cinza-800);
 
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
 .dark
 .botao-paginacao-investimento:hover:not(:disabled) {
-    border-color: #22c55e;
+    border-color: var(--verde-500);
 
     background:
         rgba(34, 197, 94, .06);
 
-    color: #4ade80;
+    color: var(--verde-400);
 }
 
 
@@ -1541,13 +1541,13 @@
 
     border:
         1px solid
-        #e5e7eb;
+        var(--cinza-200);
 
     border-radius: 9px;
 
-    background: #ffffff;
+    background: var(--branco);
 
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-family: inherit;
     font-size: 12px;
@@ -1563,18 +1563,18 @@
 
 
 .numero-pagina-investimento:hover {
-    border-color: #16a34a;
+    border-color: var(--verde-600);
 
-    color: #16a34a;
+    color: var(--verde-600);
 }
 
 
 .numero-pagina-investimento.ativo {
-    border-color: #16a34a;
+    border-color: var(--verde-600);
 
-    background: #16a34a;
+    background: var(--verde-600);
 
-    color: #ffffff;
+    color: var(--branco);
 
     box-shadow:
         0 4px 10px
@@ -1583,35 +1583,35 @@
 
 
 .numero-pagina-investimento.ativo:hover {
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
 .dark
 .numero-pagina-investimento {
-    border-color: #374151;
+    border-color: var(--cinza-700);
 
-    background: #1f2937;
+    background: var(--cinza-800);
 
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
 .dark
 .numero-pagina-investimento:hover {
-    border-color: #22c55e;
+    border-color: var(--verde-500);
 
-    color: #4ade80;
+    color: var(--verde-400);
 }
 
 
 .dark
 .numero-pagina-investimento.ativo {
-    border-color: #16a34a;
+    border-color: var(--verde-600);
 
-    background: #16a34a;
+    background: var(--verde-600);
 
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
@@ -1632,9 +1632,9 @@
 .card-lateral-carteira,
 .dark
 .card-investimento-novo {
-    background: #1f2937;
+    background: var(--cinza-800);
 
-    border-color: #374151;
+    border-color: var(--cinza-700);
 }
 
 
@@ -1646,7 +1646,7 @@
 .identificacao-investimento strong,
 .dark
 .saldo-investimento strong {
-    color: #f9fafb;
+    color: var(--cinza-50);
 }
 
 
@@ -1664,7 +1664,7 @@
 .saldo-investimento span,
 .dark
 .informacoes-investimento span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 

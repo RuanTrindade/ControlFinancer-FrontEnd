@@ -15,6 +15,8 @@ import {
 } from "react-icons/ri";
 
 import "../styles/formTransacao.css";
+
+import useFecharComEsc from "../hooks/useFecharComEsc";
 import { renderizarIcone } from "../utils/renderizarIcone";
 
 type TipoTransacao =
@@ -235,29 +237,10 @@ function FormTransacao({
         buscarCategorias();
     }, [tipo]);
 
-    useEffect(() => {
-        function fecharComEscape(evento: KeyboardEvent) {
-            if (evento.key === "Escape") {
-                onClose();
-            }
-        }
-
-        document.addEventListener(
-            "keydown",
-            fecharComEscape
-        );
-
-        document.body.style.overflow = "hidden";
-
-        return () => {
-            document.removeEventListener(
-                "keydown",
-                fecharComEscape
-            );
-
-            document.body.style.overflow = "";
-        };
-    }, [onClose]);
+    useFecharComEsc({
+        travarScroll: true,
+        onFechar: onClose
+    });
 
 
 

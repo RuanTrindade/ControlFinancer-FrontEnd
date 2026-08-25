@@ -18,6 +18,8 @@ import {
 
 import "../styles/formMovimentacaoObjetivo.css";
 
+import useFecharComEsc from "../hooks/useFecharComEsc";
+
 
 type Props = {
 
@@ -100,56 +102,12 @@ function FormMovimentacaoObjetivo({
     ]);
 
 
-    useEffect(() => {
-
-        if (!aberto) {
-            return;
-        }
-
-
-        function fecharComEscape(
-            evento: KeyboardEvent
-        ) {
-
-            if (
-                evento.key === "Escape" &&
-                !salvando
-            ) {
-
-                onClose();
-
-            }
-
-        }
-
-
-        document.addEventListener(
-            "keydown",
-            fecharComEscape
-        );
-
-        document.body.style.overflow =
-            "hidden";
-
-
-        return () => {
-
-            document.removeEventListener(
-                "keydown",
-                fecharComEscape
-            );
-
-            document.body.style.overflow =
-                "";
-
-        };
-
-    }, [
-        aberto,
-        salvando,
-        onClose
-    ]);
-
+    useFecharComEsc({
+        ativo: aberto,
+        bloqueado: salvando,
+        travarScroll: true,
+        onFechar: onClose
+    });
 
     async function salvar(
         evento: FormEvent<HTMLFormElement>

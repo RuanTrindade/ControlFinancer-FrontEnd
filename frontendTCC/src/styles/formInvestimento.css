@@ -30,7 +30,7 @@
 
     max-width: 520px;
 
-    background: #ffffff;
+    background: var(--branco);
 
     border-radius: 22px;
 
@@ -105,7 +105,7 @@
 
     background: rgba(22, 163, 74, 0.10);
 
-    color: #16a34a;
+    color: var(--verde-600);
 
     display: flex;
     align-items: center;
@@ -121,7 +121,7 @@
 .titulo-form-investimento h2 {
     margin: 0;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 20px;
     font-weight: 750;
@@ -131,7 +131,7 @@
 .titulo-form-investimento p {
     margin: 4px 0 0;
 
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 12px;
 
@@ -152,9 +152,9 @@
     border: none;
     border-radius: 10px;
 
-    background: #f8fafc;
+    background: var(--slate-50);
 
-    color: #6b7280;
+    color: var(--cinza-500);
 
     display: flex;
     align-items: center;
@@ -169,9 +169,9 @@
 
 
 .fechar-form-investimento:hover:not(:disabled) {
-    background: #f3f4f6;
+    background: var(--cinza-100);
 
-    color: #111827;
+    color: var(--cinza-900);
 }
 
 
@@ -219,7 +219,7 @@
 
     background: rgba(239, 68, 68, 0.06);
 
-    color: #dc2626;
+    color: var(--vermelho-600);
 
     font-size: 12px;
     font-weight: 600;
@@ -239,7 +239,7 @@
 
 
 .campo-form-investimento label {
-    color: #374151;
+    color: var(--cinza-700);
 
     font-size: 13px;
     font-weight: 650;
@@ -260,15 +260,15 @@
 
     box-sizing: border-box;
 
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--cinza-200);
 
     border-radius: 12px;
 
     outline: none;
 
-    background: #f9fafb;
+    background: var(--cinza-50);
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-family: inherit;
     font-size: 13px;
@@ -281,19 +281,19 @@
 
 
 .campo-form-investimento input::placeholder {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
 .campo-form-investimento input:hover:not(:disabled) {
-    border-color: #d1d5db;
+    border-color: var(--cinza-300);
 }
 
 
 .campo-form-investimento input:focus {
     border-color: rgba(22, 163, 74, 0.55);
 
-    background: #ffffff;
+    background: var(--branco);
 
     box-shadow:
         0 0 0 3px
@@ -333,11 +333,11 @@
 
     box-sizing: border-box;
 
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--cinza-200);
 
     border-radius: 12px;
 
-    background: #f9fafb;
+    background: var(--cinza-50);
 
     display: flex;
     align-items: center;
@@ -357,16 +357,16 @@
 
 
 .dropdown-tipo-botao:hover:not(:disabled) {
-    border-color: #d1d5db;
+    border-color: var(--cinza-300);
 
-    background: #ffffff;
+    background: var(--branco);
 }
 
 
 .dropdown-tipo-botao.aberto {
     border-color: rgba(22, 163, 74, 0.55);
 
-    background: #ffffff;
+    background: var(--branco);
 
     box-shadow:
         0 0 0 3px
@@ -405,7 +405,7 @@
 
     background: rgba(22, 163, 74, 0.10);
 
-    color: #16a34a;
+    color: var(--verde-600);
 
     display: flex;
     align-items: center;
@@ -430,7 +430,7 @@
 
 
 .texto-tipo-investimento strong {
-    color: #374151;
+    color: var(--cinza-700);
 
     font-size: 13px;
     font-weight: 700;
@@ -438,7 +438,7 @@
 
 
 .texto-tipo-investimento span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 11px;
 }
@@ -451,7 +451,7 @@
 .seta-dropdown-investimento {
     flex-shrink: 0;
 
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 21px;
 
@@ -465,7 +465,7 @@
 .seta-dropdown-investimento {
     transform: rotate(180deg);
 
-    color: #16a34a;
+    color: var(--verde-600);
 }
 
 
@@ -484,9 +484,9 @@
 
     padding: 6px;
 
-    background: #ffffff;
+    background: var(--branco);
 
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--cinza-200);
 
     border-radius: 14px;
 
@@ -564,7 +564,7 @@
 
 
 .opcao-tipo-investimento:hover {
-    background: #f8fafc;
+    background: var(--slate-50);
 }
 
 
@@ -583,9 +583,9 @@
 
     border-radius: 9px;
 
-    background: #f3f4f6;
+    background: var(--cinza-100);
 
-    color: #6b7280;
+    color: var(--cinza-500);
 
     display: flex;
     align-items: center;
@@ -602,7 +602,7 @@
 .icone-opcao-investimento {
     background: rgba(22, 163, 74, 0.11);
 
-    color: #16a34a;
+    color: var(--verde-600);
 }
 
 
@@ -621,7 +621,7 @@
 
 
 .texto-opcao-investimento strong {
-    color: #374151;
+    color: var(--cinza-700);
 
     font-size: 13px;
     font-weight: 650;
@@ -629,7 +629,7 @@
 
 
 .texto-opcao-investimento span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 11px;
 }
@@ -640,7 +640,7 @@
 =================================================== */
 
 .check-tipo-investimento {
-    color: #16a34a;
+    color: var(--verde-600);
 
     font-size: 18px;
 }
@@ -693,28 +693,28 @@
 /* CANCELAR */
 
 .cancelar-form-investimento {
-    background: #f3f4f6;
+    background: var(--cinza-100);
 
-    color: #6b7280;
+    color: var(--cinza-500);
 }
 
 
 .cancelar-form-investimento:hover:not(:disabled) {
-    background: #e5e7eb;
+    background: var(--cinza-200);
 }
 
 
 /* SALVAR */
 
 .salvar-form-investimento {
-    background: #16a34a;
+    background: var(--verde-600);
 
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
 .salvar-form-investimento:hover:not(:disabled) {
-    background: #15803d;
+    background: var(--verde-700);
 
     transform: translateY(-1px);
 }
@@ -734,7 +734,7 @@
 
 .dark
 .modal-form-investimento {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 
 
@@ -742,7 +742,7 @@
 .cabecalho-form-investimento,
 .dark
 .acoes-form-investimento {
-    border-color: #374151;
+    border-color: var(--cinza-700);
 }
 
 
@@ -750,13 +750,13 @@
 .titulo-form-investimento h2,
 .dark
 .campo-form-investimento label {
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
 .dark
 .titulo-form-investimento p {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
@@ -764,17 +764,17 @@
 
 .dark
 .fechar-form-investimento {
-    background: #111827;
+    background: var(--cinza-900);
 
-    color: #d1d5db;
+    color: var(--cinza-300);
 }
 
 
 .dark
 .fechar-form-investimento:hover:not(:disabled) {
-    background: #374151;
+    background: var(--cinza-700);
 
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
@@ -782,25 +782,25 @@
 
 .dark
 .campo-form-investimento input {
-    background: #111827;
+    background: var(--cinza-900);
 
-    border-color: #374151;
+    border-color: var(--cinza-700);
 
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
 .dark
 .campo-form-investimento input:hover:not(:disabled) {
-    border-color: #4b5563;
+    border-color: var(--cinza-600);
 }
 
 
 .dark
 .campo-form-investimento input:focus {
-    background: #111827;
+    background: var(--cinza-900);
 
-    border-color: #22c55e;
+    border-color: var(--verde-500);
 }
 
 
@@ -808,9 +808,9 @@
 
 .dark
 .dropdown-tipo-botao {
-    background: #111827;
+    background: var(--cinza-900);
 
-    border-color: #374151;
+    border-color: var(--cinza-700);
 }
 
 
@@ -818,19 +818,19 @@
 .dropdown-tipo-botao:hover:not(:disabled),
 .dark
 .dropdown-tipo-botao.aberto {
-    background: #111827;
+    background: var(--cinza-900);
 }
 
 
 .dark
 .texto-tipo-investimento strong {
-    color: #f9fafb;
+    color: var(--cinza-50);
 }
 
 
 .dark
 .texto-tipo-investimento span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
@@ -838,15 +838,15 @@
 
 .dark
 .menu-tipos-investimento {
-    background: #1f2937;
+    background: var(--cinza-800);
 
-    border-color: #374151;
+    border-color: var(--cinza-700);
 }
 
 
 .dark
 .opcao-tipo-investimento:hover {
-    background: #374151;
+    background: var(--cinza-700);
 }
 
 
@@ -858,9 +858,9 @@
 
 .dark
 .icone-opcao-investimento {
-    background: #111827;
+    background: var(--cinza-900);
 
-    color: #d1d5db;
+    color: var(--cinza-300);
 }
 
 
@@ -869,19 +869,19 @@
 .icone-opcao-investimento {
     background: rgba(34, 197, 94, 0.12);
 
-    color: #4ade80;
+    color: var(--verde-400);
 }
 
 
 .dark
 .texto-opcao-investimento strong {
-    color: #f9fafb;
+    color: var(--cinza-50);
 }
 
 
 .dark
 .texto-opcao-investimento span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
@@ -889,15 +889,15 @@
 
 .dark
 .cancelar-form-investimento {
-    background: #374151;
+    background: var(--cinza-700);
 
-    color: #d1d5db;
+    color: var(--cinza-300);
 }
 
 
 .dark
 .cancelar-form-investimento:hover:not(:disabled) {
-    background: #4b5563;
+    background: var(--cinza-600);
 }
 
 

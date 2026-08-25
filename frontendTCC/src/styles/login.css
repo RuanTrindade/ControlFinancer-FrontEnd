@@ -64,12 +64,12 @@
 }
 .container-formulario form h1 {
   font-size: 30px;
-  color: #111827;
+  color: var(--cinza-900);
   margin-bottom: 5px;
 }
 .container-formulario form span {
   font-size: 13px;
-  color: #6b7280;
+  color: var(--cinza-500);
   margin-bottom: 18px;
 }
 /* GOOGLE */
@@ -82,7 +82,7 @@
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--cinza-300);
   background-color: white;
   display: flex;
   align-items: center;
@@ -92,7 +92,7 @@
   text-decoration: none;
 }
 .icones-sociais a:hover {
-  background-color: #f3f4f6;
+  background-color: var(--cinza-100);
   transform:
     translateY(-2px);
   box-shadow:
@@ -115,7 +115,7 @@
   top: 50%;
   transform:
     translateY(-50%);
-  color: #9ca3af;
+  color: var(--cinza-400);
   font-size: 18px;
   z-index: 2;
   pointer-events: none;
@@ -123,7 +123,7 @@
 /* INPUT */
 .grupo-input input {
   width: 100%;
-  background-color: #f3f4f6;
+  background-color: var(--cinza-100);
   border: none;
   margin: 4px 0;
   padding: 14px 45px 14px 46px;
@@ -139,7 +139,7 @@
 }
 /* FOCUS */
 .grupo-input input:focus {
-  background-color: #eef2f7;
+  background-color: var(--cinza-divisor);
 }
 /* ÍCONES VALIDAÇÃO */
 .icone-valido {
@@ -148,7 +148,7 @@
   top: 50%;
   transform:
     translateY(-50%);
-  color: #16a34a;
+  color: var(--verde-600);
   font-size: 16px;
   animation:
     aparecerIcone 0.25s ease;
@@ -159,14 +159,14 @@
   top: 50%;
   transform:
     translateY(-50%);
-  color: #dc2626;
+  color: var(--vermelho-600);
   font-size: 16px;
   animation:
     aparecerIcone 0.25s ease;
 }
 /* ESQUECEU SENHA */
 .esqueceu-senha {
-  color: #6b7280;
+  color: var(--cinza-500);
   font-size: 13px;
   text-decoration: none;
   cursor: pointer;
@@ -174,11 +174,11 @@
   transition: 0.3s;
 }
 .esqueceu-senha:hover {
-  color: #16a34a;
+  color: var(--verde-600);
 }
 /* BOTÃO */
 .container-formulario form button {
-  background-color: #16a34a;
+  background-color: var(--verde-600);
   color: white;
   border: none;
   padding: 14px 40px;
@@ -190,7 +190,7 @@
   transition: 0.3s;
 }
 .container-formulario form button:hover {
-  background-color: #15803d;
+  background-color: var(--verde-700);
   transform:
     translateY(-2px);
 }
@@ -218,8 +218,8 @@
   background:
     linear-gradient(
       to right,
-      #22c55e,
-      #16a34a
+      var(--verde-500),
+      var(--verde-600)
     );
   color: white;
   position: relative;
@@ -308,8 +308,8 @@
   margin-bottom: 6px;
   padding: 10px 14px;
   border-radius: 12px;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
+  background: var(--cinza-50);
+  border: 1px solid var(--cinza-200);
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -329,17 +329,17 @@
   flex-shrink: 0;
 }
 .valido {
-  color: #16a34a;
+  color: var(--verde-600);
 }
 .invalido {
-  color: #dc2626;
+  color: var(--vermelho-600);
 }
 /* ERRO */
 .mensagem-erro {
   width: 100%;
   margin-top: 4px;
   margin-bottom: 4px;
-  color: #dc2626;
+  color: var(--vermelho-600);
   font-size: 12px;
   font-weight: 500;
   animation:
@@ -488,10 +488,10 @@
     margin-top: 20px;
     text-align: center;
     font-size: 14px;
-    color: #6b7280;
+    color: var(--cinza-500);
   }
   .link-mobile span {
-    color: #16a34a;
+    color: var(--verde-600);
     font-weight: 600;
     cursor: pointer;
     margin-left: 4px;

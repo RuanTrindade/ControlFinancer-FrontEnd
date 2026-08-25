@@ -45,7 +45,7 @@
         28px;
 
     background:
-        #f8fafc;
+        var(--slate-50);
 
     box-shadow:
         0 30px 80px
@@ -65,7 +65,7 @@
 .dark
 .modal-analise-ia {
     background:
-        #0f172a;
+        var(--slate-900);
 
     box-shadow:
         0 30px 80px
@@ -98,7 +98,7 @@
         999px;
 
     background:
-        #cbd5e1;
+        var(--slate-300);
 }
 
 
@@ -132,7 +132,7 @@
 
     border-bottom:
         1px solid
-        #e5e7eb;
+        var(--cinza-200);
 
     background:
         rgba(
@@ -150,7 +150,7 @@
 .dark
 .topo-modal-ia {
     border-color:
-        #1e293b;
+        var(--slate-800);
 
     background:
         rgba(
@@ -184,13 +184,13 @@
     justify-content: center;
 
     color:
-        #ffffff;
+        var(--branco);
 
     background:
         linear-gradient(
             135deg,
-            #8b5cf6,
-            #7c3aed
+            var(--violeta-500),
+            var(--violeta-600)
         );
 
     box-shadow:
@@ -212,7 +212,7 @@
 
 .titulo-modal-ia span {
     color:
-        #8b5cf6;
+        var(--violeta-500);
 
     font-size:
         12px;
@@ -235,7 +235,7 @@
         0;
 
     color:
-        #111827;
+        var(--cinza-900);
 
     font-size:
         24px;
@@ -248,7 +248,7 @@
 .dark
 .titulo-modal-ia h2 {
     color:
-        #ffffff;
+        var(--branco);
 }
 
 
@@ -259,7 +259,7 @@
         0;
 
     color:
-        #6b7280;
+        var(--cinza-500);
 
     font-size:
         13px;
@@ -272,7 +272,7 @@
 .dark
 .titulo-modal-ia p {
     color:
-        #94a3b8;
+        var(--slate-400);
 }
 
 
@@ -291,10 +291,10 @@
     justify-content: center;
 
     background:
-        #ffffff;
+        var(--branco);
 
     color:
-        #64748b;
+        var(--slate-500);
 
     cursor: pointer;
 
@@ -315,10 +315,10 @@
 .dark
 .fechar-modal-ia {
     background:
-        #1e293b;
+        var(--slate-800);
 
     color:
-        #cbd5e1;
+        var(--slate-300);
 }
 
 
@@ -332,10 +332,10 @@
         );
 
     color:
-        #ef4444;
+        var(--vermelho-500);
 
     background:
-        #fef2f2;
+        var(--vermelho-50);
 }
 
 
@@ -386,7 +386,7 @@
         linear-gradient(
             135deg,
             #faf5ff,
-            #ffffff
+            var(--branco)
         );
 
     box-shadow:
@@ -409,7 +409,7 @@
         linear-gradient(
             135deg,
             #1e1b4b,
-            #1e293b
+            var(--slate-800)
         );
 }
 
@@ -436,7 +436,7 @@
 
 .resumo-principal-topo span {
     color:
-        #7c3aed;
+        var(--violeta-600);
 
     font-size:
         12px;
@@ -454,7 +454,7 @@
 
 .resumo-principal-topo strong {
     color:
-        #111827;
+        var(--cinza-900);
 
     font-size:
         27px;
@@ -467,7 +467,7 @@
 .dark
 .resumo-principal-topo strong {
     color:
-        #ffffff;
+        var(--branco);
 }
 
 
@@ -495,7 +495,7 @@
 
 .nivel-muito_bom {
     color:
-        #15803d;
+        var(--verde-700);
 
     background:
         #dcfce7;
@@ -522,7 +522,7 @@
 
 .nivel-critico {
     color:
-        #b91c1c;
+        var(--vermelho-700);
 
     background:
         #fee2e2;
@@ -531,7 +531,7 @@
 
 .nivel-indefinido {
     color:
-        #64748b;
+        var(--slate-500);
 
     background:
         #e2e8f0;
@@ -558,7 +558,7 @@
 .dark
 .texto-resumo-ia {
     color:
-        #cbd5e1;
+        var(--slate-300);
 }
 
 
@@ -591,7 +591,7 @@
 
     border:
         1px solid
-        #e5e7eb;
+        var(--cinza-200);
 
     border-radius:
         20px;
@@ -600,7 +600,7 @@
     flex-direction: column;
 
     background:
-        #ffffff;
+        var(--branco);
 
     box-shadow:
         0 8px 22px
@@ -616,10 +616,10 @@
 .dark
 .card-indicador-ia {
     border-color:
-        #334155;
+        var(--slate-700);
 
     background:
-        #1e293b;
+        var(--slate-800);
 
     box-shadow:
         none;
@@ -650,7 +650,7 @@
 
 .icone-indicador-ia.saldo {
     color:
-        #7c3aed;
+        var(--violeta-600);
 
     background:
         #ede9fe;
@@ -659,7 +659,7 @@
 
 .icone-indicador-ia.receita {
     color:
-        #16a34a;
+        var(--verde-600);
 
     background:
         #dcfce7;
@@ -668,7 +668,7 @@
 
 .icone-indicador-ia.despesa {
     color:
-        #dc2626;
+        var(--vermelho-600);
 
     background:
         #fee2e2;
@@ -677,7 +677,7 @@
 
 .icone-indicador-ia.investimento {
     color:
-        #0284c7;
+        var(--azul-600);
 
     background:
         #e0f2fe;
@@ -689,7 +689,7 @@
         4px;
 
     color:
-        #64748b;
+        var(--slate-500);
 
     font-size:
         12px;
@@ -702,7 +702,7 @@
 .dark
 .card-indicador-ia > span {
     color:
-        #94a3b8;
+        var(--slate-400);
 }
 
 
@@ -711,7 +711,7 @@
         auto;
 
     color:
-        #111827;
+        var(--cinza-900);
 
     font-size:
         20px;
@@ -724,7 +724,7 @@
 .dark
 .card-indicador-ia > strong {
     color:
-        #ffffff;
+        var(--branco);
 }
 
 
@@ -738,13 +738,13 @@
 
     border:
         1px solid
-        #e5e7eb;
+        var(--cinza-200);
 
     border-radius:
         22px;
 
     background:
-        #ffffff;
+        var(--branco);
 
     box-shadow:
         0 8px 24px
@@ -760,10 +760,10 @@
 .dark
 .card-secao-ia {
     border-color:
-        #334155;
+        var(--slate-700);
 
     background:
-        #1e293b;
+        var(--slate-800);
 
     box-shadow:
         none;
@@ -792,7 +792,7 @@
 
 .cabecalho-secao-ia span {
     color:
-        #94a3b8;
+        var(--slate-400);
 
     font-size:
         11px;
@@ -812,7 +812,7 @@
     margin: 0;
 
     color:
-        #111827;
+        var(--cinza-900);
 
     font-size:
         19px;
@@ -825,13 +825,13 @@
 .dark
 .cabecalho-secao-ia h3 {
     color:
-        #ffffff;
+        var(--branco);
 }
 
 
 .cabecalho-secao-ia > svg {
     color:
-        #8b5cf6;
+        var(--violeta-500);
 
     font-size:
         23px;
@@ -890,13 +890,13 @@
 .dark
 .item-comparacao-ia {
     border-color:
-        #334155;
+        var(--slate-700);
 }
 
 
 .item-comparacao-ia span {
     color:
-        #64748b;
+        var(--slate-500);
 
     font-size:
         13px;
@@ -909,13 +909,13 @@
 .dark
 .item-comparacao-ia span {
     color:
-        #94a3b8;
+        var(--slate-400);
 }
 
 
 .item-comparacao-ia strong {
     color:
-        #111827;
+        var(--cinza-900);
 
     font-size:
         15px;
@@ -928,7 +928,7 @@
 .dark
 .item-comparacao-ia strong {
     color:
-        #ffffff;
+        var(--branco);
 }
 
 
@@ -942,7 +942,7 @@
         18px;
 
     color:
-        #64748b;
+        var(--slate-500);
 
     font-size:
         12px;
@@ -955,7 +955,7 @@
 .dark
 .texto-comparacao-ia {
     color:
-        #94a3b8;
+        var(--slate-400);
 }
 
 
@@ -996,7 +996,7 @@
 
 .item-alerta-ia strong {
     color:
-        #111827;
+        var(--cinza-900);
 
     font-size:
         14px;
@@ -1009,7 +1009,7 @@
 .dark
 .item-alerta-ia strong {
     color:
-        #ffffff;
+        var(--branco);
 }
 
 
@@ -1020,7 +1020,7 @@
         0;
 
     color:
-        #64748b;
+        var(--slate-500);
 
     font-size:
         12px;
@@ -1033,7 +1033,7 @@
 .dark
 .item-alerta-ia p {
     color:
-        #cbd5e1;
+        var(--slate-300);
 }
 
 
@@ -1094,13 +1094,13 @@
         #fecaca;
 
     background:
-        #fef2f2;
+        var(--vermelho-50);
 }
 
 
 .alerta-critico > span {
     color:
-        #b91c1c;
+        var(--vermelho-700);
 
     background:
         #fee2e2;
@@ -1161,7 +1161,7 @@
         #e0e7ff;
 
     background:
-        #f8fafc;
+        var(--slate-50);
 }
 
 
@@ -1171,7 +1171,7 @@
         #3730a3;
 
     background:
-        #111827;
+        var(--cinza-900);
 }
 
 
@@ -1191,7 +1191,7 @@
 
 .fluxo-redistribuicao-ia > strong {
     color:
-        #111827;
+        var(--cinza-900);
 
     font-size:
         14px;
@@ -1204,7 +1204,7 @@
 .dark
 .fluxo-redistribuicao-ia > strong {
     color:
-        #ffffff;
+        var(--branco);
 }
 
 
@@ -1225,7 +1225,7 @@
 
 .fluxo-redistribuicao-ia span {
     color:
-        #7c3aed;
+        var(--violeta-600);
 
     font-size:
         12px;
@@ -1237,7 +1237,7 @@
 
 .fluxo-redistribuicao-ia svg {
     color:
-        #8b5cf6;
+        var(--violeta-500);
 
     font-size:
         18px;
@@ -1251,7 +1251,7 @@
         0;
 
     color:
-        #64748b;
+        var(--slate-500);
 
     font-size:
         12px;
@@ -1264,7 +1264,7 @@
 .dark
 .item-redistribuicao-ia > p {
     color:
-        #cbd5e1;
+        var(--slate-300);
 }
 
 
@@ -1297,23 +1297,23 @@
 
     border:
         1px solid
-        #e5e7eb;
+        var(--cinza-200);
 
     border-radius:
         17px;
 
     background:
-        #f8fafc;
+        var(--slate-50);
 }
 
 
 .dark
 .item-sugestao-ia {
     border-color:
-        #334155;
+        var(--slate-700);
 
     background:
-        #111827;
+        var(--cinza-900);
 }
 
 
@@ -1328,7 +1328,7 @@
 
 .topo-sugestao-ia strong {
     color:
-        #111827;
+        var(--cinza-900);
 
     font-size:
         13px;
@@ -1344,7 +1344,7 @@
 .dark
 .topo-sugestao-ia strong {
     color:
-        #ffffff;
+        var(--branco);
 }
 
 
@@ -1355,7 +1355,7 @@
         0;
 
     color:
-        #64748b;
+        var(--slate-500);
 
     font-size:
         12px;
@@ -1368,7 +1368,7 @@
 .dark
 .item-sugestao-ia p {
     color:
-        #cbd5e1;
+        var(--slate-300);
 }
 
 
@@ -1410,7 +1410,7 @@
 
 .prioridade-alta {
     color:
-        #b91c1c;
+        var(--vermelho-700);
 
     background:
         #fee2e2;
@@ -1443,23 +1443,23 @@
 
     border:
         1px solid
-        #e5e7eb;
+        var(--cinza-200);
 
     border-radius:
         17px;
 
     background:
-        #f8fafc;
+        var(--slate-50);
 }
 
 
 .dark
 .item-objetivo-ia {
     border-color:
-        #334155;
+        var(--slate-700);
 
     background:
-        #111827;
+        var(--cinza-900);
 }
 
 
@@ -1474,7 +1474,7 @@
 
 .topo-objetivo-ia strong {
     color:
-        #111827;
+        var(--cinza-900);
 
     font-size:
         14px;
@@ -1487,13 +1487,13 @@
 .dark
 .topo-objetivo-ia strong {
     color:
-        #ffffff;
+        var(--branco);
 }
 
 
 .topo-objetivo-ia span {
     color:
-        #7c3aed;
+        var(--violeta-600);
 
     font-size:
         13px;
@@ -1518,14 +1518,14 @@
         999px;
 
     background:
-        #e5e7eb;
+        var(--cinza-200);
 }
 
 
 .dark
 .barra-objetivo-ia {
     background:
-        #334155;
+        var(--slate-700);
 }
 
 
@@ -1540,8 +1540,8 @@
     background:
         linear-gradient(
             90deg,
-            #8b5cf6,
-            #22c55e
+            var(--violeta-500),
+            var(--verde-500)
         );
 }
 
@@ -1567,27 +1567,27 @@
 
 .valores-objetivo-ia span {
     color:
-        #64748b;
+        var(--slate-500);
 }
 
 
 .valores-objetivo-ia strong {
     color:
-        #111827;
+        var(--cinza-900);
 }
 
 
 .dark
 .valores-objetivo-ia span {
     color:
-        #94a3b8;
+        var(--slate-400);
 }
 
 
 .dark
 .valores-objetivo-ia strong {
     color:
-        #ffffff;
+        var(--branco);
 }
 
 
@@ -1598,7 +1598,7 @@
         0;
 
     color:
-        #64748b;
+        var(--slate-500);
 
     font-size:
         11px;
@@ -1611,7 +1611,7 @@
 .dark
 .item-objetivo-ia > p {
     color:
-        #cbd5e1;
+        var(--slate-300);
 }
 
 
@@ -1652,26 +1652,26 @@
 
     border:
         1px solid
-        #e5e7eb;
+        var(--cinza-200);
 
     background:
-        #f8fafc;
+        var(--slate-50);
 }
 
 
 .dark
 .grade-investimentos-ia > div {
     border-color:
-        #334155;
+        var(--slate-700);
 
     background:
-        #111827;
+        var(--cinza-900);
 }
 
 
 .grade-investimentos-ia span {
     color:
-        #64748b;
+        var(--slate-500);
 
     font-size:
         11px;
@@ -1684,7 +1684,7 @@
 .dark
 .grade-investimentos-ia span {
     color:
-        #94a3b8;
+        var(--slate-400);
 }
 
 
@@ -1693,7 +1693,7 @@
         auto;
 
     color:
-        #111827;
+        var(--cinza-900);
 
     font-size:
         15px;
@@ -1706,7 +1706,7 @@
 .dark
 .grade-investimentos-ia strong {
     color:
-        #ffffff;
+        var(--branco);
 }
 
 
@@ -1792,7 +1792,7 @@
         1px;
 
     color:
-        #8b5cf6;
+        var(--violeta-500);
 
     font-size:
         16px;
@@ -1858,13 +1858,13 @@
     justify-content: center;
 
     color:
-        #ffffff;
+        var(--branco);
 
     background:
         linear-gradient(
             135deg,
-            #8b5cf6,
-            #7c3aed
+            var(--violeta-500),
+            var(--violeta-600)
         );
 
     box-shadow:
@@ -1892,7 +1892,7 @@
 
 .loading-modal-ia strong {
     color:
-        #111827;
+        var(--cinza-900);
 
     font-size:
         19px;
@@ -1905,7 +1905,7 @@
 .dark
 .loading-modal-ia strong {
     color:
-        #ffffff;
+        var(--branco);
 }
 
 
@@ -1919,7 +1919,7 @@
         24px;
 
     color:
-        #64748b;
+        var(--slate-500);
 
     font-size:
         13px;
@@ -1932,7 +1932,7 @@
 .dark
 .loading-modal-ia p {
     color:
-        #94a3b8;
+        var(--slate-400);
 }
 
 
@@ -1951,14 +1951,14 @@
         999px;
 
     background:
-        #e5e7eb;
+        var(--cinza-200);
 }
 
 
 .dark
 .barra-loading-ia {
     background:
-        #334155;
+        var(--slate-700);
 }
 
 
@@ -1974,8 +1974,8 @@
     background:
         linear-gradient(
             90deg,
-            #8b5cf6,
-            #22c55e
+            var(--violeta-500),
+            var(--verde-500)
         );
 
     animation:
@@ -2012,7 +2012,7 @@
         14px;
 
     color:
-        #ef4444;
+        var(--vermelho-500);
 
     font-size:
         42px;
@@ -2021,7 +2021,7 @@
 
 .erro-modal-ia strong {
     color:
-        #111827;
+        var(--cinza-900);
 
     font-size:
         18px;
@@ -2034,7 +2034,7 @@
 .dark
 .erro-modal-ia strong {
     color:
-        #ffffff;
+        var(--branco);
 }
 
 
@@ -2048,7 +2048,7 @@
         0;
 
     color:
-        #64748b;
+        var(--slate-500);
 
     font-size:
         13px;
@@ -2061,7 +2061,7 @@
 .dark
 .erro-modal-ia p {
     color:
-        #94a3b8;
+        var(--slate-400);
 }
 
 
@@ -2073,7 +2073,7 @@
 .recharts-cartesian-grid-horizontal
 line {
     stroke:
-        #e5e7eb;
+        var(--cinza-200);
 }
 
 
@@ -2082,7 +2082,7 @@ line {
 .recharts-cartesian-grid-horizontal
 line {
     stroke:
-        #334155;
+        var(--slate-700);
 }
 
 
@@ -2093,10 +2093,10 @@ line {
 
     border:
         1px solid
-        #e5e7eb !important;
+        var(--cinza-200) !important;
 
     background:
-        #ffffff !important;
+        var(--branco) !important;
 
     box-shadow:
         0 10px 24px
@@ -2113,10 +2113,10 @@ line {
 .modal-analise-ia
 .recharts-default-tooltip {
     border-color:
-        #334155 !important;
+        var(--slate-700) !important;
 
     background:
-        #111827 !important;
+        var(--cinza-900) !important;
 }
 
 

@@ -32,10 +32,10 @@
     background:
         linear-gradient(
             135deg,
-            #8b5cf6,
-            #7c3aed
+            var(--violeta-500),
+            var(--violeta-600)
         );
-    color: #ffffff;
+    color: var(--branco);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,13 +74,13 @@
     gap: 8px;
     padding: 7px;
     border-radius: 17px;
-    background: #ffffff;
+    background: var(--branco);
     box-shadow:
         0 8px 24px
         rgba(15, 23, 42, .06);
 }
 .dark .troca-grafico {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 .troca-grafico button {
     width: 46px;
@@ -88,7 +88,7 @@
     border: none;
     border-radius: 13px;
     background: transparent;
-    color: #9ca3af;
+    color: var(--cinza-400);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,15 +99,15 @@
         transform .2s ease;
 }
 .troca-grafico button:hover {
-    color: #22c55e;
+    color: var(--verde-500);
     background: #f0fdf4;
 }
 .dark .troca-grafico button:hover {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 .troca-grafico button.ativo {
-    color: #ffffff;
-    background: #22c55e;
+    color: var(--branco);
+    background: var(--verde-500);
     box-shadow:
         0 8px 18px
         rgba(34, 197, 94, .24);
@@ -132,8 +132,8 @@
     height: 46px;
     border: none;
     border-radius: 14px;
-    background: #ffffff;
-    color: #6b7280;
+    background: var(--branco);
+    color: var(--cinza-500);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,22 +147,22 @@
         color .2s ease;
 }
 .dark .acoes-relatorio button {
-    background: #1f2937;
-    color: #d1d5db;
+    background: var(--cinza-800);
+    color: var(--cinza-300);
 }
 .acoes-relatorio button:hover {
     transform: translateY(-2px);
 }
 .acoes-relatorio button:first-child:hover {
-    background: #f3f4f6;
-    color: #111827;
+    background: var(--cinza-100);
+    color: var(--cinza-900);
 }
 .dark .acoes-relatorio button:first-child:hover {
-    background: #1f2937;
-    color: #ffffff;
+    background: var(--cinza-800);
+    color: var(--branco);
 }
 .acoes-relatorio .excel {
-    color: #16a34a;
+    color: var(--verde-600);
 }
 .acoes-relatorio .excel:hover {
     background: #dcfce7;
@@ -171,7 +171,7 @@
     background: #14532d;
 }
 .acoes-relatorio .pdf {
-    color: #dc2626;
+    color: var(--vermelho-600);
 }
 .acoes-relatorio .pdf:hover {
     background: #fee2e2;
@@ -190,13 +190,13 @@
     min-height: 610px;
     padding: 60px;
     border-radius: 26px;
-    background: #ffffff;
+    background: var(--branco);
     box-shadow:
         0 14px 36px
         rgba(15, 23, 42, .06);
 }
 .dark .card-relatorio {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 /* ==========================================================
    SELETOR DE MÊS
@@ -215,8 +215,8 @@
     padding: 0 14px;
     border: none;
     border-radius: 11px;
-    background: #f3f4f6;
-    color: #6b7280;
+    background: var(--cinza-100);
+    color: var(--cinza-500);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -236,20 +236,20 @@
     padding: 0;
 }
 .dark .seletor-mes button {
-    background: #1f2937;
-    color: #d1d5db;
+    background: var(--cinza-800);
+    color: var(--cinza-300);
 }
 .seletor-mes button:hover {
     background: #dcfce7;
-    color: #16a34a;
+    color: var(--verde-600);
 }
 .dark .seletor-mes button:hover {
-    background: #374151;
-    color: #86efac;
+    background: var(--cinza-700);
+    color: var(--verde-300);
 }
 .seletor-mes button.ativo {
-    background: #22c55e;
-    color: #ffffff;
+    background: var(--verde-500);
+    color: var(--branco);
     box-shadow:
         0 8px 18px
         rgba(34, 197, 94, .22);
@@ -286,12 +286,12 @@
 .titulo-grafico-relatorio {
     text-align: center;
     margin-bottom: 16px;
-    color: #9ca3af;;
+    color: var(--cinza-400);;
     font-size: 19px;
     font-weight: 700;
 }
 .dark .titulo-grafico-relatorio {
-    color: #ffffff;
+    color: var(--branco);
 }
 .grafico-relatorio,
 .grafico-linha-relatorio {
@@ -306,19 +306,19 @@
     overflow: visible;
 }
 .recharts-cartesian-grid-horizontal line {
-    stroke: #e5e7eb;
+    stroke: var(--cinza-200);
 }
 .dark .recharts-cartesian-grid-horizontal line {
-    stroke: #374151;
+    stroke: var(--cinza-700);
 }
 .recharts-text {
     font-family: inherit;
 }
 .recharts-legend-item-text {
-    color: #6b7280 !important;
+    color: var(--cinza-500) !important;
 }
 .dark .recharts-legend-item-text {
-    color: #d1d5db !important;
+    color: var(--cinza-300) !important;
 }
 .recharts-tooltip-wrapper {
     outline: none;
@@ -340,12 +340,12 @@
 }
 .balanco-mensal h3 {
     margin: 0;
-    color:#9ca3af;;
+    color:var(--cinza-400);;
     font-size: 22px;
     font-weight: 700;
 }
 .dark .balanco-mensal h3 {
-    color: #ffffff;
+    color: var(--branco);
 }
 .titulo-mes {
     display: block;
@@ -361,27 +361,27 @@
     justify-content: space-between;
 }
 .dark .linha-balanco {
-    border-color: #1f2937;
+    border-color: var(--cinza-800);
 }
 .linha-balanco:last-child {
     border-bottom: none;
 }
 .linha-balanco span {
-    color: #6b7280;
+    color: var(--cinza-500);
     font-size: 14px;
     font-weight: 500;
 }
 .dark .linha-balanco span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 .linha-balanco strong {
-    color: #111827;
+    color: var(--cinza-900);
     font-size: 15px;
     font-weight: 700;
     text-align: right;
 }
 .dark .linha-balanco strong {
-    color: #ffffff;
+    color: var(--branco);
 }
 /* ==========================================================
    GRÁFICO DE LINHAS
@@ -412,23 +412,23 @@
 .recharts-default-tooltip {
     padding: 12px 14px !important;
     border-radius: 14px !important;
-    background: #ffffff !important;
-    border: 1px solid #e5e7eb !important;
+    background: var(--branco) !important;
+    border: 1px solid var(--cinza-200) !important;
     box-shadow:
         0 12px 30px
         rgba(15, 23, 42, .12) !important;
 }
 .dark .recharts-default-tooltip {
-    background: #111827 !important;
-    border-color: #374151 !important;
+    background: var(--cinza-900) !important;
+    border-color: var(--cinza-700) !important;
 }
 .recharts-tooltip-label {
     margin-bottom: 7px !important;
-    color: #111827 !important;
+    color: var(--cinza-900) !important;
     font-weight: 700 !important;
 }
 .dark .recharts-tooltip-label {
-    color: #ffffff !important;
+    color: var(--branco) !important;
 }
 .recharts-tooltip-item {
     font-size: 13px !important;
@@ -467,7 +467,7 @@
     width: 176px;
     height: 176px;
     border-radius: 50%;
-    background: #ffffff;
+    background: var(--branco);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -479,24 +479,24 @@
         rgba(15, 23, 42, .04);
 }
 .dark .centro-donut {
-    background: #111827;
+    background: var(--cinza-900);
 }
 .centro-donut small {
-    color: #6b7280;
+    color: var(--cinza-500);
     font-size: 13px;
     font-weight: 500;
 }
 .dark .centro-donut small {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 .centro-donut strong {
     margin-top: 7px;
-    color: #111827;
+    color: var(--cinza-900);
     font-size: 24px;
     font-weight: 800;
 }
 .dark .centro-donut strong {
-    color: #ffffff;
+    color: var(--branco);
 }
 /* ==========================================================
    LISTA DE CATEGORIAS DO DONUT
@@ -508,19 +508,19 @@
 }
 .categorias-relatorio h2 {
     margin: 0 0 8px;
-    color: #111827;
+    color: var(--cinza-900);
     font-size: 27px;
     font-weight: 800;
 }
 .dark .categorias-relatorio h2 {
-    color: #ffffff;
+    color: var(--branco);
 }
 .item-categoria-R {
     min-height: 72px;
     padding: 14px 16px;
     border-radius: 18px;
-    background: #f8fafc;
-    border: 1px solid #eef2f7;
+    background: var(--slate-50);
+    border: 1px solid var(--cinza-divisor);
     display: grid;
     grid-template-columns:
         46px
@@ -534,18 +534,18 @@
         border-color .2s ease;
 }
 .dark .item-categoria-R {
-    background: #0f172a;
-    border-color: #1f2937;
+    background: var(--slate-900);
+    border-color: var(--cinza-800);
 }
 .item-categoria-R:hover {
     transform: translateY(-2px);
-    border-color: #d1d5db;
+    border-color: var(--cinza-300);
     box-shadow:
         0 10px 24px
         rgba(15, 23, 42, .06);
 }
 .dark .item-categoria-R:hover {
-    border-color: #374151;
+    border-color: var(--cinza-700);
 }
 .item-categoria-R .icone-categoria {
     width: 42px;
@@ -554,12 +554,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
+    color: var(--branco);
     font-size: 19px;
     flex-shrink: 0;
 }
 .item-categoria-R .icone-categoria svg {
-    color: #ffffff;
+    color: var(--branco);
 }
 .info-categoria-R {
     min-width: 0;
@@ -569,28 +569,28 @@
 }
 .info-categoria-R span {
     overflow: hidden;
-    color: #374151;
+    color: var(--cinza-700);
     font-size: 15px;
     font-weight: 700;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 .dark .info-categoria-R span {
-    color: #ffffff;
+    color: var(--branco);
 }
 .info-categoria-R small {
-    color: #9ca3af;
+    color: var(--cinza-400);
     font-size: 12px;
     font-weight: 600;
 }
 .item-categoria-R > strong {
-    color: #111827;
+    color: var(--cinza-900);
     font-size: 15px;
     font-weight: 700;
     white-space: nowrap;
 }
 .dark .item-categoria-R > strong {
-    color: #ffffff;
+    color: var(--branco);
 }
 /* ==========================================================
    RESPONSIVIDADE
@@ -674,11 +674,11 @@
         height: 5px;
     }
     .seletor-mes::-webkit-scrollbar-thumb {
-        background: #d1d5db;
+        background: var(--cinza-300);
         border-radius: 999px;
     }
     .dark .seletor-mes::-webkit-scrollbar-thumb {
-        background: #4b5563;
+        background: var(--cinza-600);
     }
     .seletor-mes button {
         flex-shrink: 0;
@@ -790,10 +790,10 @@
    CORREÇÕES VISUAIS DO RECHARTS
 ========================================================== */
 .recharts-cartesian-axis-tick-value {
-    fill: #9ca3af;
+    fill: var(--cinza-400);
 }
 .dark .recharts-cartesian-axis-tick-value {
-    fill: #9ca3af;
+    fill: var(--cinza-400);
 }
 .recharts-legend-wrapper {
     padding-top: 8px;
@@ -844,7 +844,7 @@
     stroke: #273244;
 }
 .dark .recharts-legend-item-text {
-    color: #d1d5db !important;
+    color: var(--cinza-300) !important;
 }
 /* ==========================================================
    AJUSTES FINAIS

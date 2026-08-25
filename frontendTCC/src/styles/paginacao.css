@@ -9,19 +9,19 @@
     padding: 12px 18px;
     margin-top: auto;
 
-    background: var(--cor-card, #ffffff);
+    background: var(--cor-card, var(--branco));
     border-radius: 0 0 16px 16px;
 }
 
 .paginacao-informacoes {
-    color: var(--cor-texto-secundario, #6b7280);
+    color: var(--cor-texto-secundario, var(--cinza-500));
     font-size: 13px;
     line-height: 1.4;
     white-space: nowrap;
 }
 
 .paginacao-informacoes strong {
-    color: var(--cor-texto, #111827);
+    color: var(--cor-texto, var(--cinza-900));
     font-weight: 700;
 }
 
@@ -46,9 +46,9 @@
 
     height: 34px;
 
-    border: 1px solid var(--cor-borda, #e5e7eb);
-    background: var(--cor-card, #ffffff);
-    color: var(--cor-texto, #374151);
+    border: 1px solid var(--cor-borda, var(--cinza-200));
+    background: var(--cor-card, var(--branco));
+    color: var(--cor-texto, var(--cinza-700));
 
     border-radius: 10px;
 
@@ -83,25 +83,25 @@
 
 .paginacao-numero:hover:not(:disabled),
 .paginacao-botao-navegacao:hover:not(:disabled) {
-    border-color: #22c55e;
+    border-color: var(--verde-500);
     background: rgba(34, 197, 94, 0.08);
-    color: #16a34a;
+    color: var(--verde-600);
     transform: translateY(-1px);
 }
 
 .paginacao-numero.ativo {
-    border-color: #16a34a;
-    background: #16a34a;
-    color: #ffffff;
+    border-color: var(--verde-600);
+    background: var(--verde-600);
+    color: var(--branco);
 
     box-shadow:
         0 5px 12px rgba(22, 163, 74, 0.22);
 }
 
 .paginacao-numero.ativo:hover:not(:disabled) {
-    border-color: #15803d;
-    background: #15803d;
-    color: #ffffff;
+    border-color: var(--verde-700);
+    background: var(--verde-700);
+    color: var(--branco);
 }
 
 .paginacao-numero:disabled,
@@ -119,7 +119,7 @@
     min-width: 24px;
     height: 34px;
 
-    color: var(--cor-texto-secundario, #9ca3af);
+    color: var(--cor-texto-secundario, var(--cinza-400));
     font-size: 13px;
     user-select: none;
 }
@@ -131,47 +131,47 @@
 ========================================================= */
 
 .dark .paginacao {
-    background: #1e293b;
+    background: var(--slate-800);
 }
 
 .dark .paginacao-informacoes {
-    color: #94a3b8;
+    color: var(--slate-400);
 }
 
 .dark .paginacao-informacoes strong {
-    color: #f8fafc;
+    color: var(--slate-50);
 }
 
 .dark .paginacao-numero,
 .dark .paginacao-botao-navegacao {
-    background: #111827;
-    border-color: #334155;
-    color: #cbd5e1;
+    background: var(--cinza-900);
+    border-color: var(--slate-700);
+    color: var(--slate-300);
 }
 
 .dark .paginacao-numero:hover:not(:disabled),
 .dark .paginacao-botao-navegacao:hover:not(:disabled) {
     background: rgba(34, 197, 94, 0.12);
-    border-color: #22c55e;
-    color: #4ade80;
+    border-color: var(--verde-500);
+    color: var(--verde-400);
 }
 
 .dark .paginacao-numero.ativo {
-    background: #16a34a;
-    border-color: #16a34a;
-    color: #ffffff;
+    background: var(--verde-600);
+    border-color: var(--verde-600);
+    color: var(--branco);
 
     box-shadow:
         0 6px 16px rgba(22, 163, 74, 0.35);
 }
 
 .dark .paginacao-numero.ativo:hover:not(:disabled) {
-    background: #15803d;
-    border-color: #15803d;
+    background: var(--verde-700);
+    border-color: var(--verde-700);
 }
 
 .dark .paginacao-reticencias {
-    color: #64748b;
+    color: var(--slate-500);
 }
 
 .dark .paginacao-numero:disabled,

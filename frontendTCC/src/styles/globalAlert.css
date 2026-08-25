@@ -48,12 +48,12 @@
 
     padding: 22px;
 
-    background: #ffffff;
+    background: var(--branco);
 
     border:
         1px
         solid
-        #e5e7eb;
+        var(--cinza-200);
 
     border-radius: 20px;
 
@@ -106,7 +106,7 @@
     font-size: 15px;
     font-weight: 800;
 
-    color: #111827;
+    color: var(--cinza-900);
 }
 
 
@@ -118,7 +118,7 @@
 
     line-height: 1.55;
 
-    color: #6b7280;
+    color: var(--cinza-500);
 }
 
 
@@ -141,7 +141,7 @@
 
     background: transparent;
 
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 22px;
 
@@ -155,9 +155,9 @@
 
 
 .global-alert-close:hover {
-    background: #f3f4f6;
+    background: var(--cinza-100);
 
-    color: #374151;
+    color: var(--cinza-700);
 
     transform: scale(1.04);
 }
@@ -196,7 +196,7 @@
     font-size: 12px;
     font-weight: 800;
 
-    color: #ffffff;
+    color: var(--branco);
 
     cursor: pointer;
 
@@ -276,7 +276,7 @@
 .global-alert-error
 .global-alert-icon {
     color:
-        #dc2626;
+        var(--vermelho-600);
 
     background:
         #fee2e2;
@@ -286,14 +286,14 @@
 .global-alert-error
 .global-alert-content h3 {
     color:
-        #b91c1c;
+        var(--vermelho-700);
 }
 
 
 .global-alert-error
 .global-alert-button {
     background:
-        #ef4444;
+        var(--vermelho-500);
 
     box-shadow:
         0 6px 16px
@@ -319,7 +319,7 @@
 .global-alert-success
 .global-alert-icon {
     color:
-        #16a34a;
+        var(--verde-600);
 
     background:
         #dcfce7;
@@ -329,14 +329,14 @@
 .global-alert-success
 .global-alert-content h3 {
     color:
-        #15803d;
+        var(--verde-700);
 }
 
 
 .global-alert-success
 .global-alert-button {
     background:
-        #16a34a;
+        var(--verde-600);
 
     box-shadow:
         0 6px 16px
@@ -411,10 +411,10 @@
 .dark
 .global-alert {
     background:
-        #1f2937;
+        var(--cinza-800);
 
     border-color:
-        #374151;
+        var(--cinza-700);
 
     box-shadow:
         0 24px 60px
@@ -430,31 +430,31 @@
 .dark
 .global-alert-content h3 {
     color:
-        #f9fafb;
+        var(--cinza-50);
 }
 
 
 .dark
 .global-alert-content p {
     color:
-        #d1d5db;
+        var(--cinza-300);
 }
 
 
 .dark
 .global-alert-close {
     color:
-        #9ca3af;
+        var(--cinza-400);
 }
 
 
 .dark
 .global-alert-close:hover {
     background:
-        #374151;
+        var(--cinza-700);
 
     color:
-        #ffffff;
+        var(--branco);
 }
 
 
@@ -552,7 +552,7 @@
 .global-alert-success
 .global-alert-icon {
     color:
-        #4ade80;
+        var(--verde-400);
 
     background:
         rgba(
@@ -568,7 +568,7 @@
 .global-alert-success
 .global-alert-content h3 {
     color:
-        #4ade80;
+        var(--verde-400);
 }
 
 

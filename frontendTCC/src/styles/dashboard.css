@@ -12,7 +12,7 @@
 
     transition: .35s ease;
 
-    background: #eef2f7;
+    background: var(--cinza-divisor);
 }
 
 
@@ -23,7 +23,23 @@
 
 
 .dark .conteudo {
-    background: #0f172a;
+    background: var(--slate-900);
+}
+
+
+/* ===================================================
+   CELULAR — a sidebar deixa de "empurrar" o conteúdo
+   (ela passa a flutuar por cima, como um drawer)
+=================================================== */
+
+@media (max-width: 600px) {
+
+    .conteudo,
+    .sidebar.close ~ .conteudo {
+        width: 100%;
+        left: 0;
+    }
+
 }
 
 
@@ -80,7 +96,7 @@
 
     overflow: hidden;
 
-    background: #ffffff;
+    background: var(--branco);
 
     border:
         1px solid
@@ -115,9 +131,9 @@
 
 
 .dark .cartao {
-    background: #1f2937;
+    background: var(--cinza-800);
 
-    border-color: #374151;
+    border-color: var(--cinza-700);
 
     box-shadow:
         0 5px 20px
@@ -164,7 +180,7 @@
 
     background: #dcfce7;
 
-    color: #16a34a;
+    color: var(--verde-600);
 
     font-size: 19px;
 }
@@ -174,14 +190,14 @@
     background:
         rgba(34, 197, 94, .12);
 
-    color: #4ade80;
+    color: var(--verde-400);
 }
 
 
 .topo-saldo p {
     margin: 0;
 
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 13px;
     font-weight: 600;
@@ -189,14 +205,14 @@
 
 
 .dark .topo-saldo p {
-    color: #d1d5db;
+    color: var(--cinza-300);
 }
 
 
 .cartao-saldo h2 {
     margin: 0;
 
-    color: #374151;
+    color: var(--cinza-700);
 
     font-size: 34px;
     font-weight: 700;
@@ -206,7 +222,7 @@
 
 
 .dark .cartao-saldo h2 {
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
@@ -232,9 +248,9 @@
     border: none;
     border-radius: 999px;
 
-    background: #16a34a;
+    background: var(--verde-600);
 
-    color: #ffffff;
+    color: var(--branco);
 
     font-family: inherit;
     font-size: 13px;
@@ -250,7 +266,7 @@
 
 
 .botao-adicionar:hover {
-    background: #15803d;
+    background: var(--verde-700);
 
     transform:
         translateY(-2px);
@@ -341,7 +357,7 @@
 
 .cartao-resumo:nth-child(1)
 .icone-resumo-dashboard svg {
-    color: #16a34a;
+    color: var(--verde-600);
 }
 
 
@@ -357,7 +373,7 @@
 
 .cartao-resumo:nth-child(2)
 .icone-resumo-dashboard svg {
-    color: #ef4444;
+    color: var(--vermelho-500);
 }
 
 
@@ -408,7 +424,7 @@
 .topo-resumo p {
     margin: 0;
 
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 13px;
     font-weight: 500;
@@ -416,14 +432,14 @@
 
 
 .dark .topo-resumo p {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
 .cartao-resumo h3 {
     margin: 0;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 24px;
     font-weight: 700;
@@ -433,7 +449,7 @@
 
 
 .dark .cartao-resumo h3 {
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
@@ -529,14 +545,14 @@
 
     gap: 10px;
 
-    color: #374151;
+    color: var(--cinza-700);
 
     font-size: 13px;
 }
 
 
 .dark .legenda-item {
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
@@ -551,12 +567,12 @@
 
 
 .cor-verde {
-    background: #22c55e;
+    background: var(--verde-500);
 }
 
 
 .cor-vermelha {
-    background: #ef4444;
+    background: var(--vermelho-500);
 }
 
 
@@ -577,7 +593,7 @@
 
 
 .legenda-dashboard-info span {
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 12px;
     font-weight: 600;
@@ -585,7 +601,7 @@
 
 
 .legenda-dashboard-info strong {
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 12px;
     font-weight: 700;
@@ -593,12 +609,12 @@
 
 
 .dark .legenda-dashboard-info span {
-    color: #d1d5db;
+    color: var(--cinza-300);
 }
 
 
 .dark .legenda-dashboard-info strong {
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
@@ -623,7 +639,7 @@
         0
         30px;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 20px;
     font-weight: 700;
@@ -631,7 +647,7 @@
 
 
 .dark .cartao-categorias h2 {
-    color: #ffffff;
+    color: var(--branco);
 }
 
 /* ===================================================
@@ -734,14 +750,14 @@
 
     border-radius: 9px;
 
-    background: #f3f4f6;
+    background: var(--cinza-100);
 }
 
 
 .dark
 .categoria-dashboard-item
 .info-categoria > span:first-child {
-    background: #374151;
+    background: var(--cinza-700);
 }
 
 
@@ -766,7 +782,7 @@
 
     overflow: hidden;
 
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 12px;
     font-weight: 600;
@@ -786,7 +802,7 @@
 
     padding-top: 7px;
 
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 11px;
     font-weight: 700;
@@ -800,7 +816,7 @@
 .info-categoria > span:last-child,
 .dark
 .categoria-dashboard-item > strong {
-    color: #d1d5db;
+    color: var(--cinza-300);
 }
 
 
@@ -815,7 +831,7 @@
     margin-top: 18px;
     padding-top: 14px;
 
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--cinza-200);
 
     display: flex;
     align-items: center;
@@ -832,7 +848,7 @@
 
     gap: 6px;
 
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 10px;
     font-weight: 600;
@@ -852,7 +868,7 @@
 
 
 .status-verde {
-    background: #22c55e;
+    background: var(--verde-500);
 }
 
 
@@ -862,19 +878,19 @@
 
 
 .status-vermelho {
-    background: #ef4444;
+    background: var(--vermelho-500);
 }
 
 
 /* DARK */
 
 .dark .legenda-status-categorias {
-    border-top-color: #374151;
+    border-top-color: var(--cinza-700);
 }
 
 
 .dark .status-categoria-item {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
@@ -961,7 +977,7 @@
         0
         26px;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 20px;
     font-weight: 700;
@@ -969,7 +985,7 @@
 
 
 .dark .cartao-transacoes h2 {
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
@@ -992,7 +1008,7 @@
 
     border-bottom:
         1px solid
-        #eef2f7;
+        var(--cinza-divisor);
 }
 
 
@@ -1002,7 +1018,7 @@
 
 
 .dark .item-transacao {
-    border-color: #374151;
+    border-color: var(--cinza-700);
 }
 
 
@@ -1032,24 +1048,24 @@
 
     border-radius: 12px;
 
-    background: #f3f4f6;
+    background: var(--cinza-100);
 }
 
 
 .dark .icone-transacao {
-    background: #374151;
+    background: var(--cinza-700);
 }
 
 
 .icone-transacao svg {
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 18px;
 }
 
 
 .dark .icone-transacao svg {
-    color: #d1d5db;
+    color: var(--cinza-300);
 }
 
 
@@ -1062,7 +1078,7 @@
 
     overflow: hidden;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 13px;
     font-weight: 700;
@@ -1074,7 +1090,7 @@
 
 
 .dark .item-transacao strong {
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
@@ -1084,7 +1100,7 @@
         0
         0;
 
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 11px;
     font-weight: 500;
@@ -1092,7 +1108,7 @@
 
 
 .dark .item-transacao p {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
@@ -1110,17 +1126,17 @@
 
 
 .valor-positivo {
-    color: #16a34a;
+    color: var(--verde-600);
 }
 
 
 .valor-negativo {
-    color: #ef4444;
+    color: var(--vermelho-500);
 }
 
 
 .dark .valor-positivo {
-    color: #4ade80;
+    color: var(--verde-400);
 }
 
 
@@ -1136,7 +1152,7 @@
 .dark
 .grafico-categorias-dashboard
 .recharts-bar-background-rectangle path {
-    fill: #374151;
+    fill: var(--cinza-700);
 }
 
 
@@ -1147,7 +1163,7 @@
 .recharts-default-tooltip {
     border:
         1px solid
-        #e5e7eb
+        var(--cinza-200)
         !important;
 
     border-radius:
@@ -1163,15 +1179,15 @@
 .dark
 .recharts-default-tooltip {
     background:
-        #111827
+        var(--cinza-900)
         !important;
 
     border-color:
-        #374151
+        var(--cinza-700)
         !important;
 
     color:
-        #ffffff
+        var(--branco)
         !important;
 }
 
@@ -1296,7 +1312,7 @@
 
 .cartao-dashboard-clicavel:focus-visible {
     outline:
-        2px solid #22c55e;
+        2px solid var(--verde-500);
 
     outline-offset:
         3px;

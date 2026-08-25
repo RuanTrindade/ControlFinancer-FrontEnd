@@ -11,7 +11,7 @@
     margin-bottom: 28px;
     font-size: 30px;
     font-weight: 700;
-    color: #111827;
+    color: var(--cinza-900);
 }
 .dark .titulo-detalhe {
     color: white;
@@ -37,7 +37,7 @@
         rgba(0,0,0,0.04);
 }
 .dark .resumo-card {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 /* =========================
    CABEÇALHO
@@ -46,7 +46,7 @@
     text-align: center;
     font-size: 28px;
     margin-bottom: 22px;
-    color: #111827;
+    color: var(--cinza-900);
 }
 .dark .resumo-card h2 {
     color: white;
@@ -89,10 +89,10 @@
     justify-content: center;
     font-size: 34px;
     font-weight: 800;
-    color: #111827;
+    color: var(--cinza-900);
 }
 .dark .progresso-centro {
-    background: #1f2937;
+    background: var(--cinza-800);
     color: white;
 }
 /* =========================
@@ -103,16 +103,16 @@
     text-align: center;
     font-size: 26px;
     font-weight: 700;
-    color: #16a34a;
+    color: var(--verde-600);
 }
 .valor-atual span {
     display: block;
     margin-top: 4px;
     font-size: 15px;
-    color: #6b7280;
+    color: var(--cinza-500);
 }
 .dark .valor-atual span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 /* =========================
    TEXTO INFERIOR
@@ -124,17 +124,17 @@
     gap: 14px;
     font-size: 13px;
     line-height: 1.6;
-    color: #6b7280;
+    color: var(--cinza-500);
 }
 .objetivo-dica svg {
     font-size: 24px;
     flex-shrink: 0;
 }
 .objetivo-dica strong {
-    color: #111827;
+    color: var(--cinza-900);
 }
 .dark .objetivo-dica {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 .dark .objetivo-dica strong {
     color: white;
@@ -156,7 +156,7 @@
     flex-direction: column;
 }
 .dark .movimentacoes-card {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 /* =========================
    TOPO
@@ -169,7 +169,7 @@
 }
 .movimentacoes-topo h2 {
     font-size: 28px;
-    color: #111827;
+    color: var(--cinza-900);
 }
 .dark .movimentacoes-topo h2 {
     color: white;
@@ -196,10 +196,10 @@
     transition: 0.25s;
 }
 .btn-deposito {
-    background: #22c55e;
+    background: var(--verde-500);
 }
 .btn-saque {
-    background: #ef4444;
+    background: var(--vermelho-500);
 }
 .btn-deposito:hover,
 .btn-saque:hover {
@@ -221,7 +221,7 @@
    ITEM
 ========================= */
 .movimentacao-item {
-    background: #f8fafc;
+    background: var(--slate-50);
     border-radius: 18px;
     padding: 18px;
     display: flex;
@@ -233,7 +233,7 @@
     transform: translateY(-2px);
 }
 .dark .movimentacao-item {
-    background: #111827;
+    background: var(--cinza-900);
 }
 /* =========================
    INFO MOVIMENTAÇÃO
@@ -254,10 +254,10 @@
     font-size: 20px;
 }
 .movimentacao-tipo.deposito {
-    background: #22c55e;
+    background: var(--verde-500);
 }
 .movimentacao-tipo.saque {
-    background: #ef4444;
+    background: var(--vermelho-500);
 }
 .movimentacao-dados {
     display: flex;
@@ -266,17 +266,17 @@
 }
 .movimentacao-dados strong {
     font-size: 14px;
-    color: #111827;
+    color: var(--cinza-900);
 }
 .dark .movimentacao-dados strong {
     color: white;
 }
 .movimentacao-dados span {
     font-size: 13px;
-    color: #6b7280;
+    color: var(--cinza-500);
 }
 .dark .movimentacao-dados span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 /* =========================
    VALOR
@@ -286,10 +286,10 @@
     font-weight: 700;
 }
 .valor-movimentacao.deposito {
-    color: #16a34a;
+    color: var(--verde-600);
 }
 .valor-movimentacao.saque {
-    color: #ef4444;
+    color: var(--vermelho-500);
 }
 /* =========================
    AÇÕES
@@ -303,11 +303,11 @@
     background: transparent;
     cursor: pointer;
     font-size: 18px;
-    color: #6b7280;
+    color: var(--cinza-500);
     transition: .2s;
 }
 .movimentacao-acoes button:hover {
-    color: #111827;
+    color: var(--cinza-900);
 }
 .dark .movimentacao-acoes button:hover {
     color: white;
@@ -421,9 +421,9 @@
     border: none;
     border-radius: 12px;
 
-    background: #ffffff;
+    background: var(--branco);
 
-    color: #4b5563;
+    color: var(--cinza-600);
 
     font-size: 21px;
 
@@ -440,9 +440,9 @@
 
 
 .btn-menu-objetivo:hover {
-    background: #f3f4f6;
+    background: var(--cinza-100);
 
-    color: #111827;
+    color: var(--cinza-900);
 }
 
 
@@ -460,10 +460,10 @@
 
     padding: 6px;
 
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--cinza-200);
     border-radius: 12px;
 
-    background: #ffffff;
+    background: var(--branco);
 
     box-shadow:
         0 14px 35px
@@ -486,7 +486,7 @@
 
     background: transparent;
 
-    color: #374151;
+    color: var(--cinza-700);
 
     font-family: inherit;
     font-size: 13px;
@@ -509,19 +509,19 @@
 
 
 .menu-objetivo-opcoes button:hover {
-    background: #f3f4f6;
+    background: var(--cinza-100);
 }
 
 
 .menu-objetivo-opcoes
 .opcao-excluir {
-    color: #dc2626;
+    color: var(--vermelho-600);
 }
 
 
 .menu-objetivo-opcoes
 .opcao-excluir:hover {
-    background: #fef2f2;
+    background: var(--vermelho-50);
 }
 
 
@@ -530,23 +530,23 @@
 ========================= */
 
 .dark .btn-menu-objetivo {
-    background: #1f2937;
+    background: var(--cinza-800);
 
-    color: #cbd5e1;
+    color: var(--slate-300);
 }
 
 
 .dark .btn-menu-objetivo:hover {
-    background: #374151;
+    background: var(--cinza-700);
 
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
 .dark .menu-objetivo-opcoes {
-    border-color: #374151;
+    border-color: var(--cinza-700);
 
-    background: #111827;
+    background: var(--cinza-900);
 
     box-shadow:
         0 14px 35px
@@ -556,13 +556,13 @@
 
 .dark
 .menu-objetivo-opcoes button {
-    color: #e5e7eb;
+    color: var(--cinza-200);
 }
 
 
 .dark
 .menu-objetivo-opcoes button:hover {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 
 
@@ -611,9 +611,9 @@
     border: none;
     border-radius: 10px;
 
-    background: #f8fafc;
+    background: var(--slate-50);
 
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-family: inherit;
     font-size: 13px;
@@ -626,9 +626,9 @@
 
 
 .paginacao-movimentacoes button:hover:not(:disabled) {
-    background: #16a34a;
+    background: var(--verde-600);
 
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
@@ -640,31 +640,31 @@
 
 
 .pagina-movimentacao.ativa {
-    background: #16a34a !important;
+    background: var(--verde-600) !important;
 
-    color: #ffffff !important;
+    color: var(--branco) !important;
 }
 
 
 .dark
 .paginacao-movimentacoes button {
-    background: #111827;
+    background: var(--cinza-900);
 
-    color: #d1d5db;
+    color: var(--cinza-300);
 }
 
 
 .dark
 .paginacao-movimentacoes button:hover:not(:disabled) {
-    background: #16a34a;
+    background: var(--verde-600);
 
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
 .dark
 .pagina-movimentacao.ativa {
-    background: #16a34a !important;
+    background: var(--verde-600) !important;
 
-    color: #ffffff !important;
+    color: var(--branco) !important;
 }

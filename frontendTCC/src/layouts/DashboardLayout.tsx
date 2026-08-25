@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 import Sidebar from "../components/Sidebar"
 
-import Topbar from "../components/Topbar"
+import Topbar from "../components/Topbar.tsx"
 
 import "../styles/dashboard.css"
 
@@ -84,12 +84,24 @@ function DashboardLayout({
 
             />
 
+            <div
+                className={
+                    "sidebar-backdrop" +
+                    (fechado ? "" : " visivel")
+                }
+                onClick={() =>
+                    setFechado(true)
+                }
+            />
+
             <div className="conteudo">
 
                 <Topbar
                     darkMode={darkMode}
                     setDarkMode={setDarkMode}
                     mostrarMeses={mostrarMeses}
+                    fechado={fechado}
+                    setFechado={setFechado}
                 />
 
                 <main className="principal">

@@ -40,11 +40,11 @@
     overflow: hidden;
 
     border:
-        1px solid #e5e7eb;
+        1px solid var(--cinza-200);
 
     border-radius: 22px;
 
-    background: #ffffff;
+    background: var(--branco);
 
     box-shadow:
         0 25px 60px
@@ -58,8 +58,8 @@
 
 .dark
 .form-adicionar-categoria-modal {
-    background: #0f172a;
-    border-color: #1f2937;
+    background: var(--slate-900);
+    border-color: var(--cinza-800);
 }
 
 
@@ -79,13 +79,13 @@
         20px;
 
     border-bottom:
-        1px solid #eef2f7;
+        1px solid var(--cinza-divisor);
 }
 
 
 .dark
 .form-adicionar-categoria-cabecalho {
-    border-color: #1f2937;
+    border-color: var(--cinza-800);
 }
 
 
@@ -99,7 +99,7 @@
     width: 100%;
     height: 4px;
 
-    background: #7c3aed;
+    background: var(--violeta-600);
 }
 
 
@@ -108,7 +108,7 @@
 
     margin-bottom: 4px;
 
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 12px;
     font-weight: 600;
@@ -121,14 +121,14 @@
 
 .dark
 .form-adicionar-categoria-subtitulo {
-    color: #94a3b8;
+    color: var(--slate-400);
 }
 
 
 .form-adicionar-categoria-cabecalho h2 {
     margin: 0;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 23px;
     font-weight: 750;
@@ -137,7 +137,7 @@
 
 .dark
 .form-adicionar-categoria-cabecalho h2 {
-    color: #f8fafc;
+    color: var(--slate-50);
 }
 
 
@@ -156,8 +156,8 @@
     border: none;
     border-radius: 12px;
 
-    background: #f3f4f6;
-    color: #4b5563;
+    background: var(--cinza-100);
+    color: var(--cinza-600);
 
     font-size: 23px;
 
@@ -171,8 +171,8 @@
 
 
 .form-adicionar-categoria-fechar:hover {
-    background: #e5e7eb;
-    color: #111827;
+    background: var(--cinza-200);
+    color: var(--cinza-900);
 
     transform: rotate(4deg);
 }
@@ -180,15 +180,15 @@
 
 .dark
 .form-adicionar-categoria-fechar {
-    background: #1e293b;
-    color: #cbd5e1;
+    background: var(--slate-800);
+    color: var(--slate-300);
 }
 
 
 .dark
 .form-adicionar-categoria-fechar:hover {
-    background: #334155;
-    color: #ffffff;
+    background: var(--slate-700);
+    color: var(--branco);
 }
 
 
@@ -219,7 +219,7 @@
 
     margin-bottom: 8px;
 
-    color: #374151;
+    color: var(--cinza-700);
 
     font-size: 13px;
     font-weight: 600;
@@ -228,7 +228,7 @@
 
 .dark
 .form-adicionar-categoria-campo label {
-    color: #cbd5e1;
+    color: var(--slate-300);
 }
 
 
@@ -246,9 +246,9 @@
 
     border-radius: 11px;
 
-    background: #fef2f2;
+    background: var(--vermelho-50);
 
-    color: #b91c1c;
+    color: var(--vermelho-700);
 
     font-size: 13px;
 }
@@ -262,7 +262,7 @@
     background:
         rgba(127, 29, 29, 0.2);
 
-    color: #fca5a5;
+    color: var(--vermelho-300);
 }
 
 
@@ -292,9 +292,9 @@
 
     border-radius: 13px;
 
-    background: #f8fafc;
+    background: var(--slate-50);
 
-    color: #1f2937;
+    color: var(--cinza-800);
 
     cursor: pointer;
 
@@ -307,14 +307,14 @@
 
 .planejamento-categoria-select-botao:hover {
     border-color: #aab5c3;
-    background: #ffffff;
+    background: var(--branco);
 }
 
 
 .planejamento-categoria-select-botao.aberto {
-    border-color: #7c3aed;
+    border-color: var(--violeta-600);
 
-    background: #ffffff;
+    background: var(--branco);
 
     box-shadow:
         0 0 0 3px
@@ -330,22 +330,22 @@
 
 .dark
 .planejamento-categoria-select-botao {
-    border-color: #293548;
-    background: #111c2e;
-    color: #f8fafc;
+    border-color: var(--marinho-800);
+    background: var(--marinho-900);
+    color: var(--slate-50);
 }
 
 
 .dark
 .planejamento-categoria-select-botao:hover {
-    background: #111827;
+    background: var(--cinza-900);
 }
 
 
 .dark
 .planejamento-categoria-select-botao.aberto {
-    border-color: #7c3aed;
-    background: #111827;
+    border-color: var(--violeta-600);
+    background: var(--cinza-900);
 }
 
 
@@ -387,8 +387,8 @@
 
 .dark
 .planejamento-categoria-select-icone.sem-categoria {
-    background: #1e293b;
-    color: #94a3b8;
+    background: var(--slate-800);
+    color: var(--slate-400);
 }
 
 
@@ -409,7 +409,7 @@
 
 .dark
 .planejamento-categoria-select-nome {
-    color: #e5e7eb;
+    color: var(--cinza-200);
 }
 
 
@@ -423,7 +423,7 @@
 
 .dark
 .planejamento-categoria-select-placeholder {
-    color: #94a3b8;
+    color: var(--slate-400);
 }
 
 
@@ -471,7 +471,7 @@
 
     border-radius: 13px;
 
-    background: #ffffff;
+    background: var(--branco);
 
     box-shadow:
         0 14px 36px
@@ -481,8 +481,8 @@
 
 .dark
 .planejamento-categoria-select-opcoes {
-    border-color: #293548;
-    background: #111827;
+    border-color: var(--marinho-800);
+    background: var(--cinza-900);
 }
 
 
@@ -516,7 +516,7 @@
 
 .dark
 .planejamento-categoria-select-opcao:hover {
-    background: #1e293b;
+    background: var(--slate-800);
 }
 
 
@@ -541,7 +541,7 @@
 .planejamento-categoria-select-check {
     flex-shrink: 0;
 
-    color: #7c3aed;
+    color: var(--violeta-600);
 
     font-size: 19px;
 }
@@ -560,7 +560,7 @@
 
 .dark
 .planejamento-categoria-select-vazio {
-    color: #94a3b8;
+    color: var(--slate-400);
 }
 
 
@@ -575,7 +575,7 @@
 
 .planejamento-categoria-select-opcoes::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #cbd5e1;
+    background: var(--slate-300);
 }
 
 
@@ -602,7 +602,7 @@
 
 
 .planejamento-total > span {
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 13px;
     font-weight: 600;
@@ -621,7 +621,7 @@
 
 
 .planejamento-total-valores > strong:first-child {
-    color: #374151;
+    color: var(--cinza-700);
 
     font-size: 30px;
     font-weight: 750;
@@ -630,12 +630,12 @@
 
 .dark
 .planejamento-total-valores > strong:first-child {
-    color: #f8fafc;
+    color: var(--slate-50);
 }
 
 
 .planejamento-total-excedente {
-    color: #16a34a;
+    color: var(--verde-600);
 
     font-size: 18px;
     font-weight: 750;
@@ -661,16 +661,16 @@
         18px 0;
 
     border-top:
-        1px solid #eef2f7;
+        1px solid var(--cinza-divisor);
 
     border-bottom:
-        1px solid #eef2f7;
+        1px solid var(--cinza-divisor);
 }
 
 
 .dark
 .planejamento-categoria-valor {
-    border-color: #1f2937;
+    border-color: var(--cinza-800);
 }
 
 
@@ -725,12 +725,12 @@
 
 .dark
 .planejamento-categoria-identidade strong {
-    color: #f8fafc;
+    color: var(--slate-50);
 }
 
 
 .planejamento-categoria-identidade small {
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 11px;
 }
@@ -756,7 +756,7 @@
 
     border-radius: 12px;
 
-    background: #f9fafb;
+    background: var(--cinza-50);
 
     transition:
         border-color 0.2s ease,
@@ -766,9 +766,9 @@
 
 
 .planejamento-input-valor:focus-within {
-    border-color: #7c3aed;
+    border-color: var(--violeta-600);
 
-    background: #ffffff;
+    background: var(--branco);
 
     box-shadow:
         0 0 0 4px
@@ -778,26 +778,26 @@
 
 .dark
 .planejamento-input-valor {
-    border-color: #293548;
-    background: #111c2e;
+    border-color: var(--marinho-800);
+    background: var(--marinho-900);
 }
 
 
 .dark
 .planejamento-input-valor:focus-within {
-    border-color: #7c3aed;
-    background: #111827;
+    border-color: var(--violeta-600);
+    background: var(--cinza-900);
 }
 
 
 .planejamento-input-valor > svg {
-    color: #9ca3af;
+    color: var(--cinza-400);
     font-size: 18px;
 }
 
 
 .planejamento-input-valor > span {
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 14px;
     font-weight: 650;
@@ -813,7 +813,7 @@
 
     background: transparent;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-family: inherit;
 
@@ -824,13 +824,13 @@
 
 .dark
 .planejamento-input-valor input {
-    color: #f8fafc;
+    color: var(--slate-50);
 }
 
 
 .planejamento-input-valor
 input::placeholder {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 
 
@@ -850,18 +850,18 @@ input::placeholder {
     padding: 15px 16px;
 
     border:
-        1px solid #e5e7eb;
+        1px solid var(--cinza-200);
 
     border-radius: 14px;
 
-    background: #f8fafc;
+    background: var(--slate-50);
 }
 
 
 .dark
 .planejamento-categorias-restantes {
-    border-color: #293548;
-    background: #111c2e;
+    border-color: var(--marinho-800);
+    background: var(--marinho-900);
 }
 
 
@@ -885,8 +885,8 @@ input::placeholder {
 
     border-radius: 10px;
 
-    background: #e5e7eb;
-    color: #6b7280;
+    background: var(--cinza-200);
+    color: var(--cinza-500);
 
     font-size: 18px;
 }
@@ -894,8 +894,8 @@ input::placeholder {
 
 .dark
 .planejamento-categorias-restantes-icone {
-    background: #1e293b;
-    color: #94a3b8;
+    background: var(--slate-800);
+    color: var(--slate-400);
 }
 
 
@@ -908,7 +908,7 @@ input::placeholder {
 
 
 .planejamento-categorias-restantes-info strong {
-    color: #374151;
+    color: var(--cinza-700);
 
     font-size: 14px;
     font-weight: 700;
@@ -917,12 +917,12 @@ input::placeholder {
 
 .dark
 .planejamento-categorias-restantes-info strong {
-    color: #f8fafc;
+    color: var(--slate-50);
 }
 
 
 .planejamento-categorias-restantes-info small {
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 11px;
 }
@@ -931,7 +931,7 @@ input::placeholder {
 .planejamento-categorias-restantes-valor {
     flex-shrink: 0;
 
-    color: #374151;
+    color: var(--cinza-700);
 
     font-size: 16px;
     font-weight: 750;
@@ -940,7 +940,7 @@ input::placeholder {
 
 .dark
 .planejamento-categorias-restantes-valor {
-    color: #f8fafc;
+    color: var(--slate-50);
 }
 
 
@@ -979,7 +979,7 @@ input::placeholder {
     background:
         rgba(22, 101, 52, 0.18);
 
-    color: #86efac;
+    color: var(--verde-300);
 }
 
 
@@ -998,13 +998,13 @@ input::placeholder {
     padding-top: 20px;
 
     border-top:
-        1px solid #eef2f7;
+        1px solid var(--cinza-divisor);
 }
 
 
 .dark
 .form-adicionar-categoria-acoes {
-    border-color: #1f2937;
+    border-color: var(--cinza-800);
 }
 
 
@@ -1033,38 +1033,38 @@ input::placeholder {
 
 .form-adicionar-categoria-cancelar {
     border:
-        1px solid #d1d5db;
+        1px solid var(--cinza-300);
 
     background: transparent;
 
-    color: #4b5563;
+    color: var(--cinza-600);
 }
 
 
 .form-adicionar-categoria-cancelar:hover {
-    background: #f3f4f6;
+    background: var(--cinza-100);
 }
 
 
 .dark
 .form-adicionar-categoria-cancelar {
-    border-color: #334155;
-    color: #cbd5e1;
+    border-color: var(--slate-700);
+    color: var(--slate-300);
 }
 
 
 .dark
 .form-adicionar-categoria-cancelar:hover {
-    background: #1e293b;
+    background: var(--slate-800);
 }
 
 
 .form-adicionar-categoria-salvar {
     border: none;
 
-    background: #7c3aed;
+    background: var(--violeta-600);
 
-    color: #ffffff;
+    color: var(--branco);
 
     box-shadow:
         0 8px 18px

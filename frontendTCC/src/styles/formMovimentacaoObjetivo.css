@@ -30,10 +30,10 @@
 
     overflow: hidden;
 
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--cinza-200);
     border-radius: 22px;
 
-    background: #ffffff;
+    background: var(--branco);
 
     box-shadow:
         0 25px 60px
@@ -43,9 +43,9 @@
 
 .dark
 .form-movimentacao-objetivo-modal {
-    border-color: #1f2937;
+    border-color: var(--cinza-800);
 
-    background: #0f172a;
+    background: var(--slate-900);
 }
 
 
@@ -63,7 +63,7 @@
     padding: 24px 26px 20px;
 
     border-bottom:
-        1px solid #eef2f7;
+        1px solid var(--cinza-divisor);
 }
 
 
@@ -77,19 +77,19 @@
     width: 100%;
     height: 4px;
 
-    background: #22c55e;
+    background: var(--verde-500);
 }
 
 
 .form-movimentacao-objetivo-modal.retirada
 .form-movimentacao-objetivo-cabecalho::before {
-    background: #ef4444;
+    background: var(--vermelho-500);
 }
 
 
 .dark
 .form-movimentacao-objetivo-cabecalho {
-    border-color: #1f2937;
+    border-color: var(--cinza-800);
 }
 
 
@@ -98,7 +98,7 @@
 
     margin-bottom: 4px;
 
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 12px;
     font-weight: 600;
@@ -110,14 +110,14 @@
 
 .dark
 .form-movimentacao-objetivo-subtitulo {
-    color: #94a3b8;
+    color: var(--slate-400);
 }
 
 
 .form-movimentacao-objetivo-cabecalho h2 {
     margin: 0;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 23px;
     font-weight: 750;
@@ -126,7 +126,7 @@
 
 .dark
 .form-movimentacao-objetivo-cabecalho h2 {
-    color: #f8fafc;
+    color: var(--slate-50);
 }
 
 
@@ -147,9 +147,9 @@
     border: none;
     border-radius: 12px;
 
-    background: #f3f4f6;
+    background: var(--cinza-100);
 
-    color: #4b5563;
+    color: var(--cinza-600);
 
     font-size: 23px;
 
@@ -158,17 +158,17 @@
 
 
 .form-movimentacao-objetivo-fechar:hover:not(:disabled) {
-    background: #e5e7eb;
+    background: var(--cinza-200);
 
-    color: #111827;
+    color: var(--cinza-900);
 }
 
 
 .dark
 .form-movimentacao-objetivo-fechar {
-    background: #1e293b;
+    background: var(--slate-800);
 
-    color: #cbd5e1;
+    color: var(--slate-300);
 }
 
 
@@ -202,14 +202,14 @@
 .form-movimentacao-objetivo-destaque.deposito {
     background: #f0fdf4;
 
-    color: #15803d;
+    color: var(--verde-700);
 }
 
 
 .form-movimentacao-objetivo-destaque.retirada {
-    background: #fef2f2;
+    background: var(--vermelho-50);
 
-    color: #dc2626;
+    color: var(--vermelho-600);
 }
 
 
@@ -257,7 +257,7 @@
     background:
         rgba(22, 163, 74, .12);
 
-    color: #86efac;
+    color: var(--verde-300);
 }
 
 
@@ -266,7 +266,7 @@
     background:
         rgba(220, 38, 38, .12);
 
-    color: #fca5a5;
+    color: var(--vermelho-300);
 }
 
 
@@ -283,22 +283,22 @@
 
     padding: 12px 14px;
 
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--cinza-200);
     border-radius: 12px;
 
-    background: #f8fafc;
+    background: var(--slate-50);
 }
 
 
 .form-movimentacao-objetivo-saldo span {
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 12px;
 }
 
 
 .form-movimentacao-objetivo-saldo strong {
-    color: #111827;
+    color: var(--cinza-900);
 
     font-size: 14px;
 }
@@ -306,21 +306,21 @@
 
 .dark
 .form-movimentacao-objetivo-saldo {
-    border-color: #293548;
+    border-color: var(--marinho-800);
 
-    background: #111c2e;
+    background: var(--marinho-900);
 }
 
 
 .dark
 .form-movimentacao-objetivo-saldo span {
-    color: #94a3b8;
+    color: var(--slate-400);
 }
 
 
 .dark
 .form-movimentacao-objetivo-saldo strong {
-    color: #f8fafc;
+    color: var(--slate-50);
 }
 
 
@@ -333,7 +333,7 @@
 
     margin-bottom: 9px;
 
-    color: #374151;
+    color: var(--cinza-700);
 
     font-size: 13px;
     font-weight: 600;
@@ -342,7 +342,7 @@
 
 .dark
 .form-movimentacao-objetivo-campo label {
-    color: #cbd5e1;
+    color: var(--slate-300);
 }
 
 
@@ -363,14 +363,14 @@
     border: 1px solid #dbe1e8;
     border-radius: 13px;
 
-    background: #f9fafb;
+    background: var(--cinza-50);
 }
 
 
 .form-movimentacao-objetivo-input:focus-within {
-    border-color: #22c55e;
+    border-color: var(--verde-500);
 
-    background: #ffffff;
+    background: var(--branco);
 
     box-shadow:
         0 0 0 4px
@@ -380,7 +380,7 @@
 
 .retirada
 .form-movimentacao-objetivo-input:focus-within {
-    border-color: #ef4444;
+    border-color: var(--vermelho-500);
 
     box-shadow:
         0 0 0 4px
@@ -389,14 +389,14 @@
 
 
 .form-movimentacao-objetivo-input > svg {
-    color: #9ca3af;
+    color: var(--cinza-400);
 
     font-size: 20px;
 }
 
 
 .form-movimentacao-objetivo-input > span {
-    color: #6b7280;
+    color: var(--cinza-500);
 
     font-size: 13px;
     font-weight: 600;
@@ -412,7 +412,7 @@
 
     background: transparent;
 
-    color: #111827;
+    color: var(--cinza-900);
 
     font-family: inherit;
     font-size: 16px;
@@ -422,15 +422,15 @@
 
 .dark
 .form-movimentacao-objetivo-input {
-    border-color: #293548;
+    border-color: var(--marinho-800);
 
-    background: #111c2e;
+    background: var(--marinho-900);
 }
 
 
 .dark
 .form-movimentacao-objetivo-input input {
-    color: #f8fafc;
+    color: var(--slate-50);
 }
 
 
@@ -462,9 +462,9 @@
 .form-movimentacao-objetivo-erro {
     border: 1px solid #fecaca;
 
-    background: #fef2f2;
+    background: var(--vermelho-50);
 
-    color: #b91c1c;
+    color: var(--vermelho-700);
 }
 
 
@@ -488,7 +488,7 @@
     background:
         rgba(127,29,29,.2);
 
-    color: #fca5a5;
+    color: var(--vermelho-300);
 }
 
 
@@ -506,13 +506,13 @@
     padding-top: 20px;
 
     border-top:
-        1px solid #eef2f7;
+        1px solid var(--cinza-divisor);
 }
 
 
 .dark
 .form-movimentacao-objetivo-acoes {
-    border-color: #1f2937;
+    border-color: var(--cinza-800);
 }
 
 
@@ -533,26 +533,26 @@
 
 
 .form-movimentacao-objetivo-cancelar {
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--cinza-300);
 
     background: transparent;
 
-    color: #4b5563;
+    color: var(--cinza-600);
 }
 
 
 .form-movimentacao-objetivo-salvar {
     border: none;
 
-    background: #22c55e;
+    background: var(--verde-500);
 
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
 .retirada
 .form-movimentacao-objetivo-salvar {
-    background: #ef4444;
+    background: var(--vermelho-500);
 }
 
 
@@ -566,9 +566,9 @@
 
 .dark
 .form-movimentacao-objetivo-cancelar {
-    border-color: #334155;
+    border-color: var(--slate-700);
 
-    color: #cbd5e1;
+    color: var(--slate-300);
 }
 
 

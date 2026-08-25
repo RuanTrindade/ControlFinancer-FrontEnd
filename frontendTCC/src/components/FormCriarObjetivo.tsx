@@ -14,6 +14,8 @@ import {
 
 
 import "../styles/formCriarObjetivo.css";
+
+import useFecharComEsc from "../hooks/useFecharComEsc";
 import {
     iconesObjetivos,
     mapaIconesCategorias
@@ -175,55 +177,12 @@ function FormCriarObjetivo({
     }, [aberto]);
 
 
-    useEffect(() => {
-
-        if (!aberto) {
-            return;
-        }
-
-
-        function fecharComEscape(
-            evento: KeyboardEvent
-        ) {
-
-            if (
-                evento.key === "Escape" &&
-                !carregando
-            ) {
-
-                onFechar();
-
-            }
-
-        }
-
-
-        document.addEventListener(
-            "keydown",
-            fecharComEscape
-        );
-
-        document.body.style.overflow =
-            "hidden";
-
-
-        return () => {
-
-            document.removeEventListener(
-                "keydown",
-                fecharComEscape
-            );
-
-            document.body.style.overflow =
-                "";
-
-        };
-
-    }, [
-        aberto,
-        carregando,
-        onFechar
-    ]);
+    useFecharComEsc({
+        ativo: aberto,
+        bloqueado: carregando,
+        travarScroll: true,
+        onFechar: onFechar
+    });
 
 
     function fecharModal() {

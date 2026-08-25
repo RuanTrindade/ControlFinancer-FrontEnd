@@ -17,6 +17,8 @@ import { renderizarIcone }
 
 import "../styles/formAdicionarCategoriaPlanejamento.css";
 
+import useFecharComEsc from "../hooks/useFecharComEsc";
+
 import {
     salvarCategoriaPlanejamento
 } from "../services/planejamentoCategoriaService";
@@ -375,50 +377,10 @@ function FormAdicionarCategoriaPlanejamento({
     }, []);
 
 
-    /* =========================================
-       ESC
-    ========================================= */
-
-    useEffect(() => {
-
-        function fecharComEscape(
-            evento: KeyboardEvent
-        ) {
-
-            if (
-                evento.key === "Escape"
-            ) {
-
-                onClose();
-
-            }
-
-        }
-
-
-        document.addEventListener(
-            "keydown",
-            fecharComEscape
-        );
-
-
-        document.body.style.overflow =
-            "hidden";
-
-
-        return () => {
-
-            document.removeEventListener(
-                "keydown",
-                fecharComEscape
-            );
-
-            document.body.style.overflow =
-                "";
-
-        };
-
-    }, [onClose]);
+    useFecharComEsc({
+        travarScroll: true,
+        onFechar: onClose
+    });
 
 
     /* =========================================

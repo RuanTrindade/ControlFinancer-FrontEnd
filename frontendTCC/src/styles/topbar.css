@@ -21,26 +21,26 @@
 }
 .dark .topbar-meses {
     background:
-        #1f2937;
+        var(--cinza-800);
 }
 .topbar-meses button {
     border: none;
     background: transparent;
     padding: 12px 18px;
     border-radius: 999px;
-    color: #6b7280;
+    color: var(--cinza-500);
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
     transition: 0.25s;
 }
 .dark .topbar-meses button {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 .topbar-meses button:hover {
      transform:
         translateY(-1px);
-    color: #111827;
+    color: var(--cinza-900);
 }
 .dark .topbar-meses button:hover {
     color: white;
@@ -85,7 +85,7 @@
 }
 .dark .topbar-btn {
     background:
-        #1f2937;
+        var(--cinza-800);
 }
 .topbar-btn:hover {
     transform:
@@ -93,7 +93,7 @@
 }
 .topbar-btn svg {
     font-size: 22px;
-    color: #111827;
+    color: var(--cinza-900);
 }
 .dark .topbar-btn svg {
     color: white;
@@ -106,7 +106,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #ef4444;
+    background: var(--vermelho-500);
     color: white;
     font-size: 11px;
     font-weight: 700;
@@ -117,5 +117,58 @@
 }
 .dark .topbar-btn span {
     border-color:
-        #1f2937;
+        var(--cinza-800);
+}
+/* BOTÃO DE MENU (HAMBÚRGUER) — só aparece no celular */
+.topbar-btn-menu {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 14px;
+
+    background: white;
+    color: var(--cinza-900);
+
+    font-size: 22px;
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 18px
+        rgba(0, 0, 0, 0.04);
+}
+.dark .topbar-btn-menu {
+    background: var(--cinza-800);
+    color: white;
+}
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+    .topbar {
+        justify-content: flex-start;
+        gap: 12px;
+        padding: 16px;
+    }
+    .topbar-btn-menu {
+        display: flex;
+    }
+    .topbar-meses {
+        flex: 1;
+        justify-content: center;
+        min-width: 0;
+        padding: 6px;
+    }
+    .topbar-meses button {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+    .topbar-acoes {
+        position: static;
+        right: auto;
+    }
 }

@@ -12,14 +12,14 @@
 =================================================== */
 .card-superior {
     width: 100%;
-    background: #ffffff;
+    background: var(--branco);
     border-radius: 26px;
     padding: 18px 18px 0 18px;
     box-shadow:
         0 8px 24px rgba(15, 23, 42, .05);
 }
 .dark .card-superior {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 /* ===================================================
    TOPO
@@ -46,7 +46,7 @@
     padding: 0 22px;
     border: none;
     border-radius: 999px;
-    background: #7c3aed;
+    background: var(--violeta-600);
     color: #fff;
     display: flex;
     align-items: center;
@@ -74,20 +74,20 @@
     flex-direction: column;
 }
 .resumo-planejamento-dashboard span {
-    color: #9ca3af;
+    color: var(--cinza-400);
     font-size: 13px;
 }
 .resumo-planejamento-dashboard h2 {
     margin: 2px 0;
     font-size: 38px;
-    color: #374151;
+    color: var(--cinza-700);
     font-weight: 700;
 }
 .dark .resumo-planejamento-dashboard h2 {
     color: white;
 }
 .resumo-planejamento-dashboard small {
-    color: #9ca3af;
+    color: var(--cinza-400);
     font-size: 13px;
 }
 /* ===================================================
@@ -114,27 +114,27 @@
 
 
 .dark .barra-geral {
-    background: #374151;
+    background: var(--cinza-700);
 }
 
 
 
 .barra-geral-excedente-comprometido {
     z-index: 1;
-    background: #fca5a5;
+    background: var(--vermelho-300);
 }
 
 .barra-geral-excedente-pago {
     z-index: 2;
-    background: #b91c1c;
+    background: var(--vermelho-700);
 }
 
 .bolinha.vermelho-claro {
-    background: #fca5a5;
+    background: var(--vermelho-300);
 }
 
 .bolinha.vermelho-escuro {
-    background: #b91c1c;
+    background: var(--vermelho-700);
 }
 
 
@@ -169,7 +169,7 @@
 .barra-geral-comprometido {
     z-index: 1;
 
-    background: #86efac;
+    background: var(--verde-300);
 }
 
 
@@ -182,27 +182,27 @@
 .barra-geral-pago {
     z-index: 2;
 
-    background: #22c55e;
+    background: var(--verde-500);
 }
 
 
 
 .barra-geral-excedente-comprometido {
     z-index: 1;
-    background: #fca5a5;
+    background: var(--vermelho-300);
 }
 
 .barra-geral-excedente-pago {
     z-index: 2;
-    background: #b91c1c;
+    background: var(--vermelho-700);
 }
 
 .bolinha.vermelho-claro {
-    background: #fca5a5;
+    background: var(--vermelho-300);
 }
 
 .bolinha.vermelho-escuro {
-    background: #b91c1c;
+    background: var(--vermelho-700);
 }
 
 
@@ -223,11 +223,11 @@
 }
 .dados-barra span {
     font-size: 12px;
-    color: #6b7280;
+    color: var(--cinza-500);
     font-weight: 600;
 }
 .dark .dados-barra span {
-    color: #d1d5db;
+    color: var(--cinza-300);
 }
 .indicador-barra {
     display: flex;
@@ -241,18 +241,18 @@
     flex-shrink:0;
 }
 .bolinha.verde{
-    background:#22c55e;
+    background:var(--verde-500);
 }
 .bolinha.verde-claro{
-    background:#86efac;
+    background:var(--verde-300);
 }
 .indicador-barra small{
     font-size:13px;
     font-weight:600;
-    color:#6b7280;
+    color:var(--cinza-500);
 }
 .dark .indicador-barra small{
-    color:#d1d5db;
+    color:var(--cinza-300);
 }
 /* ==========================================
    STATUS DA BARRA
@@ -271,10 +271,10 @@
 .indicador-status small{
     font-size:11px;
     font-weight:600;
-    color:#6b7280;
+    color:var(--cinza-500);
 }
 .dark .indicador-status small{
-    color:#d1d5db;
+    color:var(--cinza-300);
 }
 .bolinha{
     width:20px;
@@ -284,15 +284,15 @@
 }
 /* Pago */
 .bolinha.verde{
-    background:#22c55e;
+    background:var(--verde-500);
 }
 /* Não pago */
 .bolinha.verde-claro{
-    background:#86efac;
+    background:var(--verde-300);
 }
 /* Pago ultrapassado */
 .bolinha.vermelho{
-    background:#ef4444;
+    background:var(--vermelho-500);
 }
 /* Não pago ultrapassado */
 .bolinha.vermelho-escuro{
@@ -330,7 +330,7 @@
 
 .card-categoria .indicador-status small {
     font-size: 11px;
-    color: #9ca3af;
+    color: var(--cinza-400);
     font-weight: 500;
 }
 
@@ -344,7 +344,7 @@
     height: 42px;
     border: none;
     border-radius: 12px;
-    background: #f8fafc;
+    background: var(--slate-50);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -352,13 +352,13 @@
     transition: .2s;
 }
 .dark .btn-menu-dashboard {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 .btn-menu-dashboard:hover {
     background: #ececec;
 }
 .dark .btn-menu-dashboard:hover {
-    background: #374151;
+    background: var(--cinza-700);
 }
 .btn-menu-dashboard svg {
     font-size: 22px;
@@ -368,7 +368,7 @@
 =================================================== */
 .cabecalho-dashboard {
     height: 60px;
-    background: #7c3aed;
+    background: var(--violeta-600);
     border-radius: 18px;
     display: grid;
     grid-template-columns:
@@ -406,7 +406,7 @@
     width: 100%;
     min-height: 76px;
 
-    background: #ffffff;
+    background: var(--branco);
     border-radius: 14px;
 
     padding: 10px 18px;
@@ -432,7 +432,7 @@
         0 6px 18px rgba(15, 23, 42, .07);
 }
 .dark .card-categoria {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 
 /* ===================================================
@@ -447,7 +447,7 @@
 .col-categoria span {
     font-size: 14px;
     font-weight: 600;
-    color: #374151;
+    color: var(--cinza-700);
 }
 .dark .col-categoria span {
     color: white;
@@ -479,7 +479,7 @@
 .col-valor {
     font-size: 15px;
     font-weight: 700;
-    color: #374151;
+    color: var(--cinza-700);
 }
 .dark .col-valor {
     color: white;
@@ -489,7 +489,7 @@
 =================================================== */
 .col-status small {
     font-size: 11px;
-    color: #9ca3af;
+    color: var(--cinza-400);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -497,13 +497,13 @@
 }
 
 .col-status strong {
-    color: #374151;
+    color: var(--cinza-700);
     font-size: 12px;
     font-weight: 700;
 }
 
 .col-status strong {
-    color: #374151;
+    color: var(--cinza-700);
     font-size: 12px;
     font-weight: 700;
 }
@@ -517,13 +517,13 @@
     position: relative;
     width: 100%;
     height: 14px;
-    background: #e5e7eb;
+    background: var(--cinza-200);
     border-radius: 999px;
     overflow: hidden;
     margin: 5px 0 5px 0;
 }
 .dark .barra-status {
-    background: #374151;
+    background: var(--cinza-700);
 }
 
 .barra-segmento {
@@ -537,17 +537,17 @@
 
 .barra-pago {
     z-index: 2;
-    background: #16a34a;
+    background: var(--verde-600);
 }
 
 .barra-previsto {
     z-index: 1;
-    background: #86efac;
+    background: var(--verde-300);
 }
 
 .barra-pago-ultrapassado {
     z-index: 2;
-    background: #b91c1c;
+    background: var(--vermelho-700);
 }
 
 .barra-previsto-ultrapassado {
@@ -565,7 +565,7 @@
 .status-info span {
     font-size: 11px;
     font-weight: 600;
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 /* ===================================================
    AÇÕES
@@ -579,7 +579,7 @@
     width: 36px;
     height: 36px;
     border: none;
-    background: #f8fafc;
+    background: var(--slate-50);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -588,26 +588,26 @@
     transition: .2s;
 }
 .dark .acoes-dashboard button {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 .acoes-dashboard button:hover {
     background: #ececec;
 }
 .dark .acoes-dashboard button:hover {
-    background: #374151;
+    background: var(--cinza-700);
 }
 .acoes-dashboard svg {
     font-size: 18px;
-    color: #6b7280;
+    color: var(--cinza-500);
 }
 .dark .acoes-dashboard svg {
-    color: #d1d5db;
+    color: var(--cinza-300);
 }
 .acoes-dashboard button:nth-child(1):hover svg {
     color: #2563eb;
 }
 .acoes-dashboard button:nth-child(2):hover svg {
-    color: #ef4444;
+    color: var(--vermelho-500);
 }
 .acoes-dashboard button:nth-child(3):hover svg {
     color: #f59e0b;
@@ -627,8 +627,8 @@
     height: 36px;
     border: none;
     border-radius: 10px;
-    background: #ffffff;
-    color: #6b7280;
+    background: var(--branco);
+    color: var(--cinza-500);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -640,11 +640,11 @@
     transition: .20s;
 }
 .dark .paginacao-dashboard button {
-    background: #1f2937;
-    color: #d1d5db;
+    background: var(--cinza-800);
+    color: var(--cinza-300);
 }
 .paginacao-dashboard button:hover:not(:disabled) {
-    background: #7c3aed;
+    background: var(--violeta-600);
     color: white;
 }
 .paginacao-dashboard button:disabled {
@@ -652,13 +652,13 @@
     cursor: not-allowed;
 }
 .pagina {
-    background: #ffffff !important;
+    background: var(--branco) !important;
 }
 .dark .pagina {
-    background: #1f2937 !important;
+    background: var(--cinza-800) !important;
 }
 .pagina.ativa {
-    background: #7c3aed !important;
+    background: var(--violeta-600) !important;
     color: white !important;
 }
 
@@ -675,7 +675,7 @@
 }
 
 .card-resumo-financeiro {
-    background: #ffffff;
+    background: var(--branco);
     border-radius: 18px;
     padding: 16px 18px;
     display: flex;
@@ -695,19 +695,19 @@
 
 
 .card-resumo-financeiro span {
-    color: #9ca3af;
+    color: var(--cinza-400);
     font-size: 13px;
     font-weight: 500;
 }
 
 .card-resumo-financeiro strong {
-    color: #374151;
+    color: var(--cinza-700);
     font-size: 22px;
     font-weight: 700;
 }
 
 .card-resumo-financeiro.resumo-negativo strong {
-    color: #ef4444;
+    color: var(--vermelho-500);
 }
 
 
@@ -733,7 +733,7 @@
 /* RECEITA */
 
 .icone-receita {
-    color: #16a34a;
+    color: var(--verde-600);
     background: #dcfce7;
 }
 
@@ -741,7 +741,7 @@
 /* GASTOS */
 
 .icone-gasto {
-    color: #ef4444;
+    color: var(--vermelho-500);
     background: #fee2e2;
 }
 
@@ -765,11 +765,11 @@
 /* DARK */
 
 .dark .card-resumo-financeiro {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 
 .dark .card-resumo-financeiro strong {
-    color: #ffffff;
+    color: var(--branco);
 }
 
 .dark .card-resumo-financeiro.resumo-negativo strong {
@@ -790,23 +790,23 @@
 =================================================== */
 
 .card-categorias-restantes {
-    border: 1px dashed #d1d5db;
+    border: 1px dashed var(--cinza-300);
 }
 
 .card-categorias-restantes .icone-categoria-P {
-    background: #9ca3af !important;
+    background: var(--cinza-400) !important;
 }
 
 .card-categorias-restantes .col-categoria span {
-    color: #6b7280;
+    color: var(--cinza-500);
 }
 
 .dark .card-categorias-restantes {
-    border-color: #4b5563;
+    border-color: var(--cinza-600);
 }
 
 .dark .card-categorias-restantes .col-categoria span {
-    color: #d1d5db;
+    color: var(--cinza-300);
 }
 
 
@@ -821,8 +821,8 @@
     border: 1px solid #fecaca;
     border-radius: 10px;
 
-    background: #fef2f2;
-    color: #b91c1c;
+    background: var(--vermelho-50);
+    color: var(--vermelho-700);
 
     font-size: 14px;
     font-weight: 500;
@@ -852,9 +852,9 @@
 
     padding: 6px;
 
-    background: #ffffff;
+    background: var(--branco);
 
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--cinza-200);
     border-radius: 12px;
 
     box-shadow:
@@ -878,7 +878,7 @@
 
     background: transparent;
 
-    color: #374151;
+    color: var(--cinza-700);
 
     font-size: 13px;
     font-weight: 600;
@@ -890,7 +890,7 @@
 
 
 .menu-planejamento-opcoes button:hover {
-    background: #f3f4f6;
+    background: var(--cinza-100);
 }
 
 
@@ -900,21 +900,21 @@
 
 
 .menu-planejamento-opcoes .opcao-excluir {
-    color: #dc2626;
+    color: var(--vermelho-600);
 }
 
 
 .menu-planejamento-opcoes .opcao-excluir:hover {
-    background: #fef2f2;
+    background: var(--vermelho-50);
 }
 
 
 /* DARK */
 
 .dark .menu-planejamento-opcoes {
-    background: #111827;
+    background: var(--cinza-900);
 
-    border-color: #374151;
+    border-color: var(--cinza-700);
 
     box-shadow:
         0 14px 35px
@@ -923,12 +923,12 @@
 
 
 .dark .menu-planejamento-opcoes button {
-    color: #e5e7eb;
+    color: var(--cinza-200);
 }
 
 
 .dark .menu-planejamento-opcoes button:hover {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 
 
@@ -949,14 +949,14 @@
 =================================================== */
 .rodape-planejamento-card {
     width: 100%;
-    background: #ffffff;
+    background: var(--branco);
     border-radius: 20px;
     padding: 20px 26px;
     box-shadow:
         0 4px 18px rgba(15, 23, 42, .05);
 }
 .dark .rodape-planejamento-card {
-    background: #1f2937;
+    background: var(--cinza-800);
 }
 /* ===================================================
    LEGENDA
@@ -973,11 +973,11 @@
     align-items: center;
     gap: 8px;
     font-size: 13px;
-    color: #6b7280;
+    color: var(--cinza-500);
     font-weight: 500;
 }
 .dark .card-legenda div {
-    color: #d1d5db;
+    color: var(--cinza-300);
 }
 .card-legenda span {
     width: 11px;
@@ -987,13 +987,13 @@
     flex-shrink: 0;
 }
 .verde {
-    background: #22c55e;
+    background: var(--verde-500);
 }
 .verde-claro {
-    background: #86efac;
+    background: var(--verde-300);
 }
 .vermelho {
-    background: #ef4444;
+    background: var(--vermelho-500);
 }
 .vinho {
     background: #991b1b;
@@ -1025,7 +1025,7 @@
     color: white;
 }
 .dark .status-info span {
-    color: #9ca3af;
+    color: var(--cinza-400);
 }
 .dark .btn-menu-dashboard svg {
     color: white;

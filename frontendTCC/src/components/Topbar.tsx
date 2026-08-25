@@ -1,6 +1,7 @@
 import {
     RiMoonClearLine,
     RiSunLine,
+    RiMenuLine
 } from "react-icons/ri";
 
 import { useMes } from "../context/MesContext";
@@ -15,12 +16,20 @@ type Props = {
     ) => void;
 
     mostrarMeses?: boolean;
+
+    fechado: boolean;
+
+    setFechado: (
+        valor: boolean
+    ) => void;
 };
 
 function Topbar({
     darkMode,
     setDarkMode,
-    mostrarMeses = true
+    mostrarMeses = true,
+    fechado,
+    setFechado
 }: Props) {
 
     const {
@@ -74,6 +83,17 @@ function Topbar({
 
     return (
         <header className="topbar">
+
+            <button
+                type="button"
+                className="topbar-btn-menu"
+                onClick={() =>
+                    setFechado(!fechado)
+                }
+                aria-label="Abrir menu"
+            >
+                <RiMenuLine />
+            </button>
 
             {mostrarMeses ? (
                 <div className="topbar-meses">
