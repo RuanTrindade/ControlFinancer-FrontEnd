@@ -1,0 +1,910 @@
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.form-objetivo-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(5px);
+
+    animation: aparecer-overlay-objetivo 0.2s ease;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.form-objetivo-modal {
+    width: 100%;
+    max-width: 620px;
+    max-height: calc(100vh - 48px);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 25px 60px rgba(15, 23, 42, 0.22);
+
+    animation: aparecer-modal-objetivo 0.25s ease;
+}
+
+
+.dark .form-objetivo-modal {
+    border-color: #1f2937;
+
+    background: #0f172a;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.form-objetivo-cabecalho {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 24px 26px 20px;
+
+    border-bottom: 1px solid #eef2f7;
+}
+
+
+.form-objetivo-cabecalho::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: #8b5cf6;
+}
+
+
+.dark .form-objetivo-cabecalho {
+    border-color: #1f2937;
+}
+
+
+.form-objetivo-subtitulo {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+
+.dark .form-objetivo-subtitulo {
+    color: #94a3b8;
+}
+
+
+.form-objetivo-cabecalho h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 23px;
+    font-weight: 750;
+}
+
+
+.dark .form-objetivo-cabecalho h2 {
+    color: #f8fafc;
+}
+
+
+/* =========================================================
+   BOTÃO FECHAR
+========================================================= */
+
+.form-objetivo-fechar {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #f3f4f6;
+    color: #4b5563;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.form-objetivo-fechar:hover:not(:disabled) {
+    background: #e5e7eb;
+    color: #111827;
+
+    transform: rotate(4deg);
+}
+
+
+.dark .form-objetivo-fechar {
+    background: #1e293b;
+
+    color: #cbd5e1;
+}
+
+
+.dark .form-objetivo-fechar:hover:not(:disabled) {
+    background: #334155;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.form-objetivo-conteudo {
+    padding: 24px 26px 26px;
+
+    overflow-y: auto;
+}
+
+
+.form-objetivo-campo {
+    margin-bottom: 24px;
+}
+
+
+.form-objetivo-campo label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.dark .form-objetivo-campo label {
+    color: #cbd5e1;
+}
+
+
+/* =========================================================
+   LINHA COM 2 CAMPOS
+========================================================= */
+
+.form-objetivo-linha {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.form-objetivo-input {
+    min-height: 49px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dbe1e8;
+    border-radius: 13px;
+
+    background: #f9fafb;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.form-objetivo-input:focus-within {
+    border-color: #8b5cf6;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(139, 92, 246, 0.10);
+}
+
+
+.form-objetivo-input > svg {
+    min-width: 19px;
+
+    color: #9ca3af;
+
+    font-size: 19px;
+}
+
+
+.form-objetivo-input input {
+    width: 100%;
+    height: 47px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #111827;
+
+    font-family: inherit;
+    font-size: 14px;
+}
+
+
+.form-objetivo-input input::placeholder {
+    color: #9ca3af;
+}
+
+
+.form-objetivo-input input[type="date"] {
+    color-scheme: light;
+}
+
+
+.dark .form-objetivo-input {
+    border-color: #293548;
+
+    background: #111c2e;
+}
+
+
+.dark .form-objetivo-input:focus-within {
+    background: #111827;
+}
+
+
+.dark .form-objetivo-input input {
+    color: #f8fafc;
+}
+
+
+.dark
+.form-objetivo-input
+input[type="date"] {
+    color-scheme: dark;
+}
+
+
+/* =========================================================
+   REMOVER SETAS DO INPUT NUMBER
+========================================================= */
+
+.form-objetivo-input
+input[type="number"]::-webkit-inner-spin-button,
+.form-objetivo-input
+input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+
+/* =========================================================
+   CORES
+========================================================= */
+
+.form-objetivo-cores {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.form-objetivo-cor {
+    position: relative;
+
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 3px solid transparent;
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.form-objetivo-cor:hover:not(:disabled) {
+    transform: scale(1.08);
+}
+
+
+.form-objetivo-cor.selecionada {
+    border-color: #ffffff;
+
+    box-shadow:
+        0 0 0 2px #8b5cf6,
+        0 5px 12px
+        rgba(15, 23, 42, 0.18);
+}
+
+
+.dark
+.form-objetivo-cor.selecionada {
+    border-color: #0f172a;
+}
+
+
+/* =========================================================
+   ÍCONES
+========================================================= */
+
+.form-objetivo-icones {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.form-objetivo-icone {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #dbe1e8;
+    border-radius: 11px;
+
+    background: #f9fafb;
+
+    color: #667085;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.18s ease,
+        background 0.18s ease,
+        color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+.form-objetivo-icone svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+.form-objetivo-icone:hover:not(:disabled) {
+    border-color: #8b5cf6;
+
+    background: #f5f3ff;
+
+    color: #7c3aed;
+
+    transform: translateY(-1px);
+}
+
+
+.form-objetivo-icone.selecionado {
+    border-color: #8b5cf6;
+
+    background: #8b5cf6;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 6px 14px
+        rgba(139, 92, 246, 0.22);
+}
+
+
+.dark .form-objetivo-icone {
+    border-color: #293548;
+
+    background: #111c2e;
+
+    color: #cbd5e1;
+}
+
+
+.dark
+.form-objetivo-icone:hover:not(:disabled) {
+    border-color: #8b5cf6;
+
+    background: #1e1b4b;
+
+    color: #c4b5fd;
+}
+
+
+.dark
+.form-objetivo-icone.selecionado {
+    border-color: #8b5cf6;
+
+    background: #8b5cf6;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   ERRO
+========================================================= */
+
+.form-objetivo-erro {
+    margin-bottom: 18px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #fecaca;
+    border-radius: 11px;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    font-size: 13px;
+}
+
+
+.dark .form-objetivo-erro {
+    border-color:
+        rgba(239, 68, 68, 0.3);
+
+    background:
+        rgba(127, 29, 29, 0.2);
+
+    color: #fca5a5;
+}
+
+
+/* =========================================================
+   RODAPÉ / AÇÕES
+========================================================= */
+
+.form-objetivo-acoes {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 26px;
+    padding-top: 20px;
+
+    border-top: 1px solid #eef2f7;
+}
+
+
+.dark .form-objetivo-acoes {
+    border-color: #1f2937;
+}
+
+
+.form-objetivo-cancelar,
+.form-objetivo-salvar {
+    min-height: 44px;
+
+    padding: 0 20px;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* CANCELAR */
+
+.form-objetivo-cancelar {
+    border: 1px solid #d1d5db;
+
+    background: transparent;
+
+    color: #4b5563;
+}
+
+
+.form-objetivo-cancelar:hover:not(:disabled) {
+    background: #f3f4f6;
+
+    transform: translateY(-1px);
+}
+
+
+.dark
+.form-objetivo-cancelar {
+    border-color: #334155;
+
+    color: #cbd5e1;
+}
+
+
+.dark
+.form-objetivo-cancelar:hover:not(:disabled) {
+    background: #1e293b;
+}
+
+
+/* SALVAR */
+
+.form-objetivo-salvar {
+    border: none;
+
+    background: #8b5cf6;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 18px
+        rgba(139, 92, 246, 0.22);
+}
+
+
+.form-objetivo-salvar:hover:not(:disabled) {
+    background: #7c3aed;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.form-objetivo-fechar:disabled,
+.form-objetivo-cancelar:disabled,
+.form-objetivo-salvar:disabled,
+.form-objetivo-cor:disabled,
+.form-objetivo-icone:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.form-objetivo-conteudo::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+.form-objetivo-conteudo::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.form-objetivo-conteudo::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background: #d1d5db;
+}
+
+
+.dark
+.form-objetivo-conteudo::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+
+.form-objetivo-imagens-carrossel {
+    display: flex;
+    gap: 10px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 3px 3px 9px;
+
+    scroll-snap-type: x mandatory;
+}
+
+.form-objetivo-imagens-carrossel::-webkit-scrollbar {
+    height: 5px;
+}
+
+.form-objetivo-imagens-carrossel::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 999px;
+}
+
+.dark
+.form-objetivo-imagens-carrossel::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+
+.form-objetivo-imagem-mini {
+    position: relative;
+
+    min-width: 145px;
+    width: 145px;
+    height: 82px;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    border: 2px solid transparent;
+    border-radius: 12px;
+
+    background: #f3f4f6;
+
+    cursor: pointer;
+
+    scroll-snap-align: start;
+
+    transition:
+        width .2s ease,
+        min-width .2s ease,
+        height .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+
+.form-objetivo-imagem-mini:hover:not(:disabled) {
+    min-width: 165px;
+    width: 165px;
+    height: 94px;
+
+    transform: translateY(-1px);
+}
+
+
+.form-objetivo-imagem-mini.selecionada {
+    min-width: 165px;
+    width: 165px;
+    height: 94px;
+
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139, 92, 246, .12);
+}
+
+
+.form-objetivo-imagem-mini img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.form-objetivo-imagem-mini-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    padding: 8px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(15, 23, 42, .72),
+            transparent 65%
+        );
+}
+
+
+.form-objetivo-imagem-mini-overlay > span:first-child {
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+.form-objetivo-imagem-mini-check {
+    width: 21px;
+    height: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #8b5cf6;
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+.dark .form-objetivo-imagem-mini {
+    background: #111c2e;
+}
+
+
+.form-objetivo-imagem-mini:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 620px) {
+
+    .form-objetivo-overlay {
+        align-items: flex-end;
+
+        padding: 0;
+    }
+
+
+    .form-objetivo-modal {
+        max-height: 94vh;
+
+        border-radius:
+            22px 22px 0 0;
+    }
+
+
+    .form-objetivo-cabecalho {
+        padding:
+            22px 20px 18px;
+    }
+
+
+    .form-objetivo-conteudo {
+        padding: 20px;
+    }
+
+
+    .form-objetivo-linha {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .form-objetivo-cores,
+    .form-objetivo-icones {
+        justify-content: flex-start;
+    }
+
+
+    .form-objetivo-acoes {
+        flex-direction: column-reverse;
+    }
+
+
+    .form-objetivo-cancelar,
+    .form-objetivo-salvar {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes aparecer-overlay-objetivo {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes aparecer-modal-objetivo {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(14px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}

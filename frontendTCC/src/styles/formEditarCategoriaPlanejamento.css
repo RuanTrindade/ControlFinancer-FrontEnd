@@ -1,0 +1,380 @@
+.editar-categoria-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background:
+        rgba(15, 23, 42, .55);
+
+    backdrop-filter: blur(5px);
+}
+
+.editar-categoria-modal {
+    width: 100%;
+    max-width: 480px;
+
+    overflow: hidden;
+
+    background: #fff;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 60px
+        rgba(15, 23, 42, .22);
+}
+
+.editar-categoria-modal header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 24px;
+
+    border-bottom:
+        1px solid #eef2f7;
+}
+
+.editar-categoria-modal header span {
+    color: #9ca3af;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.editar-categoria-modal header h2 {
+    margin: 3px 0 0;
+
+    color: #111827;
+
+    font-size: 22px;
+}
+
+.editar-categoria-modal header button {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: #f3f4f6;
+
+    cursor: pointer;
+
+    font-size: 22px;
+}
+
+.editar-categoria-conteudo {
+    padding: 24px;
+}
+
+.editar-categoria-nome {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin-bottom: 20px;
+}
+
+.editar-categoria-nome span {
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+.editar-categoria-nome strong {
+    color: #374151;
+    font-size: 16px;
+}
+
+.editar-categoria-conteudo label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.editar-categoria-input {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 14px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+}
+
+.editar-categoria-input:focus-within {
+    border-color: #7c3aed;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(124, 58, 237, .10);
+}
+
+.editar-categoria-input span {
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.editar-categoria-input input {
+    width: 100%;
+    height: 48px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.editar-categoria-erro {
+    margin-top: 12px;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    font-size: 12px;
+}
+
+.editar-categoria-modal footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #eef2f7;
+}
+.editar-categoria-modal footer button {
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    border-radius: 11px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+}
+
+.editar-categoria-cancelar {
+    border:
+        1px solid #d1d5db;
+
+    background: transparent;
+
+    color: #4b5563;
+}
+
+.editar-categoria-salvar {
+    border: none;
+
+    background: #7c3aed;
+
+    color: white;
+}
+
+.editar-categoria-salvar:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+
+
+
+.editar-categoria-resumo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    margin-top: 18px;
+}
+
+.editar-categoria-resumo > div {
+    padding: 13px 14px;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+}
+
+.editar-categoria-resumo span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+}
+
+.editar-categoria-resumo strong {
+    color: #374151;
+
+    font-size: 15px;
+}
+
+.editar-categoria-aviso {
+    margin-top: 12px;
+
+    padding: 11px 13px;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 11px;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    font-size: 12px;
+}
+
+.editar-categoria-aviso strong {
+    font-weight: 750;
+}
+
+
+
+/* ===================================================
+   DARK MODE
+=================================================== */
+
+.dark .editar-categoria-modal {
+    background: #0f172a;
+    border: 1px solid #1f2937;
+}
+
+.dark .editar-categoria-modal header {
+    border-color: #1f2937;
+}
+
+.dark .editar-categoria-modal header h2 {
+    color: #f8fafc;
+}
+
+.dark .editar-categoria-modal header span {
+    color: #94a3b8;
+}
+
+.dark .editar-categoria-modal header button {
+    background: #1e293b;
+    color: #cbd5e1;
+}
+
+.dark .editar-categoria-modal header button:hover {
+    background: #334155;
+    color: #ffffff;
+}
+
+.dark .editar-categoria-nome span {
+    color: #94a3b8;
+}
+
+.dark .editar-categoria-nome strong {
+    color: #f8fafc;
+}
+
+.dark .editar-categoria-conteudo label {
+    color: #cbd5e1;
+}
+
+.dark .editar-categoria-input {
+    border-color: #293548;
+    background: #111c2e;
+}
+
+.dark .editar-categoria-input:focus-within {
+    border-color: #7c3aed;
+    background: #111827;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(124, 58, 237, .14);
+}
+
+.dark .editar-categoria-input span {
+    color: #94a3b8;
+}
+
+.dark .editar-categoria-input input {
+    color: #f8fafc;
+}
+
+.dark .editar-categoria-resumo > div {
+    background: #111c2e;
+    border: 1px solid #293548;
+}
+
+.dark .editar-categoria-resumo span {
+    color: #94a3b8;
+}
+
+.dark .editar-categoria-resumo strong {
+    color: #f8fafc;
+}
+
+.dark .editar-categoria-aviso {
+    border-color:
+        rgba(239, 68, 68, .30);
+
+    background:
+        rgba(127, 29, 29, .20);
+
+    color: #fca5a5;
+}
+
+.dark .editar-categoria-erro {
+    border: 1px solid
+        rgba(239, 68, 68, .30);
+
+    background:
+        rgba(127, 29, 29, .20);
+
+    color: #fca5a5;
+}
+
+.dark .editar-categoria-modal footer {
+    border-color: #1f2937;
+}
+
+.dark .editar-categoria-cancelar {
+    border-color: #334155;
+    color: #cbd5e1;
+}
+
+.dark .editar-categoria-cancelar:hover {
+    background: #1e293b;
+}
+
+.dark .editar-categoria-salvar {
+    background: #7c3aed;
+    color: #ffffff;
+}
+
+.dark .editar-categoria-salvar:hover:not(:disabled) {
+    background: #6d28d9;
+}

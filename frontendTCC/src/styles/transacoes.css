@@ -1,0 +1,2847 @@
+/* ===================================================
+   PÁGINA
+=================================================== */
+
+.pagina-transacoes {
+    width: 100%;
+
+    height: calc(100vh - 90px);
+
+    padding: 34px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    background: transparent;
+}
+
+
+.dark .pagina-transacoes {
+    background: transparent;
+}
+
+
+/* ===================================================
+   TOPO
+=================================================== */
+
+.topo-transacoes {
+    width: 100%;
+
+    margin-bottom: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* ===================================================
+   AÇÕES DO TOPO
+=================================================== */
+
+.acoes-transacoes {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 14px;
+}
+
+
+/* ===================================================
+   BOTÃO FILTRO
+=================================================== */
+
+.botao-filtro {
+    position: relative;
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0ea5e9,
+            #0284c7
+        );
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 24px
+        rgba(14, 165, 233, .18);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.botao-filtro:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 13px 26px
+        rgba(14, 165, 233, .23);
+}
+
+
+.botao-filtro svg {
+    color: #ffffff;
+
+    font-size: 20px;
+}
+
+
+/* ===================================================
+   FILTRO ATIVO
+=================================================== */
+
+.indicador-filtro-ativo {
+    position: absolute;
+
+    top: -3px;
+    right: -3px;
+
+    width: 12px;
+    height: 12px;
+
+    border:
+        2px solid
+        #ffffff;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+}
+
+
+.dark .indicador-filtro-ativo {
+    border-color: #0f172a;
+}
+
+
+.botao-filtro.filtro-ativo {
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, .13),
+        0 10px 24px
+        rgba(14, 165, 233, .22);
+}
+
+
+/* ===================================================
+   NOVA RECEITA / NOVA DESPESA
+=================================================== */
+
+.botao-nova-receita,
+.botao-nova-despesa {
+    height: 48px;
+
+    padding:
+        0
+        22px;
+
+    border: none;
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+
+.botao-nova-receita {
+    background:
+        rgb(50, 255, 40);
+
+    box-shadow:
+        0 10px 25px
+        rgba(34, 197, 94, .18);
+}
+
+
+.botao-nova-despesa {
+    background:
+        rgb(255, 49, 49);
+
+    box-shadow:
+        0 10px 25px
+        rgba(255, 49, 49, .18);
+}
+
+
+.botao-nova-receita:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 28px
+        rgba(34, 197, 94, .22);
+}
+
+
+.botao-nova-despesa:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 28px
+        rgba(255, 49, 49, .22);
+}
+
+
+.botao-nova-receita svg,
+.botao-nova-despesa svg {
+    flex-shrink: 0;
+
+    font-size: 20px;
+}
+
+
+/* ===================================================
+   TABELA
+=================================================== */
+
+.tabela-transacoes {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    overflow: visible;
+}
+
+/* ===================================================
+   HEADER
+=================================================== */
+
+.tabela-header {
+    width: 100%;
+    min-height: 62px;
+
+    flex-shrink: 0;
+
+    padding:
+        0
+        22px;
+
+    box-sizing: border-box;
+
+    border-radius: 22px;
+
+    display: grid;
+
+    grid-template-columns:
+        .7fr
+        1.8fr
+        1.2fr
+        1.4fr
+        1fr
+        1.4fr
+        1.2fr
+        .8fr
+        1fr;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0ea5e9,
+            #0284c7
+        );
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.dark .tabela-header {
+    background:
+        linear-gradient(
+            135deg,
+            #0284c7,
+            #0369a1
+        );
+}
+
+
+.tabela-header span {
+    min-width: 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* ===================================================
+   LINHA
+=================================================== */
+
+.linha-transacao {
+    width: 100%;
+    min-height: 62px;
+
+    padding:
+        0
+        16px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius: 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        .6fr
+        1.6fr
+        1.1fr
+        1.2fr
+        1fr
+        1.4fr
+        1fr
+        .8fr
+        .8fr;
+
+    align-items: center;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0, 0, 0, .03);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+
+.linha-transacao:hover {
+    transform: translateY(-2px);
+
+    border-color: #e5e7eb;
+
+    box-shadow:
+        0 8px 18px
+        rgba(0, 0, 0, .05);
+}
+
+
+.dark .linha-transacao {
+    border-color: transparent;
+
+    background: #1e293b;
+
+    box-shadow:
+        0 4px 14px
+        rgba(0, 0, 0, .25);
+}
+
+
+.dark .linha-transacao:hover {
+    border-color: #334155;
+
+    box-shadow:
+        0 8px 24px
+        rgba(0, 0, 0, .35);
+}
+
+
+/* ===================================================
+   STATUS
+=================================================== */
+
+.status-transacao {
+    display: flex;
+    align-items: center;
+}
+
+
+.bolinha-status {
+    width: 12px;
+    height: 12px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+
+.bolinha-status.pago {
+    background: #22c55e;
+}
+
+
+.bolinha-status.pendente {
+    background: #facc15;
+}
+
+
+.bolinha-status.atrasado {
+    background: #ef4444;
+}
+
+
+/* ===================================================
+   NOME
+=================================================== */
+
+.nome-transacao {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.nome-transacao strong {
+    min-width: 0;
+    max-width: 100%;
+
+    overflow: hidden;
+
+    color: #4b5563;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.dark .nome-transacao strong {
+    color: #ffffff;
+}
+
+
+/* ===================================================
+   AVATAR
+=================================================== */
+
+.avatar-transacao {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f3f4f6;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.avatar-transacao svg {
+    color: inherit;
+
+    font-size: 20px;
+}
+
+
+.linha-transacao:hover
+.avatar-transacao {
+    transform: scale(1.04);
+
+    box-shadow:
+        0 3px 10px
+        rgba(15, 23, 42, .08);
+}
+
+
+/* ===================================================
+   BADGE TIPO
+=================================================== */
+
+.badge-tipo {
+    width: fit-content;
+
+    padding:
+        5px
+        10px;
+
+    border-radius: 999px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+.badge-tipo.receita {
+    background:
+        rgba(34, 197, 94, .12);
+
+    color: #16a34a;
+}
+
+
+.badge-tipo.despesa {
+    background:
+        rgba(239, 68, 68, .12);
+
+    color: #ef4444;
+}
+
+
+/* ===================================================
+   CATEGORIA
+=================================================== */
+
+.categoria-transacao {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: #4b5563;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.dark .categoria-transacao {
+    color: #d1d5db;
+}
+
+
+/* ===================================================
+   TEXTO NORMAL
+=================================================== */
+
+.texto-transacao {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: #4b5563;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.dark .texto-transacao {
+    color: #d1d5db;
+}
+
+
+/* ===================================================
+   VALOR
+=================================================== */
+
+.valor-transacao {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: #4b5563;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.dark .valor-transacao {
+    color: #d1d5db;
+}
+
+
+/* ===================================================
+   ARQUIVO
+=================================================== */
+
+.arquivo-transacao {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+
+.arquivo-anexado {
+    color: #3b82f6;
+
+    cursor: pointer;
+}
+
+
+.arquivo-anexado:hover {
+    background:
+        rgba(59, 130, 246, .08);
+
+    transform: translateY(-1px);
+}
+
+
+.dark
+.arquivo-anexado {
+    color: #3b82f6;
+}
+
+
+.dark
+.arquivo-anexado:hover {
+    background:
+        rgba(59, 130, 246, .12);
+}
+
+
+.arquivo-sem-anexo {
+    color: #cbd5e1;
+}
+
+
+/* ===================================================
+   AÇÕES
+=================================================== */
+
+.acoes-transacao {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.acoes-transacao button {
+    width: 32px;
+    height: 32px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        color .2s ease;
+}
+
+
+.acoes-transacao button svg {
+    font-size: 18px;
+}
+
+
+.acoes-transacao button:first-child svg {
+    color: #6b7280;
+}
+
+
+.acoes-transacao button:last-child svg {
+    color: #ef4444;
+}
+
+
+.acoes-transacao button:first-child:hover {
+    background: #f3f4f6;
+}
+
+
+.acoes-transacao button:last-child:hover {
+    background: #fef2f2;
+}
+
+
+.acoes-transacao button:hover {
+    transform: translateY(-1px);
+}
+
+
+.dark
+.acoes-transacao button:first-child svg {
+    color: #d1d5db;
+}
+
+
+.dark
+.acoes-transacao button:first-child:hover {
+    background: #334155;
+}
+
+
+.dark
+.acoes-transacao button:last-child:hover {
+    background:
+        rgba(239, 68, 68, .10);
+}
+
+
+/* ===================================================
+   BOTÃO TRANSAÇÃO PROTEGIDA
+=================================================== */
+
+.botao-transacao-protegida {
+    width: 36px !important;
+    height: 36px !important;
+
+    border-radius: 10px !important;
+
+    background: #f3f4f6 !important;
+
+    color: #6b7280 !important;
+}
+
+
+.botao-transacao-protegida:hover {
+    background: #e5e7eb !important;
+
+    color: #111827 !important;
+}
+
+
+.dark
+.botao-transacao-protegida {
+    background: #111827 !important;
+
+    color: #9ca3af !important;
+}
+
+
+.dark
+.botao-transacao-protegida:hover {
+    background: #374151 !important;
+
+    color: #ffffff !important;
+}
+
+
+/* ===================================================
+   NENHUMA TRANSAÇÃO
+=================================================== */
+
+.nenhuma-transacao {
+    width: 100%;
+    min-height: 82px;
+
+    padding:
+        18px
+        22px;
+
+    box-sizing: border-box;
+
+    border:
+        1px dashed
+        #cbd5e1;
+
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    background: #ffffff;
+
+    color: #64748b;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0, 0, 0, .03);
+}
+
+
+.nenhuma-transacao > svg {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+    border-radius: 13px;
+
+    background:
+        rgba(14, 165, 233, .10);
+
+    color: #0284c7;
+}
+
+
+.texto-nenhuma-transacao {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.texto-nenhuma-transacao strong {
+    color: #334155;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.texto-nenhuma-transacao span {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+.nenhuma-transacao button {
+    min-height: 40px;
+
+    flex-shrink: 0;
+
+    padding:
+        0
+        16px;
+
+    border: none;
+    border-radius: 11px;
+
+    background:
+        rgba(14, 165, 233, .10);
+
+    color: #0284c7;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+
+.nenhuma-transacao button:hover {
+    background: #0284c7;
+
+    color: #ffffff;
+}
+
+
+.dark
+.nenhuma-transacao {
+    border-color: #475569;
+
+    background: #1e293b;
+
+    color: #94a3b8;
+
+    box-shadow:
+        0 4px 14px
+        rgba(0, 0, 0, .25);
+}
+
+
+.dark
+.nenhuma-transacao > svg {
+    background:
+        rgba(56, 189, 248, .12);
+
+    color: #38bdf8;
+}
+
+
+.dark
+.texto-nenhuma-transacao strong {
+    color: #f8fafc;
+}
+
+
+.dark
+.texto-nenhuma-transacao span {
+    color: #94a3b8;
+}
+
+
+.dark
+.nenhuma-transacao button {
+    background:
+        rgba(56, 189, 248, .12);
+
+    color: #38bdf8;
+}
+
+
+.dark
+.nenhuma-transacao button:hover {
+    background: #0284c7;
+
+    color: #ffffff;
+}
+
+
+/* ===================================================
+   COMPROVANTE - OVERLAY
+=================================================== */
+
+.overlay-comprovante {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    padding: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(15, 23, 42, .65);
+
+    backdrop-filter: blur(4px);
+
+    animation:
+        aparecer-overlay
+        .2s ease;
+}
+
+
+/* ===================================================
+   COMPROVANTE - MODAL
+=================================================== */
+
+.modal-comprovante {
+    width:
+        min(
+            900px,
+            95vw
+        );
+
+    height:
+        min(
+            750px,
+            90vh
+        );
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 24px 70px
+        rgba(0, 0, 0, .30);
+
+    animation:
+        aparecer-modal
+        .22s ease;
+}
+
+
+.dark
+.modal-comprovante {
+    background: #1e293b;
+}
+
+
+.cabecalho-modal-comprovante {
+    padding:
+        16px
+        20px;
+
+    border-bottom:
+        1px solid
+        #e2e8f0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.dark
+.cabecalho-modal-comprovante {
+    border-color: #334155;
+}
+
+
+.cabecalho-modal-comprovante h3 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 18px;
+}
+
+
+.dark
+.cabecalho-modal-comprovante h3 {
+    color: #ffffff;
+}
+
+
+.botao-fechar-comprovante {
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    color: #64748b;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+
+.botao-fechar-comprovante:hover {
+    background: #f1f5f9;
+
+    color: #0f172a;
+}
+
+
+.dark
+.botao-fechar-comprovante:hover {
+    background: #334155;
+
+    color: #ffffff;
+}
+
+
+.visualizador-comprovante {
+    width: 100%;
+
+    flex: 1;
+
+    border: none;
+}
+
+
+/* ===================================================
+   EXCLUSÃO - OVERLAY
+=================================================== */
+
+.overlay-exclusao {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(15, 23, 42, .55);
+
+    backdrop-filter: blur(4px);
+
+    animation:
+        aparecer-overlay
+        .2s ease;
+}
+
+
+/* ===================================================
+   EXCLUSÃO - MODAL
+=================================================== */
+
+.modal-exclusao {
+    width: 100%;
+    max-width: 440px;
+
+    padding: 28px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid
+        #e5e7eb;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 25px 60px
+        rgba(15, 23, 42, .25);
+
+    animation:
+        aparecer-modal
+        .22s ease;
+}
+
+
+.dark
+.modal-exclusao {
+    border-color: #374151;
+
+    background: #1f2937;
+}
+
+
+.icone-modal-exclusao {
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: 18px;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fef2f2;
+
+    color: #dc2626;
+
+    font-size: 26px;
+}
+
+
+.dark
+.icone-modal-exclusao {
+    background:
+        rgba(239, 68, 68, .10);
+
+    color: #f87171;
+}
+
+
+.conteudo-modal-exclusao h3 {
+    margin:
+        0
+        0
+        8px;
+
+    color: #172033;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+
+.dark
+.conteudo-modal-exclusao h3 {
+    color: #ffffff;
+}
+
+
+.conteudo-modal-exclusao > p {
+    margin:
+        0
+        0
+        20px;
+
+    color: #667085;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+.dark
+.conteudo-modal-exclusao > p {
+    color: #9ca3af;
+}
+
+
+/* ===================================================
+   RESUMO EXCLUSÃO
+=================================================== */
+
+.resumo-transacao-exclusao {
+    padding: 14px;
+
+    border:
+        1px solid
+        #e8edf3;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    background: #f8fafc;
+}
+
+
+.dark
+.resumo-transacao-exclusao {
+    border-color: #374151;
+
+    background: #111827;
+}
+
+
+.icone-transacao-exclusao {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+
+.dados-transacao-exclusao {
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.dados-transacao-exclusao strong {
+    overflow: hidden;
+
+    color: #253044;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.dark
+.dados-transacao-exclusao strong {
+    color: #f9fafb;
+}
+
+
+.dados-transacao-exclusao span {
+    color: #7b8494;
+
+    font-size: 12px;
+}
+
+
+.valor-exclusao {
+    flex-shrink: 0;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
+.valor-exclusao.receita {
+    color: #16a34a;
+}
+
+
+.valor-exclusao.despesa {
+    color: #dc2626;
+}
+
+
+.aviso-modal-exclusao {
+    margin-top: 15px;
+
+    color: #b42318;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* ===================================================
+   AÇÕES DO MODAL DE EXCLUSÃO
+=================================================== */
+
+.acoes-modal-exclusao {
+    margin-top: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+}
+
+
+.botao-cancelar-exclusao,
+.botao-confirmar-exclusao {
+    min-height: 43px;
+
+    padding:
+        0
+        18px;
+
+    border: none;
+    border-radius: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform .18s ease,
+        background .18s ease,
+        opacity .18s ease;
+}
+
+
+.botao-cancelar-exclusao {
+    background: #f2f4f7;
+
+    color: #475467;
+}
+
+
+.botao-cancelar-exclusao:hover:not(:disabled) {
+    background: #e4e7ec;
+}
+
+
+.dark
+.botao-cancelar-exclusao {
+    background: #111827;
+
+    color: #d1d5db;
+}
+
+
+.dark
+.botao-cancelar-exclusao:hover:not(:disabled) {
+    background: #374151;
+}
+
+
+.botao-confirmar-exclusao {
+    background: #dc2626;
+
+    color: #ffffff;
+}
+
+
+.botao-confirmar-exclusao:hover:not(:disabled) {
+    background: #b91c1c;
+
+    transform: translateY(-1px);
+}
+
+
+.botao-cancelar-exclusao:disabled,
+.botao-confirmar-exclusao:disabled {
+    opacity: .65;
+
+    cursor: not-allowed;
+}
+
+
+.spinner-exclusao {
+    width: 15px;
+    height: 15px;
+
+    border:
+        2px solid
+        rgba(255, 255, 255, .40);
+
+    border-top-color: #ffffff;
+
+    border-radius: 50%;
+
+    animation:
+        girar-spinner-exclusao
+        .7s linear infinite;
+}
+
+
+/* ===================================================
+   FILTRO - OVERLAY
+=================================================== */
+
+.overlay-filtro {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: flex-end;
+
+    background:
+        rgba(15, 23, 42, .45);
+
+    backdrop-filter: blur(3px);
+}
+
+
+/* ===================================================
+   PAINEL FILTRO
+=================================================== */
+
+.painel-filtro {
+    width: 420px;
+    height: 100vh;
+
+    overflow: auto;
+
+    border-radius:
+        30px
+        0
+        0
+        30px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+
+    animation:
+        abrirFiltro
+        .25s ease;
+}
+
+
+.dark
+.painel-filtro {
+    background: #1f2937;
+}
+
+
+/* ===================================================
+   CABEÇALHO FILTRO
+=================================================== */
+
+.cabecalho-filtro {
+    padding: 24px;
+
+    border-bottom:
+        1px solid
+        #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.dark
+.cabecalho-filtro {
+    border-color: #374151;
+}
+
+
+.cabecalho-filtro h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 22px;
+}
+
+
+.dark
+.cabecalho-filtro h2 {
+    color: #ffffff;
+}
+
+
+/* ===================================================
+   FECHAR FILTRO
+=================================================== */
+
+.botao-fechar-filtro {
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1f5f9;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+
+.botao-fechar-filtro svg {
+    color: #64748b;
+
+    font-size: 22px;
+}
+
+
+.botao-fechar-filtro:hover {
+    background: #e2e8f0;
+
+    transform: rotate(90deg);
+}
+
+
+.dark
+.botao-fechar-filtro {
+    background: #334155;
+}
+
+
+.dark
+.botao-fechar-filtro svg {
+    color: #e2e8f0;
+}
+
+
+.dark
+.botao-fechar-filtro:hover {
+    background: #475569;
+}
+
+
+/* ===================================================
+   CONTEÚDO FILTRO
+=================================================== */
+
+.conteudo-filtro {
+    flex: 1;
+
+    padding: 26px;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+.dark
+.conteudo-filtro {
+    background: #1e293b;
+}
+
+
+/* ===================================================
+   CAMPO FILTRO
+=================================================== */
+
+.campo-filtro {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.campo-filtro label {
+    color: #475569;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.dark
+.campo-filtro label {
+    color: #cbd5e1;
+}
+
+
+.campo-filtro input,
+.campo-filtro select {
+    width: 100%;
+    height: 46px;
+
+    padding:
+        0
+        14px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid
+        #dbe3ec;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: #f8fafc;
+
+    color: #334155;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.campo-filtro input:focus,
+.campo-filtro select:focus {
+    border-color: #0ea5e9;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(14, 165, 233, .12);
+}
+
+
+.dark
+.campo-filtro input,
+.dark
+.campo-filtro select {
+    border-color: #334155;
+
+    background: #0f172a;
+
+    color: #f8fafc;
+}
+
+
+.dark
+.campo-filtro input::placeholder {
+    color: #64748b;
+}
+
+
+/* ===================================================
+   GRUPOS FILTRO
+=================================================== */
+
+.grupo-periodo-filtro,
+.grupo-valores-filtro {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 14px;
+}
+
+
+/* ===================================================
+   RODAPÉ FILTRO
+=================================================== */
+
+.rodape-filtro {
+    width: 100%;
+
+    padding:
+        18px
+        26px
+        22px;
+
+    box-sizing: border-box;
+
+    border-top:
+        1px solid
+        #eef2f7;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    background: #ffffff;
+}
+
+
+/* DARK */
+
+.dark .rodape-filtro {
+    border-color: #374151;
+
+    background: #1f2937;
+}
+
+
+/* ===================================================
+   BOTÕES DO RODAPÉ
+=================================================== */
+
+.botao-limpar-filtro,
+.botao-aplicar-filtro {
+    min-height: 44px;
+
+    padding:
+        0
+        19px;
+
+    border-radius: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease,
+        opacity .2s ease;
+}
+
+
+/* ===================================================
+   LIMPAR
+=================================================== */
+
+.botao-limpar-filtro {
+    border:
+        1px solid
+        #d1d5db;
+
+    background: transparent;
+
+    color: #6b7280;
+}
+
+
+.botao-limpar-filtro:hover:not(:disabled) {
+    border-color: #cbd5e1;
+
+    background: #f3f4f6;
+
+    color: #374151;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* DARK */
+
+.dark .botao-limpar-filtro {
+    border-color: #374151;
+
+    background: transparent;
+
+    color: #d1d5db;
+}
+
+
+.dark
+.botao-limpar-filtro:hover:not(:disabled) {
+    border-color: #4b5563;
+
+    background: #111827;
+
+    color: #ffffff;
+}
+
+
+/* ===================================================
+   APLICAR
+=================================================== */
+
+.botao-aplicar-filtro {
+    border: none;
+
+    background: #0284c7;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 16px
+        rgba(
+            2,
+            132,
+            199,
+            .18
+        );
+}
+
+
+.botao-aplicar-filtro:hover:not(:disabled) {
+    background: #0369a1;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 9px 20px
+        rgba(
+            2,
+            132,
+            199,
+            .23
+        );
+}
+
+
+/* ===================================================
+   DESABILITADO
+=================================================== */
+
+.botao-limpar-filtro:disabled,
+.botao-aplicar-filtro:disabled {
+    opacity: .55;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* ===================================================
+   MOBILE
+=================================================== */
+
+@media (max-width: 600px) {
+
+    .rodape-filtro {
+        padding:
+            16px
+            20px
+            20px;
+
+        flex-direction: column-reverse;
+    }
+
+
+    .botao-limpar-filtro,
+    .botao-aplicar-filtro {
+        width: 100%;
+    }
+
+}
+
+
+/* ===================================================
+   OVERLAY TRANSAÇÃO PROTEGIDA
+=================================================== */
+
+.overlay-transacao-protegida {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    padding: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(15, 23, 42, .50);
+
+    backdrop-filter: blur(5px);
+
+    animation:
+        aparecer-overlay-transacao
+        .2s ease;
+}
+
+
+/* ===================================================
+   MODAL TRANSAÇÃO PROTEGIDA
+=================================================== */
+
+.modal-transacao-protegida {
+    position: relative;
+
+    width: 100%;
+    max-width: 440px;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid
+        #e5e7eb;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 26px 70px
+        rgba(15, 23, 42, .22);
+
+    animation:
+        aparecer-modal-transacao
+        .22s ease;
+}
+
+
+.dark
+.modal-transacao-protegida {
+    border-color: #374151;
+
+    background: #1f2937;
+}
+
+
+/* ===================================================
+   FECHAR TRANSAÇÃO PROTEGIDA
+=================================================== */
+
+.fechar-transacao-protegida {
+    position: absolute;
+
+    top: 16px;
+    right: 16px;
+
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f3f4f6;
+
+    color: #6b7280;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+
+.fechar-transacao-protegida:hover {
+    background: #e5e7eb;
+
+    color: #111827;
+}
+
+
+.dark
+.fechar-transacao-protegida {
+    background: #111827;
+
+    color: #9ca3af;
+}
+
+
+.dark
+.fechar-transacao-protegida:hover {
+    background: #374151;
+
+    color: #ffffff;
+}
+
+
+/* ===================================================
+   ÍCONE TRANSAÇÃO PROTEGIDA
+=================================================== */
+
+.icone-transacao-protegida {
+    width: 60px;
+    height: 60px;
+
+    margin-bottom: 20px;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f0fdf4;
+
+    color: #16a34a;
+
+    font-size: 28px;
+}
+
+
+.dark
+.icone-transacao-protegida {
+    background:
+        rgba(34, 197, 94, .12);
+
+    color: #4ade80;
+}
+
+
+/* ===================================================
+   TÍTULO TRANSAÇÃO PROTEGIDA
+=================================================== */
+
+.modal-transacao-protegida h3 {
+    margin:
+        0
+        0
+        9px;
+
+    color: #111827;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+.dark
+.modal-transacao-protegida h3 {
+    color: #ffffff;
+}
+
+
+/* ===================================================
+   TEXTO TRANSAÇÃO PROTEGIDA
+=================================================== */
+
+.texto-transacao-protegida {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.texto-transacao-protegida strong {
+    color: #111827;
+}
+
+
+.dark
+.texto-transacao-protegida {
+    color: #9ca3af;
+}
+
+
+.dark
+.texto-transacao-protegida strong {
+    color: #f9fafb;
+}
+
+
+/* ===================================================
+   RESUMO TRANSAÇÃO PROTEGIDA
+=================================================== */
+
+.resumo-transacao-protegida {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding:
+        15px
+        16px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid
+        #e5e7eb;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    background: #f9fafb;
+}
+
+
+.resumo-transacao-protegida span {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.resumo-transacao-protegida strong {
+    flex-shrink: 0;
+
+    color: #16a34a;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.dark
+.resumo-transacao-protegida {
+    border-color: #374151;
+
+    background: #111827;
+}
+
+
+.dark
+.resumo-transacao-protegida span {
+    color: #d1d5db;
+}
+
+
+.dark
+.resumo-transacao-protegida strong {
+    color: #4ade80;
+}
+
+
+/* ===================================================
+   AVISO TRANSAÇÃO PROTEGIDA
+=================================================== */
+
+.aviso-transacao-protegida {
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding:
+        13px
+        14px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid
+        #d1fae5;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    background: #f0fdf4;
+
+    color: #166534;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.aviso-transacao-protegida svg {
+    flex-shrink: 0;
+
+    margin-top: 1px;
+
+    font-size: 18px;
+}
+
+
+.dark
+.aviso-transacao-protegida {
+    border-color:
+        rgba(34, 197, 94, .20);
+
+    background:
+        rgba(34, 197, 94, .08);
+
+    color: #86efac;
+}
+
+
+/* ===================================================
+   AÇÕES TRANSAÇÃO PROTEGIDA
+=================================================== */
+
+.acoes-transacao-protegida {
+    width: 100%;
+
+    margin-top: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+}
+
+
+.btn-fechar-transacao-protegida,
+.btn-ir-objetivo,
+.btn-entendi-transacao-protegida {
+    min-height: 42px;
+
+    padding:
+        0
+        18px;
+
+    border-radius: 11px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.btn-fechar-transacao-protegida {
+    border:
+        1px solid
+        #d1d5db;
+
+    background: transparent;
+
+    color: #4b5563;
+}
+
+
+.btn-fechar-transacao-protegida:hover {
+    background: #f3f4f6;
+}
+
+
+.dark
+.btn-fechar-transacao-protegida {
+    border-color: #374151;
+
+    color: #d1d5db;
+}
+
+
+.dark
+.btn-fechar-transacao-protegida:hover {
+    background: #111827;
+}
+
+
+.btn-ir-objetivo,
+.btn-entendi-transacao-protegida {
+    border: none;
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    font-weight: 700;
+}
+
+
+.btn-ir-objetivo:hover,
+.btn-entendi-transacao-protegida:hover {
+    background: #15803d;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(22, 163, 74, .18);
+}
+
+
+/* ===================================================
+   PAGINAÇÃO TRANSAÇÕES
+=================================================== */
+
+.paginacao-transacoes {
+    width: 100%;
+
+    margin-top: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+
+/* ===================================================
+   NÚMEROS
+=================================================== */
+
+.numeros-paginacao-transacoes {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+/* ===================================================
+   ANTERIOR / PRÓXIMA
+=================================================== */
+
+.botao-paginacao-transacao {
+    height: 38px;
+
+    padding:
+        0
+        14px;
+
+    border:
+        1px solid
+        #e5e7eb;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    color: #6b7280;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        border-color .2s ease,
+        color .2s ease,
+        background .2s ease,
+        transform .2s ease;
+}
+
+
+.botao-paginacao-transacao:hover:not(:disabled) {
+    border-color: #0284c7;
+
+    color: #0284c7;
+
+    transform:
+        translateY(-1px);
+}
+
+
+.botao-paginacao-transacao:disabled {
+    opacity: .4;
+
+    cursor: default;
+
+    transform: none;
+}
+
+
+/* ===================================================
+   NÚMERO DA PÁGINA
+=================================================== */
+
+.numero-pagina-transacao {
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+
+    border:
+        1px solid
+        #e5e7eb;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    color: #6b7280;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        border-color .2s ease,
+        color .2s ease,
+        background .2s ease,
+        transform .2s ease;
+}
+
+
+.numero-pagina-transacao:hover:not(:disabled) {
+    border-color: #0284c7;
+
+    color: #0284c7;
+
+    transform:
+        translateY(-1px);
+}
+
+
+.numero-pagina-transacao.ativo {
+    border-color: #0284c7;
+
+    background: #0284c7;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 14px
+        rgba(2, 132, 199, .18);
+}
+
+
+.numero-pagina-transacao.ativo:hover {
+    color: #ffffff;
+}
+
+
+/* ===================================================
+   TOTAL
+=================================================== */
+
+.total-transacoes-paginacao {
+    width: 100%;
+
+    margin-top: 8px;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+
+    text-align: center;
+
+    flex-shrink: 0;
+}
+
+
+/* ===================================================
+   DARK
+=================================================== */
+
+.dark
+.botao-paginacao-transacao,
+.dark
+.numero-pagina-transacao {
+    border-color: #374151;
+
+    background: #1e293b;
+
+    color: #9ca3af;
+}
+
+
+.dark
+.botao-paginacao-transacao:hover:not(:disabled),
+.dark
+.numero-pagina-transacao:hover:not(:disabled) {
+    border-color: #38bdf8;
+
+    color: #38bdf8;
+}
+
+
+.dark
+.numero-pagina-transacao.ativo {
+    border-color: #0284c7;
+
+    background: #0284c7;
+
+    color: #ffffff;
+}
+
+
+.dark
+.total-transacoes-paginacao {
+    color: #6b7280;
+}
+
+
+/* ===================================================
+   RESPONSIVO
+=================================================== */
+
+@media (max-width: 600px) {
+
+    .paginacao-transacoes {
+        flex-wrap: wrap;
+    }
+
+
+    .numeros-paginacao-transacoes {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+}
+
+/* ===================================================
+   RESPONSIVO
+=================================================== */
+
+@media (max-width: 1200px) {
+
+    .tabela-header {
+        display: none;
+    }
+
+
+    .linha-transacao {
+        grid-template-columns:
+            1fr;
+
+        gap: 14px;
+
+        padding: 20px;
+    }
+
+
+    .nome-transacao strong,
+    .categoria-transacao,
+    .texto-transacao,
+    .valor-transacao {
+        overflow: visible;
+
+        white-space: normal;
+
+        text-overflow: unset;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .pagina-transacoes {
+        height: auto;
+
+        padding: 20px;
+    }
+
+
+    .topo-transacoes {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+
+    .acoes-transacoes {
+        width: 100%;
+
+        flex-wrap: wrap;
+    }
+
+
+    .botao-nova-receita,
+    .botao-nova-despesa {
+        flex: 1;
+    }
+
+
+    .nenhuma-transacao {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .nenhuma-transacao button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .painel-filtro {
+        width: 100%;
+
+        border-radius: 0;
+    }
+
+
+    .grupo-periodo-filtro,
+    .grupo-valores-filtro {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .acoes-transacao-protegida,
+    .acoes-modal-exclusao {
+        flex-direction: column-reverse;
+    }
+
+
+    .btn-fechar-transacao-protegida,
+    .btn-ir-objetivo,
+    .btn-entendi-transacao-protegida,
+    .botao-cancelar-exclusao,
+    .botao-confirmar-exclusao {
+        width: 100%;
+    }
+
+
+    .resumo-transacao-protegida,
+    .resumo-transacao-exclusao {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+}
+
+
+/* ===================================================
+   ANIMAÇÕES
+=================================================== */
+
+@keyframes abrirFiltro {
+
+    from {
+        transform:
+            translateX(100%);
+    }
+
+    to {
+        transform:
+            translateX(0);
+    }
+
+}
+
+
+@keyframes aparecer-overlay {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes aparecer-modal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(10px)
+            scale(.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes girar-spinner-exclusao {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes aparecer-overlay-transacao {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes aparecer-modal-transacao {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(10px)
+            scale(.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}

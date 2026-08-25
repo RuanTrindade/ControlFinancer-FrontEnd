@@ -1,0 +1,962 @@
+/* ===================================================
+   OVERLAY
+=================================================== */
+
+.overlay-form-investimento {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    padding: 24px;
+
+    background: rgba(15, 23, 42, 0.45);
+
+    backdrop-filter: blur(3px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ===================================================
+   MODAL
+=================================================== */
+
+.modal-form-investimento {
+    width: 100%;
+
+    max-width: 520px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 22px 55px
+        rgba(15, 23, 42, 0.18);
+
+    overflow: visible;
+
+    animation:
+        aparecer-form-investimento
+        0.18s ease;
+}
+
+
+@keyframes aparecer-form-investimento {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(8px)
+            scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* ===================================================
+   CABEÇALHO
+=================================================== */
+
+.cabecalho-form-investimento {
+    padding:
+        22px
+        24px
+        18px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 1px solid #eef0f2;
+}
+
+
+.titulo-form-investimento {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.icone-form-investimento {
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+
+    border-radius: 13px;
+
+    background: rgba(22, 163, 74, 0.10);
+
+    color: #16a34a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.icone-form-investimento svg {
+    font-size: 22px;
+}
+
+
+.titulo-form-investimento h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 20px;
+    font-weight: 750;
+}
+
+
+.titulo-form-investimento p {
+    margin: 4px 0 0;
+
+    color: #9ca3af;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+}
+
+
+/* ===================================================
+   BOTÃO FECHAR
+=================================================== */
+
+.fechar-form-investimento {
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    color: #6b7280;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.fechar-form-investimento:hover:not(:disabled) {
+    background: #f3f4f6;
+
+    color: #111827;
+}
+
+
+.fechar-form-investimento svg {
+    font-size: 20px;
+}
+
+
+.fechar-form-investimento:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+/* ===================================================
+   CONTEÚDO
+=================================================== */
+
+.conteudo-form-investimento {
+    padding:
+        22px
+        24px
+        24px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* ===================================================
+   ERRO
+=================================================== */
+
+.erro-form-investimento {
+    padding:
+        11px
+        13px;
+
+    border: 1px solid rgba(239, 68, 68, 0.20);
+
+    border-radius: 10px;
+
+    background: rgba(239, 68, 68, 0.06);
+
+    color: #dc2626;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ===================================================
+   CAMPOS
+=================================================== */
+
+.campo-form-investimento {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.campo-form-investimento label {
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 650;
+}
+
+
+/* ===================================================
+   INPUT
+=================================================== */
+
+.campo-form-investimento input {
+    width: 100%;
+    height: 47px;
+
+    padding:
+        0
+        14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: #f9fafb;
+
+    color: #111827;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.campo-form-investimento input::placeholder {
+    color: #9ca3af;
+}
+
+
+.campo-form-investimento input:hover:not(:disabled) {
+    border-color: #d1d5db;
+}
+
+
+.campo-form-investimento input:focus {
+    border-color: rgba(22, 163, 74, 0.55);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22, 163, 74, 0.08);
+}
+
+
+.campo-form-investimento input:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* ===================================================
+   DROPDOWN
+=================================================== */
+
+.dropdown-tipo-investimento {
+    position: relative;
+
+    width: 100%;
+}
+
+
+/* ===================================================
+   BOTÃO DO DROPDOWN
+=================================================== */
+
+.dropdown-tipo-botao {
+    width: 100%;
+    min-height: 58px;
+
+    padding:
+        8px
+        12px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    background: #f9fafb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.dropdown-tipo-botao:hover:not(:disabled) {
+    border-color: #d1d5db;
+
+    background: #ffffff;
+}
+
+
+.dropdown-tipo-botao.aberto {
+    border-color: rgba(22, 163, 74, 0.55);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22, 163, 74, 0.08);
+}
+
+
+.dropdown-tipo-botao:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* ===================================================
+   ITEM SELECIONADO
+=================================================== */
+
+.dropdown-tipo-selecionado {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.icone-tipo-investimento {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+
+    border-radius: 10px;
+
+    background: rgba(22, 163, 74, 0.10);
+
+    color: #16a34a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.icone-tipo-investimento svg {
+    font-size: 20px;
+}
+
+
+.texto-tipo-investimento {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 2px;
+}
+
+
+.texto-tipo-investimento strong {
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.texto-tipo-investimento span {
+    color: #9ca3af;
+
+    font-size: 11px;
+}
+
+
+/* ===================================================
+   SETA
+=================================================== */
+
+.seta-dropdown-investimento {
+    flex-shrink: 0;
+
+    color: #9ca3af;
+
+    font-size: 21px;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.dropdown-tipo-botao.aberto
+.seta-dropdown-investimento {
+    transform: rotate(180deg);
+
+    color: #16a34a;
+}
+
+
+/* ===================================================
+   MENU ABERTO
+=================================================== */
+
+.menu-tipos-investimento {
+    position: absolute;
+
+    top: calc(100% + 7px);
+    left: 0;
+    right: 0;
+
+    z-index: 1100;
+
+    padding: 6px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(15, 23, 42, 0.14);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    animation:
+        abrir-dropdown-investimento
+        0.15s ease;
+}
+
+
+@keyframes abrir-dropdown-investimento {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ===================================================
+   OPÇÃO
+=================================================== */
+
+.opcao-tipo-investimento {
+    width: 100%;
+
+    min-height: 54px;
+
+    padding:
+        7px
+        9px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    display: grid;
+
+    grid-template-columns:
+        38px
+        minmax(0, 1fr)
+        24px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    text-align: left;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease;
+}
+
+
+.opcao-tipo-investimento:hover {
+    background: #f8fafc;
+}
+
+
+.opcao-tipo-investimento.selecionada {
+    background: rgba(22, 163, 74, 0.07);
+}
+
+
+/* ===================================================
+   ÍCONE DA OPÇÃO
+=================================================== */
+
+.icone-opcao-investimento {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 9px;
+
+    background: #f3f4f6;
+
+    color: #6b7280;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.icone-opcao-investimento svg {
+    font-size: 19px;
+}
+
+
+.opcao-tipo-investimento.selecionada
+.icone-opcao-investimento {
+    background: rgba(22, 163, 74, 0.11);
+
+    color: #16a34a;
+}
+
+
+/* ===================================================
+   TEXTO DA OPÇÃO
+=================================================== */
+
+.texto-opcao-investimento {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+
+.texto-opcao-investimento strong {
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 650;
+}
+
+
+.texto-opcao-investimento span {
+    color: #9ca3af;
+
+    font-size: 11px;
+}
+
+
+/* ===================================================
+   CHECK
+=================================================== */
+
+.check-tipo-investimento {
+    color: #16a34a;
+
+    font-size: 18px;
+}
+
+
+/* ===================================================
+   AÇÕES
+=================================================== */
+
+.acoes-form-investimento {
+    margin-top: 4px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #eef0f2;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+}
+
+
+.cancelar-form-investimento,
+.salvar-form-investimento {
+    height: 43px;
+
+    padding:
+        0
+        18px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* CANCELAR */
+
+.cancelar-form-investimento {
+    background: #f3f4f6;
+
+    color: #6b7280;
+}
+
+
+.cancelar-form-investimento:hover:not(:disabled) {
+    background: #e5e7eb;
+}
+
+
+/* SALVAR */
+
+.salvar-form-investimento {
+    background: #16a34a;
+
+    color: #ffffff;
+}
+
+
+.salvar-form-investimento:hover:not(:disabled) {
+    background: #15803d;
+
+    transform: translateY(-1px);
+}
+
+
+.cancelar-form-investimento:disabled,
+.salvar-form-investimento:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+}
+
+
+/* ===================================================
+   DARK MODE
+=================================================== */
+
+.dark
+.modal-form-investimento {
+    background: #1f2937;
+}
+
+
+.dark
+.cabecalho-form-investimento,
+.dark
+.acoes-form-investimento {
+    border-color: #374151;
+}
+
+
+.dark
+.titulo-form-investimento h2,
+.dark
+.campo-form-investimento label {
+    color: #ffffff;
+}
+
+
+.dark
+.titulo-form-investimento p {
+    color: #9ca3af;
+}
+
+
+/* FECHAR */
+
+.dark
+.fechar-form-investimento {
+    background: #111827;
+
+    color: #d1d5db;
+}
+
+
+.dark
+.fechar-form-investimento:hover:not(:disabled) {
+    background: #374151;
+
+    color: #ffffff;
+}
+
+
+/* INPUT */
+
+.dark
+.campo-form-investimento input {
+    background: #111827;
+
+    border-color: #374151;
+
+    color: #ffffff;
+}
+
+
+.dark
+.campo-form-investimento input:hover:not(:disabled) {
+    border-color: #4b5563;
+}
+
+
+.dark
+.campo-form-investimento input:focus {
+    background: #111827;
+
+    border-color: #22c55e;
+}
+
+
+/* DROPDOWN */
+
+.dark
+.dropdown-tipo-botao {
+    background: #111827;
+
+    border-color: #374151;
+}
+
+
+.dark
+.dropdown-tipo-botao:hover:not(:disabled),
+.dark
+.dropdown-tipo-botao.aberto {
+    background: #111827;
+}
+
+
+.dark
+.texto-tipo-investimento strong {
+    color: #f9fafb;
+}
+
+
+.dark
+.texto-tipo-investimento span {
+    color: #9ca3af;
+}
+
+
+/* MENU */
+
+.dark
+.menu-tipos-investimento {
+    background: #1f2937;
+
+    border-color: #374151;
+}
+
+
+.dark
+.opcao-tipo-investimento:hover {
+    background: #374151;
+}
+
+
+.dark
+.opcao-tipo-investimento.selecionada {
+    background: rgba(34, 197, 94, 0.10);
+}
+
+
+.dark
+.icone-opcao-investimento {
+    background: #111827;
+
+    color: #d1d5db;
+}
+
+
+.dark
+.opcao-tipo-investimento.selecionada
+.icone-opcao-investimento {
+    background: rgba(34, 197, 94, 0.12);
+
+    color: #4ade80;
+}
+
+
+.dark
+.texto-opcao-investimento strong {
+    color: #f9fafb;
+}
+
+
+.dark
+.texto-opcao-investimento span {
+    color: #9ca3af;
+}
+
+
+/* CANCELAR */
+
+.dark
+.cancelar-form-investimento {
+    background: #374151;
+
+    color: #d1d5db;
+}
+
+
+.dark
+.cancelar-form-investimento:hover:not(:disabled) {
+    background: #4b5563;
+}
+
+
+/* ===================================================
+   RESPONSIVO
+=================================================== */
+
+@media (max-width: 600px) {
+
+    .overlay-form-investimento {
+        padding: 14px;
+    }
+
+
+    .modal-form-investimento {
+        border-radius: 18px;
+    }
+
+
+    .cabecalho-form-investimento {
+        padding:
+            18px
+            18px
+            15px;
+    }
+
+
+    .conteudo-form-investimento {
+        padding: 18px;
+    }
+
+
+    .titulo-form-investimento {
+        align-items: flex-start;
+    }
+
+
+    .titulo-form-investimento h2 {
+        font-size: 18px;
+    }
+
+
+    .acoes-form-investimento {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+
+    .cancelar-form-investimento,
+    .salvar-form-investimento {
+        width: 100%;
+    }
+
+
+    .menu-tipos-investimento {
+        max-height: 290px;
+
+        overflow-y: auto;
+    }
+
+}

@@ -1,0 +1,1310 @@
+/* =========================================================
+   FUNDO DO MODAL
+========================================================= */
+
+.form-transacao-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(5px);
+
+    animation: aparecer-overlay 0.2s ease;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.form-transacao-modal {
+    width: 100%;
+    max-width: 640px;
+    max-height: calc(100vh - 48px);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 25px 60px
+        rgba(15, 23, 42, 0.22);
+
+    animation: aparecer-modal 0.25s ease;
+}
+
+.dark .form-transacao-modal {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.form-transacao-cabecalho {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 24px 26px 20px;
+
+    border-bottom: 1px solid #eef2f7;
+}
+
+.dark .form-transacao-cabecalho {
+    border-color: #374151;
+}
+
+.form-transacao-cabecalho::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: #22c55e;
+}
+
+.form-transacao-modal.form-despesa
+.form-transacao-cabecalho::before {
+    background: #ef4444;
+}
+
+.form-transacao-subtitulo {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.dark .form-transacao-subtitulo {
+    color: #9ca3af;
+}
+
+.form-transacao-cabecalho h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 23px;
+    font-weight: 750;
+}
+
+.dark .form-transacao-cabecalho h2 {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   BOTÃO FECHAR
+========================================================= */
+
+.form-transacao-fechar {
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f3f4f6;
+
+    color: #4b5563;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.form-transacao-fechar:hover {
+    background: #e5e7eb;
+
+    color: #111827;
+}
+
+.dark .form-transacao-fechar {
+    background: #111827;
+
+    color: #d1d5db;
+}
+
+.dark .form-transacao-fechar:hover {
+    background: #374151;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.form-transacao-conteudo {
+    padding: 24px 26px 26px;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   GRADE
+========================================================= */
+
+.form-transacao-grade {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    margin-bottom: 18px;
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.form-transacao-campo {
+    margin-bottom: 18px;
+}
+
+.form-transacao-grade
+.form-transacao-campo {
+    margin-bottom: 0;
+}
+
+.form-transacao-campo label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* DARK LABEL */
+
+.dark .form-transacao-campo label {
+    color: #d1d5db;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.form-transacao-input {
+    min-height: 49px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dbe1e8;
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    background: #f9fafb;
+
+    transition: .2s;
+}
+
+.form-transacao-input:focus-within {
+    border-color: #22c55e;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, .10);
+}
+
+.form-despesa
+.form-transacao-input:focus-within {
+    border-color: #ef4444;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(239, 68, 68, .09);
+}
+
+
+/* DARK INPUT */
+
+.dark .form-transacao-input {
+    background: #111827;
+
+    border-color: #374151;
+}
+
+.dark .form-transacao-input:focus-within {
+    background: #111827;
+
+    border-color: #22c55e;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, .08);
+}
+
+.dark .form-despesa
+.form-transacao-input:focus-within {
+    border-color: #ef4444;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(239, 68, 68, .08);
+}
+
+
+/* =========================================================
+   INPUT INTERNO
+========================================================= */
+
+.form-transacao-input > svg {
+    min-width: 19px;
+
+    color: #9ca3af;
+
+    font-size: 19px;
+}
+
+.form-transacao-input input,
+.form-transacao-input select {
+    width: 100%;
+    height: 47px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #111827;
+
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.form-transacao-input input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* DARK */
+
+.dark .form-transacao-input > svg {
+    color: #9ca3af;
+}
+
+.dark .form-transacao-input input,
+.dark .form-transacao-input select {
+    color: #ffffff;
+}
+
+.dark .form-transacao-input input::placeholder {
+    color: #6b7280;
+}
+
+.dark .form-transacao-input select option {
+    background: #111827;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   VALOR
+========================================================= */
+
+.input-valor > span {
+    color: #6b7280;
+
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.dark .input-valor > span {
+    color: #9ca3af;
+}
+
+.input-valor input {
+    font-size: 17px;
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   ERRO
+========================================================= */
+
+.form-transacao-erro {
+    margin-bottom: 18px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #fecaca;
+    border-radius: 11px;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    font-size: 13px;
+}
+
+.dark .form-transacao-erro {
+    border-color: rgba(239, 68, 68, .30);
+
+    background: rgba(127, 29, 29, .20);
+
+    color: #fca5a5;
+}
+
+
+/* =========================================================
+   AÇÕES
+========================================================= */
+
+.form-transacao-acoes {
+    margin-top: 26px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eef2f7;
+
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 12px;
+}
+
+.dark .form-transacao-acoes {
+    border-color: #374151;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.form-transacao-cancelar,
+.form-transacao-salvar {
+    min-height: 44px;
+
+    padding: 0 20px;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.form-transacao-cancelar {
+    border: 1px solid #d1d5db;
+
+    background: transparent;
+
+    color: #4b5563;
+}
+
+.form-transacao-cancelar:hover {
+    background: #f3f4f6;
+}
+
+.dark .form-transacao-cancelar {
+    border-color: #374151;
+
+    color: #d1d5db;
+}
+
+.dark .form-transacao-cancelar:hover {
+    background: #111827;
+}
+
+.form-transacao-salvar {
+    border: none;
+
+    background: #22c55e;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 18px
+        rgba(34, 197, 94, .22);
+}
+
+.form-despesa
+.form-transacao-salvar {
+    background: #ef4444;
+
+    box-shadow:
+        0 8px 18px
+        rgba(239, 68, 68, .20);
+}
+
+.form-transacao-salvar:not(:disabled):hover,
+.form-transacao-cancelar:not(:disabled):hover {
+    transform: translateY(-1px);
+}
+
+.form-transacao-salvar:disabled,
+.form-transacao-cancelar:disabled,
+.form-transacao-fechar:disabled {
+    opacity: .55;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   COMPROVANTE
+========================================================= */
+
+.upload-comprovante {
+    width: 100%;
+    min-height: 55px;
+
+    padding: 0 18px;
+
+    border: 2px dashed #d1d5db;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.upload-comprovante:hover {
+    border-color: #22c55e;
+
+    background: #f8fffa;
+}
+
+.upload-comprovante svg {
+    color: #22c55e;
+
+    font-size: 22px;
+}
+
+.upload-comprovante span {
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* DARK */
+
+.dark .upload-comprovante {
+    border-color: #374151;
+
+    background: #111827;
+}
+
+.dark .upload-comprovante:hover {
+    border-color: #22c55e;
+
+    background:
+        rgba(34, 197, 94, .05);
+}
+
+.dark .upload-comprovante span {
+    color: #d1d5db;
+}
+
+
+/* =========================================================
+   REMOVER COMPROVANTE
+========================================================= */
+
+.remover-comprovante {
+    margin-top: 10px;
+
+    border: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    background: none;
+
+    color: #ef4444;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CATEGORIA - SELECT
+========================================================= */
+
+.categoria-select-personalizado {
+    position: relative;
+
+    width: 100%;
+}
+
+.categoria-select-botao {
+    width: 100%;
+    min-height: 48px;
+
+    padding: 7px 12px;
+
+    border: 1px solid #d7dee8;
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #f8fafc;
+
+    color: #1f2937;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.categoria-select-botao:hover {
+    border-color: #aab5c3;
+
+    background: #ffffff;
+}
+
+.categoria-select-botao.aberto {
+    border-color: #16a34a;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22, 163, 74, .12);
+}
+
+
+/* =========================================================
+   CATEGORIA - DARK
+========================================================= */
+
+.dark .categoria-select-botao {
+    background: #111827;
+
+    border-color: #374151;
+
+    color: #ffffff;
+}
+
+.dark .categoria-select-botao:hover {
+    background: #111827;
+
+    border-color: #4b5563;
+}
+
+.dark .categoria-select-botao.aberto {
+    background: #111827;
+
+    border-color: #22c55e;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(34, 197, 94, .10);
+}
+
+
+.categoria-select-conteudo {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.categoria-select-icone {
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+.categoria-select-icone.sem-categoria {
+    background: #eef2f6;
+
+    color: #98a2b3;
+}
+
+.dark .categoria-select-icone.sem-categoria {
+    background: #1f2937;
+
+    color: #9ca3af;
+}
+
+.categoria-select-nome {
+    overflow: hidden;
+
+    color: #253044;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+.dark .categoria-select-nome {
+    color: #ffffff;
+}
+
+.categoria-select-placeholder {
+    color: #667085;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dark .categoria-select-placeholder {
+    color: #9ca3af;
+}
+
+.categoria-select-seta {
+    flex-shrink: 0;
+
+    color: #667085;
+
+    font-size: 21px;
+
+    transition: transform .2s ease;
+}
+
+.dark .categoria-select-seta {
+    color: #9ca3af;
+}
+
+.categoria-select-seta.girada {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   CATEGORIA - OPÇÕES
+========================================================= */
+
+.categoria-select-opcoes {
+    position: absolute;
+
+    z-index: 100;
+
+    top: calc(100% + 7px);
+    left: 0;
+    right: 0;
+
+    max-height: 230px;
+
+    padding: 6px;
+
+    overflow-y: auto;
+
+    border: 1px solid #dfe5ec;
+    border-radius: 13px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 14px 36px
+        rgba(15, 23, 42, .16);
+}
+
+.dark .categoria-select-opcoes {
+    border-color: #374151;
+
+    background: #111827;
+
+    box-shadow:
+        0 14px 36px
+        rgba(0, 0, 0, .30);
+}
+
+.categoria-select-opcao {
+    width: 100%;
+
+    padding: 8px;
+
+    border: 0;
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: .18s;
+}
+
+.categoria-select-opcao:hover {
+    background: #f3f6f9;
+}
+
+.dark .categoria-select-opcao:hover {
+    background: #1f2937;
+}
+
+.categoria-select-opcao.selecionada {
+    background: #f0fdf4;
+}
+
+.dark .categoria-select-opcao.selecionada {
+    background:
+        rgba(34, 197, 94, .08);
+}
+
+.categoria-select-opcao
+.categoria-select-nome {
+    flex: 1;
+}
+
+.categoria-select-check {
+    flex-shrink: 0;
+
+    color: #16a34a;
+
+    font-size: 19px;
+}
+
+.dark .categoria-select-check {
+    color: #4ade80;
+}
+
+.categoria-select-vazio {
+    padding: 15px;
+
+    color: #667085;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+.dark .categoria-select-vazio {
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   SELECT PERSONALIZADO
+   MÉTODO DE PAGAMENTO / STATUS
+========================================================= */
+
+.select-personalizado {
+    position: relative;
+
+    width: 100%;
+}
+
+.select-personalizado-botao {
+    width: 100%;
+    min-height: 48px;
+
+    padding: 7px 12px;
+
+    border: 1px solid #d7dee8;
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #f8fafc;
+
+    color: #1f2937;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.select-personalizado-botao:hover {
+    border-color: #aab5c3;
+
+    background: #ffffff;
+}
+
+.select-personalizado-botao.aberto {
+    border-color: #16a34a;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22, 163, 74, .12);
+}
+
+
+/* =========================================================
+   MÉTODO / STATUS - DARK
+========================================================= */
+
+.dark .select-personalizado-botao {
+    background: #111827;
+
+    border-color: #374151;
+
+    color: #ffffff;
+}
+
+.dark .select-personalizado-botao:hover {
+    background: #111827;
+
+    border-color: #4b5563;
+}
+
+.dark .select-personalizado-botao.aberto {
+    background: #111827;
+
+    border-color: #22c55e;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(34, 197, 94, .10);
+}
+
+
+.select-personalizado-conteudo {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #253044;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dark .select-personalizado-conteudo {
+    color: #ffffff;
+}
+
+.select-personalizado-icone {
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eef2f6;
+
+    color: #667085;
+
+    font-size: 18px;
+}
+
+.dark .select-personalizado-icone {
+    background: #1f2937;
+
+    color: #9ca3af;
+}
+
+.select-personalizado-seta {
+    color: #667085;
+
+    font-size: 21px;
+
+    transition: transform .2s ease;
+}
+
+.dark .select-personalizado-seta {
+    color: #9ca3af;
+}
+
+.select-personalizado-seta.girada {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   MÉTODO / STATUS - OPÇÕES
+========================================================= */
+
+.select-personalizado-opcoes {
+    position: absolute;
+
+    z-index: 120;
+
+    top: calc(100% + 7px);
+    left: 0;
+    right: 0;
+
+    max-height: 230px;
+
+    padding: 6px;
+
+    overflow-y: auto;
+
+    border: 1px solid #dfe5ec;
+    border-radius: 13px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 14px 36px
+        rgba(15, 23, 42, .16);
+}
+
+.dark .select-personalizado-opcoes {
+    border-color: #374151;
+
+    background: #111827;
+
+    box-shadow:
+        0 14px 36px
+        rgba(0, 0, 0, .30);
+}
+
+.select-personalizado-opcao {
+    width: 100%;
+
+    padding: 8px;
+
+    border: 0;
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: .18s;
+}
+
+.select-personalizado-opcao:hover {
+    background: #f3f6f9;
+}
+
+.dark .select-personalizado-opcao:hover {
+    background: #1f2937;
+}
+
+.select-personalizado-opcao.selecionada {
+    background: #f0fdf4;
+}
+
+.dark .select-personalizado-opcao.selecionada {
+    background:
+        rgba(34, 197, 94, .08);
+}
+
+.select-personalizado-nome {
+    flex: 1;
+
+    color: #253044;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-align: left;
+}
+
+.dark .select-personalizado-nome {
+    color: #ffffff;
+}
+
+.select-personalizado-placeholder {
+    color: #667085;
+
+    font-size: 14px;
+}
+
+.dark .select-personalizado-placeholder {
+    color: #9ca3af;
+}
+
+.select-personalizado-check {
+    color: #16a34a;
+
+    font-size: 19px;
+}
+
+.dark .select-personalizado-check {
+    color: #4ade80;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status-select-indicador {
+    width: 11px;
+    height: 11px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+.status-select-indicador.pago {
+    background: #22c55e;
+}
+
+.status-select-indicador.pendente {
+    background: #f59e0b;
+}
+
+
+/* =========================================================
+   SCROLL DOS SELECTS
+========================================================= */
+
+.categoria-select-opcoes::-webkit-scrollbar,
+.select-personalizado-opcoes::-webkit-scrollbar {
+    width: 6px;
+}
+
+.categoria-select-opcoes::-webkit-scrollbar-thumb,
+.select-personalizado-opcoes::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+
+    background: #cbd5e1;
+}
+
+.dark
+.categoria-select-opcoes::-webkit-scrollbar-thumb,
+.dark
+.select-personalizado-opcoes::-webkit-scrollbar-thumb {
+    background: #4b5563;
+}
+
+.categoria-select-opcoes::-webkit-scrollbar-track,
+.select-personalizado-opcoes::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* =========================================================
+   TRANSAÇÃO COM IA
+========================================================= */
+
+.acao-ia-transacao {
+    width: 100%;
+
+    margin-bottom: 18px;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.botao-transacao-ia {
+    min-height: 40px;
+
+    padding: 0 16px;
+
+    border: 1px solid #ddd6fe;
+    border-radius: 11px;
+
+    background: #f5f3ff;
+
+    color: #7c3aed;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.botao-transacao-ia:hover:not(:disabled) {
+    border-color: #c4b5fd;
+
+    background: #ede9fe;
+
+    transform: translateY(-1px);
+}
+
+.botao-transacao-ia:disabled {
+    opacity: .6;
+
+    cursor: wait;
+}
+
+.dark .botao-transacao-ia {
+    border-color:
+        rgba(139, 92, 246, .30);
+
+    background:
+        rgba(124, 58, 237, .10);
+
+    color: #c4b5fd;
+}
+
+.dark
+.botao-transacao-ia:hover:not(:disabled) {
+    background:
+        rgba(124, 58, 237, .18);
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 620px) {
+
+    .form-transacao-overlay {
+        align-items: flex-end;
+
+        padding: 0;
+    }
+
+    .form-transacao-modal {
+        max-height: 94vh;
+
+        border-radius:
+            22px
+            22px
+            0
+            0;
+    }
+
+    .form-transacao-grade {
+        grid-template-columns: 1fr;
+    }
+
+    .form-transacao-cabecalho {
+        padding:
+            22px
+            20px
+            18px;
+    }
+
+    .form-transacao-conteudo {
+        padding: 20px;
+    }
+
+    .form-transacao-acoes {
+        flex-direction: column-reverse;
+    }
+
+    .form-transacao-cancelar,
+    .form-transacao-salvar {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes aparecer-overlay {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes aparecer-modal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(14px)
+            scale(.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}

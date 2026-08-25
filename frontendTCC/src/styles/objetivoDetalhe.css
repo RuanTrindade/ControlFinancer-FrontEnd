@@ -1,0 +1,670 @@
+/* =========================
+   PÁGINA
+========================= */
+.pagina-objetivo-detalhe {
+    width: 100%;
+}
+.titulo-detalhe {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #111827;
+}
+.dark .titulo-detalhe {
+    color: white;
+}
+/* =========================
+   GRID
+========================= */
+.detalhe-grid {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 24px;
+}
+/* =========================
+   CARD ESQUERDO
+========================= */
+.resumo-card {
+    background: white;
+    border-radius: 28px;
+    padding: 28px;
+    min-height: 500px;
+    box-shadow:
+        0 8px 24px
+        rgba(0,0,0,0.04);
+}
+.dark .resumo-card {
+    background: #1f2937;
+}
+/* =========================
+   CABEÇALHO
+========================= */
+.resumo-card h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 22px;
+    color: #111827;
+}
+.dark .resumo-card h2 {
+    color: white;
+}
+.resumo-info {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 28px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.resumo-info span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.dark .resumo-info {
+    color: white;
+}
+/* =========================
+   GRÁFICO
+========================= */
+.progresso-circular {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.progresso-centro {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    font-weight: 800;
+    color: #111827;
+}
+.dark .progresso-centro {
+    background: #1f2937;
+    color: white;
+}
+/* =========================
+   VALOR GUARDADO
+========================= */
+.valor-atual {
+    margin-top: 26px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    color: #16a34a;
+}
+.valor-atual span {
+    display: block;
+    margin-top: 4px;
+    font-size: 15px;
+    color: #6b7280;
+}
+.dark .valor-atual span {
+    color: #9ca3af;
+}
+/* =========================
+   TEXTO INFERIOR
+========================= */
+.objetivo-dica {
+    margin-top: 36px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #6b7280;
+}
+.objetivo-dica svg {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+.objetivo-dica strong {
+    color: #111827;
+}
+.dark .objetivo-dica {
+    color: #9ca3af;
+}
+.dark .objetivo-dica strong {
+    color: white;
+}
+/* =========================
+   CARD DIREITO
+========================= */
+.movimentacoes-card {
+    background: white;
+    border-radius: 28px;
+    padding: 28px;
+    min-height: 500px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(0,0,0,0.04);
+
+    display: flex;
+    flex-direction: column;
+}
+.dark .movimentacoes-card {
+    background: #1f2937;
+}
+/* =========================
+   TOPO
+========================= */
+.movimentacoes-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.movimentacoes-topo h2 {
+    font-size: 28px;
+    color: #111827;
+}
+.dark .movimentacoes-topo h2 {
+    color: white;
+}
+/* =========================
+   BOTÕES
+========================= */
+.movimentacoes-acoes {
+    display: flex;
+    gap: 12px;
+}
+.btn-deposito,
+.btn-saque {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    transition: 0.25s;
+}
+.btn-deposito {
+    background: #22c55e;
+}
+.btn-saque {
+    background: #ef4444;
+}
+.btn-deposito:hover,
+.btn-saque:hover {
+    transform: translateY(-2px);
+}
+/* =========================
+   LISTA
+========================= */
+.lista-movimentacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    flex: 1;
+}
+
+
+/* =========================
+   ITEM
+========================= */
+.movimentacao-item {
+    background: #f8fafc;
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .25s;
+}
+.movimentacao-item:hover {
+    transform: translateY(-2px);
+}
+.dark .movimentacao-item {
+    background: #111827;
+}
+/* =========================
+   INFO MOVIMENTAÇÃO
+========================= */
+.movimentacao-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.movimentacao-tipo {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+.movimentacao-tipo.deposito {
+    background: #22c55e;
+}
+.movimentacao-tipo.saque {
+    background: #ef4444;
+}
+.movimentacao-dados {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.movimentacao-dados strong {
+    font-size: 14px;
+    color: #111827;
+}
+.dark .movimentacao-dados strong {
+    color: white;
+}
+.movimentacao-dados span {
+    font-size: 13px;
+    color: #6b7280;
+}
+.dark .movimentacao-dados span {
+    color: #9ca3af;
+}
+/* =========================
+   VALOR
+========================= */
+.valor-movimentacao {
+    font-size: 18px;
+    font-weight: 700;
+}
+.valor-movimentacao.deposito {
+    color: #16a34a;
+}
+.valor-movimentacao.saque {
+    color: #ef4444;
+}
+/* =========================
+   AÇÕES
+========================= */
+.movimentacao-acoes {
+    display: flex;
+    gap: 10px;
+}
+.movimentacao-acoes button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    color: #6b7280;
+    transition: .2s;
+}
+.movimentacao-acoes button:hover {
+    color: #111827;
+}
+.dark .movimentacao-acoes button:hover {
+    color: white;
+}
+/* =========================
+   AJUSTES DO GRÁFICO REAL
+========================= */
+.titulo-detalhe {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+}
+.progresso-circular {
+    position: relative;
+}
+.progresso-circular .recharts-wrapper {
+    position: absolute !important;
+    inset: 0;
+}
+.progresso-centro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(
+        -50%,
+        -50%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+.progresso-circular
+.recharts-tooltip-wrapper {
+    z-index: 10;
+    outline: none;
+}
+.progresso-circular
+.recharts-pie-sector path {
+    transition:
+        opacity .2s ease,
+        filter .2s ease;
+}
+.progresso-circular
+.recharts-pie-sector:hover path {
+    opacity: .9;
+    filter:
+        drop-shadow(
+            0 5px 8px
+            rgba(15,23,42,.12)
+        );
+}
+.objetivo-dica p {
+    margin: 3px 0 0;
+}
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 1100px) {
+    .detalhe-grid {
+        grid-template-columns: 1fr;
+    }
+    .resumo-card,
+    .movimentacoes-card {
+        min-height: auto;
+    }
+}
+
+
+
+/* =========================
+   TOPO DA PÁGINA
+========================= */
+
+.objetivo-detalhe-topo {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 28px;
+}
+
+
+.objetivo-detalhe-topo .titulo-detalhe {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   MENU OBJETIVO
+========================= */
+
+.menu-objetivo-container {
+    position: relative;
+}
+
+
+.btn-menu-objetivo {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #4b5563;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 14px
+        rgba(15, 23, 42, .06);
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+
+.btn-menu-objetivo:hover {
+    background: #f3f4f6;
+
+    color: #111827;
+}
+
+
+/* MENU */
+
+.menu-objetivo-opcoes {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    right: 0;
+
+    z-index: 100;
+
+    width: 205px;
+
+    padding: 6px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 14px 35px
+        rgba(15, 23, 42, .14);
+}
+
+
+.menu-objetivo-opcoes button {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #374151;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease;
+}
+
+
+.menu-objetivo-opcoes button svg {
+    flex-shrink: 0;
+
+    font-size: 17px;
+}
+
+
+.menu-objetivo-opcoes button:hover {
+    background: #f3f4f6;
+}
+
+
+.menu-objetivo-opcoes
+.opcao-excluir {
+    color: #dc2626;
+}
+
+
+.menu-objetivo-opcoes
+.opcao-excluir:hover {
+    background: #fef2f2;
+}
+
+
+/* =========================
+   DARK
+========================= */
+
+.dark .btn-menu-objetivo {
+    background: #1f2937;
+
+    color: #cbd5e1;
+}
+
+
+.dark .btn-menu-objetivo:hover {
+    background: #374151;
+
+    color: #ffffff;
+}
+
+
+.dark .menu-objetivo-opcoes {
+    border-color: #374151;
+
+    background: #111827;
+
+    box-shadow:
+        0 14px 35px
+        rgba(0, 0, 0, .3);
+}
+
+
+.dark
+.menu-objetivo-opcoes button {
+    color: #e5e7eb;
+}
+
+
+.dark
+.menu-objetivo-opcoes button:hover {
+    background: #1f2937;
+}
+
+
+.dark
+.menu-objetivo-opcoes
+.opcao-excluir {
+    color: #f87171;
+}
+
+
+.dark
+.menu-objetivo-opcoes
+.opcao-excluir:hover {
+    background:
+        rgba(127, 29, 29, .25);
+}
+
+
+
+/* ===================================================
+   PAGINAÇÃO DAS MOVIMENTAÇÕES
+=================================================== */
+
+.paginacao-movimentacoes {
+    width: 100%;
+
+    margin-top: auto;
+    padding-top: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+
+.paginacao-movimentacoes button {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    color: #6b7280;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.paginacao-movimentacoes button:hover:not(:disabled) {
+    background: #16a34a;
+
+    color: #ffffff;
+}
+
+
+.paginacao-movimentacoes button:disabled {
+    opacity: .4;
+
+    cursor: not-allowed;
+}
+
+
+.pagina-movimentacao.ativa {
+    background: #16a34a !important;
+
+    color: #ffffff !important;
+}
+
+
+.dark
+.paginacao-movimentacoes button {
+    background: #111827;
+
+    color: #d1d5db;
+}
+
+
+.dark
+.paginacao-movimentacoes button:hover:not(:disabled) {
+    background: #16a34a;
+
+    color: #ffffff;
+}
+
+
+.dark
+.pagina-movimentacao.ativa {
+    background: #16a34a !important;
+
+    color: #ffffff !important;
+}

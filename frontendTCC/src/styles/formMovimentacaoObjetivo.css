@@ -1,0 +1,600 @@
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.form-movimentacao-objetivo-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background:
+        rgba(15, 23, 42, 0.55);
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.form-movimentacao-objetivo-modal {
+    width: 100%;
+    max-width: 500px;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 25px 60px
+        rgba(15, 23, 42, 0.22);
+}
+
+
+.dark
+.form-movimentacao-objetivo-modal {
+    border-color: #1f2937;
+
+    background: #0f172a;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.form-movimentacao-objetivo-cabecalho {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 24px 26px 20px;
+
+    border-bottom:
+        1px solid #eef2f7;
+}
+
+
+.form-movimentacao-objetivo-cabecalho::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: #22c55e;
+}
+
+
+.form-movimentacao-objetivo-modal.retirada
+.form-movimentacao-objetivo-cabecalho::before {
+    background: #ef4444;
+}
+
+
+.dark
+.form-movimentacao-objetivo-cabecalho {
+    border-color: #1f2937;
+}
+
+
+.form-movimentacao-objetivo-subtitulo {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+
+.dark
+.form-movimentacao-objetivo-subtitulo {
+    color: #94a3b8;
+}
+
+
+.form-movimentacao-objetivo-cabecalho h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 23px;
+    font-weight: 750;
+}
+
+
+.dark
+.form-movimentacao-objetivo-cabecalho h2 {
+    color: #f8fafc;
+}
+
+
+/* =========================================================
+   FECHAR
+========================================================= */
+
+.form-movimentacao-objetivo-fechar {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #f3f4f6;
+
+    color: #4b5563;
+
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+
+.form-movimentacao-objetivo-fechar:hover:not(:disabled) {
+    background: #e5e7eb;
+
+    color: #111827;
+}
+
+
+.dark
+.form-movimentacao-objetivo-fechar {
+    background: #1e293b;
+
+    color: #cbd5e1;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.form-movimentacao-objetivo-conteudo {
+    padding: 24px 26px 26px;
+}
+
+
+/* =========================================================
+   DESTAQUE
+========================================================= */
+
+.form-movimentacao-objetivo-destaque {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 22px;
+
+    padding: 14px;
+
+    border-radius: 14px;
+}
+
+
+.form-movimentacao-objetivo-destaque.deposito {
+    background: #f0fdf4;
+
+    color: #15803d;
+}
+
+
+.form-movimentacao-objetivo-destaque.retirada {
+    background: #fef2f2;
+
+    color: #dc2626;
+}
+
+
+.form-movimentacao-objetivo-destaque > span {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.8);
+
+    font-size: 23px;
+}
+
+
+.form-movimentacao-objetivo-destaque div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.form-movimentacao-objetivo-destaque strong {
+    font-size: 13px;
+}
+
+
+.form-movimentacao-objetivo-destaque small {
+    opacity: .8;
+
+    font-size: 11px;
+}
+
+
+.dark
+.form-movimentacao-objetivo-destaque.deposito {
+    background:
+        rgba(22, 163, 74, .12);
+
+    color: #86efac;
+}
+
+
+.dark
+.form-movimentacao-objetivo-destaque.retirada {
+    background:
+        rgba(220, 38, 38, .12);
+
+    color: #fca5a5;
+}
+
+
+/* =========================================================
+   SALDO
+========================================================= */
+
+.form-movimentacao-objetivo-saldo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    background: #f8fafc;
+}
+
+
+.form-movimentacao-objetivo-saldo span {
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+
+.form-movimentacao-objetivo-saldo strong {
+    color: #111827;
+
+    font-size: 14px;
+}
+
+
+.dark
+.form-movimentacao-objetivo-saldo {
+    border-color: #293548;
+
+    background: #111c2e;
+}
+
+
+.dark
+.form-movimentacao-objetivo-saldo span {
+    color: #94a3b8;
+}
+
+
+.dark
+.form-movimentacao-objetivo-saldo strong {
+    color: #f8fafc;
+}
+
+
+/* =========================================================
+   CAMPO
+========================================================= */
+
+.form-movimentacao-objetivo-campo label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.dark
+.form-movimentacao-objetivo-campo label {
+    color: #cbd5e1;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.form-movimentacao-objetivo-input {
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dbe1e8;
+    border-radius: 13px;
+
+    background: #f9fafb;
+}
+
+
+.form-movimentacao-objetivo-input:focus-within {
+    border-color: #22c55e;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, .10);
+}
+
+
+.retirada
+.form-movimentacao-objetivo-input:focus-within {
+    border-color: #ef4444;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(239, 68, 68, .09);
+}
+
+
+.form-movimentacao-objetivo-input > svg {
+    color: #9ca3af;
+
+    font-size: 20px;
+}
+
+
+.form-movimentacao-objetivo-input > span {
+    color: #6b7280;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.form-movimentacao-objetivo-input input {
+    width: 100%;
+    height: 48px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #111827;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+.dark
+.form-movimentacao-objetivo-input {
+    border-color: #293548;
+
+    background: #111c2e;
+}
+
+
+.dark
+.form-movimentacao-objetivo-input input {
+    color: #f8fafc;
+}
+
+
+/* =========================================================
+   AVISO / ERRO
+========================================================= */
+
+.form-movimentacao-objetivo-aviso,
+.form-movimentacao-objetivo-erro {
+    margin-top: 13px;
+
+    padding: 11px 13px;
+
+    border-radius: 11px;
+
+    font-size: 12px;
+}
+
+
+.form-movimentacao-objetivo-aviso {
+    border: 1px solid #fde68a;
+
+    background: #fffbeb;
+
+    color: #92400e;
+}
+
+
+.form-movimentacao-objetivo-erro {
+    border: 1px solid #fecaca;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+}
+
+
+.dark
+.form-movimentacao-objetivo-aviso {
+    border-color:
+        rgba(245,158,11,.25);
+
+    background:
+        rgba(120,53,15,.18);
+
+    color: #fbbf24;
+}
+
+
+.dark
+.form-movimentacao-objetivo-erro {
+    border-color:
+        rgba(239,68,68,.3);
+
+    background:
+        rgba(127,29,29,.2);
+
+    color: #fca5a5;
+}
+
+
+/* =========================================================
+   AÇÕES
+========================================================= */
+
+.form-movimentacao-objetivo-acoes {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 24px;
+    padding-top: 20px;
+
+    border-top:
+        1px solid #eef2f7;
+}
+
+
+.dark
+.form-movimentacao-objetivo-acoes {
+    border-color: #1f2937;
+}
+
+
+.form-movimentacao-objetivo-cancelar,
+.form-movimentacao-objetivo-salvar {
+    min-height: 44px;
+
+    padding: 0 20px;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 650;
+
+    cursor: pointer;
+}
+
+
+.form-movimentacao-objetivo-cancelar {
+    border: 1px solid #d1d5db;
+
+    background: transparent;
+
+    color: #4b5563;
+}
+
+
+.form-movimentacao-objetivo-salvar {
+    border: none;
+
+    background: #22c55e;
+
+    color: #ffffff;
+}
+
+
+.retirada
+.form-movimentacao-objetivo-salvar {
+    background: #ef4444;
+}
+
+
+.form-movimentacao-objetivo-salvar:disabled,
+.form-movimentacao-objetivo-cancelar:disabled {
+    opacity: .5;
+
+    cursor: not-allowed;
+}
+
+
+.dark
+.form-movimentacao-objetivo-cancelar {
+    border-color: #334155;
+
+    color: #cbd5e1;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .form-movimentacao-objetivo-overlay {
+        padding: 16px;
+    }
+
+
+    .form-movimentacao-objetivo-modal {
+        border-radius: 18px;
+    }
+
+
+    .form-movimentacao-objetivo-acoes {
+        flex-direction: column-reverse;
+    }
+
+
+    .form-movimentacao-objetivo-acoes button {
+        width: 100%;
+    }
+
+}

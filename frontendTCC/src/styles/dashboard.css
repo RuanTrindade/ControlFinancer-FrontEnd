@@ -1,0 +1,1313 @@
+/* ===================================================
+   CONTEÚDO
+=================================================== */
+
+.conteudo {
+    position: relative;
+
+    width: calc(100% - 250px);
+    left: 250px;
+
+    min-height: 100vh;
+
+    transition: .35s ease;
+
+    background: #eef2f7;
+}
+
+
+.sidebar.close ~ .conteudo {
+    width: calc(100% - 78px);
+    left: 78px;
+}
+
+
+.dark .conteudo {
+    background: #0f172a;
+}
+
+
+/* ===================================================
+   MAIN
+=================================================== */
+
+.principal {
+    padding: 28px 42px 42px;
+}
+
+
+/* ===================================================
+   GRID PRINCIPAL
+=================================================== */
+
+.grade-dashboard {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        520px;
+
+    gap: 26px;
+
+    align-items: start;
+}
+
+
+/* ===================================================
+   COLUNA ESQUERDA
+=================================================== */
+
+.dashboard-esquerda {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+
+/* ===================================================
+   CARD PADRÃO
+=================================================== */
+
+.cartao {
+    width: 100%;
+
+    padding: 22px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        #edf1f5;
+
+    border-radius: 21px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(15, 23, 42, .05);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease,
+        background .35s ease,
+        color .35s ease;
+}
+
+
+.cartao:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        #e2e8f0;
+
+    box-shadow:
+        0 9px 28px
+        rgba(15, 23, 42, .07);
+}
+
+
+.dark .cartao {
+    background: #1f2937;
+
+    border-color: #374151;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, .14);
+}
+
+
+/* ===================================================
+   SALDO
+=================================================== */
+
+.cartao-saldo {
+    min-height: 138px;
+
+    padding: 24px 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+}
+
+
+.topo-saldo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+.topo-saldo svg {
+    width: 36px;
+    height: 36px;
+
+    padding: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    background: #dcfce7;
+
+    color: #16a34a;
+
+    font-size: 19px;
+}
+
+
+.dark .topo-saldo svg {
+    background:
+        rgba(34, 197, 94, .12);
+
+    color: #4ade80;
+}
+
+
+.topo-saldo p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.dark .topo-saldo p {
+    color: #d1d5db;
+}
+
+
+.cartao-saldo h2 {
+    margin: 0;
+
+    color: #374151;
+
+    font-size: 34px;
+    font-weight: 700;
+
+    letter-spacing: -.6px;
+}
+
+
+.dark .cartao-saldo h2 {
+    color: #ffffff;
+}
+
+
+/* ===================================================
+   BOTÃO ADICIONAR
+=================================================== */
+
+.botao-adicionar {
+    min-height: 44px;
+
+    padding:
+        0
+        20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 999px;
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.botao-adicionar:hover {
+    background: #15803d;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 22px
+        rgba(22, 163, 74, .22);
+}
+
+
+.botao-adicionar svg {
+    font-size: 17px;
+}
+
+
+/* ===================================================
+   GRID DE RESUMO
+=================================================== */
+
+.grade-resumo {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 18px;
+}
+
+
+/* ===================================================
+   CARD RESUMO
+=================================================== */
+
+.cartao-resumo {
+    min-height: 132px;
+
+    padding: 20px 21px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.topo-resumo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+}
+
+
+.icone-resumo-dashboard {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+}
+
+
+.icone-resumo-dashboard svg {
+    font-size: 19px;
+}
+
+
+/* ===================================================
+   RECEITA
+=================================================== */
+
+.cartao-resumo:nth-child(1)
+.icone-resumo-dashboard {
+    background: #dcfce7;
+}
+
+
+.cartao-resumo:nth-child(1)
+.icone-resumo-dashboard svg {
+    color: #16a34a;
+}
+
+
+/* ===================================================
+   DESPESA
+=================================================== */
+
+.cartao-resumo:nth-child(2)
+.icone-resumo-dashboard {
+    background: #fee2e2;
+}
+
+
+.cartao-resumo:nth-child(2)
+.icone-resumo-dashboard svg {
+    color: #ef4444;
+}
+
+
+/* ===================================================
+   INVESTIMENTO
+=================================================== */
+
+.cartao-resumo:nth-child(3)
+.icone-resumo-dashboard {
+    background: #dbeafe;
+}
+
+
+.cartao-resumo:nth-child(3)
+.icone-resumo-dashboard svg {
+    color: #2563eb;
+}
+
+
+/* ===================================================
+   DARK ÍCONES
+=================================================== */
+
+.dark
+.cartao-resumo:nth-child(1)
+.icone-resumo-dashboard {
+    background:
+        rgba(34, 197, 94, .12);
+}
+
+
+.dark
+.cartao-resumo:nth-child(2)
+.icone-resumo-dashboard {
+    background:
+        rgba(239, 68, 68, .12);
+}
+
+
+.dark
+.cartao-resumo:nth-child(3)
+.icone-resumo-dashboard {
+    background:
+        rgba(59, 130, 246, .14);
+}
+
+
+.topo-resumo p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.dark .topo-resumo p {
+    color: #9ca3af;
+}
+
+
+.cartao-resumo h3 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    letter-spacing: -.35px;
+}
+
+
+.dark .cartao-resumo h3 {
+    color: #ffffff;
+}
+
+
+/* ===================================================
+   PARTE INFERIOR
+
+   O CARD DO DONUT AGORA TEM MAIS ESPAÇO
+=================================================== */
+
+.dashboard-inferior {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        370px
+        minmax(0, 1fr);
+
+    gap: 20px;
+
+    align-items: stretch;
+}
+
+
+/* ===================================================
+   CARD GRÁFICO DONUT
+=================================================== */
+
+.cartao-grafico {
+    min-height: 370px;
+
+    padding: 24px 26px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 24px;
+}
+
+
+/* ===================================================
+   DONUT
+=================================================== */
+
+.grafico-dashboard-container {
+    width: 210px;
+    height: 210px;
+
+    flex-shrink: 0;
+}
+
+
+.grafico-dashboard-container
+.recharts-tooltip-wrapper {
+    outline: none;
+}
+
+
+/*
+ * Aumentamos visualmente a espessura
+ * do gráfico sem alterar o JSX.
+ *
+ * O Pie usa atualmente:
+ * innerRadius 50
+ * outerRadius 74
+ *
+ * Como o container ficou maior,
+ * a rosca também cresce bastante.
+ */
+
+
+/* ===================================================
+   LEGENDA DO DONUT
+=================================================== */
+
+.legenda-grafico {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+
+.legenda-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #374151;
+
+    font-size: 13px;
+}
+
+
+.dark .legenda-item {
+    color: #ffffff;
+}
+
+
+.cor-legenda {
+    width: 10px;
+    height: 10px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+
+.cor-verde {
+    background: #22c55e;
+}
+
+
+.cor-vermelha {
+    background: #ef4444;
+}
+
+
+.cor-azul {
+    background: #0ea5e9;
+}
+
+
+.legenda-dashboard-info {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+}
+
+
+.legenda-dashboard-info span {
+    color: #6b7280;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.legenda-dashboard-info strong {
+    color: #111827;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.dark .legenda-dashboard-info span {
+    color: #d1d5db;
+}
+
+
+.dark .legenda-dashboard-info strong {
+    color: #ffffff;
+}
+
+
+/* ===================================================
+   CARD CATEGORIAS
+=================================================== */
+
+.cartao-categorias {
+    min-height: 370px;
+
+    padding: 26px 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.cartao-categorias h2 {
+    margin:
+        0
+        0
+        30px;
+
+    color: #111827;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.dark .cartao-categorias h2 {
+    color: #ffffff;
+}
+
+/* ===================================================
+   ÁREA DO GRÁFICO DE CATEGORIAS
+=================================================== */
+
+.grafico-categorias-dashboard {
+    position: relative;
+
+    width: 100%;
+    height: 220px;
+
+    min-width: 0;
+}
+
+
+/* ===================================================
+   TEXTOS SOBRE O GRÁFICO
+=================================================== */
+
+.categorias-sobre-grafico {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    display: grid;
+
+    /*
+     * O número de linhas agora vem
+     * dinamicamente pelo TSX.
+     */
+    align-items: stretch;
+
+    pointer-events: none;
+}
+
+
+/* ===================================================
+   ITEM DE CATEGORIA
+=================================================== */
+
+.categoria-dashboard-item {
+    width: 100%;
+    min-width: 0;
+
+    padding:
+        3px
+        2px
+        0;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    overflow: hidden;
+}
+
+
+/* ===================================================
+   INFORMAÇÕES DA CATEGORIA
+=================================================== */
+
+.categoria-dashboard-item
+.info-categoria {
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    overflow: hidden;
+}
+
+
+/* ===================================================
+   ÍCONE
+=================================================== */
+
+.categoria-dashboard-item
+.info-categoria > span:first-child {
+    width: 30px;
+    height: 30px;
+
+    min-width: 30px;
+
+    flex: 0 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #f3f4f6;
+}
+
+
+.dark
+.categoria-dashboard-item
+.info-categoria > span:first-child {
+    background: #374151;
+}
+
+
+.categoria-dashboard-item
+.info-categoria svg {
+    width: 17px;
+    height: 17px;
+
+    display: block;
+
+    font-size: 17px;
+}
+
+
+/* ===================================================
+   NOME DA CATEGORIA
+=================================================== */
+
+.categoria-dashboard-item
+.info-categoria > span:last-child {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: #6b7280;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* ===================================================
+   PERCENTUAL
+=================================================== */
+
+.categoria-dashboard-item > strong {
+    flex-shrink: 0;
+
+    padding-top: 7px;
+
+    color: #6b7280;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+.dark
+.categoria-dashboard-item
+.info-categoria > span:last-child,
+.dark
+.categoria-dashboard-item > strong {
+    color: #d1d5db;
+}
+
+
+
+/* ===================================================
+   LEGENDA STATUS - GASTOS POR CATEGORIA
+=================================================== */
+
+.legenda-status-categorias {
+    width: 100%;
+
+    margin-top: 18px;
+    padding-top: 14px;
+
+    border-top: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 16px;
+}
+
+
+.status-categoria-item {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #6b7280;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+.status-bolinha {
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+
+.status-verde {
+    background: #22c55e;
+}
+
+
+.status-amarelo {
+    background: #f59e0b;
+}
+
+
+.status-vermelho {
+    background: #ef4444;
+}
+
+
+/* DARK */
+
+.dark .legenda-status-categorias {
+    border-top-color: #374151;
+}
+
+
+.dark .status-categoria-item {
+    color: #9ca3af;
+}
+
+
+/* ===================================================
+   RECHARTS
+=================================================== */
+
+.grafico-categorias-dashboard
+.recharts-wrapper {
+    overflow: visible;
+}
+
+
+.grafico-categorias-dashboard
+.recharts-surface {
+    overflow: visible;
+}
+
+
+/*
+ * Empurra a barra um pouco para baixo
+ * dentro de cada linha.
+ *
+ * Assim:
+ *
+ * [ícone] Alimentação       75%
+ * ─────────────────────────────
+ *
+ * e não:
+ *
+ * [ícone]━━Alimentação━━━━━━75%
+ */
+
+.grafico-categorias-dashboard
+.recharts-layer.recharts-bar-rectangle {
+    transform:
+        translateY(20px);
+}
+
+
+.grafico-categorias-dashboard
+.recharts-bar-background-rectangle {
+    transform:
+        translateY(20px);
+}
+
+
+/* ===================================================
+   MOBILE
+=================================================== */
+
+@media (max-width: 600px) {
+
+    .grafico-categorias-dashboard {
+        height: 230px;
+    }
+
+
+    .categoria-dashboard-item
+    .info-categoria > span:last-child {
+        max-width: 150px;
+    }
+
+}
+
+
+/* ===================================================
+   TRANSAÇÕES
+=================================================== */
+
+.cartao-transacoes {
+    min-height: 738px;
+
+    padding: 24px 26px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.cartao-transacoes h2 {
+    margin:
+        0
+        0
+        26px;
+
+    color: #111827;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.dark .cartao-transacoes h2 {
+    color: #ffffff;
+}
+
+
+/* ===================================================
+   ITEM TRANSAÇÃO
+=================================================== */
+
+.item-transacao {
+    width: 100%;
+
+    min-height: 74px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    padding: 15px 0;
+
+    border-bottom:
+        1px solid
+        #eef2f7;
+}
+
+
+.item-transacao:last-child {
+    border-bottom: none;
+}
+
+
+.dark .item-transacao {
+    border-color: #374151;
+}
+
+
+/* ===================================================
+   TRANSAÇÃO ESQUERDA
+=================================================== */
+
+.transacao-esquerda {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.icone-transacao {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #f3f4f6;
+}
+
+
+.dark .icone-transacao {
+    background: #374151;
+}
+
+
+.icone-transacao svg {
+    color: #6b7280;
+
+    font-size: 18px;
+}
+
+
+.dark .icone-transacao svg {
+    color: #d1d5db;
+}
+
+
+/* ===================================================
+   TEXTO TRANSAÇÃO
+=================================================== */
+
+.item-transacao strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: #111827;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.dark .item-transacao strong {
+    color: #ffffff;
+}
+
+
+.item-transacao p {
+    margin:
+        4px
+        0
+        0;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+
+.dark .item-transacao p {
+    color: #9ca3af;
+}
+
+
+/* ===================================================
+   VALORES
+=================================================== */
+
+.valor-positivo,
+.valor-negativo {
+    flex-shrink: 0;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.valor-positivo {
+    color: #16a34a;
+}
+
+
+.valor-negativo {
+    color: #ef4444;
+}
+
+
+.dark .valor-positivo {
+    color: #4ade80;
+}
+
+
+.dark .valor-negativo {
+    color: #f87171;
+}
+
+
+/* ===================================================
+   RECHARTS DARK MODE
+=================================================== */
+
+.dark
+.grafico-categorias-dashboard
+.recharts-bar-background-rectangle path {
+    fill: #374151;
+}
+
+
+/* ===================================================
+   TOOLTIP
+=================================================== */
+
+.recharts-default-tooltip {
+    border:
+        1px solid
+        #e5e7eb
+        !important;
+
+    border-radius:
+        12px
+        !important;
+
+    box-shadow:
+        0 10px 24px
+        rgba(15, 23, 42, .12);
+}
+
+
+.dark
+.recharts-default-tooltip {
+    background:
+        #111827
+        !important;
+
+    border-color:
+        #374151
+        !important;
+
+    color:
+        #ffffff
+        !important;
+}
+
+
+/* ===================================================
+   RESPONSIVO
+=================================================== */
+
+@media (
+    max-width: 1350px
+) {
+
+    .grade-dashboard {
+        grid-template-columns:
+            minmax(0, 1fr)
+            450px;
+    }
+
+
+    .dashboard-inferior {
+        grid-template-columns:
+            330px
+            minmax(0, 1fr);
+    }
+
+}
+
+
+@media (
+    max-width: 1180px
+) {
+
+    .grade-dashboard {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .cartao-transacoes {
+        min-height: auto;
+    }
+
+}
+
+
+@media (
+    max-width: 900px
+) {
+
+    .principal {
+        padding:
+            24px;
+    }
+
+
+    .grade-resumo {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .dashboard-inferior {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .cartao-grafico,
+    .cartao-categorias {
+        min-height: 350px;
+    }
+
+
+    .grafico-dashboard-container {
+        width: 190px;
+        height: 190px;
+    }
+
+}
+
+
+@media (
+    max-width: 600px
+) {
+
+    .cartao-saldo {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .botao-adicionar {
+        width: 100%;
+    }
+
+
+    .cartao-saldo h2 {
+        font-size: 29px;
+    }
+
+}
+
+
+/* ===================================================
+   CARDS CLICÁVEIS
+=================================================== */
+
+.cartao-dashboard-clicavel {
+    cursor: pointer;
+}
+
+
+.cartao-dashboard-clicavel:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(15, 23, 42, .08);
+}
+
+
+.cartao-dashboard-clicavel:focus-visible {
+    outline:
+        2px solid #22c55e;
+
+    outline-offset:
+        3px;
+}
+
+
+/* DARK */
+
+.dark
+.cartao-dashboard-clicavel:hover {
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, .22);
+}

@@ -1,0 +1,553 @@
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.editar-movimentacao-objetivo-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background:
+        rgba(15, 23, 42, 0.55);
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.editar-movimentacao-objetivo-modal {
+    width: 100%;
+    max-width: 500px;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 25px 60px
+        rgba(15, 23, 42, 0.22);
+}
+
+
+.dark
+.editar-movimentacao-objetivo-modal {
+    border-color: #1f2937;
+
+    background: #0f172a;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.editar-movimentacao-objetivo-modal > header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 24px 26px 20px;
+
+    border-bottom:
+        1px solid #eef2f7;
+}
+
+
+.editar-movimentacao-objetivo-modal > header::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: #22c55e;
+}
+
+
+.editar-movimentacao-objetivo-modal.retirada
+> header::before {
+    background: #ef4444;
+}
+
+
+.dark
+.editar-movimentacao-objetivo-modal > header {
+    border-color: #1f2937;
+}
+
+
+.editar-movimentacao-objetivo-modal
+> header
+> div
+> span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+
+.dark
+.editar-movimentacao-objetivo-modal
+> header
+> div
+> span {
+    color: #94a3b8;
+}
+
+
+.editar-movimentacao-objetivo-modal
+> header
+h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 23px;
+    font-weight: 750;
+}
+
+
+.dark
+.editar-movimentacao-objetivo-modal
+> header
+h2 {
+    color: #f8fafc;
+}
+
+
+/* =========================================================
+   BOTÃO FECHAR
+========================================================= */
+
+.editar-movimentacao-objetivo-modal
+> header
+button {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #f3f4f6;
+
+    color: #4b5563;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+
+.editar-movimentacao-objetivo-modal
+> header
+button:hover:not(:disabled) {
+    background: #e5e7eb;
+
+    color: #111827;
+}
+
+
+.dark
+.editar-movimentacao-objetivo-modal
+> header
+button {
+    background: #1e293b;
+
+    color: #cbd5e1;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.editar-movimentacao-objetivo-modal
+> form {
+    padding: 24px 26px 26px;
+}
+
+
+/* =========================================================
+   DESTAQUE
+========================================================= */
+
+.editar-movimentacao-destaque {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    background: #f0fdf4;
+
+    color: #15803d;
+
+    font-size: 13px;
+}
+
+
+.editar-movimentacao-objetivo-modal.retirada
+.editar-movimentacao-destaque {
+    background: #fef2f2;
+
+    color: #dc2626;
+}
+
+
+.editar-movimentacao-destaque svg {
+    flex-shrink: 0;
+
+    font-size: 22px;
+}
+
+
+.dark
+.editar-movimentacao-destaque {
+    background:
+        rgba(22, 163, 74, .12);
+
+    color: #86efac;
+}
+
+
+.dark
+.editar-movimentacao-objetivo-modal.retirada
+.editar-movimentacao-destaque {
+    background:
+        rgba(220, 38, 38, .12);
+
+    color: #fca5a5;
+}
+
+
+/* =========================================================
+   CAMPO
+========================================================= */
+
+.editar-movimentacao-campo label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.dark
+.editar-movimentacao-campo label {
+    color: #cbd5e1;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.editar-movimentacao-input {
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dbe1e8;
+    border-radius: 13px;
+
+    background: #f9fafb;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+
+.editar-movimentacao-input:focus-within {
+    border-color: #22c55e;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, .10);
+}
+
+
+.editar-movimentacao-objetivo-modal.retirada
+.editar-movimentacao-input:focus-within {
+    border-color: #ef4444;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(239, 68, 68, .09);
+}
+
+
+.editar-movimentacao-input > svg {
+    color: #9ca3af;
+
+    font-size: 20px;
+}
+
+
+.editar-movimentacao-input > span {
+    color: #6b7280;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.editar-movimentacao-input input {
+    width: 100%;
+    height: 48px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #111827;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+.dark
+.editar-movimentacao-input {
+    border-color: #293548;
+
+    background: #111c2e;
+}
+
+
+.dark
+.editar-movimentacao-input input {
+    color: #f8fafc;
+}
+
+
+/* =========================================================
+   ERRO
+========================================================= */
+
+.editar-movimentacao-erro {
+    margin-top: 13px;
+
+    padding: 11px 13px;
+
+    border: 1px solid #fecaca;
+    border-radius: 11px;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    font-size: 12px;
+}
+
+
+.dark
+.editar-movimentacao-erro {
+    border-color:
+        rgba(239, 68, 68, .3);
+
+    background:
+        rgba(127, 29, 29, .2);
+
+    color: #fca5a5;
+}
+
+
+/* =========================================================
+   AÇÕES
+========================================================= */
+
+.editar-movimentacao-objetivo-modal
+footer {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 24px;
+    padding-top: 20px;
+
+    border-top:
+        1px solid #eef2f7;
+}
+
+
+.dark
+.editar-movimentacao-objetivo-modal
+footer {
+    border-color: #1f2937;
+}
+
+
+.editar-movimentacao-cancelar,
+.editar-movimentacao-salvar {
+    min-height: 44px;
+
+    padding: 0 20px;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        opacity .2s ease;
+}
+
+
+.editar-movimentacao-cancelar {
+    border: 1px solid #d1d5db;
+
+    background: transparent;
+
+    color: #4b5563;
+}
+
+
+.editar-movimentacao-cancelar:hover:not(:disabled) {
+    background: #f3f4f6;
+
+    transform: translateY(-1px);
+}
+
+
+.dark
+.editar-movimentacao-cancelar {
+    border-color: #334155;
+
+    color: #cbd5e1;
+}
+
+
+.dark
+.editar-movimentacao-cancelar:hover:not(:disabled) {
+    background: #1e293b;
+}
+
+
+.editar-movimentacao-salvar {
+    border: none;
+
+    background: #22c55e;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 18px
+        rgba(34, 197, 94, .20);
+}
+
+
+.editar-movimentacao-objetivo-modal.retirada
+.editar-movimentacao-salvar {
+    background: #ef4444;
+
+    box-shadow:
+        0 8px 18px
+        rgba(239, 68, 68, .18);
+}
+
+
+.editar-movimentacao-salvar:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+
+.editar-movimentacao-cancelar:disabled,
+.editar-movimentacao-salvar:disabled,
+.editar-movimentacao-objetivo-modal
+> header
+button:disabled {
+    opacity: .5;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .editar-movimentacao-objetivo-overlay {
+        padding: 16px;
+    }
+
+
+    .editar-movimentacao-objetivo-modal {
+        border-radius: 18px;
+    }
+
+
+    .editar-movimentacao-objetivo-modal
+    footer {
+        flex-direction: column-reverse;
+    }
+
+
+    .editar-movimentacao-cancelar,
+    .editar-movimentacao-salvar {
+        width: 100%;
+    }
+
+}
