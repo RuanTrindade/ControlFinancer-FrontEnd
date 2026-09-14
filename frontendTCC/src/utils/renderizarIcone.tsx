@@ -7,7 +7,7 @@ const iconesAntigos: Record<string, keyof typeof BiIcons> = {
     "bi-car-front": "BiCar",
     "bi-graph-up": "BiLineChart",
     "bi-cash": "BiMoney",
-    "bi-heart-pulse": "BiHeart"
+    "bi-heart-pulse": "BiHeart",
 };
 
 export function renderizarIcone(nomeIcone: string | null | undefined) {
@@ -15,13 +15,9 @@ export function renderizarIcone(nomeIcone: string | null | undefined) {
         return <BiIcons.BiCategory />;
     }
 
-    const nomeConvertido =
-        iconesAntigos[nomeIcone] ?? nomeIcone;
+    const nomeConvertido = iconesAntigos[nomeIcone] ?? nomeIcone;
 
-    const Icone =
-        BiIcons[
-            nomeConvertido as keyof typeof BiIcons
-        ] as IconType | undefined;
+    const Icone = BiIcons[nomeConvertido as keyof typeof BiIcons] as IconType | undefined;
 
     if (!Icone) {
         return <BiIcons.BiCategory />;

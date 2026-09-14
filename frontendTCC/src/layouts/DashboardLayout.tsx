@@ -1,101 +1,56 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
-import Sidebar from "../components/Sidebar"
+import Sidebar from "./Sidebar";
 
-import Topbar from "../components/Topbar.tsx"
+import Topbar from "./Topbar.tsx";
 
-import "../styles/dashboard.css"
+import "./dashboard-shell.css";
 
 type Props = {
+    children: React.ReactNode;
 
-    children: React.ReactNode
-
-    mostrarMeses?: boolean
-}
+    mostrarMeses?: boolean;
+};
 
 function DashboardLayout({
-
     children,
 
-    mostrarMeses = true
-
+    mostrarMeses = true,
 }: Props) {
-
-    const [fechado, setFechado] =
-        useState(
-
-            () => {
-
-                return localStorage.getItem(
-                    "sidebar-fechada"
-                ) === "true"
-            }
-        )
+    const [fechado, setFechado] = useState(() => {
+        return localStorage.getItem("sidebar-fechada") === "true";
+    });
 
     useEffect(() => {
-
         localStorage.setItem(
-
             "sidebar-fechada",
 
-            String(fechado)
-        )
+            String(fechado),
+        );
+    }, [fechado]);
 
-    }, [fechado])
-
-    const [darkMode, setDarkMode] =
-        useState(
-
-            () => {
-
-                return localStorage.getItem(
-                    "dark-mode"
-                ) === "true"
-            }
-        )
-
+    const [darkMode, setDarkMode] = useState(() => {
+        return localStorage.getItem("dark-mode") === "true";
+    });
 
     useEffect(() => {
-
         localStorage.setItem(
-
             "dark-mode",
 
-            String(darkMode)
-        )
-
-    }, [darkMode])
-
+            String(darkMode),
+        );
+    }, [darkMode]);
 
     return (
-
-        <div
-            className={
-                darkMode
-                    ? "dark"
-                    : ""
-            }
-        >
-
-            <Sidebar
-                fechado={fechado}
-                setFechado={setFechado}
-
-
-            />
+        <div className={darkMode ? "dark" : ""}>
+            <Sidebar fechado={fechado} setFechado={setFechado} />
 
             <div
-                className={
-                    "sidebar-backdrop" +
-                    (fechado ? "" : " visivel")
-                }
-                onClick={() =>
-                    setFechado(true)
-                }
+                className={"sidebar-backdrop" + (fechado ? "" : " visivel")}
+                onClick={() => setFechado(true)}
             />
 
             <div className="conteudo">
-
                 <Topbar
                     darkMode={darkMode}
                     setDarkMode={setDarkMode}
@@ -104,20 +59,10 @@ function DashboardLayout({
                     setFechado={setFechado}
                 />
 
-                <main className="principal">
-
-                    {children}
-
-                </main>
-
+                <main className="principal">{children}</main>
             </div>
-
-            
-
         </div>
-
-    )
-
+    );
 }
 
-export default DashboardLayout
+export default DashboardLayout;

@@ -1,0 +1,203 @@
+/* =========================================================
+   PÁGINA
+========================================================= */
+.pagina-planejamento {
+    width: 100%;
+}
+/* =========================================================
+   ESTADO VAZIO
+========================================================= */
+.planejamento-vazio {
+    width: 100%;
+    min-height: calc(100vh - 190px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* =========================================================
+   CARD PRINCIPAL
+========================================================= */
+.planejamento-card {
+    width: 100%;
+    min-height: 500px;
+    padding: 44px 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed var(--cinza-300);
+    border-radius: 18px;
+    background: var(--slate-50);
+}
+/* DARK */
+.dark .planejamento-card {
+    border-color: var(--cinza-600);
+    background: var(--cinza-900);
+}
+/* =========================================================
+   CENTRO
+========================================================= */
+.planejamento-centro {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+/* =========================================================
+   ÍCONE
+========================================================= */
+.icone-planejamento-vazio {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dcfce7;
+    color: var(--verde-600);
+    font-size: 30px;
+}
+.icone-planejamento-vazio svg {
+    font-size: 30px;
+}
+/* DARK */
+.dark .icone-planejamento-vazio {
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--verde-400);
+}
+/* =========================================================
+   TÍTULO
+========================================================= */
+.planejamento-centro h2 {
+    margin: 0;
+    color: var(--cinza-900);
+    font-size: 20px;
+    font-weight: 700;
+}
+.dark .planejamento-centro h2 {
+    color: var(--cinza-50);
+}
+/* =========================================================
+   TEXTO
+========================================================= */
+.planejamento-centro p {
+    max-width: 430px;
+    margin: 8px 0 22px;
+    color: var(--cinza-500);
+    font-size: 14px;
+    line-height: 1.6;
+}
+.dark .planejamento-centro p {
+    color: var(--cinza-400);
+}
+/* =========================================================
+   BOTÃO PRINCIPAL
+========================================================= */
+.btn-planejamento {
+    min-height: 42px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--verde-600);
+    color: var(--branco);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+.btn-planejamento svg {
+    font-size: 18px;
+}
+.btn-planejamento:hover {
+    background: var(--verde-700);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(22, 163, 74, 0.18);
+}
+/* =========================================================
+   COPIAR MÊS ANTERIOR
+========================================================= */
+.btn-copiar {
+    min-height: 40px;
+    margin-top: 10px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 1px solid var(--cinza-200);
+    border-radius: 999px;
+    background: var(--branco);
+    color: var(--cinza-500);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+.btn-copiar svg {
+    font-size: 17px;
+}
+.btn-copiar:hover {
+    color: var(--verde-600);
+    border-color: rgba(22, 163, 74, 0.3);
+    background: #f0fdf4;
+    transform: translateY(-1px);
+}
+/* DARK */
+.dark .btn-copiar {
+    border-color: var(--cinza-700);
+    background: var(--cinza-800);
+    color: var(--cinza-300);
+}
+.dark .btn-copiar:hover {
+    color: var(--verde-400);
+    border-color: rgba(74, 222, 128, 0.3);
+    background: rgba(34, 197, 94, 0.08);
+}
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+@media (max-width: 900px) {
+    .planejamento-card {
+        min-height: 440px;
+        padding: 38px 24px;
+    }
+}
+@media (max-width: 600px) {
+    .planejamento-card {
+        min-height: 360px;
+        padding: 34px 20px;
+    }
+    .icone-planejamento-vazio {
+        width: 60px;
+        height: 60px;
+    }
+    .icone-planejamento-vazio svg {
+        font-size: 27px;
+    }
+    .planejamento-centro h2 {
+        font-size: 19px;
+    }
+    .planejamento-centro p {
+        font-size: 13px;
+    }
+    .btn-planejamento,
+    .btn-copiar {
+        width: 100%;
+    }
+}

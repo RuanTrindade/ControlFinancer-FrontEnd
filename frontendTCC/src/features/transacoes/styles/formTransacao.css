@@ -1,0 +1,820 @@
+/* =========================================================
+   FUNDO DO MODAL
+========================================================= */
+.form-transacao-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(5px);
+    animation: aparecer-overlay 0.2s ease;
+}
+/* =========================================================
+   MODAL
+========================================================= */
+.form-transacao-modal {
+    width: 100%;
+    max-width: 640px;
+    max-height: calc(100vh - 48px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--cinza-200);
+    border-radius: 22px;
+    background: var(--branco);
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.22);
+    animation: aparecer-modal 0.25s ease;
+}
+.dark .form-transacao-modal {
+    background: var(--cinza-800);
+    border-color: var(--cinza-700);
+}
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+.form-transacao-cabecalho {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 26px 20px;
+    border-bottom: 1px solid var(--cinza-divisor);
+}
+.dark .form-transacao-cabecalho {
+    border-color: var(--cinza-700);
+}
+.form-transacao-cabecalho::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--verde-500);
+}
+.form-transacao-modal.form-despesa .form-transacao-cabecalho::before {
+    background: var(--vermelho-500);
+}
+.form-transacao-subtitulo {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--cinza-500);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.dark .form-transacao-subtitulo {
+    color: var(--cinza-400);
+}
+.form-transacao-cabecalho h2 {
+    margin: 0;
+    color: var(--cinza-900);
+    font-size: 23px;
+    font-weight: 750;
+}
+.dark .form-transacao-cabecalho h2 {
+    color: var(--branco);
+}
+/* =========================================================
+   BOTÃO FECHAR
+========================================================= */
+.form-transacao-fechar {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cinza-100);
+    color: var(--cinza-600);
+    font-size: 23px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.form-transacao-fechar:hover {
+    background: var(--cinza-200);
+    color: var(--cinza-900);
+}
+.dark .form-transacao-fechar {
+    background: var(--cinza-900);
+    color: var(--cinza-300);
+}
+.dark .form-transacao-fechar:hover {
+    background: var(--cinza-700);
+    color: var(--branco);
+}
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+.form-transacao-conteudo {
+    padding: 24px 26px 26px;
+    overflow-y: auto;
+}
+/* =========================================================
+   GRADE
+========================================================= */
+.form-transacao-grade {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 18px;
+    gap: 18px;
+}
+/* =========================================================
+   CAMPOS
+========================================================= */
+.form-transacao-campo {
+    margin-bottom: 18px;
+}
+.form-transacao-grade .form-transacao-campo {
+    margin-bottom: 0;
+}
+.form-transacao-campo label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--cinza-700);
+    font-size: 13px;
+    font-weight: 600;
+}
+/* DARK LABEL */
+.dark .form-transacao-campo label {
+    color: var(--cinza-300);
+}
+/* =========================================================
+   INPUT
+========================================================= */
+.form-transacao-input {
+    min-height: 49px;
+    padding: 0 14px;
+    border: 1px solid #dbe1e8;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--cinza-50);
+    transition: 0.2s;
+}
+.form-transacao-input:focus-within {
+    border-color: var(--verde-500);
+    background: var(--branco);
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+}
+.form-despesa .form-transacao-input:focus-within {
+    border-color: var(--vermelho-500);
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.09);
+}
+/* DARK INPUT */
+.dark .form-transacao-input {
+    background: var(--cinza-900);
+    border-color: var(--cinza-700);
+}
+.dark .form-transacao-input:focus-within {
+    background: var(--cinza-900);
+    border-color: var(--verde-500);
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.08);
+}
+.dark .form-despesa .form-transacao-input:focus-within {
+    border-color: var(--vermelho-500);
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.08);
+}
+/* =========================================================
+   INPUT INTERNO
+========================================================= */
+.form-transacao-input > svg {
+    min-width: 19px;
+    color: var(--cinza-400);
+    font-size: 19px;
+}
+.form-transacao-input input,
+.form-transacao-input select {
+    width: 100%;
+    height: 47px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--cinza-900);
+    font-family: inherit;
+    font-size: 14px;
+}
+.form-transacao-input input::placeholder {
+    color: var(--cinza-400);
+}
+/* DARK */
+.dark .form-transacao-input > svg {
+    color: var(--cinza-400);
+}
+.dark .form-transacao-input input,
+.dark .form-transacao-input select {
+    color: var(--branco);
+}
+.dark .form-transacao-input input::placeholder {
+    color: var(--cinza-500);
+}
+.dark .form-transacao-input select option {
+    background: var(--cinza-900);
+    color: var(--branco);
+}
+/* =========================================================
+   VALOR
+========================================================= */
+.input-valor > span {
+    color: var(--cinza-500);
+    font-size: 14px;
+    font-weight: 650;
+}
+.dark .input-valor > span {
+    color: var(--cinza-400);
+}
+.input-valor input {
+    font-size: 17px;
+    font-weight: 650;
+}
+/* =========================================================
+   ERRO
+========================================================= */
+.form-transacao-erro {
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border: 1px solid #fecaca;
+    border-radius: 11px;
+    background: var(--vermelho-50);
+    color: var(--vermelho-700);
+    font-size: 13px;
+}
+.dark .form-transacao-erro {
+    border-color: rgba(239, 68, 68, 0.3);
+    background: rgba(127, 29, 29, 0.2);
+    color: var(--vermelho-300);
+}
+/* =========================================================
+   AÇÕES
+========================================================= */
+.form-transacao-acoes {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cinza-divisor);
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+.dark .form-transacao-acoes {
+    border-color: var(--cinza-700);
+}
+/* =========================================================
+   BOTÕES
+========================================================= */
+.form-transacao-cancelar,
+.form-transacao-salvar {
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.form-transacao-cancelar {
+    border: 1px solid var(--cinza-300);
+    background: transparent;
+    color: var(--cinza-600);
+}
+.form-transacao-cancelar:hover {
+    background: var(--cinza-100);
+}
+.dark .form-transacao-cancelar {
+    border-color: var(--cinza-700);
+    color: var(--cinza-300);
+}
+.dark .form-transacao-cancelar:hover {
+    background: var(--cinza-900);
+}
+.form-transacao-salvar {
+    border: none;
+    background: var(--verde-500);
+    color: var(--branco);
+    box-shadow: 0 8px 18px rgba(34, 197, 94, 0.22);
+}
+.form-despesa .form-transacao-salvar {
+    background: var(--vermelho-500);
+    box-shadow: 0 8px 18px rgba(239, 68, 68, 0.2);
+}
+.form-transacao-salvar:not(:disabled):hover,
+.form-transacao-cancelar:not(:disabled):hover {
+    transform: translateY(-1px);
+}
+.form-transacao-salvar:disabled,
+.form-transacao-cancelar:disabled,
+.form-transacao-fechar:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+/* =========================================================
+   COMPROVANTE
+========================================================= */
+.upload-comprovante {
+    width: 100%;
+    min-height: 55px;
+    padding: 0 18px;
+    border: 2px dashed var(--cinza-300);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.upload-comprovante:hover {
+    border-color: var(--verde-500);
+    background: #f8fffa;
+}
+.upload-comprovante svg {
+    color: var(--verde-500);
+    font-size: 22px;
+}
+.upload-comprovante span {
+    color: var(--cinza-500);
+    font-size: 14px;
+}
+/* DARK */
+.dark .upload-comprovante {
+    border-color: var(--cinza-700);
+    background: var(--cinza-900);
+}
+.dark .upload-comprovante:hover {
+    border-color: var(--verde-500);
+    background: rgba(34, 197, 94, 0.05);
+}
+.dark .upload-comprovante span {
+    color: var(--cinza-300);
+}
+/* =========================================================
+   REMOVER COMPROVANTE
+========================================================= */
+.remover-comprovante {
+    margin-top: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    color: var(--vermelho-500);
+    font-size: 13px;
+    cursor: pointer;
+}
+/* =========================================================
+   CATEGORIA - SELECT
+========================================================= */
+.categoria-select-personalizado {
+    position: relative;
+    width: 100%;
+}
+.categoria-select-botao {
+    width: 100%;
+    min-height: 48px;
+    padding: 7px 12px;
+    border: 1px solid #d7dee8;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--slate-50);
+    color: var(--cinza-800);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.categoria-select-botao:hover {
+    border-color: #aab5c3;
+    background: var(--branco);
+}
+.categoria-select-botao.aberto {
+    border-color: var(--verde-600);
+    background: var(--branco);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+/* =========================================================
+   CATEGORIA - DARK
+========================================================= */
+.dark .categoria-select-botao {
+    background: var(--cinza-900);
+    border-color: var(--cinza-700);
+    color: var(--branco);
+}
+.dark .categoria-select-botao:hover {
+    background: var(--cinza-900);
+    border-color: var(--cinza-600);
+}
+.dark .categoria-select-botao.aberto {
+    background: var(--cinza-900);
+    border-color: var(--verde-500);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+.categoria-select-conteudo {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.categoria-select-icone {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+.categoria-select-icone.sem-categoria {
+    background: #eef2f6;
+    color: #98a2b3;
+}
+.dark .categoria-select-icone.sem-categoria {
+    background: var(--cinza-800);
+    color: var(--cinza-400);
+}
+.categoria-select-nome {
+    overflow: hidden;
+    color: #253044;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.dark .categoria-select-nome {
+    color: var(--branco);
+}
+.categoria-select-placeholder {
+    color: #667085;
+    font-size: 14px;
+    font-weight: 500;
+}
+.dark .categoria-select-placeholder {
+    color: var(--cinza-400);
+}
+.categoria-select-seta {
+    flex-shrink: 0;
+    color: #667085;
+    font-size: 21px;
+    transition: transform 0.2s ease;
+}
+.dark .categoria-select-seta {
+    color: var(--cinza-400);
+}
+.categoria-select-seta.girada {
+    transform: rotate(180deg);
+}
+/* =========================================================
+   CATEGORIA - OPÇÕES
+========================================================= */
+.categoria-select-opcoes {
+    position: absolute;
+    z-index: 100;
+    top: calc(100% + 7px);
+    left: 0;
+    right: 0;
+    max-height: 230px;
+    padding: 6px;
+    overflow-y: auto;
+    border: 1px solid #dfe5ec;
+    border-radius: 13px;
+    background: var(--branco);
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.16);
+}
+.dark .categoria-select-opcoes {
+    border-color: var(--cinza-700);
+    background: var(--cinza-900);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
+}
+.categoria-select-opcao {
+    width: 100%;
+    padding: 8px;
+    border: 0;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.18s;
+}
+.categoria-select-opcao:hover {
+    background: #f3f6f9;
+}
+.dark .categoria-select-opcao:hover {
+    background: var(--cinza-800);
+}
+.categoria-select-opcao.selecionada {
+    background: #f0fdf4;
+}
+.dark .categoria-select-opcao.selecionada {
+    background: rgba(34, 197, 94, 0.08);
+}
+.categoria-select-opcao .categoria-select-nome {
+    flex: 1;
+}
+.categoria-select-check {
+    flex-shrink: 0;
+    color: var(--verde-600);
+    font-size: 19px;
+}
+.dark .categoria-select-check {
+    color: var(--verde-400);
+}
+.categoria-select-vazio {
+    padding: 15px;
+    color: #667085;
+    font-size: 14px;
+    text-align: center;
+}
+.dark .categoria-select-vazio {
+    color: var(--cinza-400);
+}
+/* =========================================================
+   SELECT PERSONALIZADO
+   MÉTODO DE PAGAMENTO / STATUS
+========================================================= */
+.select-personalizado {
+    position: relative;
+    width: 100%;
+}
+.select-personalizado-botao {
+    width: 100%;
+    min-height: 48px;
+    padding: 7px 12px;
+    border: 1px solid #d7dee8;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--slate-50);
+    color: var(--cinza-800);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.select-personalizado-botao:hover {
+    border-color: #aab5c3;
+    background: var(--branco);
+}
+.select-personalizado-botao.aberto {
+    border-color: var(--verde-600);
+    background: var(--branco);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+/* =========================================================
+   MÉTODO / STATUS - DARK
+========================================================= */
+.dark .select-personalizado-botao {
+    background: var(--cinza-900);
+    border-color: var(--cinza-700);
+    color: var(--branco);
+}
+.dark .select-personalizado-botao:hover {
+    background: var(--cinza-900);
+    border-color: var(--cinza-600);
+}
+.dark .select-personalizado-botao.aberto {
+    background: var(--cinza-900);
+    border-color: var(--verde-500);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+.select-personalizado-conteudo {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #253044;
+    font-size: 14px;
+    font-weight: 500;
+}
+.dark .select-personalizado-conteudo {
+    color: var(--branco);
+}
+.select-personalizado-icone {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef2f6;
+    color: #667085;
+    font-size: 18px;
+}
+.dark .select-personalizado-icone {
+    background: var(--cinza-800);
+    color: var(--cinza-400);
+}
+.select-personalizado-seta {
+    color: #667085;
+    font-size: 21px;
+    transition: transform 0.2s ease;
+}
+.dark .select-personalizado-seta {
+    color: var(--cinza-400);
+}
+.select-personalizado-seta.girada {
+    transform: rotate(180deg);
+}
+/* =========================================================
+   MÉTODO / STATUS - OPÇÕES
+========================================================= */
+.select-personalizado-opcoes {
+    position: absolute;
+    z-index: 120;
+    top: calc(100% + 7px);
+    left: 0;
+    right: 0;
+    max-height: 230px;
+    padding: 6px;
+    overflow-y: auto;
+    border: 1px solid #dfe5ec;
+    border-radius: 13px;
+    background: var(--branco);
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.16);
+}
+.dark .select-personalizado-opcoes {
+    border-color: var(--cinza-700);
+    background: var(--cinza-900);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
+}
+.select-personalizado-opcao {
+    width: 100%;
+    padding: 8px;
+    border: 0;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.18s;
+}
+.select-personalizado-opcao:hover {
+    background: #f3f6f9;
+}
+.dark .select-personalizado-opcao:hover {
+    background: var(--cinza-800);
+}
+.select-personalizado-opcao.selecionada {
+    background: #f0fdf4;
+}
+.dark .select-personalizado-opcao.selecionada {
+    background: rgba(34, 197, 94, 0.08);
+}
+.select-personalizado-nome {
+    flex: 1;
+    color: #253044;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+}
+.dark .select-personalizado-nome {
+    color: var(--branco);
+}
+.select-personalizado-placeholder {
+    color: #667085;
+    font-size: 14px;
+}
+.dark .select-personalizado-placeholder {
+    color: var(--cinza-400);
+}
+.select-personalizado-check {
+    color: var(--verde-600);
+    font-size: 19px;
+}
+.dark .select-personalizado-check {
+    color: var(--verde-400);
+}
+/* =========================================================
+   STATUS
+========================================================= */
+.status-select-indicador {
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+.status-select-indicador.pago {
+    background: var(--verde-500);
+}
+.status-select-indicador.pendente {
+    background: #f59e0b;
+}
+/* =========================================================
+   SCROLL DOS SELECTS
+========================================================= */
+.categoria-select-opcoes::-webkit-scrollbar,
+.select-personalizado-opcoes::-webkit-scrollbar {
+    width: 6px;
+}
+.categoria-select-opcoes::-webkit-scrollbar-thumb,
+.select-personalizado-opcoes::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--slate-300);
+}
+.dark .categoria-select-opcoes::-webkit-scrollbar-thumb,
+.dark .select-personalizado-opcoes::-webkit-scrollbar-thumb {
+    background: var(--cinza-600);
+}
+.categoria-select-opcoes::-webkit-scrollbar-track,
+.select-personalizado-opcoes::-webkit-scrollbar-track {
+    background: transparent;
+}
+/* =========================================================
+   TRANSAÇÃO COM IA
+========================================================= */
+.acao-ia-transacao {
+    width: 100%;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: flex-end;
+}
+.botao-transacao-ia {
+    min-height: 40px;
+    padding: 0 16px;
+    border: 1px solid #ddd6fe;
+    border-radius: 11px;
+    background: #f5f3ff;
+    color: var(--violeta-600);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.botao-transacao-ia:hover:not(:disabled) {
+    border-color: #c4b5fd;
+    background: #ede9fe;
+    transform: translateY(-1px);
+}
+.botao-transacao-ia:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+.dark .botao-transacao-ia {
+    border-color: rgba(139, 92, 246, 0.3);
+    background: rgba(124, 58, 237, 0.1);
+    color: #c4b5fd;
+}
+.dark .botao-transacao-ia:hover:not(:disabled) {
+    background: rgba(124, 58, 237, 0.18);
+}
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+@media (max-width: 620px) {
+    .form-transacao-overlay {
+        align-items: flex-end;
+        padding: 0;
+    }
+    .form-transacao-modal {
+        max-height: 94vh;
+        border-radius: 22px 22px 0 0;
+    }
+    .form-transacao-grade {
+        grid-template-columns: 1fr;
+    }
+    .form-transacao-cabecalho {
+        padding: 22px 20px 18px;
+    }
+    .form-transacao-conteudo {
+        padding: 20px;
+    }
+    .form-transacao-acoes {
+        flex-direction: column-reverse;
+    }
+    .form-transacao-cancelar,
+    .form-transacao-salvar {
+        width: 100%;
+    }
+}
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+@keyframes aparecer-overlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes aparecer-modal {
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

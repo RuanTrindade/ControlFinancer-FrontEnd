@@ -1,0 +1,827 @@
+/* ==========================================================
+   PÁGINA
+========================================================== */
+.pagina-relatorios {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    animation: entradaRelatorios 0.3s ease;
+}
+/* ==========================================================
+   TOPO
+========================================================== */
+.topo-relatorios {
+    width: 100%;
+    display: grid;
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+    align-items: center;
+    gap: 24px;
+}
+/* ==========================================================
+   BOTÃO IA
+========================================================== */
+.botao-ia {
+    width: max-content;
+    height: 48px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--violeta-500), var(--violeta-600));
+    color: var(--branco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+    box-shadow: 0 10px 24px rgba(124, 58, 237, 0.24);
+}
+.botao-ia:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.03);
+    box-shadow: 0 14px 28px rgba(124, 58, 237, 0.3);
+}
+.botao-ia:active {
+    transform: scale(0.97);
+}
+.botao-ia svg {
+    font-size: 21px;
+}
+/* ==========================================================
+   TROCA DE GRÁFICO
+========================================================== */
+.troca-grafico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 7px;
+    border-radius: 17px;
+    background: var(--branco);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+.dark .troca-grafico {
+    background: var(--cinza-800);
+}
+.troca-grafico button {
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 13px;
+    background: transparent;
+    color: var(--cinza-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+.troca-grafico button:hover {
+    color: var(--verde-500);
+    background: #f0fdf4;
+}
+.dark .troca-grafico button:hover {
+    background: var(--cinza-800);
+}
+.troca-grafico button.ativo {
+    color: var(--branco);
+    background: var(--verde-500);
+    box-shadow: 0 8px 18px rgba(34, 197, 94, 0.24);
+}
+.troca-grafico button:active {
+    transform: scale(0.95);
+}
+.troca-grafico svg {
+    font-size: 22px;
+}
+/* ==========================================================
+   AÇÕES DO RELATÓRIO
+========================================================== */
+.acoes-relatorio {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+.acoes-relatorio button {
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 14px;
+    background: var(--branco);
+    color: var(--cinza-500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+.dark .acoes-relatorio button {
+    background: var(--cinza-800);
+    color: var(--cinza-300);
+}
+.acoes-relatorio button:hover {
+    transform: translateY(-2px);
+}
+.acoes-relatorio button:first-child:hover {
+    background: var(--cinza-100);
+    color: var(--cinza-900);
+}
+.dark .acoes-relatorio button:first-child:hover {
+    background: var(--cinza-800);
+    color: var(--branco);
+}
+.acoes-relatorio .excel {
+    color: var(--verde-600);
+}
+.acoes-relatorio .excel:hover {
+    background: #dcfce7;
+}
+.dark .acoes-relatorio .excel:hover {
+    background: #14532d;
+}
+.acoes-relatorio .pdf {
+    color: var(--vermelho-600);
+}
+.acoes-relatorio .pdf:hover {
+    background: #fee2e2;
+}
+.dark .acoes-relatorio .pdf:hover {
+    background: #450a0a;
+}
+.acoes-relatorio svg {
+    font-size: 21px;
+}
+/* ==========================================================
+   CARD PRINCIPAL
+========================================================== */
+.card-relatorio {
+    width: 100%;
+    min-height: 610px;
+    padding: 60px;
+    border-radius: 26px;
+    background: var(--branco);
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+}
+.dark .card-relatorio {
+    background: var(--cinza-800);
+}
+/* ==========================================================
+   SELETOR DE MÊS
+========================================================== */
+.seletor-mes {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 26px;
+}
+.seletor-mes button {
+    min-width: 84px;
+    height: 38px;
+    padding: 0 14px;
+    border: none;
+    border-radius: 11px;
+    background: var(--cinza-100);
+    color: var(--cinza-500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+.seletor-mes button:first-child,
+.seletor-mes button:last-child {
+    min-width: 38px;
+    width: 38px;
+    padding: 0;
+}
+.dark .seletor-mes button {
+    background: var(--cinza-800);
+    color: var(--cinza-300);
+}
+.seletor-mes button:hover {
+    background: #dcfce7;
+    color: var(--verde-600);
+}
+.dark .seletor-mes button:hover {
+    background: var(--cinza-700);
+    color: var(--verde-300);
+}
+.seletor-mes button.ativo {
+    background: var(--verde-500);
+    color: var(--branco);
+    box-shadow: 0 8px 18px rgba(34, 197, 94, 0.22);
+}
+.seletor-mes button:active {
+    transform: scale(0.96);
+}
+.seletor-mes svg {
+    font-size: 21px;
+}
+/* ==========================================================
+   CONTEÚDO PRINCIPAL
+========================================================== */
+.conteudo-relatorio {
+    width: 100%;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 3fr)
+        minmax(250px, 1fr);
+    gap: 28px;
+    align-items: stretch;
+}
+/* ==========================================================
+   ÁREA DO GRÁFICO
+========================================================== */
+.area-grafico-relatorio,
+.area-grafico-linha {
+    min-width: 0;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.titulo-grafico-relatorio {
+    text-align: center;
+    margin-bottom: 16px;
+    color: var(--cinza-400);
+    font-size: 19px;
+    font-weight: 700;
+}
+.dark .titulo-grafico-relatorio {
+    color: var(--branco);
+}
+.grafico-relatorio,
+.grafico-linha-relatorio {
+    width: 100%;
+    height: 440px;
+    min-width: 0;
+}
+/* ==========================================================
+   AJUSTES DO RECHARTS
+========================================================== */
+.recharts-surface {
+    overflow: visible;
+}
+.recharts-cartesian-grid-horizontal line {
+    stroke: var(--cinza-200);
+}
+.dark .recharts-cartesian-grid-horizontal line {
+    stroke: var(--cinza-700);
+}
+.recharts-text {
+    font-family: inherit;
+}
+.recharts-legend-item-text {
+    color: var(--cinza-500) !important;
+}
+.dark .recharts-legend-item-text {
+    color: var(--cinza-300) !important;
+}
+.recharts-tooltip-wrapper {
+    outline: none;
+}
+/* ==========================================================
+   BALANÇO MENSAL
+========================================================== */
+.balanco-mensal {
+    min-width: 0;
+    padding: 24px;
+    border: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+}
+.bloco-balanco {
+    margin-top: 15px;
+}
+.balanco-mensal h3 {
+    margin: 0;
+    color: var(--cinza-400);
+    font-size: 22px;
+    font-weight: 700;
+}
+.dark .balanco-mensal h3 {
+    color: var(--branco);
+}
+.titulo-mes {
+    display: block;
+    margin-top: 5px;
+    color: rgb(16, 184, 245);
+    font-size: 16px;
+    font-weight: 600;
+}
+.linha-balanco {
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dark .linha-balanco {
+    border-color: var(--cinza-800);
+}
+.linha-balanco:last-child {
+    border-bottom: none;
+}
+.linha-balanco span {
+    color: var(--cinza-500);
+    font-size: 14px;
+    font-weight: 500;
+}
+.dark .linha-balanco span {
+    color: var(--cinza-400);
+}
+.linha-balanco strong {
+    color: var(--cinza-900);
+    font-size: 15px;
+    font-weight: 700;
+    text-align: right;
+}
+.dark .linha-balanco strong {
+    color: var(--branco);
+}
+/* ==========================================================
+   GRÁFICO DE LINHAS
+========================================================== */
+.area-grafico-linha {
+    grid-column: 1 / -1;
+}
+.grafico-linha-relatorio {
+    height: 470px;
+}
+.grafico-linha-relatorio .recharts-line-curve {
+    filter: drop-shadow(0 4px 8px rgba(15, 23, 42, 0.08));
+}
+.grafico-linha-relatorio .recharts-dot {
+    transition: r 0.2s ease;
+}
+.grafico-linha-relatorio .recharts-dot:hover {
+    r: 7;
+}
+/* ==========================================================
+   TOOLTIP
+========================================================== */
+.recharts-default-tooltip {
+    padding: 12px 14px !important;
+    border-radius: 14px !important;
+    background: var(--branco) !important;
+    border: 1px solid var(--cinza-200) !important;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12) !important;
+}
+.dark .recharts-default-tooltip {
+    background: var(--cinza-900) !important;
+    border-color: var(--cinza-700) !important;
+}
+.recharts-tooltip-label {
+    margin-bottom: 7px !important;
+    color: var(--cinza-900) !important;
+    font-weight: 700 !important;
+}
+.dark .recharts-tooltip-label {
+    color: var(--branco) !important;
+}
+.recharts-tooltip-item {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+}
+/* ==========================================================
+   GRÁFICO DONUT
+========================================================== */
+.area-pizza-relatorio {
+    grid-column: 1 / -1;
+    min-height: 490px;
+    display: grid;
+    grid-template-columns:
+        minmax(420px, 1fr)
+        minmax(320px, 0.9fr);
+    align-items: center;
+    gap: 70px;
+    padding: 10px 50px;
+}
+.grafico-donut {
+    position: relative;
+    min-width: 0;
+    height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grafico-donut .recharts-wrapper {
+    margin: 0 auto;
+}
+.centro-donut {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 176px;
+    height: 176px;
+    border-radius: 50%;
+    background: var(--branco);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+.dark .centro-donut {
+    background: var(--cinza-900);
+}
+.centro-donut small {
+    color: var(--cinza-500);
+    font-size: 13px;
+    font-weight: 500;
+}
+.dark .centro-donut small {
+    color: var(--cinza-400);
+}
+.centro-donut strong {
+    margin-top: 7px;
+    color: var(--cinza-900);
+    font-size: 24px;
+    font-weight: 800;
+}
+.dark .centro-donut strong {
+    color: var(--branco);
+}
+/* ==========================================================
+   LISTA DE CATEGORIAS DO DONUT
+========================================================== */
+.categorias-relatorio {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.categorias-relatorio h2 {
+    margin: 0 0 8px;
+    color: var(--cinza-900);
+    font-size: 27px;
+    font-weight: 800;
+}
+.dark .categorias-relatorio h2 {
+    color: var(--branco);
+}
+.item-categoria-R {
+    min-height: 72px;
+    padding: 14px 16px;
+    border-radius: 18px;
+    background: var(--slate-50);
+    border: 1px solid var(--cinza-divisor);
+    display: grid;
+    grid-template-columns:
+        46px
+        minmax(0, 1fr)
+        auto;
+    align-items: center;
+    gap: 13px;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+.dark .item-categoria-R {
+    background: var(--slate-900);
+    border-color: var(--cinza-800);
+}
+.item-categoria-R:hover {
+    transform: translateY(-2px);
+    border-color: var(--cinza-300);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.dark .item-categoria-R:hover {
+    border-color: var(--cinza-700);
+}
+.item-categoria-R .icone-categoria {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--branco);
+    font-size: 19px;
+    flex-shrink: 0;
+}
+.item-categoria-R .icone-categoria svg {
+    color: var(--branco);
+}
+.info-categoria-R {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.info-categoria-R span {
+    overflow: hidden;
+    color: var(--cinza-700);
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.dark .info-categoria-R span {
+    color: var(--branco);
+}
+.info-categoria-R small {
+    color: var(--cinza-400);
+    font-size: 12px;
+    font-weight: 600;
+}
+.item-categoria-R > strong {
+    color: var(--cinza-900);
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.dark .item-categoria-R > strong {
+    color: var(--branco);
+}
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+@media (max-width: 1280px) {
+    .conteudo-relatorio {
+        grid-template-columns:
+            minmax(0, 2.4fr)
+            minmax(230px, 1fr);
+        gap: 22px;
+    }
+    .area-pizza-relatorio {
+        grid-template-columns:
+            minmax(360px, 1fr)
+            minmax(290px, 0.9fr);
+        gap: 40px;
+        padding: 10px 20px;
+    }
+}
+@media (max-width: 1050px) {
+    .topo-relatorios {
+        grid-template-columns:
+            1fr
+            auto;
+    }
+    .troca-grafico {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-self: center;
+    }
+    .acoes-relatorio {
+        justify-self: end;
+    }
+    .conteudo-relatorio {
+        grid-template-columns: 1fr;
+    }
+    .balanco-mensal {
+        min-height: auto;
+    }
+    .area-pizza-relatorio {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding: 0;
+    }
+    .grafico-donut {
+        height: 390px;
+    }
+    .categorias-relatorio {
+        width: 100%;
+        max-width: 620px;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 820px) {
+    .pagina-relatorios {
+        padding: 20px;
+    }
+    .topo-relatorios {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .botao-ia {
+        width: 100%;
+    }
+    .troca-grafico {
+        align-self: center;
+    }
+    .acoes-relatorio {
+        justify-content: center;
+    }
+    .card-relatorio {
+        padding: 20px;
+    }
+    .seletor-mes {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 6px;
+    }
+    .seletor-mes::-webkit-scrollbar {
+        height: 5px;
+    }
+    .seletor-mes::-webkit-scrollbar-thumb {
+        background: var(--cinza-300);
+        border-radius: 999px;
+    }
+    .dark .seletor-mes::-webkit-scrollbar-thumb {
+        background: var(--cinza-600);
+    }
+    .seletor-mes button {
+        flex-shrink: 0;
+    }
+    .grafico-relatorio,
+    .grafico-linha-relatorio {
+        height: 390px;
+    }
+    .area-pizza-relatorio {
+        min-height: auto;
+    }
+    .grafico-donut {
+        height: 350px;
+    }
+    .grafico-donut .recharts-wrapper {
+        transform: scale(0.88);
+    }
+}
+@media (max-width: 560px) {
+    .pagina-relatorios {
+        padding: 14px;
+        gap: 16px;
+    }
+    .card-relatorio {
+        min-height: auto;
+        padding: 16px;
+        border-radius: 20px;
+    }
+    .acoes-relatorio {
+        width: 100%;
+    }
+    .acoes-relatorio button {
+        flex: 1;
+    }
+    .troca-grafico {
+        width: 100%;
+    }
+    .troca-grafico button {
+        flex: 1;
+    }
+    .titulo-grafico-relatorio {
+        font-size: 17px;
+    }
+    .grafico-relatorio,
+    .grafico-linha-relatorio {
+        height: 340px;
+    }
+    .balanco-mensal {
+        padding: 18px;
+    }
+    .linha-balanco {
+        min-height: 54px;
+    }
+    .grafico-donut {
+        height: 310px;
+    }
+    .grafico-donut .recharts-wrapper {
+        transform: scale(0.72);
+    }
+    .centro-donut {
+        width: 126px;
+        height: 126px;
+    }
+    .centro-donut strong {
+        font-size: 18px;
+    }
+    .categorias-relatorio h2 {
+        font-size: 22px;
+    }
+    .item-categoria-R {
+        grid-template-columns:
+            42px
+            minmax(0, 1fr);
+    }
+    .item-categoria-R > strong {
+        grid-column: 2;
+        justify-self: start;
+    }
+}
+/* ==========================================================
+   ACESSIBILIDADE E FOCO
+========================================================== */
+.botao-ia:focus-visible,
+.troca-grafico button:focus-visible,
+.acoes-relatorio button:focus-visible,
+.seletor-mes button:focus-visible {
+    outline: 3px solid rgba(34, 197, 94, 0.24);
+    outline-offset: 3px;
+}
+/* ==========================================================
+   ANIMAÇÕES
+========================================================== */
+@keyframes entradaRelatorios {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.card-relatorio,
+.balanco-mensal,
+.item-categoria-R {
+    animation: entradaRelatorios 0.3s ease;
+}
+/* ==========================================================
+   CORREÇÕES VISUAIS DO RECHARTS
+========================================================== */
+.recharts-cartesian-axis-tick-value {
+    fill: var(--cinza-400);
+}
+.dark .recharts-cartesian-axis-tick-value {
+    fill: var(--cinza-400);
+}
+.recharts-legend-wrapper {
+    padding-top: 8px;
+}
+.recharts-legend-item {
+    margin-right: 22px !important;
+}
+.recharts-bar-rectangle path {
+    transition:
+        opacity 0.2s ease,
+        filter 0.2s ease;
+}
+.recharts-bar-rectangle:hover path {
+    opacity: 0.86;
+    filter: drop-shadow(0 5px 8px rgba(15, 23, 42, 0.12));
+}
+.recharts-line-dot {
+    cursor: pointer;
+}
+.recharts-pie-sector path {
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    transform-origin: center;
+}
+.recharts-pie-sector:hover path {
+    opacity: 0.9;
+}
+/* ==========================================================
+   DARK MODE FINAL
+========================================================== */
+.dark .card-relatorio {
+    box-shadow: none;
+}
+.dark .botao-ia {
+    box-shadow: 0 10px 24px rgba(124, 58, 237, 0.18);
+}
+.dark .item-categoria-R {
+    box-shadow: none;
+}
+.dark .recharts-cartesian-grid line {
+    stroke: #273244;
+}
+.dark .recharts-legend-item-text {
+    color: var(--cinza-300) !important;
+}
+/* ==========================================================
+   AJUSTES FINAIS
+========================================================== */
+.pagina-relatorios * {
+    box-sizing: border-box;
+}
+.botao-ia,
+.troca-grafico button,
+.acoes-relatorio button,
+.seletor-mes button {
+    font-family: inherit;
+}
+.item-categoria-R:last-child {
+    margin-bottom: 0;
+}

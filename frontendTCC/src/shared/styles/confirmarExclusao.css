@@ -1,0 +1,373 @@
+/* =========================================================
+   CONFIRMAR EXCLUSÃO — modal genérico
+   (substitui confirmarExclusaoObjetivo.css,
+   confirmarExclusaoPlanejamento.css,
+   confirmarExclusaoCategoriaPlanejamento.css e
+   confirmarExclusaoMovimentacaoObjetivo.css)
+========================================================= */
+/* =========================================================
+   OVERLAY
+========================================================= */
+.confirmar-exclusao-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 4000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(5px);
+    animation: aparecer-overlay-exclusao 0.2s ease;
+}
+/* =========================================================
+   MODAL
+========================================================= */
+.confirmar-exclusao-modal {
+    width: 100%;
+    max-width: 470px;
+    overflow: hidden;
+    border: 1px solid var(--cinza-200);
+    border-radius: 22px;
+    background: var(--branco);
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.22);
+    animation: aparecer-modal-exclusao 0.25s ease;
+}
+.dark .confirmar-exclusao-modal {
+    border-color: var(--marinho-800);
+    background: var(--slate-900);
+}
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+.confirmar-exclusao-modal > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 24px 8px;
+}
+/* =========================================================
+   ÍCONE DE EXCLUSÃO
+========================================================= */
+.confirmar-exclusao-icone {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: var(--vermelho-50);
+    color: var(--vermelho-500);
+    font-size: 25px;
+}
+.dark .confirmar-exclusao-icone {
+    background: rgba(239, 68, 68, 0.12);
+    color: #f87171;
+}
+/* =========================================================
+   BOTÃO FECHAR
+========================================================= */
+.confirmar-exclusao-fechar {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    border-radius: 11px;
+    background: var(--cinza-100);
+    color: var(--cinza-500);
+    font-size: 21px;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+.confirmar-exclusao-fechar:hover:not(:disabled) {
+    background: var(--cinza-200);
+    color: var(--cinza-900);
+}
+.dark .confirmar-exclusao-fechar {
+    background: var(--slate-800);
+    color: var(--slate-400);
+}
+.dark .confirmar-exclusao-fechar:hover:not(:disabled) {
+    background: var(--slate-700);
+    color: var(--branco);
+}
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+.confirmar-exclusao-conteudo {
+    padding: 12px 24px 24px;
+}
+.confirmar-exclusao-conteudo h2 {
+    margin: 4px 0 9px;
+    color: var(--cinza-900);
+    font-size: 23px;
+    font-weight: 750;
+}
+.dark .confirmar-exclusao-conteudo h2 {
+    color: var(--slate-50);
+}
+.confirmar-exclusao-conteudo > p {
+    margin: 0;
+    color: var(--cinza-500);
+    font-size: 14px;
+    line-height: 1.6;
+}
+.confirmar-exclusao-conteudo > p strong {
+    color: var(--cinza-700);
+    font-weight: 700;
+}
+.dark .confirmar-exclusao-conteudo > p {
+    color: var(--slate-400);
+}
+.dark .confirmar-exclusao-conteudo > p strong {
+    color: #e2e8f0;
+}
+/* =========================================================
+   RESUMO (neutro — usado em planejamento, categoria
+   e movimentação)
+========================================================= */
+.confirmar-exclusao-resumo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 14px 16px;
+    border: 1px solid var(--cinza-200);
+    border-radius: 12px;
+    background: var(--slate-50);
+}
+.confirmar-exclusao-resumo span {
+    max-width: 210px;
+    color: var(--cinza-500);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+.confirmar-exclusao-resumo strong {
+    flex-shrink: 0;
+    color: var(--cinza-700);
+    font-size: 15px;
+    font-weight: 750;
+}
+.dark .confirmar-exclusao-resumo {
+    background: var(--marinho-900);
+    border-color: var(--marinho-800);
+}
+.dark .confirmar-exclusao-resumo span {
+    color: var(--slate-400);
+}
+.dark .confirmar-exclusao-resumo strong {
+    color: var(--slate-50);
+}
+/* =========================================================
+   RESUMO — variante positiva (usada quando um valor é
+   devolvido ao saldo do usuário, ex: exclusão de objetivo)
+========================================================= */
+.confirmar-exclusao-resumo--positivo {
+    border-color: #d1fae5;
+    background: #f0fdf4;
+}
+.confirmar-exclusao-resumo--positivo strong {
+    color: var(--verde-600);
+    font-size: 17px;
+}
+.dark .confirmar-exclusao-resumo--positivo {
+    border-color: rgba(34, 197, 94, 0.2);
+    background: rgba(22, 163, 74, 0.08);
+}
+.dark .confirmar-exclusao-resumo--positivo span {
+    color: var(--slate-300);
+}
+.dark .confirmar-exclusao-resumo--positivo strong {
+    color: var(--verde-400);
+}
+/* =========================================================
+   AVISO
+========================================================= */
+.confirmar-exclusao-aviso {
+    position: relative;
+    margin-top: 14px;
+    padding: 13px 14px 13px 39px;
+    border: 1px solid #fde68a;
+    border-radius: 12px;
+    background: #fffbeb;
+    color: #92400e;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.confirmar-exclusao-aviso::before {
+    content: "!";
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #d97706;
+    border-radius: 50%;
+    color: #d97706;
+    font-size: 11px;
+    font-weight: 800;
+    transform: translateY(-50%);
+}
+.dark .confirmar-exclusao-aviso {
+    border-color: rgba(245, 158, 11, 0.25);
+    background: rgba(120, 53, 15, 0.18);
+    color: #fbbf24;
+}
+.dark .confirmar-exclusao-aviso::before {
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+/* =========================================================
+   ERRO
+========================================================= */
+.confirmar-exclusao-erro {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border: 1px solid #fecaca;
+    border-radius: 11px;
+    background: var(--vermelho-50);
+    color: var(--vermelho-700);
+    font-size: 12px;
+    line-height: 1.5;
+}
+.dark .confirmar-exclusao-erro {
+    border-color: rgba(239, 68, 68, 0.3);
+    background: rgba(127, 29, 29, 0.18);
+    color: var(--vermelho-300);
+}
+/* =========================================================
+   RODAPÉ
+========================================================= */
+.confirmar-exclusao-conteudo footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 11px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cinza-divisor);
+}
+.dark .confirmar-exclusao-conteudo footer {
+    border-color: var(--cinza-800);
+}
+/* =========================================================
+   BOTÕES
+========================================================= */
+.confirmar-exclusao-cancelar,
+.confirmar-exclusao-confirmar {
+    min-height: 43px;
+    padding: 0 18px;
+    border-radius: 11px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+/* CANCELAR */
+.confirmar-exclusao-cancelar {
+    border: 1px solid var(--cinza-300);
+    background: transparent;
+    color: var(--cinza-600);
+}
+.confirmar-exclusao-cancelar:hover:not(:disabled) {
+    background: var(--cinza-100);
+    transform: translateY(-1px);
+}
+.dark .confirmar-exclusao-cancelar {
+    border-color: var(--slate-700);
+    color: var(--slate-300);
+}
+.dark .confirmar-exclusao-cancelar:hover:not(:disabled) {
+    background: var(--slate-800);
+}
+/* CONFIRMAR EXCLUSÃO */
+.confirmar-exclusao-confirmar {
+    border: none;
+    background: var(--vermelho-500);
+    color: var(--branco);
+    box-shadow: 0 7px 16px rgba(239, 68, 68, 0.2);
+}
+.confirmar-exclusao-confirmar:hover:not(:disabled) {
+    background: var(--vermelho-600);
+    transform: translateY(-1px);
+    box-shadow: 0 9px 20px rgba(239, 68, 68, 0.25);
+}
+/* =========================================================
+   DISABLED
+========================================================= */
+.confirmar-exclusao-modal button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+/* =========================================================
+   MOBILE
+========================================================= */
+@media (max-width: 520px) {
+    .confirmar-exclusao-overlay {
+        align-items: flex-end;
+        padding: 0;
+    }
+    .confirmar-exclusao-modal {
+        max-width: none;
+        border-radius: 22px 22px 0 0;
+    }
+    .confirmar-exclusao-modal > header {
+        padding: 22px 20px 8px;
+    }
+    .confirmar-exclusao-conteudo {
+        padding: 12px 20px 22px;
+    }
+    .confirmar-exclusao-resumo {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+    }
+    .confirmar-exclusao-resumo span {
+        max-width: none;
+    }
+    .confirmar-exclusao-conteudo footer {
+        flex-direction: column-reverse;
+    }
+    .confirmar-exclusao-cancelar,
+    .confirmar-exclusao-confirmar {
+        width: 100%;
+    }
+}
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+@keyframes aparecer-overlay-exclusao {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes aparecer-modal-exclusao {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

@@ -1,0 +1,394 @@
+/* =========================================================
+   VARIÁVEIS DA SIDEBAR
+========================================================= */
+.sidebar {
+    --sidebar-width: 250px;
+    --sidebar-width-closed: 78px;
+    --sidebar-bg: var(--branco);
+    --sidebar-text: var(--cinza-500);
+    --sidebar-text-strong: var(--cinza-900);
+    --sidebar-active-bg: var(--cinza-divisor);
+    --sidebar-green: var(--verde-500);
+    --sidebar-green-dark: var(--verde-600);
+    --sidebar-border: var(--cinza-200);
+    --sidebar-danger: var(--vermelho-500);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--sidebar-bg);
+    overflow: hidden;
+    z-index: 1000;
+    transition:
+        width 0.35s ease,
+        background-color 0.35s ease;
+}
+/* =========================================================
+   MODO ESCURO
+========================================================= */
+.dark .sidebar {
+    --sidebar-bg: #0b1220;
+    --sidebar-text: var(--cinza-400);
+    --sidebar-text-strong: var(--branco);
+    --sidebar-active-bg: var(--slate-900);
+    --sidebar-border: var(--cinza-800);
+}
+/* =========================================================
+   SIDEBAR FECHADA
+========================================================= */
+.sidebar.close {
+    width: var(--sidebar-width-closed);
+}
+/* =========================================================
+   LOGO
+========================================================= */
+.sidebar .logo {
+    width: 100%;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 22px;
+    flex-shrink: 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+.sidebar .logo-circle {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 14px;
+    background: linear-gradient(
+        135deg,
+        var(--sidebar-green),
+        var(--sidebar-green-dark)
+    );
+}
+.sidebar .logo-name {
+    color: var(--sidebar-text-strong);
+    font-size: 23px;
+    font-weight: 800;
+    white-space: nowrap;
+    opacity: 1;
+    transition:
+        opacity 0.2s ease,
+        transform 0.3s ease;
+}
+.sidebar .logo-name span {
+    color: var(--sidebar-green);
+}
+.sidebar.close .logo {
+    justify-content: center;
+    padding: 0;
+}
+.sidebar.close .logo-name {
+    opacity: 0;
+    transform: translateX(-10px);
+    pointer-events: none;
+}
+/* =========================================================
+   LISTAS DO MENU
+========================================================= */
+.sidebar .side-menu {
+    width: 100%;
+    margin: 0;
+    padding: 12px 0;
+    overflow: visible;
+}
+/*
+   Como existem duas listas, esta regra deixa a primeira
+   ocupar a região principal e a segunda ficar embaixo.
+*/
+/* .sidebar .side-menu:first-of-type {
+    margin-bottom: auto;
+} */
+/* =========================================================
+   ITEM DO MENU
+========================================================= */
+.sidebar .side-menu li {
+    position: relative;
+    width: calc(100% - 10px);
+    height: 58px;
+    margin-left: 10px;
+    padding: 4px;
+    list-style: none;
+    border-radius: 30px 0 0 30px;
+    background: transparent;
+}
+/* =========================================================
+   ITEM ATIVO
+========================================================= */
+.sidebar .side-menu li.active {
+    background: var(--sidebar-active-bg);
+}
+/* =========================================================
+   CURVA SUPERIOR E INFERIOR
+========================================================= */
+.sidebar .side-menu li.active::before,
+.sidebar .side-menu li.active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+.sidebar .side-menu li.active::before {
+    top: -32px;
+    box-shadow: 16px 16px 0 var(--sidebar-active-bg);
+}
+.sidebar .side-menu li.active::after {
+    bottom: -32px;
+    box-shadow: 16px -16px 0 var(--sidebar-active-bg);
+}
+/* =========================================================
+   LINK
+========================================================= */
+.sidebar .side-menu li a {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 18px;
+    border-radius: 30px;
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    text-decoration: none;
+    overflow: hidden;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.35s ease;
+}
+/* =========================================================
+   LINK ATIVO
+========================================================= */
+.sidebar .side-menu li.active a {
+    color: var(--sidebar-green);
+    font-weight: 600;
+    transform: translateX(4px);
+    box-shadow: 0 8px 18px rgba(34, 197, 94, 0.08);
+}
+/* =========================================================
+   HOVER
+========================================================= */
+.sidebar .side-menu li:not(.active) a:hover {
+    color: var(--sidebar-green);
+    transform: translateX(3px);
+}
+.sidebar .side-menu li a:active {
+    transform: scale(0.97);
+}
+/* =========================================================
+   ÍCONES
+========================================================= */
+.sidebar .side-menu li a svg {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    flex-shrink: 0;
+    font-size: 23px;
+}
+/* =========================================================
+   TEXTO
+========================================================= */
+.sidebar .side-menu li a span {
+    color: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+    transition:
+        opacity 0.18s ease,
+        transform 0.25s ease;
+}
+/* =========================================================
+   LOGOUT
+========================================================= */
+.sidebar .side-menu li a.logout {
+    color: var(--sidebar-danger);
+}
+.sidebar .side-menu li a.logout:hover {
+    color: var(--sidebar-danger);
+}
+/* =========================================================
+   MENU FECHADO
+========================================================= */
+.sidebar.close .side-menu li {
+    width: calc(100% - 8px);
+    height: 58px;
+    margin-left: 8px;
+    padding: 4px;
+    border-radius: 29px 0 0 29px;
+}
+/*
+   Mantém o encaixe curvado mesmo quando a sidebar fecha.
+*/
+.sidebar.close .side-menu li.active {
+    background: var(--sidebar-active-bg);
+}
+/*
+   Curvas menores para não criar aquela barriga exagerada.
+*/
+.sidebar.close .side-menu li.active::before,
+.sidebar.close .side-menu li.active::after {
+    width: 26px;
+    height: 26px;
+}
+.sidebar.close .side-menu li.active::before {
+    top: -26px;
+    box-shadow: 13px 13px 0 var(--sidebar-active-bg);
+}
+.sidebar.close .side-menu li.active::after {
+    bottom: -26px;
+    box-shadow: 13px -13px 0 var(--sidebar-active-bg);
+}
+/*
+   O link ocupa quase toda a largura, mas mantém espaço
+   suficiente para o encaixe da curva.
+*/
+.sidebar.close .side-menu li a {
+    width: 54px;
+    height: 50px;
+    justify-content: center;
+    gap: 0;
+    padding: 0;
+    border-radius: 25px;
+}
+/*
+   Remove o deslocamento lateral no item ativo fechado.
+*/
+.sidebar.close .side-menu li.active a {
+    transform: none;
+}
+/*
+   Hover fechado: aumenta levemente, sem deslocar.
+*/
+.sidebar.close .side-menu li:not(.active) a:hover {
+    transform: scale(1.05);
+}
+/*
+   Esconde somente o texto, sem afetar o ícone.
+*/
+.sidebar.close .side-menu li a span {
+    width: 0;
+    opacity: 0;
+    transform: translateX(-8px);
+    pointer-events: none;
+}
+/* =========================================================
+   USUÁRIO
+========================================================= */
+.sidebar .usuario-sidebar {
+    width: 100%;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--sidebar-border);
+}
+.sidebar .usuario-info {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.sidebar .usuario-avatar {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.sidebar .usuario-nome {
+    color: var(--sidebar-text-strong);
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+/* =========================================================
+   BOTÃO SAIR
+========================================================= */
+.sidebar .botao-sair {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    background: transparent;
+    color: var(--sidebar-danger);
+    font-size: 13px;
+    cursor: pointer;
+}
+/* =========================================================
+   USUÁRIO COM SIDEBAR FECHADA
+========================================================= */
+.sidebar.close .usuario-sidebar {
+    justify-content: center;
+    padding: 18px 0;
+}
+.sidebar.close .usuario-nome,
+.sidebar.close .botao-sair span {
+    display: none;
+}
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 230px;
+    }
+    .sidebar.close {
+        width: 78px;
+    }
+}
+/* =========================================================
+   CELULAR — a sidebar vira um menu retrátil (drawer)
+   em vez de empurrar o conteúdo. Reaproveita o mesmo
+   estado "fechado"/"aberto" que já existia: em telas
+   largas ele alterna entre 250px e 78px (ícones); aqui
+   embaixo de 600px ele alterna entre escondida fora da
+   tela e um menu de largura cheia por cima do conteúdo.
+========================================================= */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 250px;
+        transform: translateX(-100%);
+        box-shadow: 18px 0 40px rgba(15, 23, 42, 0.25);
+    }
+    .sidebar:not(.close) {
+        transform: translateX(0);
+    }
+    .sidebar.close {
+        width: 250px;
+    }
+}
+/* =========================================================
+   FUNDO ESCURECIDO (BACKDROP) — só aparece no celular,
+   atrás do menu, quando ele está aberto. Clicar nele
+   fecha o menu.
+========================================================= */
+.sidebar-backdrop {
+    display: none;
+}
+@media (max-width: 600px) {
+    .sidebar-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        background: rgba(15, 23, 42, 0.45);
+    }
+    .sidebar-backdrop.visivel {
+        display: block;
+    }
+}

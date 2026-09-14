@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 
-
 type Opcoes = {
-
     /** Se falso, o hook nao faz nada (equivalente a um `if (!aberto) return;` no efeito original). */
     ativo?: boolean;
 
@@ -13,9 +11,7 @@ type Opcoes = {
     travarScroll?: boolean;
 
     onFechar: () => void;
-
 };
-
 
 /**
  * Fecha um modal/formulario ao pressionar Esc, com as mesmas
@@ -29,66 +25,33 @@ function useFecharComEsc({
     ativo = true,
     bloqueado = false,
     travarScroll = false,
-    onFechar
+    onFechar,
 }: Opcoes) {
-
     useEffect(() => {
-
         if (!ativo) {
             return;
         }
 
-        function fecharComEscape(
-            evento: KeyboardEvent
-        ) {
-
-            if (
-                evento.key === "Escape" &&
-                !bloqueado
-            ) {
-
+        function fecharComEscape(evento: KeyboardEvent) {
+            if (evento.key === "Escape" && !bloqueado) {
                 onFechar();
-
             }
-
         }
 
-        document.addEventListener(
-            "keydown",
-            fecharComEscape
-        );
+        document.addEventListener("keydown", fecharComEscape);
 
         if (travarScroll) {
-
-            document.body.style.overflow =
-                "hidden";
-
+            document.body.style.overflow = "hidden";
         }
 
         return () => {
-
-            document.removeEventListener(
-                "keydown",
-                fecharComEscape
-            );
+            document.removeEventListener("keydown", fecharComEscape);
 
             if (travarScroll) {
-
-                document.body.style.overflow =
-                    "";
-
+                document.body.style.overflow = "";
             }
-
         };
-
-    }, [
-        ativo,
-        bloqueado,
-        travarScroll,
-        onFechar
-    ]);
-
+    }, [ativo, bloqueado, travarScroll, onFechar]);
 }
-
 
 export default useFecharComEsc;

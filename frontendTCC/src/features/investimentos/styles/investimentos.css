@@ -1,0 +1,994 @@
+/* =========================================================
+   PÁGINA
+========================================================= */
+.pagina-investimentos {
+    width: 100%;
+    min-height: 100%;
+    padding: 32px 40px 52px;
+    box-sizing: border-box;
+}
+/* =========================================================
+   TOPO
+========================================================= */
+.topo-investimentos {
+    width: 100%;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+.titulo-investimentos h1 {
+    margin: 0;
+    color: var(--cinza-900);
+    font-size: 29px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
+}
+.titulo-investimentos p {
+    margin: 6px 0 0;
+    color: #8a919d;
+    font-size: 14px;
+}
+/* DARK */
+.dark .titulo-investimentos h1 {
+    color: var(--cinza-50);
+}
+.dark .titulo-investimentos p {
+    color: var(--cinza-400);
+}
+/* =========================================================
+   BOTÃO NOVO INVESTIMENTO
+========================================================= */
+.botao-novo-investimento {
+    min-height: 46px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--verde-600);
+    color: var(--branco);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 650;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(22, 163, 74, 0.17);
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+.botao-novo-investimento svg {
+    font-size: 20px;
+}
+.botao-novo-investimento:hover {
+    background: var(--verde-700);
+    transform: translateY(-1px);
+    box-shadow: 0 9px 20px rgba(22, 163, 74, 0.22);
+}
+.dark .botao-novo-investimento {
+    background: var(--verde-600);
+    box-shadow: 0 6px 18px rgba(22, 163, 74, 0.18);
+}
+.dark .botao-novo-investimento:hover {
+    background: var(--verde-700);
+}
+/* =========================================================
+   ERRO
+========================================================= */
+.mensagem-erro-investimentos {
+    margin-bottom: 22px;
+    padding: 13px 16px;
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--vermelho-50);
+    color: var(--vermelho-700);
+    font-size: 13px;
+    font-weight: 600;
+}
+.mensagem-erro-investimentos svg {
+    flex-shrink: 0;
+    font-size: 19px;
+}
+.dark .mensagem-erro-investimentos {
+    border-color: rgba(239, 68, 68, 0.25);
+    background: rgba(127, 29, 29, 0.16);
+    color: var(--vermelho-300);
+}
+/* =========================================================
+   RESUMO
+========================================================= */
+.resumo-investimentos {
+    position: relative;
+    margin-bottom: 38px;
+    padding-bottom: 26px;
+}
+/* =========================================================
+   FUNDO VERDE
+========================================================= */
+.fundo-resumo-investimentos {
+    position: relative;
+    height: 190px;
+    padding: 28px 32px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: linear-gradient(
+        120deg,
+        var(--verde-700) 0%,
+        var(--verde-600) 52%,
+        var(--verde-500) 100%
+    );
+    box-shadow: 0 12px 30px rgba(22, 163, 74, 0.13);
+}
+.fundo-resumo-investimentos::before {
+    content: "";
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    top: -205px;
+    right: -70px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+}
+.fundo-resumo-investimentos::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    left: -100px;
+    bottom: -170px;
+    border: 42px solid rgba(255, 255, 255, 0.045);
+    border-radius: 50%;
+}
+.dark .fundo-resumo-investimentos {
+    background: linear-gradient(
+        120deg,
+        #14532d 0%,
+        var(--verde-700) 52%,
+        var(--verde-600) 100%
+    );
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+.texto-resumo-investimentos {
+    position: relative;
+    z-index: 2;
+}
+.texto-resumo-investimentos span {
+    display: block;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 12px;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.texto-resumo-investimentos h2 {
+    margin: 0;
+    color: var(--branco);
+    font-size: 22px;
+    font-weight: 650;
+    letter-spacing: -0.3px;
+}
+/* =========================================================
+   LINHA DE CARDS
+========================================================= */
+.linha-cards-carteira {
+    position: relative;
+    z-index: 5;
+    width: calc(100% - 70px);
+    margin: -98px auto 0;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(340px, 1.35fr)
+        minmax(0, 1fr);
+    gap: 18px;
+    align-items: end;
+}
+/* =========================================================
+   CARD PRINCIPAL
+========================================================= */
+.card-saldo-carteira {
+    width: 100%;
+    min-height: 196px;
+    padding: 23px 25px;
+    box-sizing: border-box;
+    border: 1px solid var(--cinza-200);
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--branco);
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.1);
+}
+.dark .card-saldo-carteira {
+    border-color: var(--cinza-700);
+    background: var(--cinza-800);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.22);
+}
+/* =========================================================
+   SALDO
+========================================================= */
+.topo-saldo-carteira {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+.icone-saldo-carteira {
+    width: 47px;
+    height: 47px;
+    flex-shrink: 0;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(22, 163, 74, 0.09);
+    color: var(--verde-600);
+}
+.icone-saldo-carteira svg {
+    font-size: 23px;
+}
+.dark .icone-saldo-carteira {
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--verde-400);
+}
+.texto-saldo-carteira {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+.texto-saldo-carteira > span {
+    color: #8a919d;
+    font-size: 12px;
+    font-weight: 550;
+}
+.texto-saldo-carteira > strong {
+    margin-top: 3px;
+    color: var(--cinza-900);
+    font-size: 31px;
+    font-weight: 750;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+}
+.texto-saldo-carteira > small {
+    margin-top: 4px;
+    color: var(--cinza-400);
+    font-size: 10px;
+}
+.dark .texto-saldo-carteira > span {
+    color: var(--cinza-400);
+}
+.dark .texto-saldo-carteira > strong {
+    color: var(--cinza-50);
+}
+.dark .texto-saldo-carteira > small {
+    color: var(--cinza-500);
+}
+/* =========================================================
+   DIVISOR
+========================================================= */
+.divisor-saldo-carteira {
+    width: 100%;
+    height: 1px;
+    margin: 17px 0 14px;
+    background: #eceef1;
+}
+.dark .divisor-saldo-carteira {
+    background: var(--cinza-700);
+}
+/* =========================================================
+   RENDIMENTO
+========================================================= */
+.rendimento-saldo-carteira {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+.rendimento-saldo-carteira > div:first-child {
+    display: flex;
+    flex-direction: column;
+}
+.rendimento-saldo-carteira span {
+    color: var(--cinza-400);
+    font-size: 11px;
+}
+.rendimento-saldo-carteira strong {
+    margin-top: 2px;
+    color: var(--verde-600);
+    font-size: 17px;
+    font-weight: 700;
+}
+.dark .rendimento-saldo-carteira span {
+    color: var(--cinza-400);
+}
+.dark .rendimento-saldo-carteira strong {
+    color: var(--verde-400);
+}
+.icone-rendimento-carteira {
+    width: 37px;
+    height: 37px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(22, 163, 74, 0.09);
+    color: var(--verde-600);
+}
+.icone-rendimento-carteira svg {
+    font-size: 19px;
+}
+.dark .icone-rendimento-carteira {
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--verde-400);
+}
+/* =========================================================
+   CARDS LATERAIS
+========================================================= */
+.card-lateral-carteira {
+    width: 100%;
+    min-height: 132px;
+    padding: 18px 20px;
+    box-sizing: border-box;
+    border: 1px solid var(--cinza-200);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--branco);
+    box-shadow: 0 7px 20px rgba(15, 23, 42, 0.055);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+.card-lateral-carteira:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.075);
+}
+.dark .card-lateral-carteira {
+    border-color: var(--cinza-700);
+    background: var(--cinza-800);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+}
+.dark .card-lateral-carteira:hover {
+    border-color: var(--cinza-600);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+.topo-card-lateral {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.topo-card-lateral > span {
+    color: var(--cinza-400);
+    font-size: 11px;
+    font-weight: 550;
+}
+.dark .topo-card-lateral > span {
+    color: var(--cinza-400);
+}
+.icone-resumo {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icone-resumo svg {
+    font-size: 19px;
+}
+.icone-resumo.aporte {
+    background: rgba(22, 163, 74, 0.09);
+    color: var(--verde-600);
+}
+.dark .icone-resumo.aporte {
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--verde-400);
+}
+.icone-resumo.resgate {
+    background: rgba(239, 68, 68, 0.08);
+    color: var(--vermelho-500);
+}
+.dark .icone-resumo.resgate {
+    background: rgba(239, 68, 68, 0.12);
+    color: #f87171;
+}
+.conteudo-card-lateral {
+    margin-top: 13px;
+    display: flex;
+    flex-direction: column;
+}
+.conteudo-card-lateral span {
+    color: #8a919d;
+    font-size: 12px;
+}
+.conteudo-card-lateral strong {
+    margin-top: 2px;
+    color: var(--cinza-900);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+.dark .conteudo-card-lateral span {
+    color: var(--cinza-400);
+}
+.dark .conteudo-card-lateral strong {
+    color: var(--cinza-50);
+}
+/* =========================================================
+   SEÇÃO MEUS INVESTIMENTOS
+========================================================= */
+.secao-meus-investimentos {
+    margin-top: 4px;
+}
+.cabecalho-meus-investimentos {
+    width: 100%;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+/* =========================================================
+   ABAS
+========================================================= */
+.abas-investimentos {
+    padding: 4px;
+    display: flex;
+    gap: 4px;
+    border-radius: 11px;
+    background: var(--cinza-100);
+}
+.dark .abas-investimentos {
+    background: var(--cinza-900);
+}
+.aba-investimento {
+    min-height: 37px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--cinza-500);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 650;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+.aba-investimento:hover {
+    color: var(--verde-600);
+}
+.aba-investimento.ativa {
+    background: var(--branco);
+    color: var(--verde-600);
+    box-shadow: 0 2px 7px rgba(15, 23, 42, 0.08);
+}
+.dark .aba-investimento {
+    color: var(--cinza-400);
+}
+.dark .aba-investimento:hover {
+    color: var(--verde-400);
+}
+.dark .aba-investimento.ativa {
+    background: var(--cinza-800);
+    color: var(--verde-400);
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.18);
+}
+/* =========================================================
+   GRID
+========================================================= */
+.grid-investimentos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+}
+/* =========================================================
+   CARD INVESTIMENTO
+========================================================= */
+.card-investimento-novo {
+    width: 100%;
+    min-height: 220px;
+    padding: 20px 21px;
+    box-sizing: border-box;
+    border: 1px solid var(--cinza-200);
+    border-radius: 15px;
+    background: var(--branco);
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 5px 16px rgba(15, 23, 42, 0.035);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+.card-investimento-novo:hover {
+    transform: translateY(-2px);
+    border-color: rgba(22, 163, 74, 0.3);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.07);
+}
+.dark .card-investimento-novo {
+    border-color: var(--cinza-700);
+    background: var(--cinza-800);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+}
+.dark .card-investimento-novo:hover {
+    border-color: rgba(74, 222, 128, 0.3);
+    background: #202c3d;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+}
+.card-investimento-novo.encerrado {
+    opacity: 0.75;
+}
+.dark .card-investimento-novo.encerrado {
+    opacity: 0.65;
+}
+/* =========================================================
+   TOPO CARD
+========================================================= */
+.topo-card-investimento {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.identificacao-investimento {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.icone-investimento-novo {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(22, 163, 74, 0.085);
+    color: var(--verde-600);
+}
+.icone-investimento-novo svg {
+    font-size: 21px;
+}
+.dark .icone-investimento-novo {
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--verde-400);
+}
+.identificacao-investimento > div:last-child {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+.identificacao-investimento strong {
+    overflow: hidden;
+    color: var(--cinza-900);
+    font-size: 15px;
+    font-weight: 650;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.identificacao-investimento span {
+    margin-top: 3px;
+    color: var(--cinza-400);
+    font-size: 11px;
+}
+.dark .identificacao-investimento strong {
+    color: var(--cinza-50);
+}
+.dark .identificacao-investimento span {
+    color: var(--cinza-400);
+}
+.seta-investimento {
+    flex-shrink: 0;
+    color: var(--cinza-400);
+    font-size: 23px;
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+.card-investimento-novo:hover .seta-investimento {
+    color: var(--verde-600);
+    transform: translateX(3px);
+}
+.dark .seta-investimento {
+    color: var(--cinza-500);
+}
+.dark .card-investimento-novo:hover .seta-investimento {
+    color: var(--verde-400);
+}
+/* =========================================================
+   SALDO DO INVESTIMENTO
+========================================================= */
+.saldo-investimento {
+    margin-top: 22px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eef0f2;
+    display: flex;
+    flex-direction: column;
+}
+.saldo-investimento span {
+    color: var(--cinza-400);
+    font-size: 11px;
+}
+.saldo-investimento strong {
+    margin-top: 3px;
+    color: var(--cinza-900);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+.dark .saldo-investimento {
+    border-color: var(--cinza-700);
+}
+.dark .saldo-investimento span {
+    color: var(--cinza-400);
+}
+.dark .saldo-investimento strong {
+    color: var(--cinza-50);
+}
+/* =========================================================
+   INFORMAÇÕES
+========================================================= */
+.informacoes-investimento {
+    margin-top: 15px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+}
+.informacoes-investimento > div:first-child {
+    display: flex;
+    flex-direction: column;
+}
+.informacoes-investimento > div:first-child span {
+    color: var(--cinza-400);
+    font-size: 10px;
+}
+.dark .informacoes-investimento > div:first-child span {
+    color: var(--cinza-400);
+}
+.rendimento-investimento {
+    margin-top: 3px;
+    color: var(--verde-600);
+    font-size: 13px;
+    font-weight: 650;
+}
+.dark .rendimento-investimento {
+    color: var(--verde-400);
+}
+.sem-rendimento {
+    margin-top: 3px;
+    color: var(--cinza-400);
+    font-size: 13px;
+}
+.dark .sem-rendimento {
+    color: var(--cinza-500);
+}
+/* =========================================================
+   STATUS
+========================================================= */
+.status-investimento {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.status-investimento span,
+.status-investimento button {
+    min-height: 30px;
+    padding: 0 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 650;
+    white-space: nowrap;
+}
+.status-investimento svg {
+    font-size: 13px;
+}
+/* =========================================================
+   STATUS - PENDENTE
+========================================================= */
+.status-pendente {
+    color: #d97706;
+    background: rgba(245, 158, 11, 0.1);
+}
+.dark .status-pendente {
+    color: #fbbf24;
+    background: rgba(245, 158, 11, 0.12);
+}
+/* =========================================================
+   STATUS - ATUALIZADO
+========================================================= */
+.status-atualizado {
+    color: var(--verde-700);
+    background: rgba(22, 163, 74, 0.09);
+}
+.dark .status-atualizado {
+    color: var(--verde-400);
+    background: rgba(34, 197, 94, 0.11);
+}
+/* =========================================================
+   STATUS - ENCERRADO
+========================================================= */
+.status-encerrado {
+    color: var(--cinza-500);
+    background: rgba(107, 114, 128, 0.1);
+}
+.dark .status-encerrado {
+    color: var(--cinza-400);
+    background: rgba(156, 163, 175, 0.1);
+}
+/* =========================================================
+   BOTÃO ATUALIZAR
+========================================================= */
+.botao-atualizar-card {
+    border: none;
+    color: #d97706;
+    background: rgba(245, 158, 11, 0.1);
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+.botao-atualizar-card:hover {
+    background: rgba(245, 158, 11, 0.17);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.1);
+}
+.dark .botao-atualizar-card {
+    color: #fbbf24;
+    background: rgba(245, 158, 11, 0.12);
+}
+.dark .botao-atualizar-card:hover {
+    background: rgba(245, 158, 11, 0.18);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+}
+/* =========================================================
+   MENSAGENS
+========================================================= */
+.mensagem-investimentos {
+    min-height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #dbe1e8;
+    border-radius: 14px;
+    background: var(--branco);
+    color: #8a919d;
+    font-size: 13px;
+    font-weight: 550;
+}
+.dark .mensagem-investimentos {
+    border-color: var(--cinza-600);
+    background: var(--cinza-900);
+    color: var(--cinza-400);
+}
+/* =========================================================
+   PAGINAÇÃO
+========================================================= */
+.paginacao-investimentos {
+    width: 100%;
+    margin-top: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+.botao-paginacao-investimento {
+    height: 38px;
+    padding: 0 14px;
+    border: 1px solid var(--cinza-200);
+    border-radius: 9px;
+    background: var(--branco);
+    color: var(--cinza-500);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease;
+}
+.botao-paginacao-investimento:hover:not(:disabled) {
+    border-color: var(--verde-600);
+    color: var(--verde-600);
+}
+.botao-paginacao-investimento:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+.dark .botao-paginacao-investimento {
+    border-color: var(--cinza-700);
+    background: var(--cinza-800);
+    color: var(--cinza-400);
+}
+.dark .botao-paginacao-investimento:hover:not(:disabled) {
+    border-color: var(--verde-500);
+    background: rgba(34, 197, 94, 0.06);
+    color: var(--verde-400);
+}
+.numero-pagina-investimento {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 1px solid var(--cinza-200);
+    border-radius: 9px;
+    background: var(--branco);
+    color: var(--cinza-500);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+.numero-pagina-investimento:hover {
+    border-color: var(--verde-600);
+    color: var(--verde-600);
+}
+.numero-pagina-investimento.ativo {
+    border-color: var(--verde-600);
+    background: var(--verde-600);
+    color: var(--branco);
+    box-shadow: 0 4px 10px rgba(22, 163, 74, 0.16);
+}
+.numero-pagina-investimento.ativo:hover {
+    color: var(--branco);
+}
+.dark .numero-pagina-investimento {
+    border-color: var(--cinza-700);
+    background: var(--cinza-800);
+    color: var(--cinza-400);
+}
+.dark .numero-pagina-investimento:hover {
+    border-color: var(--verde-500);
+    color: var(--verde-400);
+}
+.dark .numero-pagina-investimento.ativo {
+    border-color: var(--verde-600);
+    background: var(--verde-600);
+    color: var(--branco);
+}
+/* =========================================================
+   DARK MODE - GARANTIAS
+========================================================= */
+/*
+ * Essas regras abaixo servem como proteção.
+ * Mesmo que alguma variável global do projeto permaneça
+ * com valor do tema claro, os componentes de investimentos
+ * continuam corretos no dark mode.
+ */
+.dark .card-saldo-carteira,
+.dark .card-lateral-carteira,
+.dark .card-investimento-novo {
+    background: var(--cinza-800);
+    border-color: var(--cinza-700);
+}
+.dark .texto-saldo-carteira > strong,
+.dark .conteudo-card-lateral strong,
+.dark .identificacao-investimento strong,
+.dark .saldo-investimento strong {
+    color: var(--cinza-50);
+}
+.dark .texto-saldo-carteira > span,
+.dark .texto-saldo-carteira > small,
+.dark .topo-card-lateral > span,
+.dark .conteudo-card-lateral span,
+.dark .identificacao-investimento span,
+.dark .saldo-investimento span,
+.dark .informacoes-investimento span {
+    color: var(--cinza-400);
+}
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+@media (max-width: 1050px) {
+    .pagina-investimentos {
+        padding: 28px 26px 45px;
+    }
+    .linha-cards-carteira {
+        width: calc(100% - 38px);
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(300px, 1.2fr)
+            minmax(0, 1fr);
+        gap: 14px;
+    }
+    .texto-saldo-carteira > strong {
+        font-size: 27px;
+    }
+}
+@media (max-width: 850px) {
+    .linha-cards-carteira {
+        width: calc(100% - 28px);
+        margin-top: -76px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .card-saldo-carteira {
+        order: 1;
+        width: 100%;
+    }
+    .card-lateral-carteira {
+        order: 2;
+        width: calc(50% - 7px);
+    }
+    .grid-investimentos {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .pagina-investimentos {
+        padding: 22px 16px 38px;
+    }
+    .topo-investimentos {
+        align-items: stretch;
+        flex-direction: column;
+    }
+    .titulo-investimentos h1 {
+        font-size: 26px;
+    }
+    .botao-novo-investimento {
+        width: 100%;
+    }
+    .fundo-resumo-investimentos {
+        height: 165px;
+        padding: 24px 21px;
+    }
+    .texto-resumo-investimentos h2 {
+        font-size: 18px;
+    }
+    .cabecalho-meus-investimentos {
+        justify-content: stretch;
+    }
+    .abas-investimentos {
+        width: 100%;
+    }
+    .aba-investimento {
+        flex: 1;
+    }
+    .informacoes-investimento {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .status-investimento {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+@media (max-width: 500px) {
+    .card-lateral-carteira {
+        width: 100%;
+    }
+    .texto-saldo-carteira > strong {
+        font-size: 25px;
+    }
+    .linha-cards-carteira {
+        margin-top: -60px;
+    }
+    .card-investimento-novo {
+        padding: 18px;
+    }
+}

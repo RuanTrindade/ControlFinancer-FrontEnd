@@ -1,0 +1,500 @@
+/* ===================================================
+   PÁGINA
+=================================================== */
+.pagina-objetivos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+/* ===================================================
+   TÍTULO
+=================================================== */
+.titulo-objetivos {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--cinza-900);
+}
+.dark .titulo-objetivos {
+    color: var(--branco);
+}
+/* ===================================================
+   TOPO / FILTROS
+=================================================== */
+.objetivo-filtros {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 18px;
+    background: var(--branco);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+.dark .objetivo-filtros {
+    background: var(--cinza-800);
+}
+/* ===================================================
+   TABS
+=================================================== */
+.objetivo-tabs {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 999px;
+    background: var(--cinza-100);
+}
+.dark .objetivo-tabs {
+    background: var(--cinza-900);
+}
+.objetivo-tabs button {
+    min-width: 145px;
+    height: 38px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--cinza-500);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.objetivo-tabs button:hover {
+    color: var(--cinza-900);
+}
+.objetivo-tabs button.ativo {
+    background: var(--verde-600);
+    color: var(--branco);
+    box-shadow: 0 5px 13px rgba(22, 163, 74, 0.2);
+}
+.dark .objetivo-tabs button {
+    color: var(--cinza-400);
+}
+.dark .objetivo-tabs button:hover {
+    color: var(--branco);
+}
+.dark .objetivo-tabs button.ativo {
+    color: var(--branco);
+}
+/* ===================================================
+   BOTÃO CRIAR OBJETIVO
+=================================================== */
+.btn-criar-objetivo {
+    min-height: 44px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    border-radius: 999px;
+    background: var(--verde-600);
+    color: var(--branco);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.btn-criar-objetivo:hover {
+    background: var(--verde-700);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(22, 163, 74, 0.22);
+}
+.btn-criar-objetivo svg {
+    font-size: 19px;
+}
+/* ===================================================
+   GRID
+=================================================== */
+.objetivos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 18px;
+}
+/* ===================================================
+   CARD OBJETIVO
+=================================================== */
+.card-objetivo {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--cinza-divisor);
+    border-radius: 18px;
+    background: var(--branco);
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+.card-objetivo:hover {
+    transform: translateY(-3px);
+    border-color: var(--cinza-200);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+.dark .card-objetivo {
+    background: var(--cinza-800);
+    border-color: var(--cinza-700);
+}
+/* ===================================================
+   TOPO CARD
+=================================================== */
+.card-topo {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+.card-topo > svg {
+    flex-shrink: 0;
+    color: var(--cinza-500);
+    font-size: 22px;
+}
+.dark .card-topo > svg {
+    color: var(--cinza-300);
+}
+.objetivo-info {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.objetivo-info h3 {
+    margin: 0;
+    color: var(--cinza-900);
+    font-size: 17px;
+    font-weight: 700;
+}
+.dark .objetivo-info h3 {
+    color: var(--branco);
+}
+/* ===================================================
+   TÍTULO / VENCIDO
+=================================================== */
+.objetivo-titulo-container {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+.objetivo-titulo-container h3 {
+    max-width: 190px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.objetivo-vencido {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: var(--vermelho-50);
+    color: var(--vermelho-600);
+    font-size: 10px;
+    font-weight: 700;
+}
+.data-objetivo-vencida {
+    color: var(--vermelho-600) !important;
+}
+.dark .objetivo-vencido {
+    background: rgba(220, 38, 38, 0.14);
+    color: #f87171;
+}
+.dark .data-objetivo-vencida {
+    color: #f87171 !important;
+}
+/* ===================================================
+   ÍCONE
+=================================================== */
+.objetivo-icone {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    color: var(--branco);
+    font-size: 18px;
+}
+/* ===================================================
+   IMAGEM
+=================================================== */
+.objetivo-imagem {
+    width: 100%;
+    height: 180px;
+    display: block;
+    margin-bottom: 14px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+/* ===================================================
+   PROGRESSO
+=================================================== */
+.objetivo-progresso {
+    width: 100%;
+    height: 10px;
+    margin-bottom: 9px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--cinza-200);
+}
+.dark .objetivo-progresso {
+    background: var(--cinza-700);
+}
+.objetivo-progresso .barra {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+/* ===================================================
+   VALORES
+=================================================== */
+.objetivo-valores {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 13px;
+    color: var(--cinza-500);
+    font-size: 13px;
+    font-weight: 600;
+}
+.dark .objetivo-valores {
+    color: var(--cinza-400);
+}
+/* ===================================================
+   FOOTER
+=================================================== */
+.objetivo-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--cinza-divisor);
+    font-size: 12px;
+    font-weight: 600;
+}
+.dark .objetivo-footer {
+    border-color: var(--cinza-700);
+}
+.objetivo-footer span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--cinza-700);
+}
+.objetivo-footer svg {
+    flex-shrink: 0;
+    font-size: 15px;
+}
+.dark .objetivo-footer span {
+    color: var(--cinza-300);
+}
+/* ===================================================
+   ERRO
+=================================================== */
+.mensagem-erro-objetivo {
+    padding: 12px 16px;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    background: var(--vermelho-50);
+    color: var(--vermelho-700);
+    font-size: 14px;
+    font-weight: 500;
+}
+.dark .mensagem-erro-objetivo {
+    border-color: rgba(239, 68, 68, 0.3);
+    background: rgba(127, 29, 29, 0.2);
+    color: var(--vermelho-300);
+}
+/* ===================================================
+   ESTADO VAZIO
+=================================================== */
+.objetivos-vazio {
+    width: 100%;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 44px 30px;
+    text-align: center;
+    border: 1px dashed var(--cinza-300);
+    border-radius: 18px;
+    background: var(--slate-50);
+}
+.dark .objetivos-vazio {
+    border-color: var(--cinza-600);
+    background: var(--cinza-900);
+}
+.objetivos-vazio-icone {
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    background: #dcfce7;
+    color: var(--verde-600);
+    font-size: 30px;
+}
+.dark .objetivos-vazio-icone {
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--verde-400);
+}
+.objetivos-vazio h2 {
+    margin: 0;
+    color: var(--cinza-900);
+    font-size: 20px;
+    font-weight: 700;
+}
+.dark .objetivos-vazio h2 {
+    color: var(--cinza-50);
+}
+.objetivos-vazio p {
+    max-width: 430px;
+    margin: 8px 0 20px;
+    color: var(--cinza-500);
+    font-size: 14px;
+    line-height: 1.6;
+}
+.dark .objetivos-vazio p {
+    color: var(--cinza-400);
+}
+.btn-objetivo-vazio {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 999px;
+    background: var(--verde-600);
+    color: var(--branco);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-objetivo-vazio:hover {
+    background: var(--verde-700);
+    transform: translateY(-1px);
+}
+.btn-objetivo-vazio svg {
+    font-size: 18px;
+}
+/* ===================================================
+   PAGINAÇÃO
+=================================================== */
+.paginacao-objetivos {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.paginacao-objetivos button {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    background: var(--branco);
+    color: var(--cinza-500);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+    transition: 0.2s;
+}
+.paginacao-objetivos button svg {
+    font-size: 19px;
+}
+.paginacao-objetivos button:hover:not(:disabled) {
+    background: var(--verde-600);
+    color: var(--branco);
+}
+.paginacao-objetivos button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+.pagina-objetivo.ativa {
+    background: var(--verde-600) !important;
+    color: var(--branco) !important;
+}
+.dark .paginacao-objetivos button {
+    background: var(--cinza-800);
+    color: var(--cinza-300);
+}
+.dark .paginacao-objetivos button:hover:not(:disabled) {
+    background: var(--verde-600);
+    color: var(--branco);
+}
+.dark .pagina-objetivo.ativa {
+    background: var(--verde-600) !important;
+    color: var(--branco) !important;
+}
+/* ===================================================
+   RESPONSIVO
+=================================================== */
+@media (max-width: 900px) {
+    .objetivos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 768px) {
+    .objetivo-filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .objetivo-tabs {
+        width: 100%;
+    }
+    .objetivo-tabs button {
+        min-width: 0;
+        flex: 1;
+    }
+    .btn-criar-objetivo {
+        width: 100%;
+    }
+    .objetivos-conteudo {
+        padding: 14px;
+    }
+    .objetivos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .titulo-objetivos {
+        font-size: 27px;
+    }
+    .objetivos-vazio {
+        min-height: 300px;
+        padding: 36px 20px;
+    }
+    .objetivos-vazio-icone {
+        width: 60px;
+        height: 60px;
+        font-size: 27px;
+    }
+    .objetivo-imagem {
+        height: 165px;
+    }
+}

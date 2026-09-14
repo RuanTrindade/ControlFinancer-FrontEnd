@@ -26,7 +26,7 @@ import {
     BiShoppingBag,
     BiStore,
     BiTransfer,
-    BiWallet
+    BiWallet,
 } from "react-icons/bi";
 
 import {
@@ -37,7 +37,7 @@ import {
     RiHome4Line,
     RiMoneyDollarCircleLine,
     RiPlaneLine,
-    RiTrophyLine
+    RiTrophyLine,
 } from "react-icons/ri";
 
 import type { ReactNode } from "react";
@@ -48,7 +48,6 @@ export type IconeCategoria = {
 };
 
 export const iconesCategorias: IconeCategoria[] = [
-
     { nome: "BiCar", componente: <BiCar /> },
     { nome: "BiShoppingBag", componente: <BiShoppingBag /> },
     { nome: "BiCreditCard", componente: <BiCreditCard /> },
@@ -76,105 +75,73 @@ export const iconesCategorias: IconeCategoria[] = [
     { nome: "BiMoviePlay", componente: <BiMoviePlay /> },
     { nome: "BiMusic", componente: <BiMusic /> },
     { nome: "BiPackage", componente: <BiPackage /> },
-    { nome: "BiCategory", componente: <BiCategory /> }
-
+    { nome: "BiCategory", componente: <BiCategory /> },
 ];
 
-
 export const iconesObjetivos: IconeCategoria[] = [
-
     {
         nome: "RiCarLine",
-        componente: <RiCarLine />
+        componente: <RiCarLine />,
     },
 
     {
         nome: "RiHome4Line",
-        componente: <RiHome4Line />
+        componente: <RiHome4Line />,
     },
 
     {
         nome: "RiPlaneLine",
-        componente: <RiPlaneLine />
+        componente: <RiPlaneLine />,
     },
 
     {
         nome: "RiBookOpenLine",
-        componente: <RiBookOpenLine />
+        componente: <RiBookOpenLine />,
     },
 
     {
         nome: "RiComputerLine",
-        componente: <RiComputerLine />
+        componente: <RiComputerLine />,
     },
 
     {
         nome: "RiMoneyDollarCircleLine",
-        componente: <RiMoneyDollarCircleLine />
+        componente: <RiMoneyDollarCircleLine />,
     },
 
     {
         nome: "RiTrophyLine",
-        componente: <RiTrophyLine />
+        componente: <RiTrophyLine />,
     },
 
     {
         nome: "RiHeartLine",
-        componente: <RiHeartLine />
-    }
-
+        componente: <RiHeartLine />,
+    },
 ];
 
-export const mapaIconesCategorias: Record<
-    string,
-    ReactNode
-> = {
+export const mapaIconesCategorias: Record<string, ReactNode> = {
+    ...Object.fromEntries(iconesCategorias.map((item) => [item.nome, item.componente])),
 
-    ...Object.fromEntries(
-        iconesCategorias.map(
-            item => [
-                item.nome,
-                item.componente
-            ]
-        )
-    ),
-
-    ...Object.fromEntries(
-        iconesObjetivos.map(
-            item => [
-                item.nome,
-                item.componente
-            ]
-        )
-    ),
-
+    ...Object.fromEntries(iconesObjetivos.map((item) => [item.nome, item.componente])),
 
     /* compatibilidade antiga */
 
-    alimentacao:
-        <BiRestaurant />,
+    alimentacao: <BiRestaurant />,
 
-    transporte:
-        <BiCar />,
+    transporte: <BiCar />,
 
-    contas:
-        <BiWallet />,
+    contas: <BiWallet />,
 
-    investimentos:
-        <BiDollarCircle />,
+    investimentos: <BiDollarCircle />,
 
-    objetivos:
-        <BiDonateHeart />,
+    objetivos: <BiDonateHeart />,
 
-    academia:
-        <BiDumbbell />,
+    academia: <BiDumbbell />,
 
-    lazer:
-        <BiGame />,
+    lazer: <BiGame />,
 
-    educacao:
-        <BiBook />,
+    educacao: <BiBook />,
 
-    saude:
-        <BiHealth />
+    saude: <BiHealth />,
 };

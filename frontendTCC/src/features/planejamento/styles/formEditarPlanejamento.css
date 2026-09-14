@@ -1,0 +1,321 @@
+/* =====================================================
+   OVERLAY
+===================================================== */
+.editar-planejamento-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(3px);
+}
+/* =====================================================
+   MODAL
+===================================================== */
+.editar-planejamento-modal {
+    width: 100%;
+    max-width: 520px;
+    background: var(--branco);
+    border: 1px solid var(--cinza-200);
+    border-radius: 18px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
+    overflow: hidden;
+    animation: aparecerEditarPlanejamento 0.2s ease;
+}
+@keyframes aparecerEditarPlanejamento {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+.editar-planejamento-modal > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--cinza-200);
+}
+.editar-planejamento-modal > header h2 {
+    margin: 0;
+    color: var(--cinza-900);
+    font-size: 18px;
+    font-weight: 700;
+}
+.editar-planejamento-modal > header button {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--cinza-500);
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.editar-planejamento-modal > header button:hover {
+    background: var(--cinza-100);
+    color: var(--cinza-900);
+}
+/* =====================================================
+   CONTEÚDO
+===================================================== */
+.editar-planejamento-conteudo {
+    padding: 22px;
+}
+.editar-planejamento-linha {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+/* =====================================================
+   TOTAL / ÍCONE
+===================================================== */
+.editar-planejamento-total {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--cinza-700);
+}
+.editar-planejamento-total strong {
+    font-size: 14px;
+    font-weight: 700;
+}
+.editar-planejamento-icone {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #dcfce7;
+    color: var(--verde-600);
+    font-size: 20px;
+}
+/* =====================================================
+   CAMPO
+===================================================== */
+.editar-planejamento-campo {
+    width: 210px;
+}
+.editar-planejamento-campo label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--cinza-500);
+    font-size: 12px;
+    font-weight: 600;
+}
+.editar-planejamento-input {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid var(--cinza-300);
+    border-radius: 10px;
+    background: var(--branco);
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+.editar-planejamento-input:focus-within {
+    border-color: var(--verde-500);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+.editar-planejamento-input span {
+    padding-left: 12px;
+    color: var(--cinza-500);
+    font-size: 13px;
+    font-weight: 600;
+}
+.editar-planejamento-input input {
+    width: 100%;
+    padding: 0 12px 0 6px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--cinza-900);
+    font-size: 14px;
+    font-weight: 600;
+}
+/* =====================================================
+   AVISO
+===================================================== */
+.editar-planejamento-aviso {
+    margin-top: 18px;
+    padding: 12px 14px;
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    background: #fffbeb;
+    color: #92400e;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.editar-planejamento-aviso strong {
+    font-weight: 700;
+}
+/* =====================================================
+   ERRO BACKEND
+===================================================== */
+.editar-planejamento-erro {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    background: var(--vermelho-50);
+    color: var(--vermelho-700);
+    font-size: 12px;
+    font-weight: 600;
+}
+/* =====================================================
+   FOOTER / BOTÕES
+===================================================== */
+.editar-planejamento-conteudo > footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--cinza-200);
+}
+.editar-planejamento-cancelar,
+.editar-planejamento-salvar {
+    min-width: 100px;
+    padding: 10px 16px;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.editar-planejamento-cancelar {
+    border: 1px solid var(--cinza-300);
+    background: var(--branco);
+    color: var(--cinza-700);
+}
+.editar-planejamento-cancelar:hover {
+    background: var(--cinza-50);
+}
+.editar-planejamento-salvar {
+    border: 1px solid var(--verde-600);
+    background: var(--verde-600);
+    color: var(--branco);
+}
+.editar-planejamento-salvar:hover:not(:disabled) {
+    background: var(--verde-700);
+    border-color: var(--verde-700);
+}
+.editar-planejamento-salvar:disabled {
+    border-color: var(--cinza-300);
+    background: var(--cinza-300);
+    color: var(--cinza-400);
+    cursor: not-allowed;
+}
+.editar-planejamento-cancelar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+/* =====================================================
+   DARK MODE
+===================================================== */
+.dark .editar-planejamento-overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+.dark .editar-planejamento-modal {
+    background: var(--cinza-900);
+    border-color: var(--cinza-700);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+.dark .editar-planejamento-modal > header {
+    border-bottom-color: var(--cinza-700);
+}
+.dark .editar-planejamento-modal > header h2 {
+    color: var(--cinza-50);
+}
+.dark .editar-planejamento-modal > header button {
+    color: var(--cinza-400);
+}
+.dark .editar-planejamento-modal > header button:hover {
+    background: var(--cinza-800);
+    color: var(--cinza-50);
+}
+.dark .editar-planejamento-total {
+    color: var(--cinza-200);
+}
+.dark .editar-planejamento-icone {
+    background: rgba(34, 197, 94, 0.14);
+    color: var(--verde-400);
+}
+.dark .editar-planejamento-campo label {
+    color: var(--cinza-400);
+}
+.dark .editar-planejamento-input {
+    background: var(--cinza-800);
+    border-color: var(--cinza-700);
+}
+.dark .editar-planejamento-input:focus-within {
+    border-color: var(--verde-500);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+.dark .editar-planejamento-input span {
+    color: var(--cinza-400);
+}
+.dark .editar-planejamento-input input {
+    color: var(--cinza-50);
+}
+.dark .editar-planejamento-aviso {
+    border-color: rgba(245, 158, 11, 0.25);
+    background: rgba(245, 158, 11, 0.1);
+    color: #fbbf24;
+}
+.dark .editar-planejamento-erro {
+    border-color: rgba(239, 68, 68, 0.25);
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+}
+.dark .editar-planejamento-conteudo > footer {
+    border-top-color: var(--cinza-700);
+}
+.dark .editar-planejamento-cancelar {
+    border-color: var(--cinza-700);
+    background: var(--cinza-800);
+    color: var(--cinza-200);
+}
+.dark .editar-planejamento-cancelar:hover {
+    background: var(--cinza-700);
+}
+.dark .editar-planejamento-salvar:disabled {
+    border-color: var(--cinza-700);
+    background: var(--cinza-700);
+    color: var(--cinza-500);
+}
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+@media (max-width: 560px) {
+    .editar-planejamento-modal {
+        max-width: 100%;
+    }
+    .editar-planejamento-linha {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .editar-planejamento-campo {
+        width: 100%;
+    }
+}

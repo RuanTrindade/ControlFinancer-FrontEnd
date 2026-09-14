@@ -1,0 +1,118 @@
+/* ==========================
+   BACKDROP
+========================== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.55);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    z-index: 9999;
+    animation: fadeOverlay 0.25s;
+}
+/* ==========================
+   CARD
+========================== */
+.overlay-card {
+    width: 860px;
+    max-width: 95vw;
+    background: white;
+    border-radius: 28px;
+    padding: 34px 42px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+}
+.dark .overlay-card {
+    background: var(--cinza-800);
+}
+/* ==========================
+   TOPO
+========================== */
+.overlay-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+.overlay-topo h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--cinza-900);
+}
+.dark .overlay-topo h2 {
+    color: white;
+}
+/* ==========================
+   BOTÃO FECHAR
+========================== */
+.overlay-fechar {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 14px;
+    background: var(--cinza-100);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s;
+}
+.dark .overlay-fechar {
+    background: var(--cinza-900);
+}
+.overlay-fechar svg {
+    font-size: 24px;
+}
+.dark .overlay-fechar svg {
+    color: white;
+}
+.overlay-fechar:hover {
+    transform: rotate(90deg);
+    background: var(--cinza-200);
+}
+.dark .overlay-fechar:hover {
+    background: var(--cinza-700);
+}
+/* ==========================
+   CONTEÚDO
+========================== */
+.overlay-conteudo {
+    width: 100%;
+}
+/* ==========================
+   ANIMAÇÕES
+========================== */
+@keyframes fadeOverlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes subirOverlay {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+/* ==========================
+   RESPONSIVO
+========================== */
+@media (max-width: 768px) {
+    .overlay {
+        padding: 18px;
+    }
+    .overlay-card {
+        width: 100%;
+        max-height: calc(100vh - 36px);
+        overflow-y: auto;
+        padding: 24px;
+    }
+}

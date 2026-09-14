@@ -1,0 +1,153 @@
+/* TOPBAR */
+.topbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 28px 34px;
+}
+/* MESES */
+.topbar-meses {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    padding: 8px;
+    border-radius: 999px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+.dark .topbar-meses {
+    background: var(--cinza-800);
+}
+.topbar-meses button {
+    border: none;
+    background: transparent;
+    padding: 12px 18px;
+    border-radius: 999px;
+    color: var(--cinza-500);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.25s;
+}
+.dark .topbar-meses button {
+    color: var(--cinza-400);
+}
+.topbar-meses button:hover {
+    transform: translateY(-1px);
+    color: var(--cinza-900);
+}
+.dark .topbar-meses button:hover {
+    color: white;
+}
+.topbar-meses button.ativo {
+    background: rgba(59, 130, 246, 0.12);
+    color: #2563eb;
+    font-weight: 700;
+}
+.dark .topbar-meses button.ativo {
+    background: rgba(59, 130, 246, 0.16);
+    color: #60a5fa;
+}
+/* AÇÕES */
+.topbar-acoes {
+    position: absolute;
+    right: 34px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+/* BOTÕES */
+.topbar-btn {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 18px;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+.dark .topbar-btn {
+    background: var(--cinza-800);
+}
+.topbar-btn:hover {
+    transform: translateY(-2px);
+}
+.topbar-btn svg {
+    font-size: 22px;
+    color: var(--cinza-900);
+}
+.dark .topbar-btn svg {
+    color: white;
+}
+/* NOTIFICAÇÃO */
+.topbar-btn span {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--vermelho-500);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+}
+.dark .topbar-btn span {
+    border-color: var(--cinza-800);
+}
+/* BOTÃO DE MENU (HAMBÚRGUER) — só aparece no celular */
+.topbar-btn-menu {
+    display: none;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 14px;
+    background: white;
+    color: var(--cinza-900);
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+.dark .topbar-btn-menu {
+    background: var(--cinza-800);
+    color: white;
+}
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+    .topbar {
+        justify-content: flex-start;
+        gap: 12px;
+        padding: 16px;
+    }
+    .topbar-btn-menu {
+        display: flex;
+    }
+    .topbar-meses {
+        flex: 1;
+        justify-content: center;
+        min-width: 0;
+        padding: 6px;
+    }
+    .topbar-meses button {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+    .topbar-acoes {
+        position: static;
+        right: auto;
+    }
+}
