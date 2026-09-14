@@ -2,11 +2,14 @@ import { useEffect, useMemo, useState } from "react";
 
 import { RiArrowRightLine } from "react-icons/ri";
 
+import { NumericFormat } from "react-number-format";
+
 import "../styles/formPlanejamentoCategorias.css";
 
 import ModalCategorias, { type CategoriaDisponivel } from "./ModalCategorias";
 
 import { useAlert } from "../../../context/AlertContext";
+import { useUsuarioLogado } from "../../../context/AuthContext";
 
 import { renderizarIcone } from "../../../utils/renderizarIcone";
 
@@ -55,6 +58,8 @@ type Props = {
 function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategorias }: Props) {
     const { showAlert } = useAlert();
 
+    const { id: USUARIO_ID } = useUsuarioLogado();
+
     /* ===================================================
        MODAL
     =================================================== */
@@ -91,7 +96,9 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
                  * Para montar o planejamento precisamos
                  * conhecer todas as categorias disponíveis.
                  */
-                const response = await fetch("http://localhost:8080/categorias/usuario/1/todas");
+                const response = await fetch(
+                    `http://localhost:8080/categorias/usuario/${USUARIO_ID}/todas`,
+                );
 
                 if (!response.ok) {
                     const mensagem = await response.text();
@@ -347,16 +354,15 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
                                     <div className="categoria-valor">
                                         <span>R$</span>
 
-                                        <input
-                                            type="number"
-                                            min="0"
-                                            step="0.01"
+                                        <NumericFormat
+                                            thousandSeparator="."
+                                            decimalSeparator=","
+                                            decimalScale={2}
+                                            fixedDecimalScale
+                                            allowNegative={false}
                                             value={categoria.valor}
-                                            onChange={(event) =>
-                                                alterarValor(
-                                                    categoria.id,
-                                                    Number(event.target.value),
-                                                )
+                                            onValueChange={(valores) =>
+                                                alterarValor(categoria.id, valores.floatValue ?? 0)
                                             }
                                         />
                                     </div>

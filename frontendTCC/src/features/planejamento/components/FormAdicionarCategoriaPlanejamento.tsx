@@ -1,14 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 
-import {
-    RiArrowDownSLine,
-    RiCheckLine,
-    RiCloseLine,
-    RiMoneyDollarCircleLine,
-    RiPriceTag3Line,
-} from "react-icons/ri";
+import { RiArrowDownSLine, RiCheckLine, RiCloseLine, RiPriceTag3Line } from "react-icons/ri";
+
+import { NumericFormat } from "react-number-format";
 
 import { renderizarIcone } from "../../../utils/renderizarIcone";
+import { useUsuarioLogado } from "../../../context/AuthContext";
 
 import "../styles/formAdicionarCategoriaPlanejamento.css";
 
@@ -67,6 +64,8 @@ function FormAdicionarCategoriaPlanejamento({
     onClose,
     onSalvar,
 }: Props) {
+    const { id: USUARIO_ID } = useUsuarioLogado();
+
     const [categorias, setCategorias] = useState<Categoria[]>([]);
 
     const [categoriaId, setCategoriaId] = useState("");
@@ -87,7 +86,7 @@ function FormAdicionarCategoriaPlanejamento({
         (categoria) => categoria.id.toString() === categoriaId,
     );
 
-    const valorNumerico = Number(valor.replace(",", ".")) || 0;
+    const valorNumerico = Number(valor) || 0;
 
     /*
      * Quanto ainda existe em
@@ -130,7 +129,9 @@ function FormAdicionarCategoriaPlanejamento({
             setCarregandoCategorias(true);
             setErro("");
 
-            const response = await fetch("http://localhost:8080/categorias/usuario/1/todas");
+            const response = await fetch(
+                `http://localhost:8080/categorias/usuario/${USUARIO_ID}/todas`,
+            );
 
             if (!response.ok) {
                 const mensagem = await response.text();
@@ -521,24 +522,20 @@ function FormAdicionarCategoriaPlanejamento({
                                         planejamento-input-valor
                                     "
                             >
-                                <RiMoneyDollarCircleLine />
-
-                                <span>R$</span>
-
-                                <input
-                                    type="text"
-                                    inputMode="decimal"
+                                <NumericFormat
+                                    thousandSeparator="."
+                                    decimalSeparator=","
+                                    decimalScale={2}
+                                    fixedDecimalScale
+                                    allowNegative={false}
+                                    prefix="R$ "
+                                    placeholder="R$ 0,00"
                                     value={valor}
-                                    placeholder="0,00"
                                     autoFocus
-                                    onChange={(evento) => {
-                                        const novoValor = evento.target.value;
+                                    onValueChange={(valores) => {
+                                        setValor(valores.value);
 
-                                        if (/^\d*[.,]?\d{0,2}$/.test(novoValor)) {
-                                            setValor(novoValor);
-
-                                            setErro("");
-                                        }
+                                        setErro("");
                                     }}
                                 />
                             </div>

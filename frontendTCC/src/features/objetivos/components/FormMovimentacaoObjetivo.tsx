@@ -1,11 +1,8 @@
 import { useEffect, useState, type FormEvent } from "react";
 
-import {
-    RiAddCircleLine,
-    RiCloseLine,
-    RiMoneyDollarCircleLine,
-    RiSubtractLine,
-} from "react-icons/ri";
+import { RiAddCircleLine, RiCloseLine, RiSubtractLine } from "react-icons/ri";
+
+import { NumericFormat } from "react-number-format";
 
 import { movimentarObjetivo, type TipoMovimentacaoObjetivo } from "../services/objetivoService";
 
@@ -49,7 +46,7 @@ function FormMovimentacaoObjetivo({
 
     const deposito = tipo === "DEPOSITO";
 
-    const valorNumerico = Number(valor.replace(",", ".")) || 0;
+    const valorNumerico = Number(valor) || 0;
 
     const valorValido =
         valorNumerico > 0 &&
@@ -250,26 +247,22 @@ function FormMovimentacaoObjetivo({
                                 form-movimentacao-objetivo-input
                             "
                         >
-                            <RiMoneyDollarCircleLine />
-
-                            <span>R$</span>
-
-                            <input
+                            <NumericFormat
                                 id="valor-movimentacao-objetivo"
-                                type="text"
-                                inputMode="decimal"
                                 value={valor}
-                                placeholder="0,00"
+                                thousandSeparator="."
+                                decimalSeparator=","
+                                decimalScale={2}
+                                fixedDecimalScale
+                                allowNegative={false}
+                                prefix="R$ "
+                                placeholder="R$ 0,00"
                                 autoFocus
                                 disabled={salvando}
-                                onChange={(evento) => {
-                                    const novoValor = evento.target.value;
+                                onValueChange={(valores) => {
+                                    setValor(valores.value);
 
-                                    if (/^\d*[.,]?\d{0,2}$/.test(novoValor)) {
-                                        setValor(novoValor);
-
-                                        setErro("");
-                                    }
+                                    setErro("");
                                 }}
                             />
                         </div>

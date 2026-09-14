@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import DashboardLayout from "../../../layouts/DashboardLayout";
 
 import { useAlert } from "../../../context/AlertContext";
+import { useUsuarioLogado } from "../../../context/AuthContext";
 
 import {
     RiArrowDownLine,
@@ -93,7 +94,7 @@ function InvestimentoDetalhe() {
 
     const [excluindoInvestimento, setExcluindoInvestimento] = useState(false);
 
-    const USUARIO_ID = 1;
+    const { id: USUARIO_ID } = useUsuarioLogado();
 
     const [investimento, setInvestimento] = useState<InvestimentoResumo | null>(null);
 

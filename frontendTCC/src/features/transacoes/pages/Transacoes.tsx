@@ -4,6 +4,10 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 
 import DashboardLayout from "../../../layouts/DashboardLayout";
 
+import { useUsuarioLogado } from "../../../context/AuthContext";
+
+import { NumericFormat } from "react-number-format";
+
 import {
     RiAddLine,
     RiDeleteBin6Line,
@@ -76,6 +80,8 @@ function Transacoes() {
     const [tipoFormulario, setTipoFormulario] = useState<"RECEITA" | "DESPESA">("RECEITA");
 
     const { referenciaAtual, mes: mesSelecionado, ano: anoSelecionado } = useMes();
+
+    const { id: USUARIO_ID } = useUsuarioLogado();
 
     function formatarDataInput(data: Date) {
         const ano = data.getFullYear();
@@ -179,7 +185,7 @@ function Transacoes() {
             setLoading(true);
 
             const response = await fetch(
-                `http://localhost:8080/transacoes/usuario/1?mes=${mesSelecionado}&ano=${anoSelecionado}&page=${pagina}&size=${tamanhoPagina}`,
+                `http://localhost:8080/transacoes/usuario/${USUARIO_ID}?mes=${mesSelecionado}&ano=${anoSelecionado}&page=${pagina}&size=${tamanhoPagina}`,
             );
 
             if (!response.ok) {
@@ -211,7 +217,7 @@ function Transacoes() {
 
             const parametros = new URLSearchParams();
 
-            parametros.append("usuarioId", "1");
+            parametros.append("usuarioId", USUARIO_ID.toString());
             parametros.append("page", pagina.toString());
             parametros.append("size", tamanhoPagina.toString());
 
@@ -307,7 +313,9 @@ function Transacoes() {
 
     async function buscarCategoriasFiltro() {
         try {
-            const response = await fetch("http://localhost:8080/categorias/usuario/1/todas");
+            const response = await fetch(
+                `http://localhost:8080/categorias/usuario/${USUARIO_ID}/todas`,
+            );
 
             if (!response.ok) {
                 const mensagem = await response.text();
@@ -336,7 +344,7 @@ function Transacoes() {
             setExcluindo(true);
 
             const response = await fetch(
-                `http://localhost:8080/transacoes/${transacaoParaExcluir.id}?usuarioId=1`,
+                `http://localhost:8080/transacoes/${transacaoParaExcluir.id}?usuarioId=${USUARIO_ID}`,
                 {
                     method: "DELETE",
                 },
@@ -953,17 +961,20 @@ function Transacoes() {
                                 <div className="campo-filtro">
                                     <label htmlFor="filtro-valor-minimo">Valor mínimo</label>
 
-                                    <input
+                                    <NumericFormat
                                         id="filtro-valor-minimo"
-                                        type="number"
-                                        min="0"
-                                        step="0.01"
+                                        thousandSeparator="."
+                                        decimalSeparator=","
+                                        decimalScale={2}
+                                        fixedDecimalScale
+                                        allowNegative={false}
+                                        prefix="R$ "
                                         placeholder="R$ 0,00"
                                         value={filtros.valorMin}
-                                        onChange={(event) =>
+                                        onValueChange={(valores) =>
                                             setFiltros({
                                                 ...filtros,
-                                                valorMin: event.target.value,
+                                                valorMin: valores.value,
                                             })
                                         }
                                     />
@@ -972,17 +983,20 @@ function Transacoes() {
                                 <div className="campo-filtro">
                                     <label htmlFor="filtro-valor-maximo">Valor máximo</label>
 
-                                    <input
+                                    <NumericFormat
                                         id="filtro-valor-maximo"
-                                        type="number"
-                                        min="0"
-                                        step="0.01"
+                                        thousandSeparator="."
+                                        decimalSeparator=","
+                                        decimalScale={2}
+                                        fixedDecimalScale
+                                        allowNegative={false}
+                                        prefix="R$ "
                                         placeholder="R$ 0,00"
                                         value={filtros.valorMax}
-                                        onChange={(event) =>
+                                        onValueChange={(valores) =>
                                             setFiltros({
                                                 ...filtros,
-                                                valorMax: event.target.value,
+                                                valorMax: valores.value,
                                             })
                                         }
                                     />

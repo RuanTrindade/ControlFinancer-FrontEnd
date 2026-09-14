@@ -22,6 +22,8 @@ import DashboardLayout from "../../../layouts/DashboardLayout";
 
 import LoadingOverlay from "../../../shared/components/LoadingOverlay";
 
+import { useUsuarioLogado } from "../../../context/AuthContext";
+
 import ObjetivoMovimentacaoItem from "../components/ObjetivoMovimentacaoItem";
 
 import type { Objetivo, ObjetivoMovimentacao } from "../types/objetivo";
@@ -77,7 +79,7 @@ function ObjetivoDetalhe() {
 
     const [modalExcluirObjetivo, setModalExcluirObjetivo] = useState(false);
 
-    const USUARIO_ID = 1;
+    const { id: USUARIO_ID } = useUsuarioLogado();
 
     const [saldoConta, setSaldoConta] = useState(0);
 

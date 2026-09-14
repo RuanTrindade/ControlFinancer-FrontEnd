@@ -16,8 +16,11 @@ import {
 
 import "../styles/formTransacao.css";
 
+import { NumericFormat } from "react-number-format";
+
 import useFecharComEsc from "../../../hooks/useFecharComEsc";
 import { useAlert } from "../../../context/AlertContext";
+import { useUsuarioLogado } from "../../../context/AuthContext";
 import { renderizarIcone } from "../../../utils/renderizarIcone";
 
 type TipoTransacao = "RECEITA" | "DESPESA";
@@ -129,6 +132,8 @@ const statusPagamento = [
 function FormTransacao({ tipo, transacao, onClose, onSalvar }: FormTransacaoProps) {
     const { showAlert } = useAlert();
 
+    const { id: USUARIO_ID } = useUsuarioLogado();
+
     const [dados, setDados] = useState<DadosFormulario>(dadosIniciais);
 
     const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -186,7 +191,9 @@ function FormTransacao({ tipo, transacao, onClose, onSalvar }: FormTransacaoProp
             setCarregandoCategorias(true);
             setErro("");
 
-            const response = await fetch("http://localhost:8080/categorias/usuario/1/todas");
+            const response = await fetch(
+                `http://localhost:8080/categorias/usuario/${USUARIO_ID}/todas`,
+            );
 
             if (!response.ok) {
                 const mensagem = await response.text();
@@ -238,7 +245,7 @@ function FormTransacao({ tipo, transacao, onClose, onSalvar }: FormTransacaoProp
     }
 
     function formularioValido() {
-        const valorNumerico = Number(dados.valor.replace(",", "."));
+        const valorNumerico = Number(dados.valor);
 
         return (
             dados.descricao.trim().length >= 2 &&
@@ -264,10 +271,10 @@ function FormTransacao({ tipo, transacao, onClose, onSalvar }: FormTransacaoProp
             setErro("");
 
             const dadosTransacao = {
-                usuarioId: 1,
+                usuarioId: USUARIO_ID,
                 categoriaId: Number(dados.categoriaId),
                 descricao: dados.descricao.trim(),
-                valor: Number(dados.valor.replace(",", ".")),
+                valor: Number(dados.valor),
                 metodo: dados.metodo,
                 status: dados.status,
                 data: dados.data,
@@ -290,7 +297,7 @@ function FormTransacao({ tipo, transacao, onClose, onSalvar }: FormTransacaoProp
             const editando = Boolean(transacao);
 
             const url = editando
-                ? `http://localhost:8080/transacoes/${transacao!.id}?usuarioId=1`
+                ? `http://localhost:8080/transacoes/${transacao!.id}?usuarioId=${USUARIO_ID}`
                 : "http://localhost:8080/transacoes";
 
             const metodoHttp = editando ? "PUT" : "POST";
@@ -520,22 +527,17 @@ function FormTransacao({ tipo, transacao, onClose, onSalvar }: FormTransacaoProp
                         <label htmlFor="valor">Valor</label>
 
                         <div className="form-transacao-input input-valor">
-                            <RiMoneyDollarCircleLine />
-
                             <span>R$</span>
 
-                            <input
+                            <NumericFormat
                                 id="valor"
-                                type="text"
-                                inputMode="decimal"
+                                thousandSeparator="."
+                                decimalSeparator=","
+                                decimalScale={2}
+                                fixedDecimalScale
+                                allowNegative={false}
                                 value={dados.valor}
-                                onChange={(evento) => {
-                                    const valor = evento.target.value;
-
-                                    if (/^\d*[.,]?\d{0,2}$/.test(valor)) {
-                                        atualizarCampo("valor", valor);
-                                    }
-                                }}
+                                onValueChange={(valores) => atualizarCampo("valor", valores.value)}
                                 placeholder="0,00"
                             />
                         </div>

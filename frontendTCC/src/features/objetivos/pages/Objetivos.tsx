@@ -4,6 +4,8 @@ import DashboardLayout from "../../../layouts/DashboardLayout";
 import CardObjetivo from "../components/CardObjetivo";
 
 import LoadingOverlay from "../../../shared/components/LoadingOverlay";
+
+import { useUsuarioLogado } from "../../../context/AuthContext";
 import type { Objetivo } from "../types/objetivo";
 import FormCriarObjetivo, { type DadosNovoObjetivo } from "../components/FormCriarObjetivo";
 
@@ -24,7 +26,7 @@ function Objetivos() {
 
     const [erro, setErro] = useState("");
 
-    const USUARIO_ID = 1;
+    const { id: USUARIO_ID } = useUsuarioLogado();
 
     const [objetivos, setObjetivos] = useState<Objetivo[]>([]);
 

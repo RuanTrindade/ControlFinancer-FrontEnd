@@ -1,6 +1,8 @@
 import { useEffect, useState, type FormEvent } from "react";
 
-import { RiCalendarLine, RiCloseLine, RiFlagLine, RiMoneyDollarCircleLine } from "react-icons/ri";
+import { RiCalendarLine, RiCloseLine, RiFlagLine } from "react-icons/ri";
+
+import { NumericFormat } from "react-number-format";
 
 import type { Objetivo } from "../types/objetivo";
 
@@ -102,7 +104,7 @@ function FormEditarObjetivo({ aberto, objetivo, usuarioId, onClose, onSalvar }: 
         setErro("");
     }, [aberto, objetivo]);
 
-    const valorNumerico = Number(valor.replace(",", ".")) || 0;
+    const valorNumerico = Number(valor) || 0;
 
     const valorMinimo = objetivo.valorAtual;
 
@@ -219,16 +221,17 @@ function FormEditarObjetivo({ aberto, objetivo, usuarioId, onClose, onSalvar }: 
                             <label>Valor da meta</label>
 
                             <div className="form-editar-objetivo-input">
-                                <RiMoneyDollarCircleLine />
-
-                                <input
-                                    type="number"
-                                    min={valorMinimo}
-                                    step="0.01"
+                                <NumericFormat
                                     value={valor}
+                                    thousandSeparator="."
+                                    decimalSeparator=","
+                                    decimalScale={2}
+                                    fixedDecimalScale
+                                    allowNegative={false}
+                                    prefix="R$ "
                                     disabled={salvando}
-                                    onChange={(evento) => {
-                                        setValor(evento.target.value);
+                                    onValueChange={(valores) => {
+                                        setValor(valores.value);
 
                                         setErro("");
                                     }}

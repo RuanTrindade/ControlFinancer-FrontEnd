@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { RiCloseLine, RiMoneyDollarCircleLine } from "react-icons/ri";
 
+import { NumericFormat } from "react-number-format";
+
 import { atualizarValorPlanejado } from "../services/planejamentoService";
 
 import "../styles/formEditarPlanejamento.css";
@@ -36,7 +38,7 @@ function FormEditarPlanejamento({
 
     const [erro, setErro] = useState("");
 
-    const valorNumerico = Number(valor.replace(",", ".")) || 0;
+    const valorNumerico = Number(valor) || 0;
 
     const valorValido = valorNumerico >= minimoPermitido;
 
@@ -100,20 +102,18 @@ function FormEditarPlanejamento({
                             <label>Valor</label>
 
                             <div className="editar-planejamento-input">
-                                <span>R$</span>
-
-                                <input
-                                    type="text"
-                                    inputMode="decimal"
+                                <NumericFormat
+                                    thousandSeparator="."
+                                    decimalSeparator=","
+                                    decimalScale={2}
+                                    fixedDecimalScale
+                                    allowNegative={false}
+                                    prefix="R$ "
                                     value={valor}
-                                    onChange={(evento) => {
-                                        const novoValor = evento.target.value;
+                                    onValueChange={(valores) => {
+                                        setValor(valores.value);
 
-                                        if (/^\d*[.,]?\d{0,2}$/.test(novoValor)) {
-                                            setValor(novoValor);
-
-                                            setErro("");
-                                        }
+                                        setErro("");
                                     }}
                                 />
                             </div>

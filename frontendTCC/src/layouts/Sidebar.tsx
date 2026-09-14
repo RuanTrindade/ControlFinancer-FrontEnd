@@ -10,7 +10,9 @@ import {
     RiLogoutBoxRLine,
 } from "react-icons/ri";
 
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
+import { useAuth } from "../context/AuthContext";
 
 import "./sidebar.css";
 
@@ -26,6 +28,16 @@ function Sidebar({
     setFechado,
 }: Props) {
     const location = useLocation();
+
+    const navigate = useNavigate();
+
+    const { logout } = useAuth();
+
+    function sair() {
+        logout();
+
+        navigate("/");
+    }
 
     return (
         <aside
@@ -133,7 +145,15 @@ function Sidebar({
 
             <ul className="side-menu">
                 <li>
-                    <a href="#" className="logout">
+                    <a
+                        href="#"
+                        className="logout"
+                        onClick={(evento) => {
+                            evento.preventDefault();
+
+                            sair();
+                        }}
+                    >
                         <RiLogoutBoxRLine />
 
                         <span>Logout</span>

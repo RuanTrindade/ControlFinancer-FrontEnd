@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import { RiAddLine, RiArrowDownLine, RiCloseLine, RiLineChartLine } from "react-icons/ri";
 
+import { NumericFormat } from "react-number-format";
+
 import {
     editarMovimentacao,
     registrarMovimentacao,
@@ -65,7 +67,7 @@ function FormMovimentacaoInvestimento({
          * EDIÇÃO
          */
         if (movimentacaoEdicao) {
-            setValor(String(movimentacaoEdicao.valor).replace(".", ","));
+            setValor(String(movimentacaoEdicao.valor));
 
             if (movimentacaoEdicao.tipo === "RENDIMENTO") {
                 const data = new Date(movimentacaoEdicao.data);
@@ -158,7 +160,7 @@ function FormMovimentacaoInvestimento({
             return;
         }
 
-        const valorNumero = Number(valor.replace(",", "."));
+        const valorNumero = Number(valor);
 
         if (!valor.trim() || Number.isNaN(valorNumero) || valorNumero <= 0) {
             setErro("Informe um valor válido.");
@@ -287,23 +289,18 @@ function FormMovimentacaoInvestimento({
                         <label htmlFor="valor-movimentacao">{labelValor}</label>
 
                         <div className="input-moeda-movimentacao">
-                            <span>R$</span>
-
-                            <input
+                            <NumericFormat
                                 id="valor-movimentacao"
-
-                                type="text"
-
-                                inputMode="decimal"
-
-                                placeholder="0,00"
-
+                                thousandSeparator="."
+                                decimalSeparator=","
+                                decimalScale={2}
+                                fixedDecimalScale
+                                allowNegative={false}
+                                prefix="R$ "
+                                placeholder="R$ 0,00"
                                 value={valor}
-
-                                onChange={(event) => setValor(event.target.value)}
-
+                                onValueChange={(valores) => setValor(valores.value)}
                                 autoFocus
-
                                 disabled={salvando}
                             />
                         </div>

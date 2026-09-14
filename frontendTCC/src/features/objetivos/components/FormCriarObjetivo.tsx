@@ -1,6 +1,8 @@
 import { useEffect, useState, type FormEvent } from "react";
 
-import { RiCloseLine, RiFlagLine, RiMoneyDollarCircleLine, RiCalendarLine } from "react-icons/ri";
+import { RiCloseLine, RiFlagLine, RiCalendarLine } from "react-icons/ri";
+
+import { NumericFormat } from "react-number-format";
 
 import "../styles/formCriarObjetivo.css";
 
@@ -116,7 +118,7 @@ function FormCriarObjetivo({ aberto, carregando = false, onFechar, onSalvar }: P
         onFechar();
     }
 
-    const valorNumerico = Number(valor.replace(",", "."));
+    const valorNumerico = Number(valor);
 
     function formularioValido() {
         return (
@@ -240,18 +242,19 @@ function FormCriarObjetivo({ aberto, carregando = false, onFechar, onSalvar }: P
                             <label htmlFor="valor-objetivo">Valor da meta</label>
 
                             <div className="form-objetivo-input">
-                                <RiMoneyDollarCircleLine />
-
-                                <input
+                                <NumericFormat
                                     id="valor-objetivo"
-                                    type="number"
-                                    min="0.01"
-                                    step="0.01"
                                     value={valor}
-                                    placeholder="0,00"
+                                    thousandSeparator="."
+                                    decimalSeparator=","
+                                    decimalScale={2}
+                                    fixedDecimalScale
+                                    allowNegative={false}
+                                    prefix="R$ "
+                                    placeholder="R$ 0,00"
                                     disabled={carregando}
-                                    onChange={(evento) => {
-                                        setValor(evento.target.value);
+                                    onValueChange={(valores) => {
+                                        setValor(valores.value);
 
                                         setErro("");
                                     }}

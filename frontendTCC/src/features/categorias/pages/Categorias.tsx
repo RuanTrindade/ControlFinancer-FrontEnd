@@ -5,6 +5,7 @@ import DashboardLayout from "../../../layouts/DashboardLayout";
 import LoadingOverlay from "../../../shared/components/LoadingOverlay";
 
 import { useAlert } from "../../../context/AlertContext";
+import { useUsuarioLogado } from "../../../context/AuthContext";
 
 import { mapaIconesCategorias } from "../../../utils/iconesCategorias";
 
@@ -36,6 +37,8 @@ type Categoria = {
 
 function Categorias() {
     const { showAlert } = useAlert();
+
+    const { id: USUARIO_ID } = useUsuarioLogado();
 
     const [modalCategoriaAberto, setModalCategoriaAberto] = useState(false);
 
@@ -70,7 +73,7 @@ function Categorias() {
             setLoading(true);
 
             const response = await fetch(
-                `http://localhost:8080/categorias/usuario/1?tipo=${tipoSelecionado}&page=${pagina}&size=${tamanhoPagina}`,
+                `http://localhost:8080/categorias/usuario/${USUARIO_ID}?tipo=${tipoSelecionado}&page=${pagina}&size=${tamanhoPagina}`,
             );
 
             if (!response.ok) {
@@ -145,7 +148,7 @@ function Categorias() {
             const editando = categoriaEditando !== null;
 
             const url = editando
-                ? `http://localhost:8080/categorias/${categoriaEditando.id}?usuarioId=1`
+                ? `http://localhost:8080/categorias/${categoriaEditando.id}?usuarioId=${USUARIO_ID}`
                 : "http://localhost:8080/categorias";
 
             const corpo = editando
@@ -159,7 +162,7 @@ function Categorias() {
                       tipo: dados.tipo,
                   }
                 : {
-                      usuarioId: 1,
+                      usuarioId: USUARIO_ID,
 
                       nome: dados.nome,
 
@@ -217,9 +220,12 @@ function Categorias() {
         try {
             setLoading(true);
 
-            const response = await fetch(`http://localhost:8080/categorias/${id}?usuarioId=1`, {
-                method: "DELETE",
-            });
+            const response = await fetch(
+                `http://localhost:8080/categorias/${id}?usuarioId=${USUARIO_ID}`,
+                {
+                    method: "DELETE",
+                },
+            );
 
             if (!response.ok) {
                 const texto = await response.text();

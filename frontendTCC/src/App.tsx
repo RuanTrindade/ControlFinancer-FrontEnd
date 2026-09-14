@@ -14,25 +14,98 @@ import Relatorios from "./features/relatorios/pages/Relatorios";
 import RedefinirSenha from "./features/autenticacao/pages/RedefinirSenha";
 import InvestimentoDetalhe from "./features/investimentos/pages/InvestimentoDetalhe";
 
+import RotaProtegida from "./routes/RotaProtegida";
+import RotaPublica from "./routes/RotaPublica";
+
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Login />} />
+                <Route
+                    path="/"
+                    element={
+                        <RotaPublica>
+                            <Login />
+                        </RotaPublica>
+                    }
+                />
 
-                <Route path="/dashboard" element={<Dashboard />} />
+                <Route
+                    path="/dashboard"
+                    element={
+                        <RotaProtegida>
+                            <Dashboard />
+                        </RotaProtegida>
+                    }
+                />
 
-                <Route path="/transacoes" element={<Transacoes />} />
+                <Route
+                    path="/transacoes"
+                    element={
+                        <RotaProtegida>
+                            <Transacoes />
+                        </RotaProtegida>
+                    }
+                />
 
-                <Route path="/categorias" element={<Categorias />} />
-                <Route path="/objetivos" element={<Objetivos />} />
-                <Route path="/objetivos/:id" element={<ObjetivoDetalhe />} />
-                <Route path="/planejamento" element={<Planejamento />} />
-                <Route path="/investimentos" element={<Investimentos />} />
+                <Route
+                    path="/categorias"
+                    element={
+                        <RotaProtegida>
+                            <Categorias />
+                        </RotaProtegida>
+                    }
+                />
+                <Route
+                    path="/objetivos"
+                    element={
+                        <RotaProtegida>
+                            <Objetivos />
+                        </RotaProtegida>
+                    }
+                />
+                <Route
+                    path="/objetivos/:id"
+                    element={
+                        <RotaProtegida>
+                            <ObjetivoDetalhe />
+                        </RotaProtegida>
+                    }
+                />
+                <Route
+                    path="/planejamento"
+                    element={
+                        <RotaProtegida>
+                            <Planejamento />
+                        </RotaProtegida>
+                    }
+                />
+                <Route
+                    path="/investimentos"
+                    element={
+                        <RotaProtegida>
+                            <Investimentos />
+                        </RotaProtegida>
+                    }
+                />
 
-                <Route path="/investimentos/:id" element={<InvestimentoDetalhe />} />
+                <Route
+                    path="/investimentos/:id"
+                    element={
+                        <RotaProtegida>
+                            <InvestimentoDetalhe />
+                        </RotaProtegida>
+                    }
+                />
 
-                <Route path="/relatorios" element={<Relatorios />} />
+                <Route
+                    path="/relatorios"
+                    element={
+                        <RotaProtegida>
+                            <Relatorios />
+                        </RotaProtegida>
+                    }
+                />
                 <Route path="/redefinir-senha" element={<RedefinirSenha />} />
             </Routes>
         </BrowserRouter>

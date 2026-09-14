@@ -1,6 +1,8 @@
 import { useEffect, useState, type FormEvent } from "react";
 
-import { RiCloseLine, RiEditLine, RiMoneyDollarCircleLine } from "react-icons/ri";
+import { RiCloseLine, RiEditLine } from "react-icons/ri";
+
+import { NumericFormat } from "react-number-format";
 
 import { editarMovimentacaoObjetivo } from "../services/objetivoService";
 
@@ -37,7 +39,7 @@ function FormEditarMovimentacaoObjetivo({ movimentacao, aberto, onClose, onSalva
         setErro("");
     }, [aberto, movimentacao]);
 
-    const valorNumerico = Number(valor.replace(",", ".")) || 0;
+    const valorNumerico = Number(valor) || 0;
 
     async function salvar(evento: FormEvent<HTMLFormElement>) {
         evento.preventDefault();
@@ -112,23 +114,19 @@ function FormEditarMovimentacaoObjetivo({ movimentacao, aberto, onClose, onSalva
                         <label>Valor</label>
 
                         <div className="editar-movimentacao-input">
-                            <RiMoneyDollarCircleLine />
-
-                            <span>R$</span>
-
-                            <input
-                                type="text"
-                                inputMode="decimal"
+                            <NumericFormat
                                 value={valor}
+                                thousandSeparator="."
+                                decimalSeparator=","
+                                decimalScale={2}
+                                fixedDecimalScale
+                                allowNegative={false}
+                                prefix="R$ "
                                 disabled={salvando}
-                                onChange={(evento) => {
-                                    const novoValor = evento.target.value;
+                                onValueChange={(valores) => {
+                                    setValor(valores.value);
 
-                                    if (/^\d*[.,]?\d{0,2}$/.test(novoValor)) {
-                                        setValor(novoValor);
-
-                                        setErro("");
-                                    }
+                                    setErro("");
                                 }}
                             />
                         </div>

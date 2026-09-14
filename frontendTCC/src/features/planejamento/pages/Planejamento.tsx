@@ -27,6 +27,7 @@ import {
 } from "../services/planejamentoCategoriaService";
 
 import { useMes } from "../../../context/MesContext";
+import { useUsuarioLogado } from "../../../context/AuthContext";
 
 import {
     RiAddLine,
@@ -128,7 +129,7 @@ function Planejamento() {
 
     const [totalPaginas, setTotalPaginas] = useState(0);
 
-    const USUARIO_ID = 1;
+    const { id: USUARIO_ID } = useUsuarioLogado();
 
     const { referenciaAtual, mes: mesSelecionado, ano: anoSelecionado } = useMes();
 

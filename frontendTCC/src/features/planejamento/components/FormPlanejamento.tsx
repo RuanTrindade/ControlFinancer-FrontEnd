@@ -2,6 +2,8 @@ import { useMemo } from "react";
 
 import { RiMoneyDollarCircleLine, RiArrowRightLine } from "react-icons/ri";
 
+import { NumericFormat } from "react-number-format";
+
 import { useAlert } from "../../../context/AlertContext";
 
 import "../styles/formPlanejamento.css";
@@ -79,25 +81,31 @@ function FormPlanejamento({
             <div className="campo-planejamento">
                 <label>Quanto você ganha por mês?</label>
 
-                <input
-                    type="number"
-                    min="0"
-                    step="0.01"
+                <NumericFormat
+                    thousandSeparator="."
+                    decimalSeparator=","
+                    decimalScale={2}
+                    fixedDecimalScale
+                    allowNegative={false}
+                    prefix="R$ "
+                    placeholder="R$ 0,00"
                     value={renda}
-                    onChange={(e) => setRenda(e.target.value)}
+                    onValueChange={(valores) => setRenda(valores.value)}
                 />
             </div>
 
             <div className="campo-planejamento">
                 <label>Quanto deseja economizar por mês?</label>
 
-                <input
-                    type="number"
-                    min="0"
-                    max="100"
-                    step="0.01"
+                <NumericFormat
+                    decimalSeparator=","
+                    decimalScale={2}
+                    allowNegative={false}
+                    suffix=" %"
+                    placeholder="0 %"
                     value={percentualEconomia}
-                    onChange={(e) => setPercentualEconomia(e.target.value)}
+                    isAllowed={(valores) => (valores.floatValue ?? 0) <= 100}
+                    onValueChange={(valores) => setPercentualEconomia(valores.value)}
                 />
 
                 <small>Essa porcentagem será utilizada para calcular seu orçamento mensal.</small>

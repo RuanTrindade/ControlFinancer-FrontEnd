@@ -8,11 +8,14 @@ import { BsCheckCircleFill, BsXCircleFill, BsCheckLg } from "react-icons/bs";
 
 import "../styles/login.css";
 import LoadingOverlay from "../../../shared/components/LoadingOverlay";
+import { useAuth } from "../../../context/AuthContext";
 
 function Login() {
     const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
+
+    const { login } = useAuth();
 
     const [modoCadastro, setModoCadastro] = useState(false);
 
@@ -89,6 +92,14 @@ function Login() {
             if (!resposta.ok) {
                 throw new Error();
             }
+
+            const usuarioLogado = await resposta.json();
+
+            login({
+                id: usuarioLogado.id,
+                nome: usuarioLogado.nome,
+                email: usuarioLogado.email,
+            });
 
             mostrarPopup("Login realizado!", "sucesso");
 

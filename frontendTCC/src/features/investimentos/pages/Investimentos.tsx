@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useMes } from "../../../context/MesContext";
+import { useUsuarioLogado } from "../../../context/AuthContext";
 
 import DashboardLayout from "../../../layouts/DashboardLayout";
 
@@ -45,7 +46,7 @@ function Investimentos() {
      * Depois pegaremos o ID do usuário
      * autenticado.
      */
-    const USUARIO_ID = 1;
+    const { id: USUARIO_ID } = useUsuarioLogado();
 
     /* ===================================================
        PERÍODO

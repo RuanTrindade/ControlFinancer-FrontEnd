@@ -5,6 +5,7 @@ import DashboardLayout from "../../../layouts/DashboardLayout";
 import LoadingOverlay from "../../../shared/components/LoadingOverlay";
 
 import { useMes } from "../../../context/MesContext";
+import { useUsuarioLogado } from "../../../context/AuthContext";
 
 import { buscarRelatorio } from "../services/relatorioService";
 
@@ -80,7 +81,7 @@ type CategoriaRelatorio = {
 };
 
 function Relatorios() {
-    const USUARIO_ID = 1;
+    const { id: USUARIO_ID } = useUsuarioLogado();
 
     const { mes: mesSelecionado, ano: anoSelecionado } = useMes();
 
