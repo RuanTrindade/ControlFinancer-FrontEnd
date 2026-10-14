@@ -5,7 +5,6 @@ type MesContextType = {
 
     setReferenciaAtual: (data: Date) => void;
 
-    /** Mês (1-12) e ano já derivados de `referenciaAtual`, para não recalcular em cada página. */
     mes: number;
     ano: number;
 };

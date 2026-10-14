@@ -125,8 +125,6 @@ export const mapaIconesCategorias: Record<string, ReactNode> = {
 
     ...Object.fromEntries(iconesObjetivos.map((item) => [item.nome, item.componente])),
 
-    /* compatibilidade antiga */
-
     alimentacao: <BiRestaurant />,
 
     transporte: <BiCar />,

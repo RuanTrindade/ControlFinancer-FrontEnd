@@ -4,20 +4,6 @@ import { RiCloseLine, RiDeleteBin6Line } from "react-icons/ri";
 
 import "../styles/confirmarExclusao.css";
 
-/**
- * Modal genérico de confirmação de exclusão.
- *
- * Reúne em um único componente o padrão visual e de
- * comportamento repetido em:
- *   - ConfirmarExclusaoObjetivo
- *   - ConfirmarExclusaoPlanejamento
- *   - ConfirmarExclusaoCategoriaPlanejamento
- *   - ConfirmarExclusaoMovimentacaoObjetivo
- *
- * Cada um desses componentes agora é apenas um wrapper
- * fino em cima deste, mantendo a própria API (props)
- * para não exigir nenhuma mudança nas telas que os usam.
- */
 type Props = {
     aberto: boolean;
 

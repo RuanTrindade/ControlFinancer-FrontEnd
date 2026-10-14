@@ -52,10 +52,6 @@ function Categorias() {
 
     const [categorias, setCategorias] = useState<Categoria[]>([]);
 
-    /* ===================================================
-       PAGINAÇÃO
-    =================================================== */
-
     const [paginaAtual, setPaginaAtual] = useState(0);
 
     const [totalPaginas, setTotalPaginas] = useState(0);
@@ -63,10 +59,6 @@ function Categorias() {
     const [totalCategorias, setTotalCategorias] = useState(0);
 
     const tamanhoPagina = 8;
-
-    /* ===================================================
-       BUSCAR
-    =================================================== */
 
     async function buscarCategorias(pagina = paginaAtual) {
         try {
@@ -86,9 +78,6 @@ function Categorias() {
 
             console.log("RESPOSTA CATEGORIAS:", resposta);
 
-            /*
-             * BACKEND PAGINADO
-             */
             if (resposta && Array.isArray(resposta.content)) {
                 setCategorias(resposta.content);
 
@@ -101,11 +90,6 @@ function Categorias() {
                 return;
             }
 
-            /*
-             * PROTEÇÃO:
-             * caso o backend ainda esteja
-             * retornando List
-             */
             if (Array.isArray(resposta)) {
                 setCategorias(resposta);
 
@@ -118,9 +102,6 @@ function Categorias() {
                 return;
             }
 
-            /*
-             * Nunca deixa categorias virar undefined
-             */
             setCategorias([]);
 
             setPaginaAtual(0);
@@ -136,10 +117,6 @@ function Categorias() {
             setLoading(false);
         }
     }
-
-    /* ===================================================
-       SALVAR
-    =================================================== */
 
     async function salvarCategoria(dados: DadosCategoria) {
         try {
@@ -212,10 +189,6 @@ function Categorias() {
         }
     }
 
-    /* ===================================================
-       DELETE
-    =================================================== */
-
     async function deletarCategoria(id: number) {
         try {
             setLoading(true);
@@ -245,10 +218,6 @@ function Categorias() {
                 throw new Error(mensagem);
             }
 
-            /*
-             * Caso a exclusão deixe a página atual vazia,
-             * voltamos uma página.
-             */
             const paginaDepoisExclusao =
                 categorias.length === 1 && paginaAtual > 0 ? paginaAtual - 1 : paginaAtual;
 
@@ -266,10 +235,6 @@ function Categorias() {
         }
     }
 
-    /* ===================================================
-       INIT
-    =================================================== */
-
     useEffect(() => {
         setPaginaAtual(0);
 
@@ -278,17 +243,9 @@ function Categorias() {
 
     const categoriasFiltradas = categorias;
 
-    /* ===================================================
-       TROCAR TIPO
-    =================================================== */
-
     function trocarTipo() {
         setTipoSelecionado(tipoSelecionado === "DESPESA" ? "RECEITA" : "DESPESA");
     }
-
-    /* ===================================================
-       PAGINAÇÃO
-    =================================================== */
 
     function paginaAnterior() {
         if (paginaAtual <= 0) {
@@ -311,13 +268,7 @@ function Categorias() {
             {loading && <LoadingOverlay />}
 
             <div className="pagina-categorias">
-                {/* ===================================================
-                    TOPO
-                =================================================== */}
-
                 <div className="topo-categorias">
-                    {/* TOGGLE */}
-
                     <button
                         type="button"
                         className={`
@@ -338,8 +289,6 @@ function Categorias() {
                         />
                     </button>
 
-                    {/* CRIAR */}
-
                     <button
                         type="button"
                         className={`
@@ -358,10 +307,6 @@ function Categorias() {
                     </button>
                 </div>
 
-                {/* ===================================================
-                    TABELA
-                =================================================== */}
-
                 <div
                     key={`${tipoSelecionado}-${paginaAtual}`}
                     className={`
@@ -370,8 +315,6 @@ function Categorias() {
                         ${tipoSelecionado === "RECEITA" ? "receita" : "despesa"}
                     `}
                 >
-                    {/* HEADER */}
-
                     <div
                         className={`
                             tabela-header-categorias
@@ -388,15 +331,9 @@ function Categorias() {
                         <span>Ações</span>
                     </div>
 
-                    {/* ===================================================
-                        LINHAS
-                    =================================================== */}
-
                     {categoriasFiltradas.length > 0 ? (
                         categoriasFiltradas.map((categoria) => (
                             <div key={categoria.id} className="linha-categoria">
-                                {/* NOME */}
-
                                 <strong>
                                     {categoria.nome}
 
@@ -405,14 +342,10 @@ function Categorias() {
                                     )}
                                 </strong>
 
-                                {/* ÍCONE */}
-
                                 <div className="icone-categoria">
                                     {mapaIconesCategorias[categoria.icone] ??
                                         mapaIconesCategorias.BiCategory}
                                 </div>
-
-                                {/* COR */}
 
                                 <div className="cor-categoria">
                                     <div
@@ -423,11 +356,7 @@ function Categorias() {
                                     />
                                 </div>
 
-                                {/* AÇÕES */}
-
                                 <div className="acoes-categoria">
-                                    {/* EDITAR */}
-
                                     <button
                                         type="button"
                                         className={
@@ -459,8 +388,6 @@ function Categorias() {
                                     >
                                         <RiEdit2Line />
                                     </button>
-
-                                    {/* EXCLUIR */}
 
                                     <button
                                         type="button"
@@ -501,10 +428,6 @@ function Categorias() {
                         </div>
                     )}
                 </div>
-
-                {/* ===================================================
-                    PAGINAÇÃO
-                =================================================== */}
 
                 {totalPaginas > 1 && (
                     <div className="paginacao-categorias">
@@ -554,10 +477,6 @@ function Categorias() {
 
                 <div className="total-categorias">{totalCategorias} categorias cadastradas</div>
             </div>
-
-            {/* ===================================================
-                FORM
-            =================================================== */}
 
             <FormCategoria
                 aberto={modalCategoriaAberto}

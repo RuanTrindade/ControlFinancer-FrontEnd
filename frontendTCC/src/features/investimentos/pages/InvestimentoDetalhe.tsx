@@ -51,17 +51,9 @@ import { useMes } from "../../../context/MesContext";
 
 import "../styles/investimentoDetalhe.css";
 
-/* ===================================================
-   TIPOS
-=================================================== */
-
 type FiltroHistorico = "TODOS" | "APORTE" | "RESGATE" | "RENDIMENTO";
 
 type TipoModal = "APORTE" | "RESGATE" | "RENDIMENTO" | null;
-
-/* ===================================================
-   COMPONENTE
-=================================================== */
 
 function InvestimentoDetalhe() {
     const navigate = useNavigate();
@@ -72,15 +64,7 @@ function InvestimentoDetalhe() {
 
     const investimentoId = Number(id);
 
-    /* ===================================================
-       MÊS DA TOPBAR
-    =================================================== */
-
     const { mes: mesSelecionado, ano: anoSelecionado } = useMes();
-
-    /* ===================================================
-       STATES
-    =================================================== */
 
     const [paginaAtual, setPaginaAtual] = useState(0);
 
@@ -121,10 +105,6 @@ function InvestimentoDetalhe() {
     const [carregando, setCarregando] = useState(true);
 
     const [erro, setErro] = useState<string | null>(null);
-
-    /* ===================================================
-       CARREGAR DADOS
-    =================================================== */
 
     async function carregarDados(mostrarCarregamento = true) {
         if (!investimentoId || Number.isNaN(investimentoId)) {
@@ -228,17 +208,9 @@ function InvestimentoDetalhe() {
         carregarHistorico(0);
     }, [investimentoId, mesSelecionado, anoSelecionado, filtro]);
 
-    /* ===================================================
-       CARREGAMENTO
-    =================================================== */
-
     useEffect(() => {
         carregarDados();
     }, [investimentoId, mesSelecionado, anoSelecionado]);
-
-    /* ===================================================
-       FORMATAR MOEDA
-    =================================================== */
 
     function formatarMoeda(valor: number) {
         return Number(valor || 0).toLocaleString(
@@ -251,19 +223,11 @@ function InvestimentoDetalhe() {
         );
     }
 
-    /* ===================================================
-       FORMATAR DATA
-    =================================================== */
-
     function formatarData(data: string) {
         const dataConvertida = new Date(data);
 
         return dataConvertida.toLocaleDateString("pt-BR");
     }
-
-    /* ===================================================
-       NOME DO MÊS
-    =================================================== */
 
     const nomeMes = useMemo(() => {
         const data = new Date(
@@ -286,10 +250,6 @@ function InvestimentoDetalhe() {
         return nome.charAt(0).toUpperCase() + nome.slice(1);
     }, [mesSelecionado, anoSelecionado]);
 
-    /* ===================================================
-       MOVIMENTAÇÕES ATÉ O MÊS SELECIONADO
-    =================================================== */
-
     const movimentacoesAteMes = useMemo(() => {
         const limite = new Date(
             anoSelecionado,
@@ -307,10 +267,6 @@ function InvestimentoDetalhe() {
             })
             .sort((a, b) => new Date(a.data).getTime() - new Date(b.data).getTime());
     }, [movimentacoes, mesSelecionado, anoSelecionado]);
-
-    /* ===================================================
-       TOTAIS ATÉ O MÊS
-    =================================================== */
 
     const totais = useMemo(() => {
         let aportes = 0;
@@ -341,10 +297,6 @@ function InvestimentoDetalhe() {
             saldo,
         };
     }, [movimentacoesAteMes]);
-
-    /* ===================================================
-       GRÁFICO
-    =================================================== */
 
     const dadosGrafico = useMemo(() => {
         const mapa = new Map<
@@ -403,10 +355,6 @@ function InvestimentoDetalhe() {
             };
         });
     }, [movimentacoesAteMes]);
-
-    /* ===================================================
-       HISTÓRICO FILTRADO
-    =================================================== */
 
     const historicoFiltrado = movimentacoesHistorico;
 
@@ -483,10 +431,6 @@ function InvestimentoDetalhe() {
     return (
         <DashboardLayout mostrarMeses={true}>
             <div className="pagina-investimento-detalhe">
-                {/* ===================================================
-                    TOPO
-                =================================================== */}
-
                 <div className="topo-investimento-detalhe">
                     <button
                         type="button"
@@ -522,35 +466,15 @@ function InvestimentoDetalhe() {
                     )}
                 </div>
 
-                {/* ===================================================
-                    ERRO
-                =================================================== */}
-
                 {erro && <div className="mensagem-erro-investimento-detalhe">{erro}</div>}
-
-                {/* ===================================================
-                    CARREGANDO
-                =================================================== */}
 
                 {carregando && (
                     <div className="mensagem-investimento-detalhe">Carregando investimento...</div>
                 )}
 
-                {/* ===================================================
-                    CONTEÚDO
-                =================================================== */}
-
                 {!carregando && !erro && investimento && resumoMensal && (
                     <>
-                        {/* ===================================================
-                                PAINEL SUPERIOR
-                            =================================================== */}
-
                         <section className="painel-superior-investimento">
-                            {/* =========================
-                                    CARTEIRA
-                                ========================= */}
-
                             <div className="card-investimento-principal">
                                 <div className="cabecalho-carteira-investimento">
                                     <div>
@@ -581,15 +505,7 @@ function InvestimentoDetalhe() {
                                 </button>
                             </div>
 
-                            {/* =========================
-                                    SEPARADOR
-                                ========================= */}
-
                             <div className="separador-investimento" />
-
-                            {/* =========================
-                                    GRÁFICO
-                                ========================= */}
 
                             <div className="area-grafico-investimento">
                                 <div className="cabecalho-grafico-investimento">
@@ -692,10 +608,6 @@ function InvestimentoDetalhe() {
                             </div>
                         </section>
 
-                        {/* ===================================================
-                                AÇÕES
-                            =================================================== */}
-
                         {!investimento.encerrado && (
                             <div className="acoes-detalhe-investimento">
                                 <button
@@ -732,10 +644,6 @@ function InvestimentoDetalhe() {
                                 </button>
                             </div>
                         )}
-
-                        {/* ===================================================
-                                HISTÓRICO
-                            =================================================== */}
 
                         <section className="historico-investimento">
                             <div className="cabecalho-historico-investimento">
@@ -785,10 +693,6 @@ function InvestimentoDetalhe() {
                                     </button>
                                 </div>
                             </div>
-
-                            {/* ===================================================
-                                    LISTA
-                                =================================================== */}
 
                             <div className="lista-historico-investimento">
                                 {historicoFiltrado.length === 0 ? (
@@ -928,10 +832,6 @@ function InvestimentoDetalhe() {
                     </>
                 )}
             </div>
-
-            {/* ===================================================
-                MODAL
-            =================================================== */}
 
             {modalMovimentacao && (
                 <FormMovimentacaoInvestimento

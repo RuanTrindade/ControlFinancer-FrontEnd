@@ -13,24 +13,14 @@ import type { RelatorioResponse } from "../types/relatorio";
 
 import ModalAnaliseIA from "../components/ModalAnaliseIA";
 
+import { renderizarIcone } from "../../../utils/renderizarIcone";
+
 import {
     RiRobot2Line,
     RiBarChartGroupedLine,
     RiLineChartLine,
     RiPieChart2Line,
 } from "react-icons/ri";
-
-import {
-    BiWallet,
-    BiRestaurant,
-    BiCar,
-    BiDumbbell,
-    BiDollarCircle,
-    BiTransfer,
-    BiDonateHeart,
-    BiBook,
-    BiCategory,
-} from "react-icons/bi";
 
 import {
     Bar,
@@ -85,10 +75,6 @@ function Relatorios() {
 
     const { mes: mesSelecionado, ano: anoSelecionado } = useMes();
 
-    /* ===================================================
-       STATES
-    =================================================== */
-
     const [loading, setLoading] = useState(true);
 
     const [erro, setErro] = useState("");
@@ -98,10 +84,6 @@ function Relatorios() {
     const [tipoGrafico, setTipoGrafico] = useState<TipoGrafico>("barra");
 
     const [dadosBackend, setDadosBackend] = useState<RelatorioResponse | null>(null);
-
-    /* ===================================================
-       CARREGAR RELATÓRIO
-    =================================================== */
 
     useEffect(() => {
         async function carregarRelatorio() {
@@ -137,10 +119,6 @@ function Relatorios() {
         carregarRelatorio();
     }, [mesSelecionado, anoSelecionado]);
 
-    /* ===================================================
-       HISTÓRICO DOS 6 MESES
-    =================================================== */
-
     const relatorio = useMemo<RelatorioMensal[]>(() => {
         return (dadosBackend?.historico ?? []).map((item) => {
             const [mes, ano] = item.mes.split("/");
@@ -159,22 +137,9 @@ function Relatorios() {
         });
     }, [dadosBackend]);
 
-    /* ===================================================
-       BALANÇO DOS ÚLTIMOS 3 MESES
-
-       O backend já entrega os 6 meses
-       terminando no mês da Topbar.
-
-       Então basta pegar os últimos 3.
-    =================================================== */
-
     const mesesBalanco = useMemo(() => {
         return relatorio.slice(-3).reverse();
     }, [relatorio]);
-
-    /* ===================================================
-       CATEGORIAS DO PLANEJAMENTO
-    =================================================== */
 
     const categorias = useMemo<CategoriaRelatorio[]>(() => {
         return (dadosBackend?.categoriasPlanejamento ?? []).map((categoria) => ({
@@ -194,10 +159,6 @@ function Relatorios() {
         }));
     }, [dadosBackend]);
 
-    /* ===================================================
-       TOTAL DO PLANEJAMENTO
-    =================================================== */
-
     const totalCategorias = useMemo(() => {
         return categorias.reduce(
             (total, categoria) => total + categoria.valor,
@@ -206,13 +167,6 @@ function Relatorios() {
         );
     }, [categorias]);
 
-    /* ===================================================
-       DADOS DO DONUT
-
-       A rosca representa quanto cada categoria
-       representa do total já utilizado.
-    =================================================== */
-
     const dadosPizza = useMemo(() => {
         return categorias.map((categoria) => ({
             ...categoria,
@@ -220,10 +174,6 @@ function Relatorios() {
             percentualDonut: totalCategorias > 0 ? (categoria.valor / totalCategorias) * 100 : 0,
         }));
     }, [categorias, totalCategorias]);
-
-    /* ===================================================
-       DONUT VAZIO
-    =================================================== */
 
     const dadosPizzaExibicao = useMemo(() => {
         if (totalCategorias === 0) {
@@ -244,12 +194,6 @@ function Relatorios() {
         return dadosPizza;
     }, [dadosPizza, totalCategorias]);
 
-    /* ===================================================
-       MAIOR VALOR DOS GRÁFICOS
-
-       O eixo Y deixa de ficar travado em 2400.
-    =================================================== */
-
     const maiorValorGrafico = useMemo(() => {
         const valores = relatorio.flatMap((item) => [
             item.receita,
@@ -268,10 +212,6 @@ function Relatorios() {
         return Math.ceil(maior / 500) * 500;
     }, [relatorio]);
 
-    /* ===================================================
-       FORMATAR MOEDA
-    =================================================== */
-
     function formatarMoeda(valor: number) {
         return Number(valor || 0).toLocaleString("pt-BR", {
             style: "currency",
@@ -279,10 +219,6 @@ function Relatorios() {
             currency: "BRL",
         });
     }
-
-    /* ===================================================
-       NOMES DOS MESES
-    =================================================== */
 
     function obterMesAbreviado(mes: number) {
         const meses = [
@@ -322,45 +258,6 @@ function Relatorios() {
         return meses[mes - 1] ?? "";
     }
 
-    /* ===================================================
-       ÍCONE DE CATEGORIA
-    =================================================== */
-
-    function obterIconeCategoria(icone: string) {
-        switch (icone) {
-            case "BiWallet":
-                return <BiWallet />;
-
-            case "BiRestaurant":
-                return <BiRestaurant />;
-
-            case "BiCar":
-                return <BiCar />;
-
-            case "BiDumbbell":
-                return <BiDumbbell />;
-
-            case "BiDollarCircle":
-                return <BiDollarCircle />;
-
-            case "BiTransfer":
-                return <BiTransfer />;
-
-            case "BiDonateHeart":
-                return <BiDonateHeart />;
-
-            case "BiBook":
-                return <BiBook />;
-
-            default:
-                return <BiCategory />;
-        }
-    }
-
-    /* ===================================================
-       RENDER
-    =================================================== */
-
     return (
         <DashboardLayout>
             {loading && <LoadingOverlay />}
@@ -368,10 +265,6 @@ function Relatorios() {
             {erro && <div className="mensagem-erro-relatorio">{erro}</div>}
 
             <div className="pagina-relatorios">
-                {/* ===================================================
-                    TOPO
-                =================================================== */}
-
                 <div className="topo-relatorios">
                     <button className="botao-ia" onClick={() => setModalIAAberto(true)}>
                         <RiRobot2Line />
@@ -401,38 +294,11 @@ function Relatorios() {
                         </button>
                     </div>
 
-                    {/* ===================================================
-    AÇÕES DO RELATÓRIO
-    TEMPORARIAMENTE DESATIVADAS
-=================================================== */}
-
-                    <div className="acoes-relatorio">
-                        {/*
-    <button>
-        <RiFilter3Fill />
-    </button>
-
-    <button className="excel">
-        <RiFileExcel2Fill />
-    </button>
-
-    <button className="pdf">
-        <RiFilePdf2Fill />
-    </button>
-    */}
-                    </div>
+                    <div className="acoes-relatorio"></div>
                 </div>
-
-                {/* ===================================================
-                    CARD
-                =================================================== */}
 
                 <div className="card-relatorio">
                     <div className="conteudo-relatorio">
-                        {/* ===================================================
-                            BARRA
-                        =================================================== */}
-
                         {tipoGrafico === "barra" && (
                             <>
                                 <div className="area-grafico-relatorio">
@@ -542,10 +408,6 @@ function Relatorios() {
                                     </div>
                                 </div>
 
-                                {/* ===================================================
-                                        BALANÇO DOS ÚLTIMOS 3 MESES
-                                    =================================================== */}
-
                                 <aside className="balanco-mensal">
                                     <h3>Balanço Mensal</h3>
 
@@ -577,10 +439,6 @@ function Relatorios() {
                                 </aside>
                             </>
                         )}
-
-                        {/* ===================================================
-                            LINHA
-                        =================================================== */}
 
                         {tipoGrafico === "linha" && (
                             <div className="area-grafico-linha">
@@ -703,10 +561,6 @@ function Relatorios() {
                             </div>
                         )}
 
-                        {/* ===================================================
-                            PIZZA
-                        =================================================== */}
-
                         {tipoGrafico === "pizza" && (
                             <div className="area-pizza-relatorio">
                                 <div className="grafico-donut">
@@ -759,7 +613,7 @@ function Relatorios() {
                                                         background: categoria.cor,
                                                     }}
                                                 >
-                                                    {obterIconeCategoria(categoria.iconeNome)}
+                                                    {renderizarIcone(categoria.iconeNome)}
                                                 </div>
 
                                                 <div className="info-categoria-R">

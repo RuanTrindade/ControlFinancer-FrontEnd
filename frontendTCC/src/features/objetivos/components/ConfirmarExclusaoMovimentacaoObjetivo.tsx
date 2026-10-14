@@ -14,11 +14,6 @@ type Props = {
     onExcluir: () => Promise<void>;
 };
 
-/**
- * Wrapper fino sobre o ConfirmarExclusaoModal genérico.
- * Mantém a mesma API (props) de antes — nenhuma tela que
- * usa este componente precisa ser alterada.
- */
 function ConfirmarExclusaoMovimentacaoObjetivo({
     movimentacao,
     aberto,

@@ -6,7 +6,6 @@ import {
     RiBarChartBoxLine,
     RiWallet3Line,
     RiFileChartLine,
-    // RiSettings3Line,
     RiLogoutBoxRLine,
 } from "react-icons/ri";
 
@@ -121,26 +120,6 @@ function Sidebar({
                         <span>Relatórios</span>
                     </Link>
                 </li>
-
-                {/* <li
-                    className={
-                        location.pathname === "/configuracoes"
-                            ? "active"
-                            : ""
-                    }
-                >
-
-                    <Link to="/configuracoes">
-
-                        <RiSettings3Line />
-
-                        <span>
-                            Configurações
-                        </span>
-
-                    </Link>
-
-                </li> */}
             </ul>
 
             <ul className="side-menu">

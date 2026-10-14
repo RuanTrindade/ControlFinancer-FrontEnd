@@ -187,149 +187,149 @@ function FormEditarObjetivo({ aberto, objetivo, usuarioId, onClose, onSalvar }: 
             bloqueado={salvando}
         >
             <header className="form-editar-objetivo-cabecalho">
-                    <div>
-                        <span>Gerenciar objetivo</span>
+                <div>
+                    <span>Gerenciar objetivo</span>
 
-                        <h2>Editar objetivo</h2>
+                    <h2>Editar objetivo</h2>
+                </div>
+
+                <button type="button" onClick={onClose} disabled={salvando}>
+                    <RiCloseLine />
+                </button>
+            </header>
+
+            <form className="form-editar-objetivo-conteudo" onSubmit={salvar}>
+                {erro && <div className="form-editar-objetivo-erro">{erro}</div>}
+
+                <div className="form-editar-objetivo-campo">
+                    <label>Nome do objetivo</label>
+
+                    <div className="form-editar-objetivo-input">
+                        <RiFlagLine />
+
+                        <input
+                            value={nome}
+                            maxLength={50}
+                            disabled={salvando}
+                            onChange={(evento) => setNome(evento.target.value)}
+                        />
                     </div>
+                </div>
 
-                    <button type="button" onClick={onClose} disabled={salvando}>
-                        <RiCloseLine />
-                    </button>
-                </header>
-
-                <form className="form-editar-objetivo-conteudo" onSubmit={salvar}>
-                    {erro && <div className="form-editar-objetivo-erro">{erro}</div>}
-
+                <div className="form-editar-objetivo-linha">
                     <div className="form-editar-objetivo-campo">
-                        <label>Nome do objetivo</label>
+                        <label>Valor da meta</label>
 
                         <div className="form-editar-objetivo-input">
-                            <RiFlagLine />
+                            <NumericFormat
+                                value={valor}
+                                thousandSeparator="."
+                                decimalSeparator=","
+                                decimalScale={2}
+                                fixedDecimalScale
+                                allowNegative={false}
+                                prefix="R$ "
+                                disabled={salvando}
+                                onValueChange={(valores) => {
+                                    setValor(valores.value);
+
+                                    setErro("");
+                                }}
+                            />
+                        </div>
+
+                        <small className="form-editar-objetivo-minimo">
+                            Mínimo permitido:{" "}
+                            <strong>
+                                R${" "}
+                                {valorMinimo.toLocaleString("pt-BR", {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2,
+                                })}
+                            </strong>
+                        </small>
+                    </div>
+
+                    <div className="form-editar-objetivo-campo">
+                        <label>Data final</label>
+
+                        <div className="form-editar-objetivo-input">
+                            <RiCalendarLine />
 
                             <input
-                                value={nome}
-                                maxLength={50}
+                                type="date"
+                                value={dataFinal}
                                 disabled={salvando}
-                                onChange={(evento) => setNome(evento.target.value)}
+                                onChange={(evento) => setDataFinal(evento.target.value)}
                             />
                         </div>
                     </div>
+                </div>
 
-                    <div className="form-editar-objetivo-linha">
-                        <div className="form-editar-objetivo-campo">
-                            <label>Valor da meta</label>
+                <div className="form-editar-objetivo-campo">
+                    <label>Cor do objetivo</label>
 
-                            <div className="form-editar-objetivo-input">
-                                <NumericFormat
-                                    value={valor}
-                                    thousandSeparator="."
-                                    decimalSeparator=","
-                                    decimalScale={2}
-                                    fixedDecimalScale
-                                    allowNegative={false}
-                                    prefix="R$ "
-                                    disabled={salvando}
-                                    onValueChange={(valores) => {
-                                        setValor(valores.value);
-
-                                        setErro("");
-                                    }}
-                                />
-                            </div>
-
-                            <small className="form-editar-objetivo-minimo">
-                                Mínimo permitido:{" "}
-                                <strong>
-                                    R${" "}
-                                    {valorMinimo.toLocaleString("pt-BR", {
-                                        minimumFractionDigits: 2,
-                                        maximumFractionDigits: 2,
-                                    })}
-                                </strong>
-                            </small>
-                        </div>
-
-                        <div className="form-editar-objetivo-campo">
-                            <label>Data final</label>
-
-                            <div className="form-editar-objetivo-input">
-                                <RiCalendarLine />
-
-                                <input
-                                    type="date"
-                                    value={dataFinal}
-                                    disabled={salvando}
-                                    onChange={(evento) => setDataFinal(evento.target.value)}
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="form-editar-objetivo-campo">
-                        <label>Cor do objetivo</label>
-
-                        <div className="form-editar-objetivo-cores">
-                            {coresObjetivos.map((cor) => (
-                                <button
-                                    key={cor}
-                                    type="button"
-                                    className={`
+                    <div className="form-editar-objetivo-cores">
+                        {coresObjetivos.map((cor) => (
+                            <button
+                                key={cor}
+                                type="button"
+                                className={`
                                             form-editar-objetivo-cor
                                             ${corSelecionada === cor ? "selecionada" : ""}
                                         `}
-                                    style={{
-                                        backgroundColor: cor,
-                                    }}
-                                    onClick={() => setCorSelecionada(cor)}
-                                    disabled={salvando}
-                                >
-                                    {corSelecionada === cor && <span>✓</span>}
-                                </button>
-                            ))}
-                        </div>
+                                style={{
+                                    backgroundColor: cor,
+                                }}
+                                onClick={() => setCorSelecionada(cor)}
+                                disabled={salvando}
+                            >
+                                {corSelecionada === cor && <span>✓</span>}
+                            </button>
+                        ))}
                     </div>
+                </div>
 
-                    <div className="form-editar-objetivo-campo">
-                        <label>Ícone do objetivo</label>
+                <div className="form-editar-objetivo-campo">
+                    <label>Ícone do objetivo</label>
 
-                        <div className="form-editar-objetivo-icones">
-                            {iconesObjetivos.map((item) => (
-                                <button
-                                    key={item.nome}
-                                    type="button"
-                                    className={`
+                    <div className="form-editar-objetivo-icones">
+                        {iconesObjetivos.map((item) => (
+                            <button
+                                key={item.nome}
+                                type="button"
+                                className={`
                                             form-editar-objetivo-icone
                                             ${iconeSelecionado === item.nome ? "selecionado" : ""}
                                         `}
-                                    onClick={() => setIconeSelecionado(item.nome)}
-                                    disabled={salvando}
-                                >
-                                    {item.componente}
-                                </button>
-                            ))}
-                        </div>
+                                onClick={() => setIconeSelecionado(item.nome)}
+                                disabled={salvando}
+                            >
+                                {item.componente}
+                            </button>
+                        ))}
                     </div>
+                </div>
 
-                    <footer>
-                        <button
-                            type="button"
-                            className="form-editar-objetivo-cancelar"
-                            onClick={onClose}
-                            disabled={salvando}
-                        >
-                            Cancelar
-                        </button>
+                <footer>
+                    <button
+                        type="button"
+                        className="form-editar-objetivo-cancelar"
+                        onClick={onClose}
+                        disabled={salvando}
+                    >
+                        Cancelar
+                    </button>
 
-                        <button
-                            type="submit"
-                            className="form-editar-objetivo-salvar"
-                            disabled={salvando || !formularioValido}
-                        >
-                            {salvando ? "Salvando..." : "Salvar alterações"}
-                        </button>
-                    </footer>
-                </form>
+                    <button
+                        type="submit"
+                        className="form-editar-objetivo-salvar"
+                        disabled={salvando || !formularioValido}
+                    >
+                        {salvando ? "Salvando..." : "Salvar alterações"}
+                    </button>
+                </footer>
+            </form>
         </ModalOverlay>
     );
 }

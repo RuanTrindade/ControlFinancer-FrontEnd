@@ -61,10 +61,6 @@ function ModalAnaliseIA({
 
     const [analise, setAnalise] = useState<AnaliseIAResponse | null>(null);
 
-    /* ===================================================
-       CARREGAR IA
-    =================================================== */
-
     useEffect(() => {
         if (!aberto) {
             return;
@@ -99,10 +95,6 @@ function ModalAnaliseIA({
         carregar();
     }, [aberto, usuarioId, mes, ano]);
 
-    /* ===================================================
-       FECHAR COM ESC
-    =================================================== */
-
     useEffect(() => {
         if (!aberto) {
             return;
@@ -125,10 +117,6 @@ function ModalAnaliseIA({
         };
     }, [aberto, onClose]);
 
-    /* ===================================================
-       FILTRAR CONTEÚDOS VAZIOS DA IA
-    =================================================== */
-
     const alertas = useMemo(() => {
         return (analise?.alertas ?? []).filter((item) => item.mensagem?.trim());
     }, [analise]);
@@ -148,10 +136,6 @@ function ModalAnaliseIA({
     const insights = useMemo(() => {
         return (analise?.insights ?? []).filter((item) => item?.trim());
     }, [analise]);
-
-    /* ===================================================
-       MAIOR VALOR DO GRÁFICO
-    =================================================== */
 
     const maiorValorGrafico = useMemo(() => {
         if (!analise) {
@@ -174,10 +158,6 @@ function ModalAnaliseIA({
 
         return Math.ceil(maior / 500) * 500;
     }, [analise]);
-
-    /* ===================================================
-       FORMATADORES
-    =================================================== */
 
     function formatarMoeda(valor: number) {
         return Number(valor || 0).toLocaleString("pt-BR", {
@@ -238,10 +218,6 @@ function ModalAnaliseIA({
         }
     }
 
-    /* ===================================================
-       NÃO RENDERIZA FECHADO
-    =================================================== */
-
     if (!aberto) {
         return null;
     }
@@ -256,10 +232,6 @@ function ModalAnaliseIA({
             }}
         >
             <div className="modal-analise-ia">
-                {/* ===================================================
-                    CABEÇALHO
-                =================================================== */}
-
                 <div className="topo-modal-ia">
                     <div className="titulo-modal-ia">
                         <div className="icone-titulo-modal-ia">
@@ -282,10 +254,6 @@ function ModalAnaliseIA({
                     </button>
                 </div>
 
-                {/* ===================================================
-                    LOADING
-                =================================================== */}
-
                 {loading && (
                     <div className="loading-modal-ia">
                         <div className="robo-loading-ia">
@@ -302,10 +270,6 @@ function ModalAnaliseIA({
                     </div>
                 )}
 
-                {/* ===================================================
-                    ERRO
-                =================================================== */}
-
                 {!loading && erro && (
                     <div className="erro-modal-ia">
                         <RiAlertLine />
@@ -316,16 +280,8 @@ function ModalAnaliseIA({
                     </div>
                 )}
 
-                {/* ===================================================
-                    CONTEÚDO
-                =================================================== */}
-
                 {!loading && !erro && analise && (
                     <div className="conteudo-modal-ia">
-                        {/* ===================================================
-                                RESUMO
-                            =================================================== */}
-
                         <section className="resumo-principal-ia">
                             <div className="resumo-principal-topo">
                                 <div>
@@ -346,10 +302,6 @@ function ModalAnaliseIA({
 
                             <p className="texto-resumo-ia">{analise.resumo}</p>
                         </section>
-
-                        {/* ===================================================
-                                INDICADORES
-                            =================================================== */}
 
                         <section className="grade-indicadores-ia">
                             <div className="card-indicador-ia">
@@ -394,10 +346,6 @@ function ModalAnaliseIA({
                                 </strong>
                             </div>
                         </section>
-
-                        {/* ===================================================
-                                HISTÓRICO + COMPARAÇÃO
-                            =================================================== */}
 
                         <section className="grade-historico-ia">
                             <div className="card-secao-ia grafico-historico-ia">
@@ -546,10 +494,6 @@ function ModalAnaliseIA({
                             </div>
                         </section>
 
-                        {/* ===================================================
-                                ALERTAS
-                            =================================================== */}
-
                         {alertas.length > 0 && (
                             <section className="card-secao-ia">
                                 <div className="cabecalho-secao-ia">
@@ -586,10 +530,6 @@ function ModalAnaliseIA({
                             </section>
                         )}
 
-                        {/* ===================================================
-                                REDISTRIBUIÇÕES
-                            =================================================== */}
-
                         {redistribuicoes.length > 0 && (
                             <section className="card-secao-ia">
                                 <div className="cabecalho-secao-ia">
@@ -623,10 +563,6 @@ function ModalAnaliseIA({
                                 </div>
                             </section>
                         )}
-
-                        {/* ===================================================
-                                SUGESTÕES
-                            =================================================== */}
 
                         {sugestoes.length > 0 && (
                             <section className="card-secao-ia">
@@ -664,10 +600,6 @@ function ModalAnaliseIA({
                                 </div>
                             </section>
                         )}
-
-                        {/* ===================================================
-                                OBJETIVOS
-                            =================================================== */}
 
                         {analise.objetivos.length > 0 && (
                             <section className="card-secao-ia">
@@ -717,10 +649,6 @@ function ModalAnaliseIA({
                                 </div>
                             </section>
                         )}
-
-                        {/* ===================================================
-                                INVESTIMENTOS
-                            =================================================== */}
 
                         <section className="card-secao-ia">
                             <div className="cabecalho-secao-ia">
@@ -773,10 +701,6 @@ function ModalAnaliseIA({
                                 </p>
                             )}
                         </section>
-
-                        {/* ===================================================
-                                INSIGHTS
-                            =================================================== */}
 
                         {insights.length > 0 && (
                             <section className="card-secao-ia">

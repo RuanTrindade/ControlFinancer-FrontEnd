@@ -93,22 +93,7 @@ function Topbar({ darkMode, setDarkMode, mostrarMeses = true, fechado, setFechad
             )}
 
             <div className="topbar-acoes">
-                {/* NOTIFICAÇÕES TEMPORARIAMENTE DESATIVADAS */}
-
-                <div className="topbar-notificacao-placeholder">
-                    {/*
-        <button
-            type="button"
-            className="topbar-btn"
-        >
-            <RiNotification3Line />
-
-            <span>
-                3
-            </span>
-        </button>
-        */}
-                </div>
+                <div className="topbar-notificacao-placeholder"></div>
 
                 <button type="button" className="topbar-btn" onClick={() => setDarkMode(!darkMode)}>
                     {darkMode ? <RiSunLine /> : <RiMoonClearLine />}

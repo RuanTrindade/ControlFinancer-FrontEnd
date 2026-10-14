@@ -7,23 +7,11 @@ import "../styles/globalAlert.css";
 export default function GlobalAlert() {
     const { alert, closeAlert } = useAlert();
 
-    // ==================================================
-    // NÃO EXISTE ALERTA
-    // ==================================================
-
     if (!alert) {
         return null;
     }
 
-    /*
-     * O TypeScript agora sabe que daqui para baixo
-     * o alerta não pode ser null.
-     */
     const currentAlert = alert;
-
-    // ==================================================
-    // ÍCONE
-    // ==================================================
 
     function renderIcon() {
         switch (currentAlert.type) {
@@ -43,10 +31,6 @@ export default function GlobalAlert() {
                 return <BiInfoCircle />;
         }
     }
-
-    // ==================================================
-    // COMPONENTE
-    // ==================================================
 
     return (
         <div className="global-alert-overlay" onMouseDown={closeAlert}>

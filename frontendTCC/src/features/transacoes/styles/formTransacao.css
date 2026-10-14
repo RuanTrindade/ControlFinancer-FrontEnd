@@ -1,6 +1,3 @@
-/* =========================================================
-   FUNDO DO MODAL
-========================================================= */
 .form-transacao-overlay {
     position: fixed;
     inset: 0;
@@ -13,9 +10,7 @@
     backdrop-filter: blur(5px);
     animation: aparecer-overlay 0.2s ease;
 }
-/* =========================================================
-   MODAL
-========================================================= */
+
 .form-transacao-modal {
     width: 100%;
     max-width: 640px;
@@ -33,9 +28,7 @@
     background: var(--cinza-800);
     border-color: var(--cinza-700);
 }
-/* =========================================================
-   CABEÇALHO
-========================================================= */
+
 .form-transacao-cabecalho {
     position: relative;
     display: flex;
@@ -80,9 +73,7 @@
 .dark .form-transacao-cabecalho h2 {
     color: var(--branco);
 }
-/* =========================================================
-   BOTÃO FECHAR
-========================================================= */
+
 .form-transacao-fechar {
     width: 40px;
     height: 40px;
@@ -110,25 +101,19 @@
     background: var(--cinza-700);
     color: var(--branco);
 }
-/* =========================================================
-   CONTEÚDO
-========================================================= */
+
 .form-transacao-conteudo {
     padding: 24px 26px 26px;
     overflow-y: auto;
 }
-/* =========================================================
-   GRADE
-========================================================= */
+
 .form-transacao-grade {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-bottom: 18px;
     gap: 18px;
 }
-/* =========================================================
-   CAMPOS
-========================================================= */
+
 .form-transacao-campo {
     margin-bottom: 18px;
 }
@@ -142,13 +127,11 @@
     font-size: 13px;
     font-weight: 600;
 }
-/* DARK LABEL */
+
 .dark .form-transacao-campo label {
     color: var(--cinza-300);
 }
-/* =========================================================
-   INPUT
-========================================================= */
+
 .form-transacao-input {
     min-height: 49px;
     padding: 0 14px;
@@ -169,7 +152,7 @@
     border-color: var(--vermelho-500);
     box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.09);
 }
-/* DARK INPUT */
+
 .dark .form-transacao-input {
     background: var(--cinza-900);
     border-color: var(--cinza-700);
@@ -183,9 +166,7 @@
     border-color: var(--vermelho-500);
     box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.08);
 }
-/* =========================================================
-   INPUT INTERNO
-========================================================= */
+
 .form-transacao-input > svg {
     min-width: 19px;
     color: var(--cinza-400);
@@ -205,7 +186,7 @@
 .form-transacao-input input::placeholder {
     color: var(--cinza-400);
 }
-/* DARK */
+
 .dark .form-transacao-input > svg {
     color: var(--cinza-400);
 }
@@ -220,9 +201,7 @@
     background: var(--cinza-900);
     color: var(--branco);
 }
-/* =========================================================
-   VALOR
-========================================================= */
+
 .input-valor > span {
     color: var(--cinza-500);
     font-size: 14px;
@@ -235,9 +214,7 @@
     font-size: 17px;
     font-weight: 650;
 }
-/* =========================================================
-   ERRO
-========================================================= */
+
 .form-transacao-erro {
     margin-bottom: 18px;
     padding: 12px 14px;
@@ -252,9 +229,7 @@
     background: rgba(127, 29, 29, 0.2);
     color: var(--vermelho-300);
 }
-/* =========================================================
-   AÇÕES
-========================================================= */
+
 .form-transacao-acoes {
     margin-top: 26px;
     padding-top: 20px;
@@ -266,9 +241,7 @@
 .dark .form-transacao-acoes {
     border-color: var(--cinza-700);
 }
-/* =========================================================
-   BOTÕES
-========================================================= */
+
 .form-transacao-cancelar,
 .form-transacao-salvar {
     min-height: 44px;
@@ -315,9 +288,7 @@
     opacity: 0.55;
     cursor: not-allowed;
 }
-/* =========================================================
-   COMPROVANTE
-========================================================= */
+
 .upload-comprovante {
     width: 100%;
     min-height: 55px;
@@ -342,7 +313,7 @@
     color: var(--cinza-500);
     font-size: 14px;
 }
-/* DARK */
+
 .dark .upload-comprovante {
     border-color: var(--cinza-700);
     background: var(--cinza-900);
@@ -354,9 +325,7 @@
 .dark .upload-comprovante span {
     color: var(--cinza-300);
 }
-/* =========================================================
-   REMOVER COMPROVANTE
-========================================================= */
+
 .remover-comprovante {
     margin-top: 10px;
     border: none;
@@ -368,9 +337,7 @@
     font-size: 13px;
     cursor: pointer;
 }
-/* =========================================================
-   CATEGORIA - SELECT
-========================================================= */
+
 .categoria-select-personalizado {
     position: relative;
     width: 100%;
@@ -398,9 +365,7 @@
     background: var(--branco);
     box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
 }
-/* =========================================================
-   CATEGORIA - DARK
-========================================================= */
+
 .dark .categoria-select-botao {
     background: var(--cinza-900);
     border-color: var(--cinza-700);
@@ -471,9 +436,7 @@
 .categoria-select-seta.girada {
     transform: rotate(180deg);
 }
-/* =========================================================
-   CATEGORIA - OPÇÕES
-========================================================= */
+
 .categoria-select-opcoes {
     position: absolute;
     z-index: 100;
@@ -537,10 +500,7 @@
 .dark .categoria-select-vazio {
     color: var(--cinza-400);
 }
-/* =========================================================
-   SELECT PERSONALIZADO
-   MÉTODO DE PAGAMENTO / STATUS
-========================================================= */
+
 .select-personalizado {
     position: relative;
     width: 100%;
@@ -568,9 +528,7 @@
     background: var(--branco);
     box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
 }
-/* =========================================================
-   MÉTODO / STATUS - DARK
-========================================================= */
+
 .dark .select-personalizado-botao {
     background: var(--cinza-900);
     border-color: var(--cinza-700);
@@ -624,9 +582,7 @@
 .select-personalizado-seta.girada {
     transform: rotate(180deg);
 }
-/* =========================================================
-   MÉTODO / STATUS - OPÇÕES
-========================================================= */
+
 .select-personalizado-opcoes {
     position: absolute;
     z-index: 120;
@@ -694,9 +650,7 @@
 .dark .select-personalizado-check {
     color: var(--verde-400);
 }
-/* =========================================================
-   STATUS
-========================================================= */
+
 .status-select-indicador {
     width: 11px;
     height: 11px;
@@ -709,9 +663,7 @@
 .status-select-indicador.pendente {
     background: #f59e0b;
 }
-/* =========================================================
-   SCROLL DOS SELECTS
-========================================================= */
+
 .categoria-select-opcoes::-webkit-scrollbar,
 .select-personalizado-opcoes::-webkit-scrollbar {
     width: 6px;
@@ -729,9 +681,7 @@
 .select-personalizado-opcoes::-webkit-scrollbar-track {
     background: transparent;
 }
-/* =========================================================
-   TRANSAÇÃO COM IA
-========================================================= */
+
 .acao-ia-transacao {
     width: 100%;
     margin-bottom: 18px;
@@ -768,9 +718,7 @@
 .dark .botao-transacao-ia:hover:not(:disabled) {
     background: rgba(124, 58, 237, 0.18);
 }
-/* =========================================================
-   RESPONSIVO
-========================================================= */
+
 @media (max-width: 620px) {
     .form-transacao-overlay {
         align-items: flex-end;
@@ -797,9 +745,7 @@
         width: 100%;
     }
 }
-/* =========================================================
-   ANIMAÇÕES
-========================================================= */
+
 @keyframes aparecer-overlay {
     from {
         opacity: 0;

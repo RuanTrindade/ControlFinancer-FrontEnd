@@ -166,202 +166,202 @@ function FormCategoria({
             ariaLabelledBy="titulo-form-categoria"
         >
             <header className="form-categoria-cabecalho">
-                    <div>
-                        <span className="form-categoria-subtitulo">Gerenciar categoria</span>
+                <div>
+                    <span className="form-categoria-subtitulo">Gerenciar categoria</span>
 
-                        <h2 id="titulo-form-categoria">
-                            {editando ? "Editar categoria" : "Criar categoria"}
-                        </h2>
+                    <h2 id="titulo-form-categoria">
+                        {editando ? "Editar categoria" : "Criar categoria"}
+                    </h2>
+                </div>
+
+                <button
+                    type="button"
+                    className="form-categoria-fechar"
+                    onClick={fecharModal}
+                    disabled={carregando}
+                    aria-label="Fechar formulário"
+                >
+                    <RiCloseLine />
+                </button>
+            </header>
+
+            <form className="form-categoria-conteudo" onSubmit={salvarCategoria}>
+                {erro && <div className="form-categoria-erro">{erro}</div>}
+
+                <div className="form-categoria-campo">
+                    <label htmlFor="nome-categoria">Nome da categoria</label>
+
+                    <div className="form-categoria-input">
+                        <RiPriceTag3Line />
+
+                        <input
+                            id="nome-categoria"
+                            type="text"
+                            value={nome}
+                            placeholder="Ex.: Alimentação"
+                            maxLength={50}
+                            autoFocus
+                            disabled={carregando}
+                            onChange={(evento) => {
+                                setNome(evento.target.value);
+
+                                if (erro) {
+                                    setErro("");
+                                }
+                            }}
+                        />
                     </div>
+                </div>
 
-                    <button
-                        type="button"
-                        className="form-categoria-fechar"
-                        onClick={fecharModal}
-                        disabled={carregando}
-                        aria-label="Fechar formulário"
-                    >
-                        <RiCloseLine />
-                    </button>
-                </header>
+                <div className="form-categoria-campo">
+                    <label>Cor da categoria</label>
 
-                <form className="form-categoria-conteudo" onSubmit={salvarCategoria}>
-                    {erro && <div className="form-categoria-erro">{erro}</div>}
-
-                    <div className="form-categoria-campo">
-                        <label htmlFor="nome-categoria">Nome da categoria</label>
-
-                        <div className="form-categoria-input">
-                            <RiPriceTag3Line />
-
-                            <input
-                                id="nome-categoria"
-                                type="text"
-                                value={nome}
-                                placeholder="Ex.: Alimentação"
-                                maxLength={50}
-                                autoFocus
-                                disabled={carregando}
-                                onChange={(evento) => {
-                                    setNome(evento.target.value);
-
-                                    if (erro) {
-                                        setErro("");
-                                    }
-                                }}
-                            />
-                        </div>
-                    </div>
-
-                    <div className="form-categoria-campo">
-                        <label>Cor da categoria</label>
-
-                        <div className="form-categoria-cores">
-                            {coresPrincipais.map((cor) => (
-                                <button
-                                    key={cor}
-                                    type="button"
-                                    className={`
+                    <div className="form-categoria-cores">
+                        {coresPrincipais.map((cor) => (
+                            <button
+                                key={cor}
+                                type="button"
+                                className={`
                                         form-categoria-cor
 
                                         ${corSelecionada === cor ? "selecionada" : ""}
                                     `}
+                                style={{
+                                    backgroundColor: cor,
+                                }}
+                                onClick={() => selecionarCor(cor)}
+                                disabled={carregando}
+                                aria-label={`Selecionar cor ${cor}`}
+                            >
+                                {corSelecionada === cor && <span>✓</span>}
+                            </button>
+                        ))}
+                    </div>
+
+                    <button
+                        type="button"
+                        className={`
+                                form-categoria-mais
+
+                                ${mostrarMaisCores ? "aberto" : ""}
+                            `}
+                        onClick={() => {
+                            setMostrarMaisCores((valor) => !valor);
+
+                            setMostrarMaisIcones(false);
+                        }}
+                        disabled={carregando}
+                    >
+                        •••
+                    </button>
+
+                    {mostrarMaisCores && (
+                        <div className="form-categoria-opcoes-extras form-categoria-cores-extras">
+                            {coresExtras.map((cor) => (
+                                <button
+                                    key={cor}
+                                    type="button"
+                                    className={`
+                                            form-categoria-cor
+
+                                            ${corSelecionada === cor ? "selecionada" : ""}
+                                        `}
                                     style={{
                                         backgroundColor: cor,
                                     }}
                                     onClick={() => selecionarCor(cor)}
-                                    disabled={carregando}
                                     aria-label={`Selecionar cor ${cor}`}
                                 >
                                     {corSelecionada === cor && <span>✓</span>}
                                 </button>
                             ))}
                         </div>
+                    )}
+                </div>
 
-                        <button
-                            type="button"
-                            className={`
-                                form-categoria-mais
+                <div className="form-categoria-campo">
+                    <label>Ícone da categoria</label>
 
-                                ${mostrarMaisCores ? "aberto" : ""}
-                            `}
-                            onClick={() => {
-                                setMostrarMaisCores((valor) => !valor);
-
-                                setMostrarMaisIcones(false);
-                            }}
-                            disabled={carregando}
-                        >
-                            •••
-                        </button>
-
-                        {mostrarMaisCores && (
-                            <div className="form-categoria-opcoes-extras form-categoria-cores-extras">
-                                {coresExtras.map((cor) => (
-                                    <button
-                                        key={cor}
-                                        type="button"
-                                        className={`
-                                            form-categoria-cor
-
-                                            ${corSelecionada === cor ? "selecionada" : ""}
-                                        `}
-                                        style={{
-                                            backgroundColor: cor,
-                                        }}
-                                        onClick={() => selecionarCor(cor)}
-                                        aria-label={`Selecionar cor ${cor}`}
-                                    >
-                                        {corSelecionada === cor && <span>✓</span>}
-                                    </button>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-
-                    <div className="form-categoria-campo">
-                        <label>Ícone da categoria</label>
-
-                        <div className="form-categoria-icones">
-                            {iconesPrincipais.map((item) => (
-                                <button
-                                    key={item.nome}
-                                    type="button"
-                                    className={`
+                    <div className="form-categoria-icones">
+                        {iconesPrincipais.map((item) => (
+                            <button
+                                key={item.nome}
+                                type="button"
+                                className={`
                                         form-categoria-icone
 
                                         ${iconeSelecionado === item.nome ? "selecionado" : ""}
                                     `}
+                                onClick={() => selecionarIcone(item.nome)}
+                                disabled={carregando}
+                                aria-label={`Selecionar ícone ${item.nome}`}
+                            >
+                                {item.componente}
+                            </button>
+                        ))}
+                    </div>
+
+                    <button
+                        type="button"
+                        className={`
+                                form-categoria-mais
+
+                                ${mostrarMaisIcones ? "aberto" : ""}
+                            `}
+                        onClick={() => {
+                            setMostrarMaisIcones((valor) => !valor);
+
+                            setMostrarMaisCores(false);
+                        }}
+                        disabled={carregando}
+                    >
+                        •••
+                    </button>
+
+                    {mostrarMaisIcones && (
+                        <div className="form-categoria-opcoes-extras form-categoria-icones-extras">
+                            {iconesExtras.map((item) => (
+                                <button
+                                    key={item.nome}
+                                    type="button"
+                                    className={`
+                                            form-categoria-icone
+
+                                            ${iconeSelecionado === item.nome ? "selecionado" : ""}
+                                        `}
                                     onClick={() => selecionarIcone(item.nome)}
-                                    disabled={carregando}
                                     aria-label={`Selecionar ícone ${item.nome}`}
                                 >
                                     {item.componente}
                                 </button>
                             ))}
                         </div>
+                    )}
+                </div>
 
-                        <button
-                            type="button"
-                            className={`
-                                form-categoria-mais
+                <footer className="form-categoria-acoes">
+                    <button
+                        type="button"
+                        className="form-categoria-cancelar"
+                        onClick={fecharModal}
+                        disabled={carregando}
+                    >
+                        Cancelar
+                    </button>
 
-                                ${mostrarMaisIcones ? "aberto" : ""}
-                            `}
-                            onClick={() => {
-                                setMostrarMaisIcones((valor) => !valor);
-
-                                setMostrarMaisCores(false);
-                            }}
-                            disabled={carregando}
-                        >
-                            •••
-                        </button>
-
-                        {mostrarMaisIcones && (
-                            <div className="form-categoria-opcoes-extras form-categoria-icones-extras">
-                                {iconesExtras.map((item) => (
-                                    <button
-                                        key={item.nome}
-                                        type="button"
-                                        className={`
-                                            form-categoria-icone
-
-                                            ${iconeSelecionado === item.nome ? "selecionado" : ""}
-                                        `}
-                                        onClick={() => selecionarIcone(item.nome)}
-                                        aria-label={`Selecionar ícone ${item.nome}`}
-                                    >
-                                        {item.componente}
-                                    </button>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-
-                    <footer className="form-categoria-acoes">
-                        <button
-                            type="button"
-                            className="form-categoria-cancelar"
-                            onClick={fecharModal}
-                            disabled={carregando}
-                        >
-                            Cancelar
-                        </button>
-
-                        <button
-                            type="submit"
-                            className="form-categoria-salvar"
-                            disabled={carregando || !formularioValido()}
-                        >
-                            {carregando
-                                ? "Salvando..."
-                                : editando
-                                  ? "Salvar alterações"
-                                  : "Criar categoria"}
-                        </button>
-                    </footer>
-                </form>
+                    <button
+                        type="submit"
+                        className="form-categoria-salvar"
+                        disabled={carregando || !formularioValido()}
+                    >
+                        {carregando
+                            ? "Salvando..."
+                            : editando
+                              ? "Salvar alterações"
+                              : "Criar categoria"}
+                    </button>
+                </footer>
+            </form>
         </ModalOverlay>
     );
 }

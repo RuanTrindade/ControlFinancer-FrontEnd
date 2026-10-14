@@ -1,12 +1,7 @@
-/* =========================================================
-   PÁGINA
-========================================================= */
 .pagina-planejamento {
     width: 100%;
 }
-/* =========================================================
-   ESTADO VAZIO
-========================================================= */
+
 .planejamento-vazio {
     width: 100%;
     min-height: calc(100vh - 190px);
@@ -14,9 +9,7 @@
     align-items: center;
     justify-content: center;
 }
-/* =========================================================
-   CARD PRINCIPAL
-========================================================= */
+
 .planejamento-card {
     width: 100%;
     min-height: 500px;
@@ -29,14 +22,12 @@
     border-radius: 18px;
     background: var(--slate-50);
 }
-/* DARK */
+
 .dark .planejamento-card {
     border-color: var(--cinza-600);
     background: var(--cinza-900);
 }
-/* =========================================================
-   CENTRO
-========================================================= */
+
 .planejamento-centro {
     width: 100%;
     max-width: 520px;
@@ -45,9 +36,7 @@
     align-items: center;
     text-align: center;
 }
-/* =========================================================
-   ÍCONE
-========================================================= */
+
 .icone-planejamento-vazio {
     width: 68px;
     height: 68px;
@@ -63,14 +52,12 @@
 .icone-planejamento-vazio svg {
     font-size: 30px;
 }
-/* DARK */
+
 .dark .icone-planejamento-vazio {
     background: rgba(34, 197, 94, 0.12);
     color: var(--verde-400);
 }
-/* =========================================================
-   TÍTULO
-========================================================= */
+
 .planejamento-centro h2 {
     margin: 0;
     color: var(--cinza-900);
@@ -80,9 +67,7 @@
 .dark .planejamento-centro h2 {
     color: var(--cinza-50);
 }
-/* =========================================================
-   TEXTO
-========================================================= */
+
 .planejamento-centro p {
     max-width: 430px;
     margin: 8px 0 22px;
@@ -93,9 +78,7 @@
 .dark .planejamento-centro p {
     color: var(--cinza-400);
 }
-/* =========================================================
-   BOTÃO PRINCIPAL
-========================================================= */
+
 .btn-planejamento {
     min-height: 42px;
     padding: 0 18px;
@@ -124,9 +107,7 @@
     transform: translateY(-1px);
     box-shadow: 0 8px 18px rgba(22, 163, 74, 0.18);
 }
-/* =========================================================
-   COPIAR MÊS ANTERIOR
-========================================================= */
+
 .btn-copiar {
     min-height: 40px;
     margin-top: 10px;
@@ -158,7 +139,7 @@
     background: #f0fdf4;
     transform: translateY(-1px);
 }
-/* DARK */
+
 .dark .btn-copiar {
     border-color: var(--cinza-700);
     background: var(--cinza-800);
@@ -169,9 +150,7 @@
     border-color: rgba(74, 222, 128, 0.3);
     background: rgba(34, 197, 94, 0.08);
 }
-/* =========================================================
-   RESPONSIVO
-========================================================= */
+
 @media (max-width: 900px) {
     .planejamento-card {
         min-height: 440px;

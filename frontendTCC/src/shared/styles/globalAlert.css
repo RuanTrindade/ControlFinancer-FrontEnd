@@ -1,6 +1,3 @@
-/* ===================================================
-   GLOBAL ALERT
-=================================================== */
 .global-alert-overlay {
     position: fixed;
     inset: 0;
@@ -13,9 +10,7 @@
     backdrop-filter: blur(4px);
     animation: global-alert-overlay-in 0.18s ease;
 }
-/* ===================================================
-   CONTAINER
-=================================================== */
+
 .global-alert {
     width: 100%;
     max-width: 430px;
@@ -34,9 +29,7 @@
     box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
     animation: global-alert-in 0.22s ease;
 }
-/* ===================================================
-   ÍCONE
-=================================================== */
+
 .global-alert-icon {
     width: 48px;
     height: 48px;
@@ -46,9 +39,7 @@
     border-radius: 14px;
     font-size: 25px;
 }
-/* ===================================================
-   CONTEÚDO
-=================================================== */
+
 .global-alert-content {
     min-width: 0;
     padding-top: 2px;
@@ -66,9 +57,7 @@
     line-height: 1.55;
     color: var(--cinza-500);
 }
-/* ===================================================
-   BOTÃO X
-=================================================== */
+
 .global-alert-close {
     width: 32px;
     height: 32px;
@@ -92,9 +81,7 @@
     color: var(--cinza-700);
     transform: scale(1.04);
 }
-/* ===================================================
-   AÇÕES
-=================================================== */
+
 .global-alert-actions {
     grid-column: 1 / -1;
     display: flex;
@@ -121,9 +108,7 @@
     transform: translateY(-1px);
     filter: brightness(0.96);
 }
-/* ===================================================
-   WARNING
-=================================================== */
+
 .global-alert-warning {
     border-color: #fde68a;
 }
@@ -138,9 +123,7 @@
     background: #f59e0b;
     box-shadow: 0 6px 16px rgba(245, 158, 11, 0.2);
 }
-/* ===================================================
-   ERROR
-=================================================== */
+
 .global-alert-error {
     border-color: #fecaca;
 }
@@ -155,9 +138,7 @@
     background: var(--vermelho-500);
     box-shadow: 0 6px 16px rgba(239, 68, 68, 0.2);
 }
-/* ===================================================
-   SUCCESS
-=================================================== */
+
 .global-alert-success {
     border-color: #bbf7d0;
 }
@@ -172,9 +153,7 @@
     background: var(--verde-600);
     box-shadow: 0 6px 16px rgba(22, 163, 74, 0.2);
 }
-/* ===================================================
-   INFO
-=================================================== */
+
 .global-alert-info {
     border-color: #bfdbfe;
 }
@@ -189,9 +168,7 @@
     background: #2563eb;
     box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
 }
-/* ===================================================
-   DARK MODE
-=================================================== */
+
 .dark .global-alert-overlay {
     background: rgba(0, 0, 0, 0.55);
 }
@@ -213,7 +190,7 @@
     background: var(--cinza-700);
     color: var(--branco);
 }
-/* WARNING DARK */
+
 .dark .global-alert-warning {
     border-color: rgba(245, 158, 11, 0.3);
 }
@@ -224,7 +201,7 @@
 .dark .global-alert-warning .global-alert-content h3 {
     color: #fbbf24;
 }
-/* ERROR DARK */
+
 .dark .global-alert-error {
     border-color: rgba(239, 68, 68, 0.3);
 }
@@ -235,7 +212,7 @@
 .dark .global-alert-error .global-alert-content h3 {
     color: #f87171;
 }
-/* SUCCESS DARK */
+
 .dark .global-alert-success {
     border-color: rgba(34, 197, 94, 0.28);
 }
@@ -246,7 +223,7 @@
 .dark .global-alert-success .global-alert-content h3 {
     color: var(--verde-400);
 }
-/* INFO DARK */
+
 .dark .global-alert-info {
     border-color: rgba(59, 130, 246, 0.3);
 }
@@ -257,9 +234,7 @@
 .dark .global-alert-info .global-alert-content h3 {
     color: #60a5fa;
 }
-/* ===================================================
-   ANIMAÇÕES
-=================================================== */
+
 @keyframes global-alert-overlay-in {
     from {
         opacity: 0;
@@ -278,9 +253,7 @@
         transform: translateY(0) scale(1);
     }
 }
-/* ===================================================
-   RESPONSIVO
-=================================================== */
+
 @media (max-width: 520px) {
     .global-alert {
         grid-template-columns:

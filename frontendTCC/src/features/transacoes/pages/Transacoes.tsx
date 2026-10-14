@@ -20,8 +20,6 @@ import {
     RiInformationLine,
 } from "react-icons/ri";
 
-// import * as RiIcons from "react-icons/ri";
-
 import "../styles/transacoes.css";
 
 import LoadingOverlay from "../../../shared/components/LoadingOverlay";
@@ -178,8 +176,6 @@ function Transacoes() {
         });
     }
 
-    /* BUSCAR TRANSAÇÕES */
-
     async function buscarTransacoes(pagina = paginaAtual) {
         try {
             setLoading(true);
@@ -333,8 +329,6 @@ function Transacoes() {
         }
     }
 
-    /* DELETAR */
-
     async function confirmarExclusao() {
         if (!transacaoParaExcluir) {
             return;
@@ -366,17 +360,11 @@ function Transacoes() {
         }
     }
 
-    /* INIT */
-
     useEffect(() => {
         async function carregarTransacoes() {
             setPaginaAtual(0);
 
             const tipoUrl = searchParams.get("tipo");
-
-            /* ===================================================
-                   ENTROU PELO DASHBOARD COM FILTRO
-                =================================================== */
 
             if (tipoUrl === "RECEITA" || tipoUrl === "DESPESA") {
                 const periodoMes = obterPeriodoMes();
@@ -399,10 +387,6 @@ function Transacoes() {
 
                 return;
             }
-
-            /* ===================================================
-                   ENTROU NORMALMENTE EM TRANSAÇÕES
-                =================================================== */
 
             setFiltros(filtrosVazios);
 
@@ -435,8 +419,6 @@ function Transacoes() {
                 pagina-transacoes
             "
             >
-                {/* TOPO */}
-
                 <div
                     className="
     topo-transacoes
@@ -488,15 +470,11 @@ function Transacoes() {
                     </div>
                 </div>
 
-                {/* TABELA */}
-
                 <div
                     className="
                     tabela-transacoes
                 "
                 >
-                    {/* HEADER */}
-
                     <div
                         className="
                         tabela-header
@@ -521,8 +499,6 @@ function Transacoes() {
                         <span>Ações</span>
                     </div>
 
-                    {/* LINHAS */}
-
                     {transacoes.map(
                         (transacao) => (
                             console.log(transacao),
@@ -534,8 +510,6 @@ function Transacoes() {
                     linha-transacao
                 "
                                 >
-                                    {/* STATUS */}
-
                                     <div
                                         className="
                     status-transacao
@@ -549,8 +523,6 @@ function Transacoes() {
 `}
                                         ></div>
                                     </div>
-
-                                    {/* NOME */}
 
                                     <div className="nome-transacao">
                                         <div
@@ -566,8 +538,6 @@ function Transacoes() {
                                         <strong>{transacao.descricao}</strong>
                                     </div>
 
-                                    {/* TIPO */}
-
                                     <div>
                                         <span
                                             className={`
@@ -580,17 +550,7 @@ function Transacoes() {
                                         </span>
                                     </div>
 
-                                    {/* CATEGORIA */}
-
-                                    <div
-                                        className="categoria-transacao"
-                                        // style={{
-                                        //     color: transacao.corCategoria
-                                        // }}
-                                    >
-                                        {transacao.categoria}
-                                    </div>
-                                    {/* MÉTODO */}
+                                    <div className="categoria-transacao">{transacao.categoria}</div>
 
                                     <div
                                         className="
@@ -600,8 +560,6 @@ function Transacoes() {
                                         {formatarMetodo(transacao.metodo)}
                                     </div>
 
-                                    {/* DATA */}
-
                                     <div
                                         className="
                     texto-transacao
@@ -609,8 +567,6 @@ function Transacoes() {
                                     >
                                         {formatarData(transacao.data)}
                                     </div>
-
-                                    {/* VALOR */}
 
                                     <div
                                         className={`
@@ -625,7 +581,6 @@ function Transacoes() {
                                         })}
                                     </div>
 
-                                    {/* ARQUIVO */}
                                     <div
                                         className={`arquivo-transacao ${
                                             transacao.urlComprovante
@@ -651,8 +606,6 @@ function Transacoes() {
                                             }}
                                         />
                                     </div>
-
-                                    {/* AÇÕES */}
 
                                     <div className="acoes-transacao">
                                         {transacao.objetivoId !== null ||
@@ -1227,8 +1180,6 @@ function Transacoes() {
                     </div>
                 </div>
             )}
-
-            {/* MODAL */}
 
             {formularioAberto && (
                 <FormTransacao

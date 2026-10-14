@@ -343,10 +343,6 @@ function FormTransacao({ tipo, transacao, onClose, onSalvar }: FormTransacaoProp
     }
 
     useEffect(() => {
-        /* ===================================================
-               EDIÇÃO NORMAL
-            =================================================== */
-
         if (transacao) {
             setDados({
                 descricao: transacao.descricao,
@@ -368,10 +364,6 @@ function FormTransacao({ tipo, transacao, onClose, onSalvar }: FormTransacaoProp
 
             return;
         }
-
-        /* ===================================================
-               CRIAÇÃO NORMAL
-            =================================================== */
 
         setDados(dadosIniciais);
 
@@ -399,10 +391,6 @@ function FormTransacao({ tipo, transacao, onClose, onSalvar }: FormTransacaoProp
 
             const resultado: DadosComprovanteIA = await resposta.json();
 
-            /*
-             * Mantemos os dados anteriores caso
-             * a IA não consiga identificar algum campo.
-             */
             setDados((atual) => ({
                 ...atual,
 
@@ -415,10 +403,6 @@ function FormTransacao({ tipo, transacao, onClose, onSalvar }: FormTransacaoProp
                 metodo: resultado.metodoPagamento || atual.metodo,
             }));
 
-            /*
-             * O mesmo arquivo analisado já fica
-             * como comprovante da transação.
-             */
             setArquivo(arquivo);
         } catch (erro) {
             console.error(erro);

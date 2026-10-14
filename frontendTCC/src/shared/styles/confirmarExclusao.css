@@ -1,13 +1,3 @@
-/* =========================================================
-   CONFIRMAR EXCLUSÃO — modal genérico
-   (substitui confirmarExclusaoObjetivo.css,
-   confirmarExclusaoPlanejamento.css,
-   confirmarExclusaoCategoriaPlanejamento.css e
-   confirmarExclusaoMovimentacaoObjetivo.css)
-========================================================= */
-/* =========================================================
-   OVERLAY
-========================================================= */
 .confirmar-exclusao-overlay {
     position: fixed;
     inset: 0;
@@ -20,9 +10,7 @@
     backdrop-filter: blur(5px);
     animation: aparecer-overlay-exclusao 0.2s ease;
 }
-/* =========================================================
-   MODAL
-========================================================= */
+
 .confirmar-exclusao-modal {
     width: 100%;
     max-width: 470px;
@@ -37,18 +25,14 @@
     border-color: var(--marinho-800);
     background: var(--slate-900);
 }
-/* =========================================================
-   CABEÇALHO
-========================================================= */
+
 .confirmar-exclusao-modal > header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 24px 24px 8px;
 }
-/* =========================================================
-   ÍCONE DE EXCLUSÃO
-========================================================= */
+
 .confirmar-exclusao-icone {
     width: 52px;
     height: 52px;
@@ -64,9 +48,7 @@
     background: rgba(239, 68, 68, 0.12);
     color: #f87171;
 }
-/* =========================================================
-   BOTÃO FECHAR
-========================================================= */
+
 .confirmar-exclusao-fechar {
     width: 38px;
     height: 38px;
@@ -96,9 +78,7 @@
     background: var(--slate-700);
     color: var(--branco);
 }
-/* =========================================================
-   CONTEÚDO
-========================================================= */
+
 .confirmar-exclusao-conteudo {
     padding: 12px 24px 24px;
 }
@@ -127,10 +107,7 @@
 .dark .confirmar-exclusao-conteudo > p strong {
     color: #e2e8f0;
 }
-/* =========================================================
-   RESUMO (neutro — usado em planejamento, categoria
-   e movimentação)
-========================================================= */
+
 .confirmar-exclusao-resumo {
     display: flex;
     align-items: center;
@@ -165,10 +142,7 @@
 .dark .confirmar-exclusao-resumo strong {
     color: var(--slate-50);
 }
-/* =========================================================
-   RESUMO — variante positiva (usada quando um valor é
-   devolvido ao saldo do usuário, ex: exclusão de objetivo)
-========================================================= */
+
 .confirmar-exclusao-resumo--positivo {
     border-color: #d1fae5;
     background: #f0fdf4;
@@ -187,9 +161,7 @@
 .dark .confirmar-exclusao-resumo--positivo strong {
     color: var(--verde-400);
 }
-/* =========================================================
-   AVISO
-========================================================= */
+
 .confirmar-exclusao-aviso {
     position: relative;
     margin-top: 14px;
@@ -228,9 +200,7 @@
     border-color: #f59e0b;
     color: #f59e0b;
 }
-/* =========================================================
-   ERRO
-========================================================= */
+
 .confirmar-exclusao-erro {
     margin-top: 14px;
     padding: 12px 14px;
@@ -246,9 +216,7 @@
     background: rgba(127, 29, 29, 0.18);
     color: var(--vermelho-300);
 }
-/* =========================================================
-   RODAPÉ
-========================================================= */
+
 .confirmar-exclusao-conteudo footer {
     display: flex;
     justify-content: flex-end;
@@ -260,9 +228,7 @@
 .dark .confirmar-exclusao-conteudo footer {
     border-color: var(--cinza-800);
 }
-/* =========================================================
-   BOTÕES
-========================================================= */
+
 .confirmar-exclusao-cancelar,
 .confirmar-exclusao-confirmar {
     min-height: 43px;
@@ -279,7 +245,7 @@
         box-shadow 0.2s ease,
         opacity 0.2s ease;
 }
-/* CANCELAR */
+
 .confirmar-exclusao-cancelar {
     border: 1px solid var(--cinza-300);
     background: transparent;
@@ -296,7 +262,7 @@
 .dark .confirmar-exclusao-cancelar:hover:not(:disabled) {
     background: var(--slate-800);
 }
-/* CONFIRMAR EXCLUSÃO */
+
 .confirmar-exclusao-confirmar {
     border: none;
     background: var(--vermelho-500);
@@ -308,17 +274,13 @@
     transform: translateY(-1px);
     box-shadow: 0 9px 20px rgba(239, 68, 68, 0.25);
 }
-/* =========================================================
-   DISABLED
-========================================================= */
+
 .confirmar-exclusao-modal button:disabled {
     opacity: 0.55;
     cursor: not-allowed;
     transform: none;
 }
-/* =========================================================
-   MOBILE
-========================================================= */
+
 @media (max-width: 520px) {
     .confirmar-exclusao-overlay {
         align-items: flex-end;
@@ -350,9 +312,7 @@
         width: 100%;
     }
 }
-/* =========================================================
-   ANIMAÇÕES
-========================================================= */
+
 @keyframes aparecer-overlay-exclusao {
     from {
         opacity: 0;

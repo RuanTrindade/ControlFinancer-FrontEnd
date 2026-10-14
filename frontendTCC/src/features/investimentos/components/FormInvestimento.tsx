@@ -80,10 +80,6 @@ function FormInvestimento({ usuarioId, investimento = null, onClose, onSalvar }:
         },
     ];
 
-    /* ===================================================
-       CARREGAR DADOS NA EDIÇÃO
-    =================================================== */
-
     useEffect(() => {
         if (!investimento) {
             setNome("");
@@ -98,10 +94,6 @@ function FormInvestimento({ usuarioId, investimento = null, onClose, onSalvar }:
     }, [investimento]);
 
     const tipoSelecionado = tiposInvestimento.find((opcao) => opcao.valor === tipo);
-
-    /* ===================================================
-       SALVAR
-    =================================================== */
 
     async function salvarInvestimento() {
         if (salvando) {
@@ -176,147 +168,143 @@ function FormInvestimento({ usuarioId, investimento = null, onClose, onSalvar }:
             bloqueado={salvando}
             fecharAoClicarFora={!salvando}
         >
-                <div className="cabecalho-form-investimento">
-                    <div className="titulo-form-investimento">
-                        <div className="icone-form-investimento">
-                            <RiBankLine />
-                        </div>
-
-                        <div>
-                            <h2>{editando ? "Editar investimento" : "Novo investimento"}</h2>
-
-                            <p>
-                                {editando
-                                    ? "Atualize o nome ou o tipo do investimento."
-                                    : "Cadastre um investimento para acompanhar sua evolução."}
-                            </p>
-                        </div>
+            <div className="cabecalho-form-investimento">
+                <div className="titulo-form-investimento">
+                    <div className="icone-form-investimento">
+                        <RiBankLine />
                     </div>
 
-                    <button
-                        type="button"
-                        className="fechar-form-investimento"
-                        onClick={onClose}
-                        disabled={salvando}
-                        aria-label="Fechar"
-                    >
-                        <RiCloseLine />
-                    </button>
+                    <div>
+                        <h2>{editando ? "Editar investimento" : "Novo investimento"}</h2>
+
+                        <p>
+                            {editando
+                                ? "Atualize o nome ou o tipo do investimento."
+                                : "Cadastre um investimento para acompanhar sua evolução."}
+                        </p>
+                    </div>
                 </div>
 
-                <form className="conteudo-form-investimento" onSubmit={enviarFormulario}>
-                    {erro && <div className="erro-form-investimento">{erro}</div>}
+                <button
+                    type="button"
+                    className="fechar-form-investimento"
+                    onClick={onClose}
+                    disabled={salvando}
+                    aria-label="Fechar"
+                >
+                    <RiCloseLine />
+                </button>
+            </div>
 
-                    <div className="campo-form-investimento">
-                        <label htmlFor="nome-investimento">Nome do investimento</label>
+            <form className="conteudo-form-investimento" onSubmit={enviarFormulario}>
+                {erro && <div className="erro-form-investimento">{erro}</div>}
 
-                        <input
-                            id="nome-investimento"
-                            type="text"
-                            value={nome}
-                            onChange={(event) => setNome(event.target.value)}
-                            placeholder="Ex: CDB Nubank"
-                            maxLength={100}
-                            autoFocus
-                            disabled={salvando}
-                        />
-                    </div>
+                <div className="campo-form-investimento">
+                    <label htmlFor="nome-investimento">Nome do investimento</label>
 
-                    <div className="campo-form-investimento">
-                        <label>Tipo do investimento</label>
+                    <input
+                        id="nome-investimento"
+                        type="text"
+                        value={nome}
+                        onChange={(event) => setNome(event.target.value)}
+                        placeholder="Ex: CDB Nubank"
+                        maxLength={100}
+                        autoFocus
+                        disabled={salvando}
+                    />
+                </div>
 
-                        <div className="dropdown-tipo-investimento">
-                            <button
-                                type="button"
-                                className={
-                                    dropdownTipoAberto
-                                        ? "dropdown-tipo-botao aberto"
-                                        : "dropdown-tipo-botao"
-                                }
-                                onClick={() => setDropdownTipoAberto((aberto) => !aberto)}
-                                disabled={salvando}
-                            >
-                                <div className="dropdown-tipo-selecionado">
-                                    <div className="icone-tipo-investimento">
-                                        {tipoSelecionado?.icone}
-                                    </div>
+                <div className="campo-form-investimento">
+                    <label>Tipo do investimento</label>
 
-                                    <div className="texto-tipo-investimento">
-                                        <strong>{tipoSelecionado?.nome}</strong>
-
-                                        <span>{tipoSelecionado?.descricao}</span>
-                                    </div>
-                                </div>
-
-                                <RiArrowDownSLine className="seta-dropdown-investimento" />
-                            </button>
-
-                            {dropdownTipoAberto && (
-                                <div className="menu-tipos-investimento">
-                                    {tiposInvestimento.map((opcao) => {
-                                        const selecionado = opcao.valor === tipo;
-
-                                        return (
-                                            <button
-                                                type="button"
-                                                key={opcao.valor}
-                                                className={
-                                                    selecionado
-                                                        ? "opcao-tipo-investimento selecionada"
-                                                        : "opcao-tipo-investimento"
-                                                }
-                                                onClick={() => {
-                                                    setTipo(opcao.valor);
-
-                                                    setDropdownTipoAberto(false);
-                                                }}
-                                            >
-                                                <div className="icone-opcao-investimento">
-                                                    {opcao.icone}
-                                                </div>
-
-                                                <div className="texto-opcao-investimento">
-                                                    <strong>{opcao.nome}</strong>
-
-                                                    <span>{opcao.descricao}</span>
-                                                </div>
-
-                                                {selecionado && (
-                                                    <RiCheckLine className="check-tipo-investimento" />
-                                                )}
-                                            </button>
-                                        );
-                                    })}
-                                </div>
-                            )}
-                        </div>
-                    </div>
-
-                    <div className="acoes-form-investimento">
+                    <div className="dropdown-tipo-investimento">
                         <button
                             type="button"
-                            className="cancelar-form-investimento"
-                            onClick={onClose}
+                            className={
+                                dropdownTipoAberto
+                                    ? "dropdown-tipo-botao aberto"
+                                    : "dropdown-tipo-botao"
+                            }
+                            onClick={() => setDropdownTipoAberto((aberto) => !aberto)}
                             disabled={salvando}
                         >
-                            Cancelar
+                            <div className="dropdown-tipo-selecionado">
+                                <div className="icone-tipo-investimento">
+                                    {tipoSelecionado?.icone}
+                                </div>
+
+                                <div className="texto-tipo-investimento">
+                                    <strong>{tipoSelecionado?.nome}</strong>
+
+                                    <span>{tipoSelecionado?.descricao}</span>
+                                </div>
+                            </div>
+
+                            <RiArrowDownSLine className="seta-dropdown-investimento" />
                         </button>
 
-                        <button
-                            type="submit"
-                            className="salvar-form-investimento"
-                            disabled={salvando}
-                        >
-                            {salvando
-                                ? editando
-                                    ? "Salvando..."
-                                    : "Criando..."
-                                : editando
-                                  ? "Salvar alterações"
-                                  : "Criar investimento"}
-                        </button>
+                        {dropdownTipoAberto && (
+                            <div className="menu-tipos-investimento">
+                                {tiposInvestimento.map((opcao) => {
+                                    const selecionado = opcao.valor === tipo;
+
+                                    return (
+                                        <button
+                                            type="button"
+                                            key={opcao.valor}
+                                            className={
+                                                selecionado
+                                                    ? "opcao-tipo-investimento selecionada"
+                                                    : "opcao-tipo-investimento"
+                                            }
+                                            onClick={() => {
+                                                setTipo(opcao.valor);
+
+                                                setDropdownTipoAberto(false);
+                                            }}
+                                        >
+                                            <div className="icone-opcao-investimento">
+                                                {opcao.icone}
+                                            </div>
+
+                                            <div className="texto-opcao-investimento">
+                                                <strong>{opcao.nome}</strong>
+
+                                                <span>{opcao.descricao}</span>
+                                            </div>
+
+                                            {selecionado && (
+                                                <RiCheckLine className="check-tipo-investimento" />
+                                            )}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        )}
                     </div>
-                </form>
+                </div>
+
+                <div className="acoes-form-investimento">
+                    <button
+                        type="button"
+                        className="cancelar-form-investimento"
+                        onClick={onClose}
+                        disabled={salvando}
+                    >
+                        Cancelar
+                    </button>
+
+                    <button type="submit" className="salvar-form-investimento" disabled={salvando}>
+                        {salvando
+                            ? editando
+                                ? "Salvando..."
+                                : "Criando..."
+                            : editando
+                              ? "Salvar alterações"
+                              : "Criar investimento"}
+                    </button>
+                </div>
+            </form>
         </ModalOverlay>
     );
 }

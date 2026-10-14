@@ -1,15 +1,10 @@
-/* =========================================================
-   PÁGINA
-========================================================= */
 .pagina-investimentos {
     width: 100%;
     min-height: 100%;
     padding: 32px 40px 52px;
     box-sizing: border-box;
 }
-/* =========================================================
-   TOPO
-========================================================= */
+
 .topo-investimentos {
     width: 100%;
     margin-bottom: 28px;
@@ -30,16 +25,14 @@
     color: #8a919d;
     font-size: 14px;
 }
-/* DARK */
+
 .dark .titulo-investimentos h1 {
     color: var(--cinza-50);
 }
 .dark .titulo-investimentos p {
     color: var(--cinza-400);
 }
-/* =========================================================
-   BOTÃO NOVO INVESTIMENTO
-========================================================= */
+
 .botao-novo-investimento {
     min-height: 46px;
     padding: 0 20px;
@@ -76,9 +69,7 @@
 .dark .botao-novo-investimento:hover {
     background: var(--verde-700);
 }
-/* =========================================================
-   ERRO
-========================================================= */
+
 .mensagem-erro-investimentos {
     margin-bottom: 22px;
     padding: 13px 16px;
@@ -101,17 +92,13 @@
     background: rgba(127, 29, 29, 0.16);
     color: var(--vermelho-300);
 }
-/* =========================================================
-   RESUMO
-========================================================= */
+
 .resumo-investimentos {
     position: relative;
     margin-bottom: 38px;
     padding-bottom: 26px;
 }
-/* =========================================================
-   FUNDO VERDE
-========================================================= */
+
 .fundo-resumo-investimentos {
     position: relative;
     height: 190px;
@@ -175,9 +162,7 @@
     font-weight: 650;
     letter-spacing: -0.3px;
 }
-/* =========================================================
-   LINHA DE CARDS
-========================================================= */
+
 .linha-cards-carteira {
     position: relative;
     z-index: 5;
@@ -191,9 +176,7 @@
     gap: 18px;
     align-items: end;
 }
-/* =========================================================
-   CARD PRINCIPAL
-========================================================= */
+
 .card-saldo-carteira {
     width: 100%;
     min-height: 196px;
@@ -212,9 +195,7 @@
     background: var(--cinza-800);
     box-shadow: 0 14px 35px rgba(0, 0, 0, 0.22);
 }
-/* =========================================================
-   SALDO
-========================================================= */
+
 .topo-saldo-carteira {
     display: flex;
     align-items: center;
@@ -270,9 +251,7 @@
 .dark .texto-saldo-carteira > small {
     color: var(--cinza-500);
 }
-/* =========================================================
-   DIVISOR
-========================================================= */
+
 .divisor-saldo-carteira {
     width: 100%;
     height: 1px;
@@ -282,9 +261,7 @@
 .dark .divisor-saldo-carteira {
     background: var(--cinza-700);
 }
-/* =========================================================
-   RENDIMENTO
-========================================================= */
+
 .rendimento-saldo-carteira {
     display: flex;
     align-items: center;
@@ -328,9 +305,7 @@
     background: rgba(34, 197, 94, 0.12);
     color: var(--verde-400);
 }
-/* =========================================================
-   CARDS LATERAIS
-========================================================= */
+
 .card-lateral-carteira {
     width: 100%;
     min-height: 132px;
@@ -424,9 +399,7 @@
 .dark .conteudo-card-lateral strong {
     color: var(--cinza-50);
 }
-/* =========================================================
-   SEÇÃO MEUS INVESTIMENTOS
-========================================================= */
+
 .secao-meus-investimentos {
     margin-top: 4px;
 }
@@ -437,9 +410,7 @@
     align-items: center;
     justify-content: flex-end;
 }
-/* =========================================================
-   ABAS
-========================================================= */
+
 .abas-investimentos {
     padding: 4px;
     display: flex;
@@ -485,17 +456,13 @@
     color: var(--verde-400);
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.18);
 }
-/* =========================================================
-   GRID
-========================================================= */
+
 .grid-investimentos {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 17px;
 }
-/* =========================================================
-   CARD INVESTIMENTO
-========================================================= */
+
 .card-investimento-novo {
     width: 100%;
     min-height: 220px;
@@ -535,9 +502,7 @@
 .dark .card-investimento-novo.encerrado {
     opacity: 0.65;
 }
-/* =========================================================
-   TOPO CARD
-========================================================= */
+
 .topo-card-investimento {
     display: flex;
     align-items: center;
@@ -610,9 +575,7 @@
 .dark .card-investimento-novo:hover .seta-investimento {
     color: var(--verde-400);
 }
-/* =========================================================
-   SALDO DO INVESTIMENTO
-========================================================= */
+
 .saldo-investimento {
     margin-top: 22px;
     padding-bottom: 16px;
@@ -640,9 +603,7 @@
 .dark .saldo-investimento strong {
     color: var(--cinza-50);
 }
-/* =========================================================
-   INFORMAÇÕES
-========================================================= */
+
 .informacoes-investimento {
     margin-top: 15px;
     display: flex;
@@ -678,9 +639,7 @@
 .dark .sem-rendimento {
     color: var(--cinza-500);
 }
-/* =========================================================
-   STATUS
-========================================================= */
+
 .status-investimento {
     display: flex;
     align-items: center;
@@ -703,9 +662,7 @@
 .status-investimento svg {
     font-size: 13px;
 }
-/* =========================================================
-   STATUS - PENDENTE
-========================================================= */
+
 .status-pendente {
     color: #d97706;
     background: rgba(245, 158, 11, 0.1);
@@ -714,9 +671,7 @@
     color: #fbbf24;
     background: rgba(245, 158, 11, 0.12);
 }
-/* =========================================================
-   STATUS - ATUALIZADO
-========================================================= */
+
 .status-atualizado {
     color: var(--verde-700);
     background: rgba(22, 163, 74, 0.09);
@@ -725,9 +680,7 @@
     color: var(--verde-400);
     background: rgba(34, 197, 94, 0.11);
 }
-/* =========================================================
-   STATUS - ENCERRADO
-========================================================= */
+
 .status-encerrado {
     color: var(--cinza-500);
     background: rgba(107, 114, 128, 0.1);
@@ -736,9 +689,7 @@
     color: var(--cinza-400);
     background: rgba(156, 163, 175, 0.1);
 }
-/* =========================================================
-   BOTÃO ATUALIZAR
-========================================================= */
+
 .botao-atualizar-card {
     border: none;
     color: #d97706;
@@ -762,9 +713,7 @@
     background: rgba(245, 158, 11, 0.18);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
 }
-/* =========================================================
-   MENSAGENS
-========================================================= */
+
 .mensagem-investimentos {
     min-height: 130px;
     display: flex;
@@ -782,9 +731,7 @@
     background: var(--cinza-900);
     color: var(--cinza-400);
 }
-/* =========================================================
-   PAGINAÇÃO
-========================================================= */
+
 .paginacao-investimentos {
     width: 100%;
     margin-top: 26px;
@@ -871,15 +818,7 @@
     background: var(--verde-600);
     color: var(--branco);
 }
-/* =========================================================
-   DARK MODE - GARANTIAS
-========================================================= */
-/*
- * Essas regras abaixo servem como proteção.
- * Mesmo que alguma variável global do projeto permaneça
- * com valor do tema claro, os componentes de investimentos
- * continuam corretos no dark mode.
- */
+
 .dark .card-saldo-carteira,
 .dark .card-lateral-carteira,
 .dark .card-investimento-novo {
@@ -901,9 +840,7 @@
 .dark .informacoes-investimento span {
     color: var(--cinza-400);
 }
-/* =========================================================
-   RESPONSIVO
-========================================================= */
+
 @media (max-width: 1050px) {
     .pagina-investimentos {
         padding: 28px 26px 45px;

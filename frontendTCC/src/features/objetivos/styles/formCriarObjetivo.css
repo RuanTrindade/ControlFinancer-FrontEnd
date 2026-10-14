@@ -1,6 +1,3 @@
-/* =========================================================
-   OVERLAY
-========================================================= */
 .form-objetivo-overlay {
     position: fixed;
     inset: 0;
@@ -13,9 +10,7 @@
     backdrop-filter: blur(5px);
     animation: aparecer-overlay-objetivo 0.2s ease;
 }
-/* =========================================================
-   MODAL
-========================================================= */
+
 .form-objetivo-modal {
     width: 100%;
     max-width: 620px;
@@ -33,9 +28,7 @@
     border-color: var(--cinza-800);
     background: var(--slate-900);
 }
-/* =========================================================
-   CABEÇALHO
-========================================================= */
+
 .form-objetivo-cabecalho {
     position: relative;
     display: flex;
@@ -77,9 +70,7 @@
 .dark .form-objetivo-cabecalho h2 {
     color: var(--slate-50);
 }
-/* =========================================================
-   BOTÃO FECHAR
-========================================================= */
+
 .form-objetivo-fechar {
     width: 40px;
     height: 40px;
@@ -111,9 +102,7 @@
     background: var(--slate-700);
     color: var(--branco);
 }
-/* =========================================================
-   CONTEÚDO
-========================================================= */
+
 .form-objetivo-conteudo {
     padding: 24px 26px 26px;
     overflow-y: auto;
@@ -131,17 +120,13 @@
 .dark .form-objetivo-campo label {
     color: var(--slate-300);
 }
-/* =========================================================
-   LINHA COM 2 CAMPOS
-========================================================= */
+
 .form-objetivo-linha {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
 }
-/* =========================================================
-   INPUT
-========================================================= */
+
 .form-objetivo-input {
     min-height: 49px;
     display: flex;
@@ -195,17 +180,13 @@
 .dark .form-objetivo-input input[type="date"] {
     color-scheme: dark;
 }
-/* =========================================================
-   REMOVER SETAS DO INPUT NUMBER
-========================================================= */
+
 .form-objetivo-input input[type="number"]::-webkit-inner-spin-button,
 .form-objetivo-input input[type="number"]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0;
 }
-/* =========================================================
-   CORES
-========================================================= */
+
 .form-objetivo-cores {
     display: flex;
     align-items: center;
@@ -243,9 +224,7 @@
 .dark .form-objetivo-cor.selecionada {
     border-color: var(--slate-900);
 }
-/* =========================================================
-   ÍCONES
-========================================================= */
+
 .form-objetivo-icones {
     display: flex;
     align-items: center;
@@ -304,9 +283,7 @@
     background: var(--violeta-500);
     color: var(--branco);
 }
-/* =========================================================
-   ERRO
-========================================================= */
+
 .form-objetivo-erro {
     margin-bottom: 18px;
     padding: 12px 14px;
@@ -321,9 +298,7 @@
     background: rgba(127, 29, 29, 0.2);
     color: var(--vermelho-300);
 }
-/* =========================================================
-   RODAPÉ / AÇÕES
-========================================================= */
+
 .form-objetivo-acoes {
     display: flex;
     justify-content: flex-end;
@@ -349,7 +324,7 @@
         background 0.2s ease,
         opacity 0.2s ease;
 }
-/* CANCELAR */
+
 .form-objetivo-cancelar {
     border: 1px solid var(--cinza-300);
     background: transparent;
@@ -366,7 +341,7 @@
 .dark .form-objetivo-cancelar:hover:not(:disabled) {
     background: var(--slate-800);
 }
-/* SALVAR */
+
 .form-objetivo-salvar {
     border: none;
     background: var(--violeta-500);
@@ -377,9 +352,7 @@
     background: var(--violeta-600);
     transform: translateY(-1px);
 }
-/* =========================================================
-   DISABLED
-========================================================= */
+
 .form-objetivo-fechar:disabled,
 .form-objetivo-cancelar:disabled,
 .form-objetivo-salvar:disabled,
@@ -388,9 +361,7 @@
     opacity: 0.55;
     cursor: not-allowed;
 }
-/* =========================================================
-   SCROLLBAR
-========================================================= */
+
 .form-objetivo-conteudo::-webkit-scrollbar {
     width: 6px;
 }
@@ -498,9 +469,7 @@
     opacity: 0.55;
     cursor: not-allowed;
 }
-/* =========================================================
-   RESPONSIVIDADE
-========================================================= */
+
 @media (max-width: 620px) {
     .form-objetivo-overlay {
         align-items: flex-end;
@@ -532,9 +501,7 @@
         width: 100%;
     }
 }
-/* =========================================================
-   ANIMAÇÕES
-========================================================= */
+
 @keyframes aparecer-overlay-objetivo {
     from {
         opacity: 0;

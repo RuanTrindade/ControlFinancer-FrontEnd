@@ -188,46 +188,67 @@ function FormCriarObjetivo({ aberto, carregando = false, onFechar, onSalvar }: P
             bloqueado={carregando}
             travarScroll
         >
-            {/* CABEÇALHO */}
-
             <header className="form-objetivo-cabecalho">
-                    <div>
-                        <span className="form-objetivo-subtitulo">Novo objetivo</span>
+                <div>
+                    <span className="form-objetivo-subtitulo">Novo objetivo</span>
 
-                        <h2>Criar objetivo</h2>
+                    <h2>Criar objetivo</h2>
+                </div>
+
+                <button
+                    type="button"
+                    className="form-objetivo-fechar"
+                    onClick={fecharModal}
+                    disabled={carregando}
+                >
+                    <RiCloseLine />
+                </button>
+            </header>
+
+            <form className="form-objetivo-conteudo" onSubmit={salvarObjetivo}>
+                {erro && <div className="form-objetivo-erro">{erro}</div>}
+
+                <div className="form-objetivo-campo">
+                    <label htmlFor="nome-objetivo">Nome do objetivo</label>
+
+                    <div className="form-objetivo-input">
+                        <RiFlagLine />
+
+                        <input
+                            id="nome-objetivo"
+                            type="text"
+                            value={nome}
+                            placeholder="Ex.: Novo carro"
+                            maxLength={50}
+                            autoFocus
+                            disabled={carregando}
+                            onChange={(evento) => {
+                                setNome(evento.target.value);
+
+                                setErro("");
+                            }}
+                        />
                     </div>
+                </div>
 
-                    <button
-                        type="button"
-                        className="form-objetivo-fechar"
-                        onClick={fecharModal}
-                        disabled={carregando}
-                    >
-                        <RiCloseLine />
-                    </button>
-                </header>
-
-                <form className="form-objetivo-conteudo" onSubmit={salvarObjetivo}>
-                    {erro && <div className="form-objetivo-erro">{erro}</div>}
-
-                    {/* NOME */}
-
+                <div className="form-objetivo-linha">
                     <div className="form-objetivo-campo">
-                        <label htmlFor="nome-objetivo">Nome do objetivo</label>
+                        <label htmlFor="valor-objetivo">Valor da meta</label>
 
                         <div className="form-objetivo-input">
-                            <RiFlagLine />
-
-                            <input
-                                id="nome-objetivo"
-                                type="text"
-                                value={nome}
-                                placeholder="Ex.: Novo carro"
-                                maxLength={50}
-                                autoFocus
+                            <NumericFormat
+                                id="valor-objetivo"
+                                value={valor}
+                                thousandSeparator="."
+                                decimalSeparator=","
+                                decimalScale={2}
+                                fixedDecimalScale
+                                allowNegative={false}
+                                prefix="R$ "
+                                placeholder="R$ 0,00"
                                 disabled={carregando}
-                                onChange={(evento) => {
-                                    setNome(evento.target.value);
+                                onValueChange={(valores) => {
+                                    setValor(valores.value);
 
                                     setErro("");
                                 }}
@@ -235,124 +256,91 @@ function FormCriarObjetivo({ aberto, carregando = false, onFechar, onSalvar }: P
                         </div>
                     </div>
 
-                    {/* VALOR + DATA */}
+                    <div className="form-objetivo-campo">
+                        <label htmlFor="data-objetivo">Data final</label>
 
-                    <div className="form-objetivo-linha">
-                        <div className="form-objetivo-campo">
-                            <label htmlFor="valor-objetivo">Valor da meta</label>
+                        <div className="form-objetivo-input">
+                            <RiCalendarLine />
 
-                            <div className="form-objetivo-input">
-                                <NumericFormat
-                                    id="valor-objetivo"
-                                    value={valor}
-                                    thousandSeparator="."
-                                    decimalSeparator=","
-                                    decimalScale={2}
-                                    fixedDecimalScale
-                                    allowNegative={false}
-                                    prefix="R$ "
-                                    placeholder="R$ 0,00"
-                                    disabled={carregando}
-                                    onValueChange={(valores) => {
-                                        setValor(valores.value);
+                            <input
+                                id="data-objetivo"
+                                type="date"
+                                value={dataFinal}
+                                disabled={carregando}
+                                onChange={(evento) => {
+                                    setDataFinal(evento.target.value);
 
-                                        setErro("");
-                                    }}
-                                />
-                            </div>
-                        </div>
-
-                        <div className="form-objetivo-campo">
-                            <label htmlFor="data-objetivo">Data final</label>
-
-                            <div className="form-objetivo-input">
-                                <RiCalendarLine />
-
-                                <input
-                                    id="data-objetivo"
-                                    type="date"
-                                    value={dataFinal}
-                                    disabled={carregando}
-                                    onChange={(evento) => {
-                                        setDataFinal(evento.target.value);
-
-                                        setErro("");
-                                    }}
-                                />
-                            </div>
+                                    setErro("");
+                                }}
+                            />
                         </div>
                     </div>
+                </div>
 
-                    {/* CORES */}
+                <div className="form-objetivo-campo">
+                    <label>Cor do objetivo</label>
 
-                    <div className="form-objetivo-campo">
-                        <label>Cor do objetivo</label>
-
-                        <div className="form-objetivo-cores">
-                            {coresPrincipais.map((cor) => (
-                                <button
-                                    key={cor}
-                                    type="button"
-                                    className={`
+                    <div className="form-objetivo-cores">
+                        {coresPrincipais.map((cor) => (
+                            <button
+                                key={cor}
+                                type="button"
+                                className={`
                                                 form-objetivo-cor
                                                 ${corSelecionada === cor ? "selecionada" : ""}
                                             `}
-                                    style={{
-                                        backgroundColor: cor,
-                                    }}
-                                    onClick={() => setCorSelecionada(cor)}
-                                    disabled={carregando}
-                                >
-                                    {corSelecionada === cor && <span>✓</span>}
-                                </button>
-                            ))}
-                        </div>
+                                style={{
+                                    backgroundColor: cor,
+                                }}
+                                onClick={() => setCorSelecionada(cor)}
+                                disabled={carregando}
+                            >
+                                {corSelecionada === cor && <span>✓</span>}
+                            </button>
+                        ))}
                     </div>
+                </div>
 
-                    {/* ÍCONES */}
+                <div className="form-objetivo-campo">
+                    <label>Ícone do objetivo</label>
 
-                    <div className="form-objetivo-campo">
-                        <label>Ícone do objetivo</label>
-
-                        <div className="form-objetivo-icones">
-                            {iconesObjetivos.map((item) => (
-                                <button
-                                    key={item.nome}
-                                    type="button"
-                                    className={`
+                    <div className="form-objetivo-icones">
+                        {iconesObjetivos.map((item) => (
+                            <button
+                                key={item.nome}
+                                type="button"
+                                className={`
                 form-objetivo-icone
                 ${iconeSelecionado === item.nome ? "selecionado" : ""}
             `}
-                                    onClick={() => setIconeSelecionado(item.nome)}
-                                    disabled={carregando}
-                                >
-                                    {item.componente}
-                                </button>
-                            ))}
-                        </div>
+                                onClick={() => setIconeSelecionado(item.nome)}
+                                disabled={carregando}
+                            >
+                                {item.componente}
+                            </button>
+                        ))}
                     </div>
+                </div>
 
-                    {/* AÇÕES */}
+                <footer className="form-objetivo-acoes">
+                    <button
+                        type="button"
+                        className="form-objetivo-cancelar"
+                        onClick={fecharModal}
+                        disabled={carregando}
+                    >
+                        Cancelar
+                    </button>
 
-                    <footer className="form-objetivo-acoes">
-                        <button
-                            type="button"
-                            className="form-objetivo-cancelar"
-                            onClick={fecharModal}
-                            disabled={carregando}
-                        >
-                            Cancelar
-                        </button>
-
-                        <button
-                            type="submit"
-                            className="form-objetivo-salvar"
-                            disabled={carregando || !formularioValido()}
-                        >
-                            {carregando ? "Criando..." : "Criar objetivo"}
-                        </button>
-                    </footer>
-                </form>
+                    <button
+                        type="submit"
+                        className="form-objetivo-salvar"
+                        disabled={carregando || !formularioValido()}
+                    >
+                        {carregando ? "Criando..." : "Criar objetivo"}
+                    </button>
+                </footer>
+            </form>
         </ModalOverlay>
     );
 }

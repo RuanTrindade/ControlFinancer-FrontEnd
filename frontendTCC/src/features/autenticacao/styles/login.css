@@ -6,7 +6,7 @@
     justify-content: center;
     background: #f3fbf4;
 }
-/* CONTAINER PRINCIPAL */
+
 .container-login {
     background-color: white;
     border-radius: 30px;
@@ -18,27 +18,27 @@
     min-height: 540px;
     transition: min-height 0.35s ease;
 }
-/* CONTAINER FORMULÁRIO */
+
 .container-formulario {
     position: absolute;
     top: 0;
     height: 100%;
     transition: all 0.6s ease-in-out;
 }
-/* ENTRAR */
+
 .entrar {
     left: 0;
     width: 50%;
     z-index: 2;
 }
-/* CADASTRO */
+
 .cadastro {
     left: 0;
     width: 50%;
     opacity: 0;
     z-index: 1;
 }
-/* ATIVO */
+
 .container-login.ativo .entrar {
     transform: translateX(100%);
 }
@@ -47,7 +47,7 @@
     opacity: 1;
     z-index: 5;
 }
-/* FORMULÁRIO */
+
 .container-formulario form {
     background-color: white;
     display: flex;
@@ -67,7 +67,7 @@
     color: var(--cinza-500);
     margin-bottom: 18px;
 }
-/* GOOGLE */
+
 .icones-sociais {
     display: flex;
     gap: 10px;
@@ -95,13 +95,13 @@
     width: 20px;
     height: 20px;
 }
-/* INPUTS */
+
 .grupo-input {
     width: 100%;
     position: relative;
     margin: 0;
 }
-/* ÍCONE ESQUERDA */
+
 .grupo-input svg:not(.icone-valido):not(.icone-invalido) {
     position: absolute;
     left: 16px;
@@ -112,7 +112,7 @@
     z-index: 2;
     pointer-events: none;
 }
-/* INPUT */
+
 .grupo-input input {
     width: 100%;
     background-color: var(--cinza-100);
@@ -125,15 +125,15 @@
     transition: 0.3s;
     box-sizing: border-box;
 }
-/* INPUT SEM ÍCONE */
+
 .grupo-input input[type="text"] {
     padding-left: 16px;
 }
-/* FOCUS */
+
 .grupo-input input:focus {
     background-color: var(--cinza-divisor);
 }
-/* ÍCONES VALIDAÇÃO */
+
 .icone-valido {
     position: absolute;
     right: 16px;
@@ -152,7 +152,7 @@
     font-size: 16px;
     animation: aparecerIcone 0.25s ease;
 }
-/* ESQUECEU SENHA */
+
 .esqueceu-senha {
     color: var(--cinza-500);
     font-size: 13px;
@@ -164,7 +164,7 @@
 .esqueceu-senha:hover {
     color: var(--verde-600);
 }
-/* BOTÃO */
+
 .container-formulario form button {
     background-color: var(--verde-600);
     color: white;
@@ -181,7 +181,7 @@
     background-color: var(--verde-700);
     transform: translateY(-2px);
 }
-/* LATERAL */
+
 .container-lateral {
     position: absolute;
     top: 0;
@@ -197,7 +197,7 @@
     transform: translateX(-100%);
     border-radius: 0 40px 40px 0;
 }
-/* PAINEL */
+
 .painel-lateral {
     background: linear-gradient(to right, var(--verde-500), var(--verde-600));
     color: white;
@@ -211,7 +211,7 @@
 .container-login.ativo .painel-lateral {
     transform: translateX(50%);
 }
-/* CONTEÚDO */
+
 .conteudo-lateral {
     position: absolute;
     width: 50%;
@@ -225,14 +225,14 @@
     top: 0;
     transition: all 0.6s ease-in-out;
 }
-/* ESQUERDA */
+
 .lateral-esquerda {
     transform: translateX(-200%);
 }
 .container-login.ativo .lateral-esquerda {
     transform: translateX(0);
 }
-/* DIREITA */
+
 .lateral-direita {
     right: 0;
     transform: translateX(0);
@@ -240,7 +240,7 @@
 .container-login.ativo .lateral-direita {
     transform: translateX(200%);
 }
-/* TEXTOS */
+
 .conteudo-lateral h1 {
     font-size: 34px;
     margin-bottom: 16px;
@@ -249,7 +249,7 @@
     font-size: 14px;
     line-height: 1.6;
 }
-/* BOTÃO LATERAL */
+
 .botao-lateral {
     margin-top: 28px;
     padding: 14px 34px;
@@ -267,7 +267,7 @@
     background: rgba(255, 255, 255, 0.22);
     transform: translateY(-2px);
 }
-/* VALIDAÇÃO SENHA */
+
 .validacao-senha {
     width: 100%;
     margin-top: 6px;
@@ -299,7 +299,7 @@
 .invalido {
     color: var(--vermelho-600);
 }
-/* ERRO */
+
 .mensagem-erro {
     width: 100%;
     margin-top: 4px;
@@ -309,7 +309,7 @@
     font-weight: 500;
     animation: aparecerErro 0.2s ease;
 }
-/* POPUP */
+
 .popup {
     position: fixed;
     top: 35px;
@@ -331,11 +331,11 @@
 .popup.erro {
     background: rgba(220, 38, 38, 0.95);
 }
-/* MOBILE */
+
 .link-mobile {
     display: none;
 }
-/* ANIMAÇÕES */
+
 @keyframes aparecerIcone {
     from {
         opacity: 0;
@@ -376,7 +376,7 @@
         transform: translateY(0);
     }
 }
-/* RESPONSIVO */
+
 @media (max-width: 768px) {
     .pagina-login {
         padding: 20px;

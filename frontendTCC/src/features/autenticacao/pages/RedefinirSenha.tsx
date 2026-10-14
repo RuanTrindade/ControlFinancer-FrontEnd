@@ -21,8 +21,6 @@ function RedefinirSenha() {
 
     const [tipoPopup, setTipoPopup] = useState("");
 
-    /* VALIDAÇÕES */
-
     const possui8Caracteres = senha.length >= 8;
 
     const possuiMaiuscula = /[A-Z]/.test(senha);

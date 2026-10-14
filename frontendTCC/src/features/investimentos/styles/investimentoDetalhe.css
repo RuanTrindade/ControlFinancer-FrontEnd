@@ -1,6 +1,3 @@
-/* ===================================================
-   PÁGINA
-=================================================== */
 .pagina-investimento-detalhe {
     width: 100%;
     padding: 34px;
@@ -9,9 +6,7 @@
     flex-direction: column;
     gap: 18px;
 }
-/* ===================================================
-   PAINEL SUPERIOR
-=================================================== */
+
 .painel-superior-investimento {
     position: relative;
     width: 100%;
@@ -28,18 +23,14 @@
     gap: 22px;
     align-items: stretch;
 }
-/* ===================================================
-   TOPO DO DETALHE
-=================================================== */
+
 .topo-investimento-detalhe {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-/* ===================================================
-   VOLTAR
-=================================================== */
+
 .botao-voltar-investimentos {
     height: 44px;
     padding: 0 16px;
@@ -71,9 +62,7 @@
     transform: translateX(-2px);
     box-shadow: 0 5px 15px rgba(15, 23, 42, 0.06);
 }
-/* ===================================================
-   AÇÕES DO TOPO - EDITAR / EXCLUIR
-=================================================== */
+
 .acoes-topo-investimento {
     display: flex;
     align-items: center;
@@ -103,7 +92,7 @@
 .botao-excluir-investimento svg {
     font-size: 18px;
 }
-/* EDITAR */
+
 .botao-editar-investimento {
     border: 1px solid var(--cinza-200);
     background: var(--branco);
@@ -117,7 +106,7 @@
     transform: translateY(-1px);
     box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
 }
-/* EXCLUIR */
+
 .botao-excluir-investimento {
     border: 1px solid rgba(220, 38, 38, 0.12);
     background: rgba(220, 38, 38, 0.05);
@@ -129,7 +118,7 @@
     color: var(--vermelho-700);
     transform: translateY(-1px);
 }
-/* DARK */
+
 .dark .botao-editar-investimento {
     border-color: var(--cinza-700);
     background: var(--cinza-800);
@@ -150,9 +139,7 @@
     background: rgba(239, 68, 68, 0.15);
     color: var(--vermelho-300);
 }
-/* ===================================================
-   DARK
-=================================================== */
+
 .dark .botao-voltar-investimentos {
     background: var(--cinza-800);
     color: var(--cinza-300);
@@ -165,9 +152,7 @@
     background: var(--cinza-700);
     color: var(--branco);
 }
-/* ===================================================
-   CARTEIRA
-=================================================== */
+
 .card-investimento-principal {
     position: relative;
     min-height: 155px;
@@ -186,7 +171,7 @@
     flex-direction: column;
     justify-content: space-between;
 }
-/* CÍRCULO SUPERIOR */
+
 .card-investimento-principal::before {
     content: "";
     position: absolute;
@@ -197,7 +182,7 @@
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.08);
 }
-/* DETALHE INFERIOR */
+
 .card-investimento-principal::after {
     content: "";
     position: absolute;
@@ -208,9 +193,7 @@
     border: 28px solid rgba(255, 255, 255, 0.05);
     border-radius: 50%;
 }
-/* ===================================================
-   CABEÇALHO DA CARTEIRA
-=================================================== */
+
 .cabecalho-carteira-investimento {
     position: relative;
     z-index: 2;
@@ -231,9 +214,7 @@
     font-weight: 600;
     opacity: 0.88;
 }
-/* ===================================================
-   VALOR
-=================================================== */
+
 .valor-principal-investimento {
     position: relative;
     z-index: 2;
@@ -257,9 +238,7 @@
     font-size: 11px;
     font-weight: 700;
 }
-/* ===================================================
-   OLHO
-=================================================== */
+
 .botao-visualizar-investimento {
     position: absolute;
     right: 16px;
@@ -283,25 +262,19 @@
 .botao-visualizar-investimento svg {
     font-size: 20px;
 }
-/* ===================================================
-   SEPARADOR
-=================================================== */
+
 .separador-investimento {
     width: 1px;
     background: var(--cinza-200);
 }
-/* ===================================================
-   ÁREA DO GRÁFICO
-=================================================== */
+
 .area-grafico-investimento {
     min-width: 0;
     padding: 3px 38px 0 8px;
     display: flex;
     flex-direction: column;
 }
-/* ===================================================
-   CABEÇALHO DO GRÁFICO
-=================================================== */
+
 .cabecalho-grafico-investimento {
     width: 100%;
     display: flex;
@@ -324,9 +297,7 @@
     color: var(--cinza-400);
     font-size: 11px;
 }
-/* ===================================================
-   RESUMO DO GRÁFICO
-=================================================== */
+
 .resumo-grafico-investimento {
     display: flex;
     flex-direction: column;
@@ -342,17 +313,13 @@
     font-size: 14px;
     font-weight: 700;
 }
-/* ===================================================
-   GRÁFICO
-=================================================== */
+
 .grafico-linha-investimento {
     width: 100%;
     height: 125px;
     margin-top: 4px;
 }
-/* ===================================================
-   AÇÕES
-=================================================== */
+
 .acoes-detalhe-investimento {
     width: 100%;
     display: grid;
@@ -385,39 +352,35 @@
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
 }
-/* APORTE */
+
 .acao-investimento.aporte {
     color: var(--verde-600);
 }
 .acao-investimento.aporte:hover {
     background: #f0fdf4;
 }
-/* RESGATE */
+
 .acao-investimento.resgate {
     color: var(--vermelho-500);
 }
 .acao-investimento.resgate:hover {
     background: var(--vermelho-50);
 }
-/* ATUALIZAR */
+
 .acao-investimento.atualizar {
     color: #2563eb;
 }
 .acao-investimento.atualizar:hover {
     background: #eff6ff;
 }
-/* ===================================================
-   HISTÓRICO
-=================================================== */
+
 .historico-investimento {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
-/* ===================================================
-   CABEÇALHO DO HISTÓRICO
-=================================================== */
+
 .cabecalho-historico-investimento {
     width: 100%;
     display: flex;
@@ -431,9 +394,7 @@
     font-size: 20px;
     font-weight: 700;
 }
-/* ===================================================
-   FILTROS
-=================================================== */
+
 .filtros-historico-investimento {
     padding: 4px;
     display: flex;
@@ -464,18 +425,14 @@
     color: var(--verde-600);
     font-weight: 700;
 }
-/* ===================================================
-   LISTA
-=================================================== */
+
 .lista-historico-investimento {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-/* ===================================================
-   ITEM DO HISTÓRICO
-=================================================== */
+
 .item-historico-investimento {
     width: 100%;
     min-height: 76px;
@@ -504,9 +461,7 @@
     border-color: #eef0f2;
     box-shadow: 0 7px 18px rgba(15, 23, 42, 0.07);
 }
-/* ===================================================
-   ÍCONE DO HISTÓRICO
-=================================================== */
+
 .icone-historico-investimento {
     width: 38px;
     height: 38px;
@@ -528,9 +483,7 @@
     color: #2563eb;
     background: rgba(37, 99, 235, 0.1);
 }
-/* ===================================================
-   DESCRIÇÃO
-=================================================== */
+
 .descricao-historico-investimento {
     min-width: 0;
     display: flex;
@@ -552,18 +505,14 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-/* ===================================================
-   DATA
-=================================================== */
+
 .data-historico-investimento {
     color: var(--cinza-500);
     font-size: 11px;
     font-weight: 500;
     white-space: nowrap;
 }
-/* ===================================================
-   VALOR
-=================================================== */
+
 .valor-historico {
     text-align: right;
     font-size: 13px;
@@ -579,9 +528,7 @@
 .valor-historico.rendimento {
     color: #2563eb;
 }
-/* ===================================================
-   AÇÕES DIRETAS
-=================================================== */
+
 .acoes-item-historico {
     display: flex;
     align-items: center;
@@ -634,9 +581,7 @@
     border-color: rgba(220, 38, 38, 0.18);
     transform: translateY(-1px);
 }
-/* ===================================================
-   DARK — HISTÓRICO
-=================================================== */
+
 .dark .item-historico-investimento {
     background: var(--cinza-800);
 }
@@ -668,9 +613,7 @@
 .dark .botao-excluir-historico:hover {
     background: rgba(239, 68, 68, 0.15);
 }
-/* ===================================================
-   TABLET — HISTÓRICO
-=================================================== */
+
 @media (max-width: 850px) {
     .item-historico-investimento {
         grid-template-columns:
@@ -702,9 +645,7 @@
         border-color: var(--cinza-700);
     }
 }
-/* ===================================================
-   MOBILE — HISTÓRICO
-=================================================== */
+
 @media (max-width: 600px) {
     .item-historico-investimento {
         padding: 12px;
@@ -728,9 +669,7 @@
         flex: 1;
     }
 }
-/* ===================================================
-   HISTÓRICO VAZIO
-=================================================== */
+
 .historico-investimento-vazio {
     min-height: 180px;
     display: flex;
@@ -768,9 +707,7 @@
     line-height: 1.5;
     color: var(--cinza-400);
 }
-/* ===================================================
-   DARK MODE
-=================================================== */
+
 .dark .historico-investimento-vazio {
     background: var(--cinza-800);
     border-color: var(--cinza-700);
@@ -786,9 +723,7 @@
 .dark .historico-investimento-vazio span {
     color: var(--cinza-400);
 }
-/* ===================================================
-   PLACEHOLDER - CATEGORIAS SEM DADOS
-=================================================== */
+
 .categorias-placeholder-dashboard {
     width: 100%;
     display: flex;
@@ -823,9 +758,7 @@
 .dark .topo-placeholder-dashboard strong {
     color: var(--cinza-500);
 }
-/* ===================================================
-   PLACEHOLDER - TRANSAÇÕES
-=================================================== */
+
 .transacoes-placeholder-dashboard {
     width: 100%;
     display: flex;
@@ -876,15 +809,13 @@
     border-radius: 999px;
     background: var(--cinza-200);
 }
-/* DARK */
+
 .dark .icone-placeholder-transacao,
 .dark .linha-placeholder-transacao,
 .dark .valor-placeholder-transacao {
     background: var(--cinza-700);
 }
-/* ===================================================
-   PAGINAÇÃO
-=================================================== */
+
 .paginacao-historico-investimento {
     width: 100%;
     margin-top: 6px;
@@ -922,9 +853,7 @@
     opacity: 0.45;
     cursor: not-allowed;
 }
-/* ===================================================
-   DARK MODE
-=================================================== */
+
 .dark .painel-superior-investimento,
 .dark .acao-investimento,
 .dark .item-historico-investimento,
@@ -980,9 +909,7 @@
 .dark .acao-investimento.atualizar:hover {
     background: rgba(59, 130, 246, 0.08);
 }
-/* ===================================================
-   OVERLAY - EXCLUIR INVESTIMENTO
-=================================================== */
+
 .overlay-excluir-investimento {
     position: fixed;
     inset: 0;
@@ -995,9 +922,7 @@
     backdrop-filter: blur(5px);
     animation: aparecer-overlay-investimento 0.2s ease;
 }
-/* ===================================================
-   MODAL - EXCLUIR INVESTIMENTO
-=================================================== */
+
 .modal-excluir-investimento {
     width: 100%;
     max-width: 440px;
@@ -1013,9 +938,7 @@
     border-color: var(--cinza-700);
     background: var(--cinza-800);
 }
-/* ===================================================
-   ÍCONE
-=================================================== */
+
 .icone-excluir-investimento {
     width: 56px;
     height: 56px;
@@ -1032,9 +955,7 @@
     background: rgba(239, 68, 68, 0.1);
     color: #f87171;
 }
-/* ===================================================
-   TEXTO
-=================================================== */
+
 .modal-excluir-investimento h2 {
     margin: 0 0 9px;
     color: var(--cinza-900);
@@ -1059,9 +980,7 @@
 .dark .modal-excluir-investimento > p strong {
     color: var(--branco);
 }
-/* ===================================================
-   AVISO
-=================================================== */
+
 .aviso-excluir-investimento {
     width: 100%;
     margin-top: 18px;
@@ -1079,9 +998,7 @@
     background: rgba(239, 68, 68, 0.08);
     color: var(--vermelho-300);
 }
-/* ===================================================
-   AÇÕES
-=================================================== */
+
 .acoes-excluir-investimento {
     width: 100%;
     margin-top: 24px;
@@ -1109,7 +1026,7 @@
         transform 0.2s ease,
         opacity 0.2s ease;
 }
-/* CANCELAR */
+
 .cancelar-excluir-investimento {
     border: 1px solid var(--cinza-300);
     background: transparent;
@@ -1127,7 +1044,7 @@
     background: var(--cinza-900);
     color: var(--branco);
 }
-/* EXCLUIR */
+
 .confirmar-excluir-investimento {
     border: none;
     background: var(--vermelho-600);
@@ -1137,16 +1054,14 @@
     background: var(--vermelho-700);
     transform: translateY(-1px);
 }
-/* DESABILITADOS */
+
 .cancelar-excluir-investimento:disabled,
 .confirmar-excluir-investimento:disabled {
     opacity: 0.55;
     cursor: not-allowed;
     transform: none;
 }
-/* ===================================================
-   ANIMAÇÕES
-=================================================== */
+
 @keyframes aparecer-overlay-investimento {
     from {
         opacity: 0;
@@ -1165,9 +1080,7 @@
         transform: translateY(0) scale(1);
     }
 }
-/* ===================================================
-   RESPONSIVO
-=================================================== */
+
 @media (max-width: 1000px) {
     .painel-superior-investimento {
         grid-template-columns:
@@ -1176,9 +1089,7 @@
             minmax(0, 1fr);
     }
 }
-/* ===================================================
-   TABLET
-=================================================== */
+
 @media (max-width: 850px) {
     .pagina-investimento-detalhe {
         padding: 24px 20px 40px;
@@ -1216,9 +1127,7 @@
         text-align: right;
     }
 }
-/* ===================================================
-   MOBILE
-=================================================== */
+
 @media (max-width: 600px) {
     .pagina-investimento-detalhe {
         padding: 20px 14px 35px;

@@ -9,9 +9,7 @@
     align-items: center;
     justify-content: center;
 }
-/* ===================================================
-   MODAL
-=================================================== */
+
 .modal-movimentacao-investimento {
     width: 100%;
     max-width: 500px;
@@ -31,9 +29,7 @@
         transform: translateY(0) scale(1);
     }
 }
-/* ===================================================
-   CABEÇALHO
-=================================================== */
+
 .cabecalho-modal-movimentacao {
     padding: 22px 24px 18px;
     border-bottom: 1px solid #eef0f2;
@@ -61,9 +57,7 @@
     font-size: 12px;
     line-height: 1.45;
 }
-/* ===================================================
-   ÍCONE
-=================================================== */
+
 .icone-modal-movimentacao {
     width: 44px;
     height: 44px;
@@ -76,24 +70,22 @@
 .icone-modal-movimentacao svg {
     font-size: 22px;
 }
-/* APORTE */
+
 .icone-modal-movimentacao.aporte {
     color: var(--verde-600);
     background: rgba(22, 163, 74, 0.1);
 }
-/* RESGATE */
+
 .icone-modal-movimentacao.resgate {
     color: var(--vermelho-600);
     background: rgba(220, 38, 38, 0.09);
 }
-/* RENDIMENTO */
+
 .icone-modal-movimentacao.rendimento {
     color: #2563eb;
     background: rgba(37, 99, 235, 0.1);
 }
-/* ===================================================
-   FECHAR
-=================================================== */
+
 .fechar-modal-movimentacao {
     width: 36px;
     height: 36px;
@@ -119,18 +111,14 @@
     color: var(--cinza-900);
     transform: scale(1.04);
 }
-/* ===================================================
-   CONTEÚDO
-=================================================== */
+
 .conteudo-modal-movimentacao {
     padding: 22px 24px 24px;
     display: flex;
     flex-direction: column;
     gap: 18px;
 }
-/* ===================================================
-   ERRO
-=================================================== */
+
 .erro-modal-movimentacao {
     padding: 11px 13px;
     border: 1px solid rgba(239, 68, 68, 0.15);
@@ -140,9 +128,7 @@
     font-size: 12px;
     font-weight: 600;
 }
-/* ===================================================
-   CAMPOS
-=================================================== */
+
 .campo-modal-movimentacao {
     display: flex;
     flex-direction: column;
@@ -153,9 +139,7 @@
     font-size: 13px;
     font-weight: 650;
 }
-/* ===================================================
-   INPUT DE MOEDA
-=================================================== */
+
 .input-moeda-movimentacao {
     width: 100%;
     height: 48px;
@@ -201,9 +185,7 @@
     background: var(--branco);
     box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.08);
 }
-/* ===================================================
-   INPUT DE MÊS
-=================================================== */
+
 .campo-modal-movimentacao > input[type="month"] {
     width: 100%;
     height: 48px;
@@ -233,33 +215,29 @@
     opacity: 0.65;
     cursor: pointer;
 }
-/* ===================================================
-   AVISOS
-=================================================== */
+
 .aviso-modal-movimentacao {
     padding: 11px 13px;
     border-radius: 10px;
     font-size: 11px;
     line-height: 1.5;
 }
-/* APORTE */
+
 .aviso-modal-movimentacao.aporte {
     color: var(--verde-700);
     background: rgba(22, 163, 74, 0.06);
 }
-/* RESGATE */
+
 .aviso-modal-movimentacao.resgate {
     color: var(--vermelho-700);
     background: rgba(220, 38, 38, 0.05);
 }
-/* RENDIMENTO */
+
 .aviso-modal-movimentacao.rendimento {
     color: #1d4ed8;
     background: rgba(37, 99, 235, 0.06);
 }
-/* ===================================================
-   AÇÕES
-=================================================== */
+
 .acoes-modal-movimentacao {
     padding-top: 18px;
     border-top: 1px solid #eef0f2;
@@ -294,9 +272,7 @@
 .cancelar-modal-movimentacao:hover:not(:disabled) {
     transform: translateY(-1px);
 }
-/* ===================================================
-   BOTÃO APORTE
-=================================================== */
+
 .salvar-modal-movimentacao.aporte {
     background: var(--verde-600);
     color: var(--branco);
@@ -304,9 +280,7 @@
 .salvar-modal-movimentacao.aporte:hover:not(:disabled) {
     background: var(--verde-700);
 }
-/* ===================================================
-   BOTÃO RESGATE
-=================================================== */
+
 .salvar-modal-movimentacao.resgate {
     background: var(--vermelho-600);
     color: var(--branco);
@@ -314,9 +288,7 @@
 .salvar-modal-movimentacao.resgate:hover:not(:disabled) {
     background: var(--vermelho-700);
 }
-/* ===================================================
-   BOTÃO RENDIMENTO
-=================================================== */
+
 .salvar-modal-movimentacao.rendimento {
     background: #2563eb;
     color: var(--branco);
@@ -324,9 +296,7 @@
 .salvar-modal-movimentacao.rendimento:hover:not(:disabled) {
     background: #1d4ed8;
 }
-/* ===================================================
-   DISABLED
-=================================================== */
+
 .salvar-modal-movimentacao:disabled,
 .cancelar-modal-movimentacao:disabled,
 .fechar-modal-movimentacao:disabled,
@@ -334,9 +304,7 @@
     cursor: not-allowed;
     opacity: 0.6;
 }
-/* ===================================================
-   DARK MODE
-=================================================== */
+
 .dark .modal-movimentacao-investimento {
     background: var(--cinza-800);
 }
@@ -393,9 +361,7 @@
     background: var(--cinza-600);
     color: var(--branco);
 }
-/* ===================================================
-   RESPONSIVO
-=================================================== */
+
 @media (max-width: 600px) {
     .overlay-movimentacao-investimento {
         padding: 14px;

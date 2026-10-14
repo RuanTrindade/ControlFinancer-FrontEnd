@@ -164,9 +164,7 @@
 .editar-categoria-aviso strong {
     font-weight: 750;
 }
-/* ===================================================
-   DARK MODE
-=================================================== */
+
 .dark .editar-categoria-modal {
     background: var(--slate-900);
     border: 1px solid var(--cinza-800);
@@ -249,9 +247,7 @@
 .dark .editar-categoria-salvar:hover:not(:disabled) {
     background: #6d28d9;
 }
-/* ===================================================
-   RESPONSIVIDADE
-=================================================== */
+
 @media (max-width: 560px) {
     .editar-categoria-overlay {
         align-items: flex-end;

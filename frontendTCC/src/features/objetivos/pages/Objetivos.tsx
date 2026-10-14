@@ -93,11 +93,6 @@ function Objetivos() {
                 imagem: dados.imagem,
             });
 
-            /*
-             * Depois de criar,
-             * mostramos automaticamente
-             * a aba Em andamento.
-             */
             setFiltro("ANDAMENTO");
             setPaginaAtual(0);
 
@@ -221,8 +216,6 @@ function Objetivos() {
 
                 {totalPaginas > 1 && (
                     <div className="paginacao-objetivos">
-                        {/* VOLTAR */}
-
                         <button
                             type="button"
                             disabled={paginaAtual === 0}
@@ -230,8 +223,6 @@ function Objetivos() {
                         >
                             <RiArrowLeftSLine />
                         </button>
-
-                        {/* PÁGINAS */}
 
                         {Array.from({
                             length: totalPaginas,
@@ -249,8 +240,6 @@ function Objetivos() {
                                 {index + 1}
                             </button>
                         ))}
-
-                        {/* AVANÇAR */}
 
                         <button
                             type="button"

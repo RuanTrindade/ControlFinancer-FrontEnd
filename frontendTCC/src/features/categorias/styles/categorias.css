@@ -1,9 +1,8 @@
-/* PÁGINA */
 .pagina-categorias {
     width: 100%;
     padding: 34px;
 }
-/* TOPO */
+
 .topo-categorias {
     width: 100%;
     display: flex;
@@ -12,8 +11,7 @@
     gap: 16px;
     margin-bottom: 26px;
 }
-/* TOGGLE */
-/* TOGGLE */
+
 .toggle-tipo {
     height: 48px;
     padding: 0 18px;
@@ -28,32 +26,31 @@
     font-size: 14px;
     font-weight: 700;
 }
-/* DESPESA */
+
 .toggle-tipo.despesa {
     background: linear-gradient(135deg, #ff3131, var(--vermelho-500));
     box-shadow: 0 10px 24px rgba(239, 68, 68, 0.25);
 }
-/* RECEITA */
+
 .toggle-tipo.receita {
     background: linear-gradient(135deg, var(--verde-500), var(--verde-600));
     box-shadow: 0 10px 24px rgba(34, 197, 94, 0.25);
 }
-/* ÍCONE */
+
 .icone-toggle {
     font-size: 18px;
     transition: 0.5s;
 }
-/* ANIMAÇÃO */
-/* ÍCONE */
+
 .icone-toggle {
     font-size: 18px;
     transition: transform 0.5s ease;
 }
-/* GIRAR */
+
 .icone-toggle.girado {
     transform: rotate(180deg);
 }
-/* BOTÃO */
+
 .botao-criar-categoria {
     height: 48px;
     padding: 0 22px;
@@ -69,11 +66,11 @@
     transition: 0.25s;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
 }
-/* BOTÃO RECEITA */
+
 .botao-criar-categoria.receita {
     color: var(--verde-500);
 }
-/* BOTÃO DESPESA */
+
 .botao-criar-categoria.despesa {
     color: #ff3131;
 }
@@ -110,7 +107,7 @@
     background: var(--cinza-700);
     color: var(--cinza-300);
 }
-/* TABELA */
+
 .tabela-categorias {
     width: 100%;
     display: flex;
@@ -126,7 +123,7 @@
         opacity: 1;
     }
 }
-/* HEADER */
+
 .tabela-header-categorias {
     width: 100%;
     min-height: 54px;
@@ -143,15 +140,15 @@
     font-size: 13px;
     font-weight: 700;
 }
-/* HEADER RECEITA */
+
 .tabela-header-categorias.receita {
     background: linear-gradient(135deg, var(--verde-500), var(--verde-600));
 }
-/* HEADER DESPESA */
+
 .tabela-header-categorias.despesa {
     background: linear-gradient(135deg, #ff3131, var(--vermelho-500));
 }
-/* LINHAS */
+
 .linha-categoria {
     width: 100%;
     min-height: 62px;
@@ -175,7 +172,7 @@
 .linha-categoria:hover {
     transform: translateY(-2px);
 }
-/* NOME */
+
 .linha-categoria strong {
     font-size: 14px;
     color: var(--cinza-700);
@@ -183,7 +180,7 @@
 .dark .linha-categoria strong {
     color: var(--cinza-100);
 }
-/* ÍCONE */
+
 .icone-categoria {
     font-size: 22px;
     color: var(--cinza-900);
@@ -193,7 +190,7 @@
 .dark .icone-categoria {
     color: var(--cinza-50);
 }
-/* COR */
+
 .cor-categoria {
     display: flex;
     align-items: center;
@@ -204,7 +201,7 @@
     border-radius: 50%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
-/* AÇÕES */
+
 .acoes-categoria {
     display: flex;
     align-items: center;
@@ -222,7 +219,7 @@
 .acoes-categoria button:hover {
     transform: scale(1.1);
 }
-/* EDITAR */
+
 .acoes-categoria button:first-child svg {
     font-size: 17px;
     color: var(--cinza-500);
@@ -230,12 +227,12 @@
 .dark .acoes-categoria button:first-child svg {
     color: var(--cinza-300);
 }
-/* DELETE */
+
 .acoes-categoria button:last-child svg {
     font-size: 17px;
     color: var(--vermelho-500);
 }
-/* RESPONSIVO */
+
 @media (max-width: 900px) {
     .pagina-categorias {
         padding: 18px;
@@ -290,9 +287,7 @@
         gap: 8px;
     }
 }
-/* =========================================================
-   CATEGORIAS VAZIO
-========================================================= */
+
 .categorias-vazio {
     width: 100%;
     min-height: 90px;
@@ -313,9 +308,7 @@
     background: var(--cinza-900);
     color: var(--cinza-400);
 }
-/* =========================================================
-   PAGINAÇÃO
-========================================================= */
+
 .paginacao-categorias {
     width: 100%;
     margin-top: 24px;
@@ -329,9 +322,7 @@
     align-items: center;
     gap: 6px;
 }
-/* =========================================================
-   ANTERIOR / PRÓXIMA
-========================================================= */
+
 .botao-paginacao-categoria {
     height: 38px;
     padding: 0 13px;
@@ -363,9 +354,7 @@
     opacity: 0.4;
     cursor: default;
 }
-/* =========================================================
-   NÚMEROS
-========================================================= */
+
 .numero-pagina-categoria {
     width: 38px;
     height: 38px;
@@ -395,18 +384,14 @@
 .numero-pagina-categoria.ativo:hover {
     color: var(--branco);
 }
-/* =========================================================
-   TOTAL
-========================================================= */
+
 .total-categorias {
     margin-top: 11px;
     color: var(--cinza-400);
     font-size: 11px;
     text-align: center;
 }
-/* =========================================================
-   DARK
-========================================================= */
+
 .dark .botao-paginacao-categoria,
 .dark .numero-pagina-categoria {
     border-color: var(--cinza-700);
@@ -426,9 +411,7 @@
 .dark .total-categorias {
     color: var(--cinza-500);
 }
-/* =========================================================
-   MOBILE
-========================================================= */
+
 @media (max-width: 600px) {
     .paginacao-categorias {
         flex-wrap: wrap;

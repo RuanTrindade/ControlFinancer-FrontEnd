@@ -37,8 +37,6 @@ function CardObjetivo({ objetivo }: Props) {
                 cursor: "pointer",
             }}
         >
-            {/* TOPO */}
-
             <div className="card-topo">
                 <div className="objetivo-info">
                     <div
@@ -62,15 +60,11 @@ function CardObjetivo({ objetivo }: Props) {
                 <RiArrowRightSLine />
             </div>
 
-            {/* IMAGEM */}
-
             <img
                 src={objetivo.imagem ?? "/images/objetivo-placeholder.jpg"}
                 alt={objetivo.nome}
                 className="objetivo-imagem"
             />
-
-            {/* PROGRESSO */}
 
             <div className="objetivo-progresso">
                 <div
@@ -82,8 +76,6 @@ function CardObjetivo({ objetivo }: Props) {
                     }}
                 />
             </div>
-
-            {/* VALORES */}
 
             <div className="objetivo-valores">
                 <span>
@@ -102,8 +94,6 @@ function CardObjetivo({ objetivo }: Props) {
                     %
                 </span>
             </div>
-
-            {/* FOOTER */}
 
             <div className="objetivo-footer">
                 <span>

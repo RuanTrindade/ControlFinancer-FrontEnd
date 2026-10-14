@@ -1,6 +1,3 @@
-/* =========================================================
-   OVERLAY
-========================================================= */
 .form-movimentacao-objetivo-overlay {
     position: fixed;
     inset: 0;
@@ -12,9 +9,7 @@
     background: rgba(15, 23, 42, 0.55);
     backdrop-filter: blur(5px);
 }
-/* =========================================================
-   MODAL
-========================================================= */
+
 .form-movimentacao-objetivo-modal {
     width: 100%;
     max-width: 500px;
@@ -28,9 +23,7 @@
     border-color: var(--cinza-800);
     background: var(--slate-900);
 }
-/* =========================================================
-   CABEÇALHO
-========================================================= */
+
 .form-movimentacao-objetivo-cabecalho {
     position: relative;
     display: flex;
@@ -76,9 +69,7 @@
 .dark .form-movimentacao-objetivo-cabecalho h2 {
     color: var(--slate-50);
 }
-/* =========================================================
-   FECHAR
-========================================================= */
+
 .form-movimentacao-objetivo-fechar {
     width: 40px;
     height: 40px;
@@ -101,15 +92,11 @@
     background: var(--slate-800);
     color: var(--slate-300);
 }
-/* =========================================================
-   CONTEÚDO
-========================================================= */
+
 .form-movimentacao-objetivo-conteudo {
     padding: 24px 26px 26px;
 }
-/* =========================================================
-   DESTAQUE
-========================================================= */
+
 .form-movimentacao-objetivo-destaque {
     display: flex;
     align-items: center;
@@ -157,9 +144,7 @@
     background: rgba(220, 38, 38, 0.12);
     color: var(--vermelho-300);
 }
-/* =========================================================
-   SALDO
-========================================================= */
+
 .form-movimentacao-objetivo-saldo {
     display: flex;
     align-items: center;
@@ -188,9 +173,7 @@
 .dark .form-movimentacao-objetivo-saldo strong {
     color: var(--slate-50);
 }
-/* =========================================================
-   CAMPO
-========================================================= */
+
 .form-movimentacao-objetivo-campo label {
     display: block;
     margin-bottom: 9px;
@@ -201,9 +184,7 @@
 .dark .form-movimentacao-objetivo-campo label {
     color: var(--slate-300);
 }
-/* =========================================================
-   INPUT
-========================================================= */
+
 .form-movimentacao-objetivo-input {
     min-height: 50px;
     display: flex;
@@ -250,9 +231,7 @@
 .dark .form-movimentacao-objetivo-input input {
     color: var(--slate-50);
 }
-/* =========================================================
-   AVISO / ERRO
-========================================================= */
+
 .form-movimentacao-objetivo-aviso,
 .form-movimentacao-objetivo-erro {
     margin-top: 13px;
@@ -280,9 +259,7 @@
     background: rgba(127, 29, 29, 0.2);
     color: var(--vermelho-300);
 }
-/* =========================================================
-   AÇÕES
-========================================================= */
+
 .form-movimentacao-objetivo-acoes {
     display: flex;
     justify-content: flex-end;
@@ -326,9 +303,7 @@
     border-color: var(--slate-700);
     color: var(--slate-300);
 }
-/* =========================================================
-   MOBILE
-========================================================= */
+
 @media (max-width: 520px) {
     .form-movimentacao-objetivo-overlay {
         padding: 16px;

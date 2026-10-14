@@ -1,15 +1,10 @@
-/* ==========================================================
-   PÁGINA
-========================================================== */
 .pagina-relatorios {
     display: flex;
     flex-direction: column;
     gap: 22px;
     animation: entradaRelatorios 0.3s ease;
 }
-/* ==========================================================
-   TOPO
-========================================================== */
+
 .topo-relatorios {
     width: 100%;
     display: grid;
@@ -20,9 +15,7 @@
     align-items: center;
     gap: 24px;
 }
-/* ==========================================================
-   BOTÃO IA
-========================================================== */
+
 .botao-ia {
     width: max-content;
     height: 48px;
@@ -55,9 +48,7 @@
 .botao-ia svg {
     font-size: 21px;
 }
-/* ==========================================================
-   TROCA DE GRÁFICO
-========================================================== */
+
 .troca-grafico {
     display: flex;
     align-items: center;
@@ -105,9 +96,7 @@
 .troca-grafico svg {
     font-size: 22px;
 }
-/* ==========================================================
-   AÇÕES DO RELATÓRIO
-========================================================== */
+
 .acoes-relatorio {
     display: flex;
     justify-content: flex-end;
@@ -167,9 +156,7 @@
 .acoes-relatorio svg {
     font-size: 21px;
 }
-/* ==========================================================
-   CARD PRINCIPAL
-========================================================== */
+
 .card-relatorio {
     width: 100%;
     min-height: 610px;
@@ -181,9 +168,7 @@
 .dark .card-relatorio {
     background: var(--cinza-800);
 }
-/* ==========================================================
-   SELETOR DE MÊS
-========================================================== */
+
 .seletor-mes {
     width: 100%;
     display: flex;
@@ -241,9 +226,7 @@
 .seletor-mes svg {
     font-size: 21px;
 }
-/* ==========================================================
-   CONTEÚDO PRINCIPAL
-========================================================== */
+
 .conteudo-relatorio {
     width: 100%;
     min-height: 500px;
@@ -254,9 +237,7 @@
     gap: 28px;
     align-items: stretch;
 }
-/* ==========================================================
-   ÁREA DO GRÁFICO
-========================================================== */
+
 .area-grafico-relatorio,
 .area-grafico-linha {
     min-width: 0;
@@ -280,9 +261,7 @@
     height: 440px;
     min-width: 0;
 }
-/* ==========================================================
-   AJUSTES DO RECHARTS
-========================================================== */
+
 .recharts-surface {
     overflow: visible;
 }
@@ -304,9 +283,7 @@
 .recharts-tooltip-wrapper {
     outline: none;
 }
-/* ==========================================================
-   BALANÇO MENSAL
-========================================================== */
+
 .balanco-mensal {
     min-width: 0;
     padding: 24px;
@@ -364,9 +341,7 @@
 .dark .linha-balanco strong {
     color: var(--branco);
 }
-/* ==========================================================
-   GRÁFICO DE LINHAS
-========================================================== */
+
 .area-grafico-linha {
     grid-column: 1 / -1;
 }
@@ -382,9 +357,7 @@
 .grafico-linha-relatorio .recharts-dot:hover {
     r: 7;
 }
-/* ==========================================================
-   TOOLTIP
-========================================================== */
+
 .recharts-default-tooltip {
     padding: 12px 14px !important;
     border-radius: 14px !important;
@@ -408,9 +381,7 @@
     font-size: 13px !important;
     font-weight: 600 !important;
 }
-/* ==========================================================
-   GRÁFICO DONUT
-========================================================== */
+
 .area-pizza-relatorio {
     grid-column: 1 / -1;
     min-height: 490px;
@@ -470,9 +441,7 @@
 .dark .centro-donut strong {
     color: var(--branco);
 }
-/* ==========================================================
-   LISTA DE CATEGORIAS DO DONUT
-========================================================== */
+
 .categorias-relatorio {
     display: flex;
     flex-direction: column;
@@ -562,9 +531,7 @@
 .dark .item-categoria-R > strong {
     color: var(--branco);
 }
-/* ==========================================================
-   RESPONSIVIDADE
-========================================================== */
+
 @media (max-width: 1280px) {
     .conteudo-relatorio {
         grid-template-columns:
@@ -728,9 +695,7 @@
         justify-self: start;
     }
 }
-/* ==========================================================
-   ACESSIBILIDADE E FOCO
-========================================================== */
+
 .botao-ia:focus-visible,
 .troca-grafico button:focus-visible,
 .acoes-relatorio button:focus-visible,
@@ -738,9 +703,7 @@
     outline: 3px solid rgba(34, 197, 94, 0.24);
     outline-offset: 3px;
 }
-/* ==========================================================
-   ANIMAÇÕES
-========================================================== */
+
 @keyframes entradaRelatorios {
     from {
         opacity: 0;
@@ -756,9 +719,7 @@
 .item-categoria-R {
     animation: entradaRelatorios 0.3s ease;
 }
-/* ==========================================================
-   CORREÇÕES VISUAIS DO RECHARTS
-========================================================== */
+
 .recharts-cartesian-axis-tick-value {
     fill: var(--cinza-400);
 }
@@ -792,9 +753,7 @@
 .recharts-pie-sector:hover path {
     opacity: 0.9;
 }
-/* ==========================================================
-   DARK MODE FINAL
-========================================================== */
+
 .dark .card-relatorio {
     box-shadow: none;
 }
@@ -810,9 +769,7 @@
 .dark .recharts-legend-item-text {
     color: var(--cinza-300) !important;
 }
-/* ==========================================================
-   AJUSTES FINAIS
-========================================================== */
+
 .pagina-relatorios * {
     box-sizing: border-box;
 }

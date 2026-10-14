@@ -80,82 +80,82 @@ function FormEditarPlanejamento({
             onClose={fecharModal}
             bloqueado={salvando}
         >
-                <header>
-                    <h2>Editar planejamento</h2>
+            <header>
+                <h2>Editar planejamento</h2>
 
-                    <button type="button" onClick={onClose} disabled={salvando}>
-                        <RiCloseLine />
-                    </button>
-                </header>
+                <button type="button" onClick={onClose} disabled={salvando}>
+                    <RiCloseLine />
+                </button>
+            </header>
 
-                <div className="editar-planejamento-conteudo">
-                    <div className="editar-planejamento-linha">
-                        <div className="editar-planejamento-total">
-                            <span className="editar-planejamento-icone">
-                                <RiMoneyDollarCircleLine />
-                            </span>
+            <div className="editar-planejamento-conteudo">
+                <div className="editar-planejamento-linha">
+                    <div className="editar-planejamento-total">
+                        <span className="editar-planejamento-icone">
+                            <RiMoneyDollarCircleLine />
+                        </span>
 
-                            <strong>Total</strong>
-                        </div>
-
-                        <div className="editar-planejamento-campo">
-                            <label>Valor</label>
-
-                            <div className="editar-planejamento-input">
-                                <NumericFormat
-                                    thousandSeparator="."
-                                    decimalSeparator=","
-                                    decimalScale={2}
-                                    fixedDecimalScale
-                                    allowNegative={false}
-                                    prefix="R$ "
-                                    value={valor}
-                                    onValueChange={(valores) => {
-                                        setValor(valores.value);
-
-                                        setErro("");
-                                    }}
-                                />
-                            </div>
-                        </div>
+                        <strong>Total</strong>
                     </div>
 
-                    {!valorValido && (
-                        <div className="editar-planejamento-aviso">
-                            O total não pode ser inferior a{" "}
-                            <strong>
-                                R${" "}
-                                {minimoPermitido.toLocaleString("pt-BR", {
-                                    minimumFractionDigits: 2,
-                                    maximumFractionDigits: 2,
-                                })}
-                            </strong>
-                            , que é o valor já distribuído nas categorias.
+                    <div className="editar-planejamento-campo">
+                        <label>Valor</label>
+
+                        <div className="editar-planejamento-input">
+                            <NumericFormat
+                                thousandSeparator="."
+                                decimalSeparator=","
+                                decimalScale={2}
+                                fixedDecimalScale
+                                allowNegative={false}
+                                prefix="R$ "
+                                value={valor}
+                                onValueChange={(valores) => {
+                                    setValor(valores.value);
+
+                                    setErro("");
+                                }}
+                            />
                         </div>
-                    )}
-
-                    {erro && <div className="editar-planejamento-erro">{erro}</div>}
-
-                    <footer>
-                        <button
-                            type="button"
-                            className="editar-planejamento-cancelar"
-                            onClick={onClose}
-                            disabled={salvando}
-                        >
-                            Cancelar
-                        </button>
-
-                        <button
-                            type="button"
-                            className="editar-planejamento-salvar"
-                            onClick={salvar}
-                            disabled={salvando || !valorValido}
-                        >
-                            {salvando ? "Salvando..." : "Salvar"}
-                        </button>
-                    </footer>
+                    </div>
                 </div>
+
+                {!valorValido && (
+                    <div className="editar-planejamento-aviso">
+                        O total não pode ser inferior a{" "}
+                        <strong>
+                            R${" "}
+                            {minimoPermitido.toLocaleString("pt-BR", {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                            })}
+                        </strong>
+                        , que é o valor já distribuído nas categorias.
+                    </div>
+                )}
+
+                {erro && <div className="editar-planejamento-erro">{erro}</div>}
+
+                <footer>
+                    <button
+                        type="button"
+                        className="editar-planejamento-cancelar"
+                        onClick={onClose}
+                        disabled={salvando}
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="button"
+                        className="editar-planejamento-salvar"
+                        onClick={salvar}
+                        disabled={salvando || !valorValido}
+                    >
+                        {salvando ? "Salvando..." : "Salvar"}
+                    </button>
+                </footer>
+            </div>
         </ModalOverlay>
     );
 }

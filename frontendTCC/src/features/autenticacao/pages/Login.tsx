@@ -31,8 +31,6 @@ function Login() {
 
     const [erroLogin, setErroLogin] = useState("");
 
-    /* VALIDAÇÕES */
-
     const emailValido = email.includes("@") && email.includes(".");
 
     const possui8Caracteres = senha.length >= 8;
@@ -45,8 +43,6 @@ function Login() {
 
     const senhaValida = possui8Caracteres && possuiMaiuscula && possuiNumero && possuiSimbolo;
 
-    /* POPUP */
-
     function mostrarPopup(mensagem: string, tipo: string) {
         setPopup(mensagem);
 
@@ -56,8 +52,6 @@ function Login() {
             setPopup("");
         }, 3000);
     }
-
-    /* LOGIN */
 
     async function fazerLogin() {
         setErroLogin("");
@@ -113,8 +107,6 @@ function Login() {
         }
     }
 
-    /* CADASTRO */
-
     async function cadastrarUsuario() {
         if (!nome || !email || !senha) {
             mostrarPopup("Preencha todos os campos", "erro");
@@ -167,8 +159,6 @@ function Login() {
         }
     }
 
-    /* RECUPERAR SENHA */
-
     async function recuperarSenha() {
         if (!email) {
             mostrarPopup("Digite seu email", "erro");
@@ -219,8 +209,6 @@ function Login() {
                 ${modoCadastro ? "ativo" : ""}
             `}
                 >
-                    {/* LOGIN */}
-
                     <div
                         className="
                     container-formulario
@@ -230,7 +218,6 @@ function Login() {
                         <form>
                             <h1>Entrar</h1>
 
-                            {/* GOOGLE */}
                             <div
                                 className="
                             icones-sociais
@@ -250,8 +237,6 @@ function Login() {
                                 </a>
                             </div>
                             <span>use seu email e senha</span>
-
-                            {/* EMAIL */}
 
                             <div
                                 className="
@@ -278,8 +263,6 @@ function Login() {
                                     />
                                 )}
                             </div>
-
-                            {/* SENHA */}
 
                             <div
                                 className="
@@ -309,8 +292,6 @@ function Login() {
                                 </p>
                             )}
 
-                            {/* ESQUECEU SENHA */}
-
                             <a
                                 href="#"
 
@@ -327,8 +308,6 @@ function Login() {
                                 Esqueceu sua senha?
                             </a>
 
-                            {/* BOTÃO */}
-
                             <button
                                 type="button"
 
@@ -336,8 +315,6 @@ function Login() {
                             >
                                 Entrar
                             </button>
-
-                            {/* MOBILE */}
 
                             <div
                                 className="
@@ -350,8 +327,6 @@ function Login() {
                         </form>
                     </div>
 
-                    {/* CADASTRO */}
-
                     <div
                         className="
                     container-formulario
@@ -360,7 +335,6 @@ function Login() {
                     >
                         <form>
                             <h1>Criar Conta</h1>
-                            {/* GOOGLE */}
 
                             <div
                                 className="
@@ -382,8 +356,6 @@ function Login() {
                             </div>
                             <span>cadastre-se para continuar</span>
 
-                            {/* NOME */}
-
                             <div
                                 className="
                             grupo-input
@@ -399,8 +371,6 @@ function Login() {
                                     onChange={(e) => setNome(e.target.value)}
                                 />
                             </div>
-
-                            {/* EMAIL */}
 
                             <div
                                 className="
@@ -428,8 +398,6 @@ function Login() {
                                 )}
                             </div>
 
-                            {/* SENHA */}
-
                             <div
                                 className="
                             grupo-input
@@ -455,8 +423,6 @@ function Login() {
                                     />
                                 )}
                             </div>
-
-                            {/* VALIDAÇÃO */}
 
                             {senha && !senhaValida && (
                                 <div
@@ -494,8 +460,6 @@ function Login() {
                                 </div>
                             )}
 
-                            {/* BOTÃO */}
-
                             <button
                                 type="button"
 
@@ -503,8 +467,6 @@ function Login() {
                             >
                                 Criar conta
                             </button>
-
-                            {/* MOBILE */}
 
                             <div
                                 className="
@@ -517,8 +479,6 @@ function Login() {
                         </form>
                     </div>
 
-                    {/* LATERAL */}
-
                     <div
                         className="
                     container-lateral
@@ -529,8 +489,6 @@ function Login() {
                         painel-lateral
                     "
                         >
-                            {/* ESQUERDA */}
-
                             <div
                                 className="
                             conteudo-lateral
@@ -551,8 +509,6 @@ function Login() {
                                     Entrar
                                 </button>
                             </div>
-
-                            {/* DIREITA */}
 
                             <div
                                 className="

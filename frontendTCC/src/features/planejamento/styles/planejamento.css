@@ -1,15 +1,10 @@
-/* ===================================================
-   DASHBOARD
-=================================================== */
 .dashboard-planejamento {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
-/* ===================================================
-   CARD SUPERIOR
-=================================================== */
+
 .card-superior {
     width: 100%;
     background: var(--branco);
@@ -20,12 +15,10 @@
 .dark .card-superior {
     background: var(--cinza-800);
 }
-/* ===================================================
-   TOPO
-=================================================== */
+
 .topo-planejamento {
     display: flex;
-    /* grid-template-columns: 220px 1fr 250px 48px; */
+
     align-items: center;
     gap: 28px;
     margin-bottom: 24px;
@@ -37,9 +30,7 @@
     justify-content: space-around;
     gap: 50px;
 }
-/* ===================================================
-   BOTÃO NOVO
-=================================================== */
+
 .btn-novo-orcamento {
     height: 46px;
     padding: 0 22px;
@@ -64,9 +55,7 @@
 .btn-novo-orcamento svg {
     font-size: 20px;
 }
-/* ===================================================
-   RESUMO
-=================================================== */
+
 .resumo-planejamento-dashboard {
     display: flex;
     flex-direction: column;
@@ -88,9 +77,7 @@
     color: var(--cinza-400);
     font-size: 13px;
 }
-/* ===================================================
-   PROGRESSO
-=================================================== */
+
 .progresso-geral-dashboard {
     display: flex;
     flex-direction: column;
@@ -122,9 +109,7 @@
 .bolinha.vermelho-escuro {
     background: var(--vermelho-700);
 }
-/* ===================================================
-   CAMADAS DAS BARRAS DE PROGRESSO
-=================================================== */
+
 .barra-geral-camada {
     position: absolute;
     top: 0;
@@ -133,23 +118,12 @@
     border-radius: 999px;
     transition: width 0.4s ease;
 }
-/*
- * Barra verde clara.
- *
- * Ela fica atrás e representa:
- *
- * PAGO + PENDENTE
- */
+
 .barra-geral-comprometido {
     z-index: 1;
     background: var(--verde-300);
 }
-/*
- * Barra verde escura.
- *
- * Ela fica na frente e representa
- * somente o que já foi pago.
- */
+
 .barra-geral-pago {
     z-index: 2;
     background: var(--verde-500);
@@ -213,9 +187,7 @@
 .dark .indicador-barra small {
     color: var(--cinza-300);
 }
-/* ==========================================
-   STATUS DA BARRA
-========================================== */
+
 .status-info {
     display: flex;
     justify-content: space-between;
@@ -241,19 +213,19 @@
     border-radius: 50%;
     display: block;
 }
-/* Pago */
+
 .bolinha.verde {
     background: var(--verde-500);
 }
-/* Não pago */
+
 .bolinha.verde-claro {
     background: var(--verde-300);
 }
-/* Pago ultrapassado */
+
 .bolinha.vermelho {
     background: var(--vermelho-500);
 }
-/* Não pago ultrapassado */
+
 .bolinha.vermelho-escuro {
     background: #991b1b;
 }
@@ -281,9 +253,7 @@
     color: var(--cinza-400);
     font-weight: 500;
 }
-/* ===================================================
-   MENU
-=================================================== */
+
 .btn-menu-dashboard {
     width: 42px;
     height: 42px;
@@ -308,9 +278,7 @@
 .btn-menu-dashboard svg {
     font-size: 22px;
 }
-/* ===================================================
-   CABEÇALHO ROXO
-=================================================== */
+
 .cabecalho-dashboard {
     height: 60px;
     background: var(--violeta-600);
@@ -328,9 +296,7 @@
     margin-bottom: 0;
     border-radius: 22px;
 }
-/* ===================================================
-   LISTA
-=================================================== */
+
 .lista-planejamento {
     display: flex;
     flex-direction: column;
@@ -341,9 +307,7 @@
     flex-direction: column;
     gap: 10px;
 }
-/* ===================================================
-   CARD DA CATEGORIA
-=================================================== */
+
 .card-categoria {
     width: 100%;
     min-height: 76px;
@@ -364,9 +328,7 @@
 .dark .card-categoria {
     background: var(--cinza-800);
 }
-/* ===================================================
-   PRIMEIRA COLUNA
-=================================================== */
+
 .col-categoria {
     display: flex;
     align-items: center;
@@ -380,9 +342,7 @@
 .dark .col-categoria span {
     color: white;
 }
-/* ===================================================
-   ÍCONE
-=================================================== */
+
 .icone-categoria-P {
     width: 34px;
     height: 34px;
@@ -396,9 +356,7 @@
     color: white;
     font-size: 17px;
 }
-/* ===================================================
-   COLUNAS
-=================================================== */
+
 .col-valor {
     font-size: 15px;
     font-weight: 700;
@@ -407,9 +365,7 @@
 .dark .col-valor {
     color: white;
 }
-/* ===================================================
-   STATUS
-=================================================== */
+
 .col-status small {
     font-size: 11px;
     color: var(--cinza-400);
@@ -431,9 +387,7 @@
 .dark .col-status strong {
     color: white;
 }
-/* ===================================================
-   BARRA
-=================================================== */
+
 .barra-status {
     position: relative;
     width: 100%;
@@ -470,9 +424,7 @@
     z-index: 1;
     background: #fb7185;
 }
-/* ===================================================
-   PORCENTAGENS
-=================================================== */
+
 .status-info {
     display: flex;
     justify-content: space-between;
@@ -483,9 +435,7 @@
     font-weight: 600;
     color: var(--cinza-400);
 }
-/* ===================================================
-   AÇÕES
-=================================================== */
+
 .acoes-dashboard {
     display: flex;
     justify-content: flex-end;
@@ -528,9 +478,7 @@
 .acoes-dashboard button:nth-child(3):hover svg {
     color: #f59e0b;
 }
-/* ===================================================
-   PAGINAÇÃO
-=================================================== */
+
 .paginacao-dashboard {
     margin-top: 18px;
     display: flex;
@@ -576,9 +524,7 @@
     background: var(--violeta-600) !important;
     color: white !important;
 }
-/* ===================================================
-   RESUMO FINANCEIRO
-=================================================== */
+
 .resumo-financeiro-planejamento {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -623,27 +569,27 @@
     flex-shrink: 0;
     font-size: 23px;
 }
-/* RECEITA */
+
 .icone-receita {
     color: var(--verde-600);
     background: #dcfce7;
 }
-/* GASTOS */
+
 .icone-gasto {
     color: var(--vermelho-500);
     background: #fee2e2;
 }
-/* BALANÇO */
+
 .icone-balanco {
     color: #2563eb;
     background: #dbeafe;
 }
-/* ECONOMIA */
+
 .icone-economia {
     color: #9333ea;
     background: #f3e8ff;
 }
-/* DARK */
+
 .dark .card-resumo-financeiro {
     background: var(--cinza-800);
 }
@@ -653,9 +599,7 @@
 .dark .card-resumo-financeiro.resumo-negativo strong {
     color: #f87171;
 }
-/* ===================================================
-   CATEGORIAS RESTANTES
-=================================================== */
+
 .card-categorias-restantes {
     border: 1px dashed var(--cinza-300);
 }
@@ -681,9 +625,7 @@
     font-size: 14px;
     font-weight: 500;
 }
-/* ===================================================
-   MENU DO PLANEJAMENTO
-=================================================== */
+
 .menu-planejamento-container {
     position: relative;
 }
@@ -726,7 +668,7 @@
 .menu-planejamento-opcoes .opcao-excluir:hover {
     background: var(--vermelho-50);
 }
-/* DARK */
+
 .dark .menu-planejamento-opcoes {
     background: var(--cinza-900);
     border-color: var(--cinza-700);
@@ -744,9 +686,7 @@
 .dark .menu-planejamento-opcoes .opcao-excluir:hover {
     background: rgba(127, 29, 29, 0.25);
 }
-/* ===================================================
-   RODAPÉ
-=================================================== */
+
 .rodape-planejamento-card {
     width: 100%;
     background: var(--branco);
@@ -757,9 +697,7 @@
 .dark .rodape-planejamento-card {
     background: var(--cinza-800);
 }
-/* ===================================================
-   LEGENDA
-=================================================== */
+
 .card-legenda {
     display: flex;
     justify-content: space-between;
@@ -797,9 +735,7 @@
 .vinho {
     background: #991b1b;
 }
-/* ===================================================
-   ANIMAÇÕES
-=================================================== */
+
 .card-categoria,
 .card-superior,
 .rodape-planejamento-card,
@@ -817,9 +753,7 @@
 .paginacao-dashboard button:active {
     transform: scale(0.95);
 }
-/* ===================================================
-   DARK MODE
-=================================================== */
+
 .dark .col-status strong {
     color: white;
 }
@@ -829,9 +763,7 @@
 .dark .btn-menu-dashboard svg {
     color: white;
 }
-/* ===================================================
-   RESPONSIVIDADE
-=================================================== */
+
 @media (max-width: 1200px) {
     .resumo-financeiro-planejamento {
         grid-template-columns: repeat(2, 1fr);
@@ -877,13 +809,6 @@
     }
 }
 @media (max-width: 640px) {
-    /*
-       Nas telas de celular a "tabela" de categorias
-       vira uma lista de cartões: o cabeçalho (que só
-       fazia sentido organizado em colunas) some, e
-       cada cartão empilha suas informações, ganhando
-       um rótulo (Meta / Pago / Previsto) via ::before.
-    */
     .cabecalho-dashboard {
         display: none;
     }

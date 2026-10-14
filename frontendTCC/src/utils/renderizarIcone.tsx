@@ -1,6 +1,8 @@
 import * as BiIcons from "react-icons/bi";
 import type { IconType } from "react-icons";
 
+import { mapaIconesCategorias } from "./iconesCategorias";
+
 const iconesAntigos: Record<string, keyof typeof BiIcons> = {
     "bi-wallet": "BiWallet",
     "bi-basket": "BiBasket",
@@ -16,6 +18,10 @@ export function renderizarIcone(nomeIcone: string | null | undefined) {
     }
 
     const nomeConvertido = iconesAntigos[nomeIcone] ?? nomeIcone;
+
+    if (mapaIconesCategorias[nomeConvertido]) {
+        return mapaIconesCategorias[nomeConvertido];
+    }
 
     const Icone = BiIcons[nomeConvertido as keyof typeof BiIcons] as IconType | undefined;
 

@@ -30,41 +30,14 @@ import "../styles/investimentos.css";
 type AbaInvestimento = "ATIVOS" | "ENCERRADOS";
 
 function Investimentos() {
-    /* ===================================================
-       NAVEGAÇÃO
-    =================================================== */
-
     const navigate = useNavigate();
 
-    /* ===================================================
-       USUÁRIO
-    =================================================== */
-
-    /*
-     * TEMPORÁRIO.
-     *
-     * Depois pegaremos o ID do usuário
-     * autenticado.
-     */
     const { id: USUARIO_ID } = useUsuarioLogado();
-
-    /* ===================================================
-       PERÍODO
-    =================================================== */
 
     const { referenciaAtual, mes: mesSelecionado, ano: anoSelecionado } = useMes();
 
-    /* ===================================================
-       ESTADOS
-    =================================================== */
-
     const [aba, setAba] = useState<AbaInvestimento>("ATIVOS");
 
-    /*
-     * IMPORTANTE:
-     *
-     * Spring começa a paginação em 0.
-     */
     const [pagina, setPagina] = useState(0);
 
     const [investimentos, setInvestimentos] = useState<InvestimentoCard[]>([]);
@@ -121,10 +94,6 @@ function Investimentos() {
         setPagina(0);
     }, [referenciaAtual]);
 
-    /* ===================================================
-       FORMATAR MOEDA
-    =================================================== */
-
     function formatarMoeda(valor: number) {
         return valor.toLocaleString("pt-BR", {
             style: "currency",
@@ -132,31 +101,15 @@ function Investimentos() {
         });
     }
 
-    /* ===================================================
-       TROCAR ABA
-    =================================================== */
-
     function trocarAba(novaAba: AbaInvestimento) {
         setAba(novaAba);
 
-        /*
-         * Ao trocar entre ativos e encerrados,
-         * voltamos para a primeira página.
-         */
         setPagina(0);
     }
-
-    /* ===================================================
-       RENDER
-    =================================================== */
 
     return (
         <DashboardLayout>
             <div className="pagina-investimentos">
-                {/* ==========================
-                    CABEÇALHO
-                ========================== */}
-
                 <div className="topo-investimentos">
                     <div className="titulo-investimentos">
                         <h1>Investimentos</h1>
@@ -174,10 +127,6 @@ function Investimentos() {
                     </button>
                 </div>
 
-                {/* ==========================
-                    ERRO
-                ========================== */}
-
                 {erro && (
                     <div className="mensagem-erro-investimentos">
                         <RiErrorWarningLine />
@@ -185,10 +134,6 @@ function Investimentos() {
                         {erro}
                     </div>
                 )}
-
-                {/* ==========================
-                    RESUMO DA CARTEIRA
-                ========================== */}
 
                 <section className="resumo-investimentos">
                     <div className="fundo-resumo-investimentos">
@@ -200,10 +145,6 @@ function Investimentos() {
                     </div>
 
                     <div className="linha-cards-carteira">
-                        {/* ==========================
-                            APORTE
-                        ========================== */}
-
                         <div className="card-lateral-carteira">
                             <div className="topo-card-lateral">
                                 <div className="icone-resumo aporte">
@@ -219,10 +160,6 @@ function Investimentos() {
                                 <strong>{formatarMoeda(resumoCarteira?.aportesMes ?? 0)}</strong>
                             </div>
                         </div>
-
-                        {/* ==========================
-                            SALDO PRINCIPAL
-                        ========================== */}
 
                         <div className="card-saldo-carteira">
                             <div className="topo-saldo-carteira">
@@ -258,10 +195,6 @@ function Investimentos() {
                             </div>
                         </div>
 
-                        {/* ==========================
-                            RESGATE
-                        ========================== */}
-
                         <div className="card-lateral-carteira">
                             <div className="topo-card-lateral">
                                 <div className="icone-resumo resgate">
@@ -279,10 +212,6 @@ function Investimentos() {
                         </div>
                     </div>
                 </section>
-
-                {/* ==========================
-                    MEUS INVESTIMENTOS
-                ========================== */}
 
                 <section className="secao-meus-investimentos">
                     <div className="cabecalho-meus-investimentos">
@@ -311,17 +240,9 @@ function Investimentos() {
                         </div>
                     </div>
 
-                    {/* ==========================
-                        CARREGANDO
-                    ========================== */}
-
                     {carregando && (
                         <div className="mensagem-investimentos">Carregando investimentos...</div>
                     )}
-
-                    {/* ==========================
-                        SEM INVESTIMENTOS
-                    ========================== */}
 
                     {!carregando && !erro && investimentos.length === 0 && (
                         <div className="mensagem-investimentos">
@@ -330,10 +251,6 @@ function Investimentos() {
                                 : "Você ainda não possui investimentos encerrados."}
                         </div>
                     )}
-
-                    {/* ==========================
-                        CARDS
-                    ========================== */}
 
                     {!carregando && !erro && (
                         <div className="grid-investimentos">
@@ -348,8 +265,6 @@ function Investimentos() {
                                     key={investimento.id}
                                     onClick={() => navigate(`/investimentos/${investimento.id}`)}
                                 >
-                                    {/* TOPO */}
-
                                     <div className="topo-card-investimento">
                                         <div className="identificacao-investimento">
                                             <div className="icone-investimento-novo">
@@ -368,8 +283,6 @@ function Investimentos() {
                                         <RiArrowRightSLine className="seta-investimento" />
                                     </div>
 
-                                    {/* SALDO */}
-
                                     <div className="saldo-investimento">
                                         <span>
                                             {investimento.pendenteAtualizacao
@@ -384,11 +297,7 @@ function Investimentos() {
                                         </strong>
                                     </div>
 
-                                    {/* INFORMAÇÕES */}
-
                                     <div className="informacoes-investimento">
-                                        {/* RENDIMENTO */}
-
                                         <div>
                                             <span>Rendimento no mês</span>
 
@@ -400,8 +309,6 @@ function Investimentos() {
                                                 <strong className="sem-rendimento">—</strong>
                                             )}
                                         </div>
-
-                                        {/* STATUS */}
 
                                         <div className="status-investimento">
                                             {investimento.encerrado ? (
@@ -437,14 +344,8 @@ function Investimentos() {
                         </div>
                     )}
 
-                    {/* ==========================
-                        PAGINAÇÃO
-                    ========================== */}
-
                     {!carregando && !erro && totalPaginas > 1 && (
                         <div className="paginacao-investimentos">
-                            {/* ANTERIOR */}
-
                             <button
                                 type="button"
                                 className="botao-paginacao-investimento"
@@ -453,8 +354,6 @@ function Investimentos() {
                             >
                                 Anterior
                             </button>
-
-                            {/* NÚMEROS */}
 
                             {Array.from(
                                 {
@@ -480,8 +379,6 @@ function Investimentos() {
                                 },
                             )}
 
-                            {/* PRÓXIMA */}
-
                             <button
                                 type="button"
                                 className="botao-paginacao-investimento"
@@ -502,25 +399,11 @@ function Investimentos() {
                     onClose={() => setModalNovoInvestimento(false)}
 
                     onSalvar={async () => {
-                        /*
-                         * Depois de criar, queremos
-                         * visualizar os investimentos ativos.
-                         */
                         setAba("ATIVOS");
 
-                        /*
-                         * Voltamos para a primeira página.
-                         */
                         if (pagina !== 0) {
                             setPagina(0);
                         } else {
-                            /*
-                             * Se já estivermos na primeira
-                             * página, nenhum estado mudaria.
-                             *
-                             * Então atualizamos os dados
-                             * diretamente.
-                             */
                             await carregarDados();
                         }
                     }}

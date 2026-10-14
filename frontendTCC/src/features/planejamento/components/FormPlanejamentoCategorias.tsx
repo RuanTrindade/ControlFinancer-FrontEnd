@@ -13,10 +13,6 @@ import { useUsuarioLogado } from "../../../context/AuthContext";
 
 import { renderizarIcone } from "../../../utils/renderizarIcone";
 
-/* ===================================================
-   CATEGORIA UTILIZADA NO PLANEJAMENTO
-=================================================== */
-
 type Categoria = {
     id: number;
     nome: string;
@@ -24,10 +20,6 @@ type Categoria = {
     valor: number;
     icone: React.ReactNode;
 };
-
-/* ===================================================
-   CATEGORIA RECEBIDA DO BACKEND
-=================================================== */
 
 type CategoriaBackend = {
     id: number;
@@ -38,10 +30,6 @@ type CategoriaBackend = {
     cor: string | null;
     icone: string | null;
 };
-
-/* ===================================================
-   PROPS
-=================================================== */
 
 type Props = {
     voltar: () => void;
@@ -60,25 +48,13 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
 
     const { id: USUARIO_ID } = useUsuarioLogado();
 
-    /* ===================================================
-       MODAL
-    =================================================== */
-
     const [modalCategorias, setModalCategorias] = useState(false);
-
-    /* ===================================================
-       TODAS AS CATEGORIAS DISPONÍVEIS
-    =================================================== */
 
     const [categoriasDisponiveis, setCategoriasDisponiveis] = useState<CategoriaDisponivel[]>([]);
 
     const [carregandoCategorias, setCarregandoCategorias] = useState(true);
 
     const [erroCategorias, setErroCategorias] = useState("");
-
-    /* ===================================================
-       BUSCAR CATEGORIAS DO BACKEND
-    =================================================== */
 
     useEffect(() => {
         async function buscarCategorias() {
@@ -87,15 +63,6 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
 
                 setErroCategorias("");
 
-                /*
-                 * IMPORTANTE:
-                 *
-                 * Aqui usamos /todas porque o endpoint
-                 * normal agora é paginado.
-                 *
-                 * Para montar o planejamento precisamos
-                 * conhecer todas as categorias disponíveis.
-                 */
                 const response = await fetch(
                     `http://localhost:8080/categorias/usuario/${USUARIO_ID}/todas`,
                 );
@@ -108,18 +75,10 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
 
                 const resultado: CategoriaBackend[] = await response.json();
 
-                /*
-                 * Planejamento só trabalha com
-                 * categorias de DESPESA.
-                 */
                 const categoriasDespesa = resultado.filter(
                     (categoria) => categoria.tipo === "DESPESA",
                 );
 
-                /*
-                 * Converte os ícones vindos do banco
-                 * para componentes React.
-                 */
                 const categoriasFormatadas: CategoriaDisponivel[] = categoriasDespesa.map(
                     (categoria) => ({
                         id: categoria.id,
@@ -132,34 +91,13 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
                     }),
                 );
 
-                /*
-                 * Guarda TODAS para podermos usar
-                 * as restantes no modal.
-                 */
                 setCategoriasDisponiveis(categoriasFormatadas);
 
-                /*
-                 * Se estamos criando um planejamento
-                 * e ainda não existem categorias,
-                 * colocamos APENAS AS 4 PRIMEIRAS
-                 * na tela principal.
-                 */
                 setCategorias((categoriasAtuais) => {
-                    /*
-                     * Se já existem categorias,
-                     * não mexemos nelas.
-                     *
-                     * Isso é importante principalmente
-                     * para edição/cópia de planejamento.
-                     */
                     if (categoriasAtuais.length > 0) {
                         return categoriasAtuais;
                     }
 
-                    /*
-                     * Só as quatro primeiras aparecem
-                     * inicialmente.
-                     */
                     return categoriasFormatadas.slice(0, 4).map((categoria) => ({
                         id: categoria.id,
 
@@ -184,19 +122,11 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
         buscarCategorias();
     }, [setCategorias]);
 
-    /* ===================================================
-       CATEGORIAS QUE AINDA NÃO ESTÃO NA TELA
-    =================================================== */
-
     const categoriasRestantes = useMemo(() => {
         const idsSelecionados = new Set(categorias.map((categoria) => categoria.id));
 
         return categoriasDisponiveis.filter((categoria) => !idsSelecionados.has(categoria.id));
     }, [categoriasDisponiveis, categorias]);
-
-    /* ===================================================
-       ADICIONAR CATEGORIA
-    =================================================== */
 
     function adicionarCategoria(categoria: CategoriaDisponivel) {
         setCategorias((categoriasAtuais) => {
@@ -224,10 +154,6 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
         });
     }
 
-    /* ===================================================
-       ALTERAR VALOR
-    =================================================== */
-
     function alterarValor(id: number, valor: number) {
         const valorSeguro = Number.isNaN(valor) ? 0 : Math.max(valor, 0);
 
@@ -244,10 +170,6 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
         );
     }
 
-    /* ===================================================
-       TOTAL
-    =================================================== */
-
     const total = useMemo(() => {
         return categorias.reduce(
             (acumulado, categoria) => acumulado + categoria.valor,
@@ -256,27 +178,11 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
         );
     }, [categorias]);
 
-    /* ===================================================
-       RESTANTE
-    =================================================== */
-
     const restante = Math.max(limite - total, 0);
-
-    /* ===================================================
-       ULTRAPASSADO
-    =================================================== */
 
     const ultrapassado = Math.max(total - limite, 0);
 
-    /* ===================================================
-       PORCENTAGEM
-    =================================================== */
-
     const porcentagem = limite > 0 ? Math.min((total / limite) * 100, 100) : 0;
-
-    /* ===================================================
-       FINALIZAR
-    =================================================== */
 
     function validarEFinalizar() {
         if (categorias.length === 0) {
@@ -292,39 +198,19 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
         finalizar();
     }
 
-    /* ===================================================
-       RENDER
-    =================================================== */
-
     return (
         <div className="planejamento-categorias">
-            {/* ===================================================
-                TÍTULO
-            =================================================== */}
-
             <div className="planejamento-titulo">
                 <h2>Hora de planejar!</h2>
 
                 <span>Defina quanto deseja gastar em cada categoria</span>
             </div>
 
-            {/* ===================================================
-                ERRO
-            =================================================== */}
-
             {erroCategorias && <div className="erro-categorias-planejamento">{erroCategorias}</div>}
-
-            {/* ===================================================
-                CARREGANDO
-            =================================================== */}
 
             {carregandoCategorias && categorias.length === 0 && (
                 <div className="carregando-categorias-planejamento">Carregando categorias...</div>
             )}
-
-            {/* ===================================================
-                CATEGORIAS DA TELA PRINCIPAL
-            =================================================== */}
 
             {!carregandoCategorias && (
                 <div className="categorias-grid">
@@ -334,8 +220,6 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
                         <div className="linha-categorias" key={linha}>
                             {categorias.slice(linha * 2, linha * 2 + 2).map((categoria) => (
                                 <div key={categoria.id} className="categoria">
-                                    {/* CATEGORIA */}
-
                                     <div className="categoria-info">
                                         <div
                                             className="categoria-icon"
@@ -348,8 +232,6 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
 
                                         <span>{categoria.nome}</span>
                                     </div>
-
-                                    {/* VALOR */}
 
                                     <div className="categoria-valor">
                                         <span>R$</span>
@@ -373,15 +255,7 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
                 </div>
             )}
 
-            {/* ===================================================
-                DIVISOR
-            =================================================== */}
-
             <div className="linha-divisoria" />
-
-            {/* ===================================================
-                ADICIONAR CATEGORIA
-            =================================================== */}
 
             <div className="adicionar-categoria">
                 <button
@@ -396,10 +270,6 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
                         : `+ Adicionar categoria (${categoriasRestantes.length})`}
                 </button>
             </div>
-
-            {/* ===================================================
-                RESUMO
-            =================================================== */}
 
             <div className="resumo">
                 <h3>Total categorizado</h3>
@@ -416,8 +286,6 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
                 </div>
 
                 <div className="informacoes">
-                    {/* CATEGORIZADO */}
-
                     <div className="info-item">
                         <div className="info-titulo">
                             <span className="bolinha verde" />
@@ -434,8 +302,6 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
                         </strong>
                     </div>
 
-                    {/* NÃO CATEGORIZADO */}
-
                     <div className="info-item">
                         <div className="info-titulo">
                             <span className="bolinha cinza" />
@@ -451,8 +317,6 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
                             })}
                         </strong>
                     </div>
-
-                    {/* ULTRAPASSADO */}
 
                     <div className="info-item">
                         <div className="info-titulo">
@@ -472,10 +336,6 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
                 </div>
             </div>
 
-            {/* ===================================================
-                FINALIZAR
-            =================================================== */}
-
             <div className="rodape">
                 <button type="button" className="btn-salvar" onClick={validarEFinalizar}>
                     Finalizar
@@ -483,22 +343,11 @@ function FormPlanejamentoCategorias({ finalizar, limite, categorias, setCategori
                 </button>
             </div>
 
-            {/* ===================================================
-                MODAL DAS CATEGORIAS RESTANTES
-            =================================================== */}
-
             <ModalCategorias
                 aberto={modalCategorias}
 
                 fechar={() => setModalCategorias(false)}
 
-                /*
-                 * IMPORTANTE:
-                 *
-                 * Agora o modal recebe SOMENTE
-                 * categorias que ainda não aparecem
-                 * na tela principal.
-                 */
                 categorias={categoriasRestantes}
 
                 categoriasSelecionadas={[]}

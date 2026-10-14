@@ -1,9 +1,4 @@
 :root {
-    /* ===== paleta compartilhada =====
-     Cores que se repetiam em varios arquivos de
-     styles/*.css foram centralizadas aqui. O valor
-     de cada cor continua exatamente o mesmo de antes,
-     so passou a ter um nome unico. */
     --branco: #ffffff;
     --cinza-50: #f9fafb;
     --cinza-100: #f3f4f6;

@@ -37,10 +37,6 @@ import type { DashboardResponse } from "../types/dashboard";
 
 import "../styles/dashboard.css";
 
-/* ===================================================
-   TIPOS INTERNOS
-=================================================== */
-
 type ResumoDashboard = {
     nome: "Receita" | "Despesa" | "Investimento";
 
@@ -77,33 +73,18 @@ type TransacaoDashboard = {
     icone: string;
 };
 
-/* ===================================================
-   COMPONENTE
-=================================================== */
-
 function Dashboard() {
     const navigate = useNavigate();
-    /* ===================================================
-       CONFIGURAÇÕES
-    =================================================== */
 
     const { id: USUARIO_ID } = useUsuarioLogado();
 
     const { mes: mesSelecionado, ano: anoSelecionado } = useMes();
-
-    /* ===================================================
-       STATES
-    =================================================== */
 
     const [loading, setLoading] = useState(true);
 
     const [erro, setErro] = useState("");
 
     const [dashboard, setDashboard] = useState<DashboardResponse | null>(null);
-
-    /* ===================================================
-       CARREGAR DASHBOARD
-    =================================================== */
 
     useEffect(() => {
         async function carregarDashboard() {
@@ -139,10 +120,6 @@ function Dashboard() {
         carregarDashboard();
     }, [mesSelecionado, anoSelecionado]);
 
-    /* ===================================================
-       VALORES PRINCIPAIS
-    =================================================== */
-
     const saldo = dashboard?.saldo ?? 0;
 
     const receita = dashboard?.receita ?? 0;
@@ -150,13 +127,6 @@ function Dashboard() {
     const despesa = dashboard?.despesa ?? 0;
 
     const investimento = dashboard?.investimento ?? 0;
-
-    /* ===================================================
-       RESUMO
-
-       Mantemos exatamente a estrutura que o JSX
-       anterior utilizava.
-    =================================================== */
 
     const resumo = useMemo<ResumoDashboard[]>(
         () => [
@@ -187,16 +157,6 @@ function Dashboard() {
         [receita, despesa, investimento],
     );
 
-    /* ===================================================
-       CATEGORIAS CRÍTICAS
-
-       O percentual já vem calculado corretamente
-       pelo backend.
-
-       NÃO recalculamos percentual em relação
-       às outras categorias.
-    =================================================== */
-
     const categorias = useMemo<CategoriaDashboard[]>(() => {
         return (dashboard?.categoriasCriticas ?? []).map((categoria) => ({
             nome: categoria.nome,
@@ -216,10 +176,6 @@ function Dashboard() {
         }));
     }, [dashboard]);
 
-    /* ===================================================
-       ÚLTIMAS TRANSAÇÕES
-    =================================================== */
-
     const transacoes = useMemo<TransacaoDashboard[]>(() => {
         return (dashboard?.ultimasTransacoes ?? []).map((transacao) => ({
             id: transacao.id,
@@ -237,10 +193,6 @@ function Dashboard() {
             icone: transacao.icone,
         }));
     }, [dashboard]);
-
-    /* ===================================================
-       DONUT
-    =================================================== */
 
     const totalResumo = useMemo(() => {
         return resumo.reduce(
@@ -273,13 +225,6 @@ function Dashboard() {
         return dadosPizza;
     }, [dadosPizza, totalResumo]);
 
-    /* ===================================================
-       CATEGORIAS PARA O GRÁFICO
-
-       Aqui usamos o percentual verdadeiro
-       do planejamento.
-    =================================================== */
-
     const dadosCategorias = useMemo(() => {
         return categorias.map((categoria) => ({
             ...categoria,
@@ -287,10 +232,6 @@ function Dashboard() {
             percentualGrafico: Math.max(0, Math.min(Number(categoria.percentual || 0), 100)),
         }));
     }, [categorias]);
-
-    /* ===================================================
-       FORMATAR MOEDA
-    =================================================== */
 
     function formatarMoeda(valor: number) {
         return Number(valor || 0).toLocaleString("pt-BR", {
@@ -300,20 +241,7 @@ function Dashboard() {
         });
     }
 
-    /* ===================================================
-       FORMATAR DATA
-    =================================================== */
-
     function formatarData(data: string) {
-        /*
-         * O T00:00:00 evita o JS interpretar
-         * a data como UTC e voltar um dia.
-         *
-         * Isso NÃO resolve ainda a questão do
-         * cadastro aparecendo no dia seguinte.
-         * Aquilo vamos investigar depois.
-         */
-
         return new Date(`${data}T00:00:00`).toLocaleDateString("pt-BR", {
             day: "2-digit",
 
@@ -322,10 +250,6 @@ function Dashboard() {
             year: "numeric",
         });
     }
-
-    /* ===================================================
-       ÍCONE DO RESUMO
-    =================================================== */
 
     function obterIconeResumo(nome: ResumoDashboard["nome"]) {
         switch (nome) {
@@ -343,10 +267,6 @@ function Dashboard() {
         }
     }
 
-    /* ===================================================
-       RENDER
-    =================================================== */
-
     return (
         <DashboardLayout>
             {loading && <LoadingOverlay />}
@@ -354,15 +274,7 @@ function Dashboard() {
             {erro && <div className="mensagem-erro-dashboard">{erro}</div>}
 
             <div className="grade-dashboard">
-                {/* ===================================================
-                    ESQUERDA
-                =================================================== */}
-
                 <div className="dashboard-esquerda">
-                    {/* ===================================================
-                        SALDO
-                    =================================================== */}
-
                     <div className="cartao cartao-saldo">
                         <div>
                             <div className="topo-saldo">
@@ -383,10 +295,6 @@ function Dashboard() {
                             <BsGraphUpArrow />
                         </button>
                     </div>
-
-                    {/* ===================================================
-                        RESUMO
-                    =================================================== */}
 
                     <div className="grade-resumo">
                         {resumo.map((item) => (
@@ -438,15 +346,7 @@ function Dashboard() {
                         ))}
                     </div>
 
-                    {/* ===================================================
-                        PARTE INFERIOR
-                    =================================================== */}
-
                     <div className="dashboard-inferior">
-                        {/* ===================================================
-                            GRÁFICO DONUT
-                        =================================================== */}
-
                         <div
                             className="cartao cartao-grafico cartao-dashboard-clicavel"
                             role="button"
@@ -484,10 +384,6 @@ function Dashboard() {
                                 </ResponsiveContainer>
                             </div>
 
-                            {/* ===================================================
-                                LEGENDA
-                            =================================================== */}
-
                             <div className="legenda-grafico">
                                 {dadosPizza.map((item) => (
                                     <div key={item.nome} className="legenda-item">
@@ -507,10 +403,6 @@ function Dashboard() {
                                 ))}
                             </div>
                         </div>
-
-                        {/* ===================================================
-                            GASTOS POR CATEGORIA
-                        =================================================== */}
 
                         <div className="cartao cartao-categorias">
                             <h2>Gastos por categoria</h2>
@@ -650,10 +542,6 @@ function Dashboard() {
                         </div>
                     </div>
                 </div>
-
-                {/* ===================================================
-                    ÚLTIMAS TRANSAÇÕES
-                =================================================== */}
 
                 <div
                     className="cartao cartao-transacoes cartao-dashboard-clicavel"

@@ -1,6 +1,3 @@
-/* =========================
-   BACKDROP
-========================= */
 .modal-categorias-backdrop {
     position: fixed;
     inset: 0;
@@ -12,9 +9,7 @@
     z-index: 99999;
     animation: fadeModal 0.25s;
 }
-/* =========================
-   MODAL
-========================= */
+
 .modal-categorias {
     width: 480px;
     max-width: 95vw;
@@ -28,9 +23,7 @@
 .dark .modal-categorias {
     background: var(--cinza-800);
 }
-/* =========================
-   TOPO
-========================= */
+
 .modal-categorias-topo {
     display: flex;
     justify-content: space-between;
@@ -60,9 +53,7 @@
 .modal-categorias-topo button:hover {
     transform: rotate(90deg);
 }
-/* =========================
-   PESQUISA
-========================= */
+
 .pesquisa-categoria {
     display: flex;
     align-items: center;
@@ -91,9 +82,7 @@
 .dark .pesquisa-categoria input {
     color: white;
 }
-/* =========================
-   LISTA
-========================= */
+
 .lista-categorias {
     display: flex;
     flex-direction: column;
@@ -102,9 +91,7 @@
     overflow-x: hidden;
     overflow-y: auto;
 }
-/* =========================
-   ITEM
-========================= */
+
 .categoria-lista {
     display: flex;
     align-items: center;
@@ -132,9 +119,7 @@
 .dark .categoria-lista span {
     color: white;
 }
-/* =========================
-   ÍCONE
-========================= */
+
 .categoria-icone {
     width: 42px;
     height: 42px;
@@ -145,9 +130,7 @@
     color: white;
     font-size: 18px;
 }
-/* =========================
-   ÍCONE DA CATEGORIA
-========================= */
+
 .categoria-icone {
     color: white;
 }
@@ -155,17 +138,13 @@
     color: white !important;
     font-size: 18px;
 }
-/* =========================
-   CHECK
-========================= */
+
 .categoria-lista > svg {
     margin-left: auto;
     color: var(--verde-500);
     font-size: 22px;
 }
-/* =========================
-   SCROLL
-========================= */
+
 .lista-categorias::-webkit-scrollbar {
     width: 7px;
 }
@@ -173,9 +152,7 @@
     background: var(--cinza-300);
     border-radius: 999px;
 }
-/* =========================
-   BOTÃO FECHAR
-========================= */
+
 .btn-fechar-modal {
     width: 42px;
     height: 42px;
@@ -200,9 +177,7 @@
 .dark .btn-fechar-modal svg {
     color: white;
 }
-/* =========================
-   ANIMAÇÕES
-========================= */
+
 @keyframes fadeModal {
     from {
         opacity: 0;
@@ -221,9 +196,7 @@
         transform: translateY(0) scale(1);
     }
 }
-/* =========================
-   RESPONSIVIDADE
-========================= */
+
 @media (max-width: 560px) {
     .modal-categorias-backdrop {
         align-items: flex-end;

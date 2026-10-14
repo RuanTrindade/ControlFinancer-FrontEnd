@@ -202,8 +202,6 @@ function ObjetivoDetalhe() {
             {loading && <LoadingOverlay />}
 
             <div className="pagina-objetivo-detalhe">
-                {/* TÍTULO */}
-
                 <div className="objetivo-detalhe-topo">
                     <button
                         type="button"
@@ -257,11 +255,7 @@ function ObjetivoDetalhe() {
                     )}
                 </div>
 
-                {/* GRID */}
-
                 <div className="detalhe-grid">
-                    {/* CARD ESQUERDO */}
-
                     <div className="resumo-card">
                         <h2>Resumo da meta</h2>
 
@@ -364,8 +358,6 @@ function ObjetivoDetalhe() {
                             </div>
                         </div>
                     </div>
-
-                    {/* CARD DIREITO */}
 
                     <div className="movimentacoes-card">
                         <div className="movimentacoes-topo">

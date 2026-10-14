@@ -7,10 +7,6 @@ import { apiFetch } from "../../../shared/services/api";
 
 const CAMINHO = "/investimentos";
 
-/* ===================================================
-   LISTAR MOVIMENTAÇÕES
-=================================================== */
-
 export async function listarMovimentacoes(
     investimentoId: number,
     mes?: number,
@@ -36,10 +32,6 @@ export async function listarMovimentacoes(
     );
 }
 
-/* ===================================================
-   REGISTRAR MOVIMENTAÇÃO
-=================================================== */
-
 export async function registrarMovimentacao(
     investimentoId: number,
     dados: InvestimentoMovimentacaoRequest,
@@ -51,10 +43,6 @@ export async function registrarMovimentacao(
     );
 }
 
-/* ===================================================
-   EDITAR MOVIMENTAÇÃO
-=================================================== */
-
 export async function editarMovimentacao(
     movimentacaoId: number,
     dados: InvestimentoMovimentacaoRequest,
@@ -65,10 +53,6 @@ export async function editarMovimentacao(
         "Não foi possível editar a movimentação.",
     );
 }
-
-/* ===================================================
-   EXCLUIR MOVIMENTAÇÃO
-=================================================== */
 
 export async function deletarMovimentacao(movimentacaoId: number): Promise<void> {
     return apiFetch<void>(

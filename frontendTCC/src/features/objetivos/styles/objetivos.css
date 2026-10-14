@@ -1,15 +1,10 @@
-/* ===================================================
-   PÁGINA
-=================================================== */
 .pagina-objetivos {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
-/* ===================================================
-   TÍTULO
-=================================================== */
+
 .titulo-objetivos {
     margin: 0;
     font-size: 32px;
@@ -19,9 +14,7 @@
 .dark .titulo-objetivos {
     color: var(--branco);
 }
-/* ===================================================
-   TOPO / FILTROS
-=================================================== */
+
 .objetivo-filtros {
     width: 100%;
     display: flex;
@@ -36,9 +29,7 @@
 .dark .objetivo-filtros {
     background: var(--cinza-800);
 }
-/* ===================================================
-   TABS
-=================================================== */
+
 .objetivo-tabs {
     display: flex;
     align-items: center;
@@ -80,9 +71,7 @@
 .dark .objetivo-tabs button.ativo {
     color: var(--branco);
 }
-/* ===================================================
-   BOTÃO CRIAR OBJETIVO
-=================================================== */
+
 .btn-criar-objetivo {
     min-height: 44px;
     padding: 0 20px;
@@ -108,17 +97,13 @@
 .btn-criar-objetivo svg {
     font-size: 19px;
 }
-/* ===================================================
-   GRID
-=================================================== */
+
 .objetivos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     gap: 18px;
 }
-/* ===================================================
-   CARD OBJETIVO
-=================================================== */
+
 .card-objetivo {
     width: 100%;
     padding: 14px;
@@ -140,9 +125,7 @@
     background: var(--cinza-800);
     border-color: var(--cinza-700);
 }
-/* ===================================================
-   TOPO CARD
-=================================================== */
+
 .card-topo {
     min-height: 42px;
     display: flex;
@@ -174,9 +157,7 @@
 .dark .objetivo-info h3 {
     color: var(--branco);
 }
-/* ===================================================
-   TÍTULO / VENCIDO
-=================================================== */
+
 .objetivo-titulo-container {
     min-width: 0;
     display: flex;
@@ -211,9 +192,7 @@
 .dark .data-objetivo-vencida {
     color: #f87171 !important;
 }
-/* ===================================================
-   ÍCONE
-=================================================== */
+
 .objetivo-icone {
     width: 38px;
     height: 38px;
@@ -225,9 +204,7 @@
     color: var(--branco);
     font-size: 18px;
 }
-/* ===================================================
-   IMAGEM
-=================================================== */
+
 .objetivo-imagem {
     width: 100%;
     height: 180px;
@@ -236,9 +213,7 @@
     object-fit: cover;
     border-radius: 14px;
 }
-/* ===================================================
-   PROGRESSO
-=================================================== */
+
 .objetivo-progresso {
     width: 100%;
     height: 10px;
@@ -255,9 +230,7 @@
     border-radius: 999px;
     transition: width 0.4s ease;
 }
-/* ===================================================
-   VALORES
-=================================================== */
+
 .objetivo-valores {
     display: flex;
     align-items: center;
@@ -271,9 +244,7 @@
 .dark .objetivo-valores {
     color: var(--cinza-400);
 }
-/* ===================================================
-   FOOTER
-=================================================== */
+
 .objetivo-footer {
     display: flex;
     align-items: center;
@@ -300,9 +271,7 @@
 .dark .objetivo-footer span {
     color: var(--cinza-300);
 }
-/* ===================================================
-   ERRO
-=================================================== */
+
 .mensagem-erro-objetivo {
     padding: 12px 16px;
     border: 1px solid #fecaca;
@@ -317,9 +286,7 @@
     background: rgba(127, 29, 29, 0.2);
     color: var(--vermelho-300);
 }
-/* ===================================================
-   ESTADO VAZIO
-=================================================== */
+
 .objetivos-vazio {
     width: 100%;
     min-height: 340px;
@@ -396,9 +363,7 @@
 .btn-objetivo-vazio svg {
     font-size: 18px;
 }
-/* ===================================================
-   PAGINAÇÃO
-=================================================== */
+
 .paginacao-objetivos {
     width: 100%;
     margin-top: 20px;
@@ -451,9 +416,7 @@
     background: var(--verde-600) !important;
     color: var(--branco) !important;
 }
-/* ===================================================
-   RESPONSIVO
-=================================================== */
+
 @media (max-width: 900px) {
     .objetivos-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));

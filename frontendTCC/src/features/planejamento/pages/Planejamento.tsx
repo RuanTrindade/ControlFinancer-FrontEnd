@@ -308,17 +308,6 @@ function Planejamento() {
 
     const economiaPlanejada = receitasMes > 0 ? (balancoPlanejado / receitasMes) * 100 : 0;
 
-    /*
-     * O total usado pelo resumo superior será:
-     *
-     * - o valor disponível originalmente
-     *
-     * OU
-     *
-     * - a soma das categorias planejadas,
-     *   caso o usuário tenha ultrapassado
-     *   o valor originalmente disponível.
-     */
     const totalMeta = Math.max(valorDisponivelOriginal, totalCategoriasPlanejadas);
 
     const totalPagoGeral = categoriasExibidas.reduce(
@@ -335,10 +324,6 @@ function Planejamento() {
 
     const ultrapassouGeral = totalComprometidoGeral > totalMeta;
 
-    /* =========================
-       PARTE NORMAL
-    ========================= */
-
     const pagoDentroLimiteGeral = Math.min(totalPagoGeral, totalMeta);
 
     const restanteAposPagoGeral = Math.max(totalMeta - pagoDentroLimiteGeral, 0);
@@ -354,10 +339,6 @@ function Planejamento() {
         percentualPagoGeral + percentualPendenteGeral,
         100,
     );
-
-    /* =========================
-       PARTE ULTRAPASSADA
-    ========================= */
 
     const pagoUltrapassadoGeral = Math.max(totalPagoGeral - totalMeta, 0);
 
@@ -442,16 +423,6 @@ function Planejamento() {
             setPercentualEconomia("");
 
             setCategoriasFormulario([]);
-
-            /*
-             * Não fechamos o modal ainda.
-             *
-             * No próximo passo, usaremos:
-             *
-             * planejamentoCriado.id
-             *
-             * para salvar os limites das categorias.
-             */
         } catch (erro) {
             const mensagem =
                 erro instanceof Error ? erro.message : "Não foi possível criar o planejamento.";
@@ -528,12 +499,7 @@ function Planejamento() {
                     />
                 ) : (
                     <div className="dashboard-planejamento">
-                        {/* ===============================
-        TOPO
-    =============================== */}
-
                         <div className="resumo-financeiro-planejamento">
-                            {/* RECEITAS */}
                             <div className="card-resumo-financeiro">
                                 <div className="conteudo-card-resumo">
                                     <span>Receitas do mês</span>
@@ -552,7 +518,6 @@ function Planejamento() {
                                 </div>
                             </div>
 
-                            {/* GASTOS */}
                             <div className="card-resumo-financeiro">
                                 <div className="conteudo-card-resumo">
                                     <span>Gastos planejados</span>
@@ -571,7 +536,6 @@ function Planejamento() {
                                 </div>
                             </div>
 
-                            {/* BALANÇO */}
                             <div
                                 className={`
             card-resumo-financeiro
@@ -596,7 +560,6 @@ function Planejamento() {
                                 </div>
                             </div>
 
-                            {/* ECONOMIA */}
                             <div
                                 className={`
             card-resumo-financeiro
@@ -826,10 +789,6 @@ function Planejamento() {
                             </div>
                         </div>
 
-                        {/* ===============================
-        LISTAGEM
-    =============================== */}
-
                         <div className="lista-planejamento">
                             <div className="lista-dashboard">
                                 {categoriasPagina.map((categoria) => {
@@ -838,10 +797,6 @@ function Planejamento() {
                                     const restanteCategoria = categoria.meta - totalGasto;
 
                                     const ultrapassou = restanteCategoria < 0;
-
-                                    /* =========================
-   PARTE NORMAL
-========================= */
 
                                     const pagoDentroLimite = Math.min(
                                         categoria.pago,
@@ -872,10 +827,6 @@ function Planejamento() {
                                         percentualPago + percentualPendente,
                                         100,
                                     );
-
-                                    /* =========================
-                                                   PARTE ULTRAPASSADA
-                                                ========================= */
 
                                     const pagoUltrapassado = Math.max(
                                         categoria.pago - categoria.meta,
@@ -1115,10 +1066,6 @@ function Planejamento() {
                             </div>
                         </div>
 
-                        {/* ===============================
-    RODAPÉ
-=============================== */}
-
                         <div className="rodape-planejamento-card">
                             <div className="card-legenda">
                                 <div>
@@ -1144,7 +1091,6 @@ function Planejamento() {
                         </div>
 
                         <div className="paginacao-dashboard">
-                            {/* VOLTAR */}
                             <button
                                 disabled={pagina === 1}
                                 onClick={async () => {
@@ -1165,7 +1111,6 @@ function Planejamento() {
                                 <RiArrowLeftSLine />
                             </button>
 
-                            {/* NÚMEROS DAS PÁGINAS */}
                             {Array.from({
                                 length: totalPaginas,
                             }).map((_, index) => {
@@ -1195,7 +1140,6 @@ function Planejamento() {
                                 );
                             })}
 
-                            {/* AVANÇAR */}
                             <button
                                 disabled={pagina === totalPaginas || totalPaginas === 0}
                                 onClick={async () => {

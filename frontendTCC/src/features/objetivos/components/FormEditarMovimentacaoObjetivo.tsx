@@ -91,68 +91,68 @@ function FormEditarMovimentacaoObjetivo({ movimentacao, aberto, onClose, onSalva
             onClose={fecharModal}
             bloqueado={salvando}
         >
-                <header>
-                    <div>
-                        <span>{deposito ? "Depósito" : "Retirada"}</span>
+            <header>
+                <div>
+                    <span>{deposito ? "Depósito" : "Retirada"}</span>
 
-                        <h2>Editar movimentação</h2>
-                    </div>
+                    <h2>Editar movimentação</h2>
+                </div>
 
-                    <button type="button" onClick={onClose} disabled={salvando}>
-                        <RiCloseLine />
-                    </button>
-                </header>
+                <button type="button" onClick={onClose} disabled={salvando}>
+                    <RiCloseLine />
+                </button>
+            </header>
 
-                <form onSubmit={salvar}>
-                    <div className="editar-movimentacao-destaque">
-                        <RiEditLine />
+            <form onSubmit={salvar}>
+                <div className="editar-movimentacao-destaque">
+                    <RiEditLine />
 
-                        <span>Altere apenas o valor desta movimentação.</span>
-                    </div>
+                    <span>Altere apenas o valor desta movimentação.</span>
+                </div>
 
-                    <div className="editar-movimentacao-campo">
-                        <label>Valor</label>
+                <div className="editar-movimentacao-campo">
+                    <label>Valor</label>
 
-                        <div className="editar-movimentacao-input">
-                            <NumericFormat
-                                value={valor}
-                                thousandSeparator="."
-                                decimalSeparator=","
-                                decimalScale={2}
-                                fixedDecimalScale
-                                allowNegative={false}
-                                prefix="R$ "
-                                disabled={salvando}
-                                onValueChange={(valores) => {
-                                    setValor(valores.value);
-
-                                    setErro("");
-                                }}
-                            />
-                        </div>
-                    </div>
-
-                    {erro && <div className="editar-movimentacao-erro">{erro}</div>}
-
-                    <footer>
-                        <button
-                            type="button"
-                            className="editar-movimentacao-cancelar"
-                            onClick={onClose}
+                    <div className="editar-movimentacao-input">
+                        <NumericFormat
+                            value={valor}
+                            thousandSeparator="."
+                            decimalSeparator=","
+                            decimalScale={2}
+                            fixedDecimalScale
+                            allowNegative={false}
+                            prefix="R$ "
                             disabled={salvando}
-                        >
-                            Cancelar
-                        </button>
+                            onValueChange={(valores) => {
+                                setValor(valores.value);
 
-                        <button
-                            type="submit"
-                            className="editar-movimentacao-salvar"
-                            disabled={salvando || valorNumerico <= 0}
-                        >
-                            {salvando ? "Salvando..." : "Salvar alterações"}
-                        </button>
-                    </footer>
-                </form>
+                                setErro("");
+                            }}
+                        />
+                    </div>
+                </div>
+
+                {erro && <div className="editar-movimentacao-erro">{erro}</div>}
+
+                <footer>
+                    <button
+                        type="button"
+                        className="editar-movimentacao-cancelar"
+                        onClick={onClose}
+                        disabled={salvando}
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        className="editar-movimentacao-salvar"
+                        disabled={salvando || valorNumerico <= 0}
+                    >
+                        {salvando ? "Salvando..." : "Salvar alterações"}
+                    </button>
+                </footer>
+            </form>
         </ModalOverlay>
     );
 }

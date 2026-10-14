@@ -1,15 +1,3 @@
-/**
- * Helper único de acesso à API.
- *
- * Antes, cada arquivo de service tinha sua própria cópia de "fetch + checar
- * resposta.ok + extrair mensagem de erro + json()". Este arquivo concentra
- * isso num só lugar, mantendo o mesmo comportamento que já existia:
- *
- * - Tenta ler a mensagem de erro do corpo JSON (`message`/`mensagem`/`erro`).
- * - Se o corpo não for JSON, cai para o texto puro da resposta.
- * - Corpos vazios (204, ou 200 sem conteúdo) retornam `undefined`.
- */
-
 export const BASE_URL = "http://localhost:8080";
 
 async function extrairMensagemErro(resposta: Response, mensagemPadrao: string): Promise<string> {

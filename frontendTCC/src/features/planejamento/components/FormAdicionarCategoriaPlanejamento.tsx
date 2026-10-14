@@ -22,33 +22,10 @@ type Categoria = {
 };
 
 type Props = {
-    /*
-     * IDs das categorias que já fazem
-     * parte do planejamento.
-     */
     categoriasPlanejadasIds: number[];
 
-    /*
-     * Valor atual total do planejamento.
-     *
-     * Vem do valorPlanejado persistido
-     * no backend.
-     *
-     * Inicialmente é:
-     *
-     * renda - economia desejada
-     *
-     * Mas pode aumentar posteriormente
-     * caso as categorias ultrapassem
-     * esse valor.
-     */
     valorDisponivel: number;
-    /*
-     * Soma SOMENTE das categorias
-     * realmente planejadas.
-     *
-     * Não inclui "Categorias restantes".
-     */
+
     totalCategoriasPlanejadas: number;
 
     planejamentoId: number;
@@ -88,33 +65,14 @@ function FormAdicionarCategoriaPlanejamento({
 
     const valorNumerico = Number(valor) || 0;
 
-    /*
-     * Quanto ainda existe em
-     * Categorias restantes antes
-     * de adicionar a nova categoria.
-     */
     const categoriasRestantesAntes = Math.max(valorDisponivel - totalCategoriasPlanejadas, 0);
 
-    /*
-     * Só esta parte realmente aumenta
-     * o planejamento.
-     */
     const valorQueAumentaPlanejamento = Math.max(valorNumerico - categoriasRestantesAntes, 0);
 
-    /*
-     * Quanto sobra depois do valor digitado.
-     */
     const categoriasRestantes = Math.max(categoriasRestantesAntes - valorNumerico, 0);
 
-    /*
-     * O total atual já vem do backend
-     * como valorPlanejado.
-     */
     const totalPlanejamentoAtual = valorDisponivel;
 
-    /*
-     * Preview do novo total.
-     */
     const novoTotalPlanejamento = totalPlanejamentoAtual + valorQueAumentaPlanejamento;
 
     function formatarDinheiro(valor: number) {
@@ -141,13 +99,6 @@ function FormAdicionarCategoriaPlanejamento({
 
             const resposta: Categoria[] = await response.json();
 
-            /*
-             * Apenas:
-             *
-             * - categorias de DESPESA
-             * - que ainda NÃO pertencem
-             *   ao planejamento
-             */
             const categoriasDisponiveis = resposta.filter(
                 (categoria) =>
                     categoria.tipo === "DESPESA" && !categoriasPlanejadasIds.includes(categoria.id),
@@ -196,17 +147,9 @@ function FormAdicionarCategoriaPlanejamento({
         }
     }
 
-    /* =========================================
-       CARREGAR AO ABRIR
-    ========================================= */
-
     useEffect(() => {
         buscarCategorias();
     }, []);
-
-    /* =========================================
-       FECHAR SELECT AO CLICAR FORA
-    ========================================= */
 
     useEffect(() => {
         function fecharAoClicarFora(evento: MouseEvent) {
@@ -222,10 +165,6 @@ function FormAdicionarCategoriaPlanejamento({
         };
     }, []);
 
-    /* =========================================
-       VALIDAÇÃO
-    ========================================= */
-
     function formularioValido() {
         return Boolean(categoriaId) && valorNumerico > 0;
     }
@@ -237,174 +176,161 @@ function FormAdicionarCategoriaPlanejamento({
             onClose={onClose}
             travarScroll
         >
-                {/* =============================
-                    CABEÇALHO
-                ============================= */}
-
-                <header
-                    className="
+            <header
+                className="
                         form-adicionar-categoria-cabecalho
                     "
-                >
-                    <div>
-                        <span
-                            className="
+            >
+                <div>
+                    <span
+                        className="
                                 form-adicionar-categoria-subtitulo
                             "
-                        >
-                            Planejamento mensal
-                        </span>
+                    >
+                        Planejamento mensal
+                    </span>
 
-                        <h2>Novo orçamento</h2>
-                    </div>
+                    <h2>Novo orçamento</h2>
+                </div>
 
-                    <button
-                        type="button"
-                        className="
+                <button
+                    type="button"
+                    className="
                             form-adicionar-categoria-fechar
                         "
-                        onClick={onClose}
-                        aria-label="Fechar"
-                    >
-                        <RiCloseLine />
-                    </button>
-                </header>
+                    onClick={onClose}
+                    aria-label="Fechar"
+                >
+                    <RiCloseLine />
+                </button>
+            </header>
 
-                {/* =============================
-                    CONTEÚDO
-                ============================= */}
+            <div
+                className="
+                        form-adicionar-categoria-conteudo
+                    "
+            >
+                {erro && (
+                    <div
+                        className="
+                                form-adicionar-categoria-erro
+                            "
+                    >
+                        {erro}
+                    </div>
+                )}
 
                 <div
                     className="
-                        form-adicionar-categoria-conteudo
-                    "
+                            form-adicionar-categoria-campo
+                        "
+                    ref={categoriaRef}
                 >
-                    {erro && (
-                        <div
-                            className="
-                                form-adicionar-categoria-erro
-                            "
-                        >
-                            {erro}
-                        </div>
-                    )}
-
-                    {/* =========================
-                        SELECT CATEGORIA
-                    ========================= */}
+                    <label>Categoria</label>
 
                     <div
                         className="
-                            form-adicionar-categoria-campo
-                        "
-                        ref={categoriaRef}
-                    >
-                        <label>Categoria</label>
-
-                        <div
-                            className="
                                 planejamento-categoria-select
                             "
-                        >
-                            <button
-                                type="button"
-                                className={`
+                    >
+                        <button
+                            type="button"
+                            className={`
                                     planejamento-categoria-select-botao
 
                                     ${categoriaAberta ? "aberto" : ""}
                                 `}
-                                onClick={() => setCategoriaAberta((aberta) => !aberta)}
-                                disabled={carregandoCategorias}
-                            >
-                                <div
-                                    className="
+                            onClick={() => setCategoriaAberta((aberta) => !aberta)}
+                            disabled={carregandoCategorias}
+                        >
+                            <div
+                                className="
                                         planejamento-categoria-select-conteudo
                                     "
-                                >
-                                    {categoriaSelecionada ? (
-                                        <>
-                                            <span
-                                                className="
+                            >
+                                {categoriaSelecionada ? (
+                                    <>
+                                        <span
+                                            className="
                                                             planejamento-categoria-select-icone
                                                         "
-                                                style={{
-                                                    color: categoriaSelecionada.cor ?? "#16a34a",
+                                            style={{
+                                                color: categoriaSelecionada.cor ?? "#16a34a",
 
-                                                    backgroundColor: `${
-                                                        categoriaSelecionada.cor ?? "#16a34a"
-                                                    }18`,
-                                                }}
-                                            >
-                                                {renderizarIcone(categoriaSelecionada.icone)}
-                                            </span>
+                                                backgroundColor: `${
+                                                    categoriaSelecionada.cor ?? "#16a34a"
+                                                }18`,
+                                            }}
+                                        >
+                                            {renderizarIcone(categoriaSelecionada.icone)}
+                                        </span>
 
-                                            <span
-                                                className="
+                                        <span
+                                            className="
                                                             planejamento-categoria-select-nome
                                                         "
-                                            >
-                                                {categoriaSelecionada.nome}
-                                            </span>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <span
-                                                className="
+                                        >
+                                            {categoriaSelecionada.nome}
+                                        </span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <span
+                                            className="
                                                             planejamento-categoria-select-icone
                                                             sem-categoria
                                                         "
-                                            >
-                                                <RiPriceTag3Line />
-                                            </span>
+                                        >
+                                            <RiPriceTag3Line />
+                                        </span>
 
-                                            <span
-                                                className="
+                                        <span
+                                            className="
                                                             planejamento-categoria-select-placeholder
                                                         "
-                                            >
-                                                {carregandoCategorias
-                                                    ? "Carregando..."
-                                                    : "Selecione uma categoria"}
-                                            </span>
-                                        </>
-                                    )}
-                                </div>
+                                        >
+                                            {carregandoCategorias
+                                                ? "Carregando..."
+                                                : "Selecione uma categoria"}
+                                        </span>
+                                    </>
+                                )}
+                            </div>
 
-                                <RiArrowDownSLine
-                                    className={`
+                            <RiArrowDownSLine
+                                className={`
                                         planejamento-categoria-select-seta
 
                                         ${categoriaAberta ? "girada" : ""}
                                     `}
-                                />
-                            </button>
+                            />
+                        </button>
 
-                            {categoriaAberta && (
-                                <div
-                                    className="
+                        {categoriaAberta && (
+                            <div
+                                className="
                                             planejamento-categoria-select-opcoes
                                         "
-                                >
-                                    {categorias.length === 0 ? (
-                                        <div
-                                            className="
+                            >
+                                {categorias.length === 0 ? (
+                                    <div
+                                        className="
                                                             planejamento-categoria-select-vazio
                                                         "
-                                        >
-                                            Nenhuma categoria disponível
-                                        </div>
-                                    ) : (
-                                        categorias.map((categoria) => {
-                                            const selecionada =
-                                                categoriaId === categoria.id.toString();
+                                    >
+                                        Nenhuma categoria disponível
+                                    </div>
+                                ) : (
+                                    categorias.map((categoria) => {
+                                        const selecionada = categoriaId === categoria.id.toString();
 
-                                            const cor = categoria.cor ?? "#16a34a";
+                                        const cor = categoria.cor ?? "#16a34a";
 
-                                            return (
-                                                <button
-                                                    key={categoria.id}
-                                                    type="button"
-                                                    className={`
+                                        return (
+                                            <button
+                                                key={categoria.id}
+                                                type="button"
+                                                className={`
                                                                     planejamento-categoria-select-opcao
 
                                                                     ${
@@ -413,220 +339,198 @@ function FormAdicionarCategoriaPlanejamento({
                                                                             : ""
                                                                     }
                                                                 `}
-                                                    onClick={() => {
-                                                        setCategoriaId(categoria.id.toString());
+                                                onClick={() => {
+                                                    setCategoriaId(categoria.id.toString());
 
-                                                        setCategoriaAberta(false);
+                                                    setCategoriaAberta(false);
 
-                                                        setErro("");
-                                                    }}
-                                                >
-                                                    <span
-                                                        className="
+                                                    setErro("");
+                                                }}
+                                            >
+                                                <span
+                                                    className="
                                                                         planejamento-categoria-select-icone
                                                                     "
-                                                        style={{
-                                                            color: cor,
+                                                    style={{
+                                                        color: cor,
 
-                                                            backgroundColor: `${cor}18`,
-                                                        }}
-                                                    >
-                                                        {renderizarIcone(categoria.icone)}
-                                                    </span>
+                                                        backgroundColor: `${cor}18`,
+                                                    }}
+                                                >
+                                                    {renderizarIcone(categoria.icone)}
+                                                </span>
 
-                                                    <span
-                                                        className="
+                                                <span
+                                                    className="
                                                                         planejamento-categoria-select-nome
                                                                     "
-                                                    >
-                                                        {categoria.nome}
-                                                    </span>
+                                                >
+                                                    {categoria.nome}
+                                                </span>
 
-                                                    {selecionada && (
-                                                        <RiCheckLine
-                                                            className="
+                                                {selecionada && (
+                                                    <RiCheckLine
+                                                        className="
                                                                                 planejamento-categoria-select-check
                                                                             "
-                                                        />
-                                                    )}
-                                                </button>
-                                            );
-                                        })
-                                    )}
-                                </div>
-                            )}
-                        </div>
+                                                    />
+                                                )}
+                                            </button>
+                                        );
+                                    })
+                                )}
+                            </div>
+                        )}
                     </div>
+                </div>
 
-                    {/* =========================
-                        TOTAL
-                    ========================= */}
+                <div className="planejamento-total">
+                    <span>Total</span>
 
-                    <div className="planejamento-total">
-                        <span>Total</span>
+                    <div className="planejamento-total-valores">
+                        <strong>R$ {formatarDinheiro(totalPlanejamentoAtual)}</strong>
 
-                        <div className="planejamento-total-valores">
-                            <strong>R$ {formatarDinheiro(totalPlanejamentoAtual)}</strong>
-
-                            {valorQueAumentaPlanejamento > 0 && (
-                                <strong
-                                    className="
+                        {valorQueAumentaPlanejamento > 0 && (
+                            <strong
+                                className="
                         planejamento-total-excedente
                     "
-                                >
-                                    + R$ {formatarDinheiro(valorQueAumentaPlanejamento)}
-                                </strong>
-                            )}
-                        </div>
+                            >
+                                + R$ {formatarDinheiro(valorQueAumentaPlanejamento)}
+                            </strong>
+                        )}
                     </div>
+                </div>
 
-                    {/* =========================
-                        CATEGORIA + VALOR
-                    ========================= */}
-
-                    {categoriaSelecionada && (
-                        <div
-                            className="
-                                    planejamento-categoria-valor
-                                "
-                        >
-                            <div
-                                className="
-                                        planejamento-categoria-identidade
-                                    "
-                            >
-                                <span
-                                    className="
-                                            planejamento-categoria-icone-grande
-                                        "
-                                    style={{
-                                        color: categoriaSelecionada.cor ?? "#16a34a",
-
-                                        backgroundColor: `${
-                                            categoriaSelecionada.cor ?? "#16a34a"
-                                        }18`,
-                                    }}
-                                >
-                                    {renderizarIcone(categoriaSelecionada.icone)}
-                                </span>
-
-                                <div>
-                                    <strong>{categoriaSelecionada.nome}</strong>
-
-                                    <small>Novo limite planejado</small>
-                                </div>
-                            </div>
-
-                            <div
-                                className="
-                                        planejamento-input-valor
-                                    "
-                            >
-                                <NumericFormat
-                                    thousandSeparator="."
-                                    decimalSeparator=","
-                                    decimalScale={2}
-                                    fixedDecimalScale
-                                    allowNegative={false}
-                                    prefix="R$ "
-                                    placeholder="R$ 0,00"
-                                    value={valor}
-                                    autoFocus
-                                    onValueChange={(valores) => {
-                                        setValor(valores.value);
-
-                                        setErro("");
-                                    }}
-                                />
-                            </div>
-                        </div>
-                    )}
-
-                    {/* =========================
-                        CATEGORIAS RESTANTES
-                    ========================= */}
-
+                {categoriaSelecionada && (
                     <div
                         className="
-                            planejamento-categorias-restantes
-                        "
+                                    planejamento-categoria-valor
+                                "
                     >
                         <div
                             className="
-                                planejamento-categorias-restantes-info
-                            "
+                                        planejamento-categoria-identidade
+                                    "
                         >
                             <span
                                 className="
-                                    planejamento-categorias-restantes-icone
-                                "
+                                            planejamento-categoria-icone-grande
+                                        "
+                                style={{
+                                    color: categoriaSelecionada.cor ?? "#16a34a",
+
+                                    backgroundColor: `${categoriaSelecionada.cor ?? "#16a34a"}18`,
+                                }}
                             >
-                                <RiPriceTag3Line />
+                                {renderizarIcone(categoriaSelecionada.icone)}
                             </span>
 
                             <div>
-                                <strong>Categorias restantes</strong>
+                                <strong>{categoriaSelecionada.nome}</strong>
 
-                                <small>Valor ainda não distribuído</small>
+                                <small>Novo limite planejado</small>
                             </div>
                         </div>
 
-                        <strong
-                            className="
-                                planejamento-categorias-restantes-valor
-                            "
-                        >
-                            R$ {formatarDinheiro(categoriasRestantes)}
-                        </strong>
-                    </div>
-
-                    {/* =========================
-                        EXCEDENTE
-                    ========================= */}
-
-                    {valorQueAumentaPlanejamento > 0 && (
                         <div
                             className="
+                                        planejamento-input-valor
+                                    "
+                        >
+                            <NumericFormat
+                                thousandSeparator="."
+                                decimalSeparator=","
+                                decimalScale={2}
+                                fixedDecimalScale
+                                allowNegative={false}
+                                prefix="R$ "
+                                placeholder="R$ 0,00"
+                                value={valor}
+                                autoFocus
+                                onValueChange={(valores) => {
+                                    setValor(valores.value);
+
+                                    setErro("");
+                                }}
+                            />
+                        </div>
+                    </div>
+                )}
+
+                <div
+                    className="
+                            planejamento-categorias-restantes
+                        "
+                >
+                    <div
+                        className="
+                                planejamento-categorias-restantes-info
+                            "
+                    >
+                        <span
+                            className="
+                                    planejamento-categorias-restantes-icone
+                                "
+                        >
+                            <RiPriceTag3Line />
+                        </span>
+
+                        <div>
+                            <strong>Categorias restantes</strong>
+
+                            <small>Valor ainda não distribuído</small>
+                        </div>
+                    </div>
+
+                    <strong
+                        className="
+                                planejamento-categorias-restantes-valor
+                            "
+                    >
+                        R$ {formatarDinheiro(categoriasRestantes)}
+                    </strong>
+                </div>
+
+                {valorQueAumentaPlanejamento > 0 && (
+                    <div
+                        className="
                 planejamento-aviso-excedente
             "
-                        >
-                            O planejamento passará de{" "}
-                            <strong>R$ {formatarDinheiro(totalPlanejamentoAtual)}</strong> para{" "}
-                            <strong>R$ {formatarDinheiro(novoTotalPlanejamento)}</strong>.
-                        </div>
-                    )}
+                    >
+                        O planejamento passará de{" "}
+                        <strong>R$ {formatarDinheiro(totalPlanejamentoAtual)}</strong> para{" "}
+                        <strong>R$ {formatarDinheiro(novoTotalPlanejamento)}</strong>.
+                    </div>
+                )}
 
-                    {/* =========================
-                        BOTÕES
-                    ========================= */}
-
-                    <footer
-                        className="
+                <footer
+                    className="
                             form-adicionar-categoria-acoes
                         "
-                    >
-                        <button
-                            type="button"
-                            className="
+                >
+                    <button
+                        type="button"
+                        className="
                                 form-adicionar-categoria-cancelar
                             "
-                            onClick={onClose}
-                        >
-                            Cancelar
-                        </button>
+                        onClick={onClose}
+                    >
+                        Cancelar
+                    </button>
 
-                        <button
-                            type="button"
-                            className="
+                    <button
+                        type="button"
+                        className="
         form-adicionar-categoria-salvar
     "
-                            onClick={adicionarCategoria}
-                            disabled={salvando || !formularioValido()}
-                        >
-                            {salvando ? "Adicionando..." : "Adicionar categoria"}
-                        </button>
-                    </footer>
-                </div>
+                        onClick={adicionarCategoria}
+                        disabled={salvando || !formularioValido()}
+                    >
+                        {salvando ? "Adicionando..." : "Adicionar categoria"}
+                    </button>
+                </footer>
+            </div>
         </ModalOverlay>
     );
 }

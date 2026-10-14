@@ -1,6 +1,3 @@
-/* ===================================================
-   CONTEÚDO
-=================================================== */
 .conteudo {
     position: relative;
     width: calc(100% - 250px);
@@ -16,10 +13,7 @@
 .dark .conteudo {
     background: var(--slate-900);
 }
-/* ===================================================
-   CELULAR — a sidebar deixa de "empurrar" o conteúdo
-   (ela passa a flutuar por cima, como um drawer)
-=================================================== */
+
 @media (max-width: 600px) {
     .conteudo,
     .sidebar.close ~ .conteudo {
@@ -27,15 +21,11 @@
         left: 0;
     }
 }
-/* ===================================================
-   MAIN
-=================================================== */
+
 .principal {
     padding: 28px 42px 42px;
 }
-/* ===================================================
-   GRID PRINCIPAL
-=================================================== */
+
 .grade-dashboard {
     width: 100%;
     display: grid;
@@ -45,18 +35,14 @@
     gap: 26px;
     align-items: start;
 }
-/* ===================================================
-   COLUNA ESQUERDA
-=================================================== */
+
 .dashboard-esquerda {
     min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
-/* ===================================================
-   CARD PADRÃO
-=================================================== */
+
 .cartao {
     width: 100%;
     padding: 22px;
@@ -82,9 +68,7 @@
     border-color: var(--cinza-700);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.14);
 }
-/* ===================================================
-   SALDO
-=================================================== */
+
 .cartao-saldo {
     min-height: 138px;
     padding: 24px 26px;
@@ -132,9 +116,7 @@
 .dark .cartao-saldo h2 {
     color: var(--branco);
 }
-/* ===================================================
-   BOTÃO ADICIONAR
-=================================================== */
+
 .botao-adicionar {
     min-height: 44px;
     padding: 0 20px;
@@ -164,18 +146,14 @@
 .botao-adicionar svg {
     font-size: 17px;
 }
-/* ===================================================
-   GRID DE RESUMO
-=================================================== */
+
 .grade-resumo {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
 }
-/* ===================================================
-   CARD RESUMO
-=================================================== */
+
 .cartao-resumo {
     min-height: 132px;
     padding: 20px 21px;
@@ -201,36 +179,28 @@
 .icone-resumo-dashboard svg {
     font-size: 19px;
 }
-/* ===================================================
-   RECEITA
-=================================================== */
+
 .cartao-resumo:nth-child(1) .icone-resumo-dashboard {
     background: #dcfce7;
 }
 .cartao-resumo:nth-child(1) .icone-resumo-dashboard svg {
     color: var(--verde-600);
 }
-/* ===================================================
-   DESPESA
-=================================================== */
+
 .cartao-resumo:nth-child(2) .icone-resumo-dashboard {
     background: #fee2e2;
 }
 .cartao-resumo:nth-child(2) .icone-resumo-dashboard svg {
     color: var(--vermelho-500);
 }
-/* ===================================================
-   INVESTIMENTO
-=================================================== */
+
 .cartao-resumo:nth-child(3) .icone-resumo-dashboard {
     background: #dbeafe;
 }
 .cartao-resumo:nth-child(3) .icone-resumo-dashboard svg {
     color: #2563eb;
 }
-/* ===================================================
-   DARK ÍCONES
-=================================================== */
+
 .dark .cartao-resumo:nth-child(1) .icone-resumo-dashboard {
     background: rgba(34, 197, 94, 0.12);
 }
@@ -259,10 +229,7 @@
 .dark .cartao-resumo h3 {
     color: var(--branco);
 }
-/* ===================================================
-   PARTE INFERIOR
-   O CARD DO DONUT AGORA TEM MAIS ESPAÇO
-=================================================== */
+
 .dashboard-inferior {
     width: 100%;
     display: grid;
@@ -272,9 +239,7 @@
     gap: 20px;
     align-items: stretch;
 }
-/* ===================================================
-   CARD GRÁFICO DONUT
-=================================================== */
+
 .cartao-grafico {
     min-height: 370px;
     padding: 24px 26px;
@@ -284,9 +249,7 @@
     justify-content: center;
     gap: 24px;
 }
-/* ===================================================
-   DONUT
-=================================================== */
+
 .grafico-dashboard-container {
     width: 210px;
     height: 210px;
@@ -295,20 +258,7 @@
 .grafico-dashboard-container .recharts-tooltip-wrapper {
     outline: none;
 }
-/*
- * Aumentamos visualmente a espessura
- * do gráfico sem alterar o JSX.
- *
- * O Pie usa atualmente:
- * innerRadius 50
- * outerRadius 74
- *
- * Como o container ficou maior,
- * a rosca também cresce bastante.
- */
-/* ===================================================
-   LEGENDA DO DONUT
-=================================================== */
+
 .legenda-grafico {
     width: 100%;
     display: flex;
@@ -364,9 +314,7 @@
 .dark .legenda-dashboard-info strong {
     color: var(--branco);
 }
-/* ===================================================
-   CARD CATEGORIAS
-=================================================== */
+
 .cartao-categorias {
     min-height: 370px;
     padding: 26px 28px;
@@ -383,33 +331,24 @@
 .dark .cartao-categorias h2 {
     color: var(--branco);
 }
-/* ===================================================
-   ÁREA DO GRÁFICO DE CATEGORIAS
-=================================================== */
+
 .grafico-categorias-dashboard {
     position: relative;
     width: 100%;
     height: 220px;
     min-width: 0;
 }
-/* ===================================================
-   TEXTOS SOBRE O GRÁFICO
-=================================================== */
+
 .categorias-sobre-grafico {
     position: absolute;
     inset: 0;
     z-index: 2;
     display: grid;
-    /*
-     * O número de linhas agora vem
-     * dinamicamente pelo TSX.
-     */
+
     align-items: stretch;
     pointer-events: none;
 }
-/* ===================================================
-   ITEM DE CATEGORIA
-=================================================== */
+
 .categoria-dashboard-item {
     width: 100%;
     min-width: 0;
@@ -421,9 +360,7 @@
     gap: 14px;
     overflow: hidden;
 }
-/* ===================================================
-   INFORMAÇÕES DA CATEGORIA
-=================================================== */
+
 .categoria-dashboard-item .info-categoria {
     min-width: 0;
     flex: 1;
@@ -432,9 +369,7 @@
     gap: 9px;
     overflow: hidden;
 }
-/* ===================================================
-   ÍCONE
-=================================================== */
+
 .categoria-dashboard-item .info-categoria > span:first-child {
     width: 30px;
     height: 30px;
@@ -455,9 +390,7 @@
     display: block;
     font-size: 17px;
 }
-/* ===================================================
-   NOME DA CATEGORIA
-=================================================== */
+
 .categoria-dashboard-item .info-categoria > span:last-child {
     min-width: 0;
     overflow: hidden;
@@ -467,9 +400,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-/* ===================================================
-   PERCENTUAL
-=================================================== */
+
 .categoria-dashboard-item > strong {
     flex-shrink: 0;
     padding-top: 7px;
@@ -482,9 +413,7 @@
 .dark .categoria-dashboard-item > strong {
     color: var(--cinza-300);
 }
-/* ===================================================
-   LEGENDA STATUS - GASTOS POR CATEGORIA
-=================================================== */
+
 .legenda-status-categorias {
     width: 100%;
     margin-top: 18px;
@@ -520,44 +449,28 @@
 .status-vermelho {
     background: var(--vermelho-500);
 }
-/* DARK */
+
 .dark .legenda-status-categorias {
     border-top-color: var(--cinza-700);
 }
 .dark .status-categoria-item {
     color: var(--cinza-400);
 }
-/* ===================================================
-   RECHARTS
-=================================================== */
+
 .grafico-categorias-dashboard .recharts-wrapper {
     overflow: visible;
 }
 .grafico-categorias-dashboard .recharts-surface {
     overflow: visible;
 }
-/*
- * Empurra a barra um pouco para baixo
- * dentro de cada linha.
- *
- * Assim:
- *
- * [ícone] Alimentação       75%
- * ─────────────────────────────
- *
- * e não:
- *
- * [ícone]━━Alimentação━━━━━━75%
- */
+
 .grafico-categorias-dashboard .recharts-layer.recharts-bar-rectangle {
     transform: translateY(20px);
 }
 .grafico-categorias-dashboard .recharts-bar-background-rectangle {
     transform: translateY(20px);
 }
-/* ===================================================
-   MOBILE
-=================================================== */
+
 @media (max-width: 600px) {
     .grafico-categorias-dashboard {
         height: 230px;
@@ -566,9 +479,7 @@
         max-width: 150px;
     }
 }
-/* ===================================================
-   TRANSAÇÕES
-=================================================== */
+
 .cartao-transacoes {
     min-height: 738px;
     padding: 24px 26px;
@@ -584,9 +495,7 @@
 .dark .cartao-transacoes h2 {
     color: var(--branco);
 }
-/* ===================================================
-   ITEM TRANSAÇÃO
-=================================================== */
+
 .item-transacao {
     width: 100%;
     min-height: 74px;
@@ -603,9 +512,7 @@
 .dark .item-transacao {
     border-color: var(--cinza-700);
 }
-/* ===================================================
-   TRANSAÇÃO ESQUERDA
-=================================================== */
+
 .transacao-esquerda {
     min-width: 0;
     display: flex;
@@ -632,9 +539,7 @@
 .dark .icone-transacao svg {
     color: var(--cinza-300);
 }
-/* ===================================================
-   TEXTO TRANSAÇÃO
-=================================================== */
+
 .item-transacao strong {
     display: block;
     overflow: hidden;
@@ -656,9 +561,7 @@
 .dark .item-transacao p {
     color: var(--cinza-400);
 }
-/* ===================================================
-   VALORES
-=================================================== */
+
 .valor-positivo,
 .valor-negativo {
     flex-shrink: 0;
@@ -677,15 +580,11 @@
 .dark .valor-negativo {
     color: #f87171;
 }
-/* ===================================================
-   RECHARTS DARK MODE
-=================================================== */
+
 .dark .grafico-categorias-dashboard .recharts-bar-background-rectangle path {
     fill: var(--cinza-700);
 }
-/* ===================================================
-   TOOLTIP
-=================================================== */
+
 .recharts-default-tooltip {
     border: 1px solid var(--cinza-200) !important;
     border-radius: 12px !important;
@@ -696,9 +595,7 @@
     border-color: var(--cinza-700) !important;
     color: var(--branco) !important;
 }
-/* ===================================================
-   RESPONSIVO
-=================================================== */
+
 @media (max-width: 1350px) {
     .grade-dashboard {
         grid-template-columns:
@@ -750,9 +647,7 @@
         font-size: 29px;
     }
 }
-/* ===================================================
-   CARDS CLICÁVEIS
-=================================================== */
+
 .cartao-dashboard-clicavel {
     cursor: pointer;
 }
@@ -764,7 +659,7 @@
     outline: 2px solid var(--verde-500);
     outline-offset: 3px;
 }
-/* DARK */
+
 .dark .cartao-dashboard-clicavel:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
 }

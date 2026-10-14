@@ -1,6 +1,3 @@
-/* =========================================================
-   OVERLAY
-========================================================= */
 .form-categoria-overlay {
     position: fixed;
     inset: 0;
@@ -13,9 +10,7 @@
     backdrop-filter: blur(5px);
     animation: aparecer-overlay-categoria 0.2s ease;
 }
-/* =========================================================
-   MODAL
-========================================================= */
+
 .form-categoria-modal {
     width: 100%;
     max-width: 570px;
@@ -33,9 +28,7 @@
     border-color: var(--cinza-800);
     background: var(--slate-900);
 }
-/* =========================================================
-   CABEÇALHO
-========================================================= */
+
 .form-categoria-cabecalho {
     position: relative;
     display: flex;
@@ -111,9 +104,7 @@
     background: var(--slate-700);
     color: var(--branco);
 }
-/* =========================================================
-   CONTEÚDO
-========================================================= */
+
 .form-categoria-conteudo {
     padding: 24px 26px 26px;
     overflow-y: auto;
@@ -131,9 +122,7 @@
 .dark .form-categoria-campo label {
     color: var(--slate-300);
 }
-/* =========================================================
-   INPUT
-========================================================= */
+
 .form-categoria-input {
     min-height: 49px;
     display: flex;
@@ -185,9 +174,7 @@
 .dark .form-categoria-input input {
     color: var(--slate-50);
 }
-/* =========================================================
-   CORES
-========================================================= */
+
 .form-categoria-cores {
     display: flex;
     align-items: center;
@@ -231,9 +218,7 @@
 .dark .form-categoria-cor.selecionada {
     border-color: var(--slate-900);
 }
-/* =========================================================
-   ÍCONES
-========================================================= */
+
 .form-categoria-icones {
     display: flex;
     align-items: center;
@@ -293,9 +278,7 @@
     background: var(--marinho-900);
     color: var(--slate-300);
 }
-/* =========================================================
-   TRÊS PONTOS
-========================================================= */
+
 .form-categoria-mais {
     width: 58px;
     height: 25px;
@@ -335,9 +318,7 @@
     background: var(--slate-800);
     color: var(--slate-400);
 }
-/* =========================================================
-   OPÇÕES EXTRAS
-========================================================= */
+
 .form-categoria-opcoes-extras {
     display: flex;
     align-items: center;
@@ -357,9 +338,7 @@
     background: var(--marinho-900);
     box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
 }
-/* =========================================================
-   ERRO
-========================================================= */
+
 .form-categoria-erro {
     margin-bottom: 18px;
     padding: 12px 14px;
@@ -374,9 +353,7 @@
     background: rgba(127, 29, 29, 0.2);
     color: var(--vermelho-300);
 }
-/* =========================================================
-   RODAPÉ
-========================================================= */
+
 .form-categoria-acoes {
     display: flex;
     justify-content: flex-end;
@@ -440,9 +417,7 @@
     opacity: 0.55;
     cursor: not-allowed;
 }
-/* =========================================================
-   RESPONSIVIDADE
-========================================================= */
+
 @media (max-width: 620px) {
     .form-categoria-overlay {
         align-items: flex-end;
@@ -466,9 +441,7 @@
         width: 100%;
     }
 }
-/* =========================================================
-   ANIMAÇÕES
-========================================================= */
+
 @keyframes aparecer-overlay-categoria {
     from {
         opacity: 0;

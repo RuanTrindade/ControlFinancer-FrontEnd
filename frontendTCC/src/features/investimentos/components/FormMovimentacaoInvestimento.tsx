@@ -46,10 +46,6 @@ function FormMovimentacaoInvestimento({
 
     const rendimento = tipo === "RENDIMENTO";
 
-    /* ===================================================
-       ESTADOS
-    =================================================== */
-
     const [valor, setValor] = useState("");
 
     const [referencia, setReferencia] = useState("");
@@ -58,14 +54,7 @@ function FormMovimentacaoInvestimento({
 
     const [erro, setErro] = useState<string | null>(null);
 
-    /* ===================================================
-       PREENCHER DADOS
-    =================================================== */
-
     useEffect(() => {
-        /*
-         * EDIÇÃO
-         */
         if (movimentacaoEdicao) {
             setValor(String(movimentacaoEdicao.valor));
 
@@ -82,12 +71,6 @@ function FormMovimentacaoInvestimento({
             return;
         }
 
-        /*
-         * NOVO RENDIMENTO
-         *
-         * Abre automaticamente
-         * no mês selecionado na Topbar.
-         */
         if (rendimento) {
             const ano = referenciaAtual.getFullYear();
 
@@ -96,10 +79,6 @@ function FormMovimentacaoInvestimento({
             setReferencia(`${ano}-${mes}`);
         }
     }, [movimentacaoEdicao, rendimento, referenciaAtual]);
-
-    /* ===================================================
-       TEXTOS
-    =================================================== */
 
     const titulo = editando
         ? aporte
@@ -151,10 +130,6 @@ function FormMovimentacaoInvestimento({
             ? "Confirmar resgate"
             : "Registrar rendimento";
 
-    /* ===================================================
-       SALVAR
-    =================================================== */
-
     async function salvarMovimentacao() {
         if (salvando) {
             return;
@@ -187,22 +162,13 @@ function FormMovimentacaoInvestimento({
 
             setErro(null);
 
-            /* ===================================================
-               EDIÇÃO
-            =================================================== */
-
             if (editando && movimentacaoEdicao) {
                 await editarMovimentacao(
                     movimentacaoEdicao.id,
 
                     dados,
                 );
-            }
-
-            /* ===================================================
-               CRIAÇÃO
-            =================================================== */
-            else {
+            } else {
                 await registrarMovimentacao(
                     investimentoId,
 
@@ -240,122 +206,110 @@ function FormMovimentacaoInvestimento({
             bloqueado={salvando}
             fecharAoClicarFora={!salvando}
         >
-                {/* CABEÇALHO */}
-
-                <div className="cabecalho-modal-movimentacao">
-                    <div className="titulo-modal-movimentacao">
-                        <div className={`icone-modal-movimentacao ${classeTipo}`}>
-                            {aporte ? (
-                                <RiAddLine />
-                            ) : resgate ? (
-                                <RiArrowDownLine />
-                            ) : (
-                                <RiLineChartLine />
-                            )}
-                        </div>
-
-                        <div>
-                            <h2>{titulo}</h2>
-
-                            <p>{descricao}</p>
-                        </div>
+            <div className="cabecalho-modal-movimentacao">
+                <div className="titulo-modal-movimentacao">
+                    <div className={`icone-modal-movimentacao ${classeTipo}`}>
+                        {aporte ? (
+                            <RiAddLine />
+                        ) : resgate ? (
+                            <RiArrowDownLine />
+                        ) : (
+                            <RiLineChartLine />
+                        )}
                     </div>
 
+                    <div>
+                        <h2>{titulo}</h2>
+
+                        <p>{descricao}</p>
+                    </div>
+                </div>
+
+                <button
+                    type="button"
+
+                    className="fechar-modal-movimentacao"
+
+                    onClick={onClose}
+
+                    disabled={salvando}
+                >
+                    <RiCloseLine />
+                </button>
+            </div>
+
+            <form
+                className="conteudo-modal-movimentacao"
+
+                onSubmit={enviarFormulario}
+            >
+                {erro && <div className="erro-modal-movimentacao">{erro}</div>}
+
+                <div className="campo-modal-movimentacao">
+                    <label htmlFor="valor-movimentacao">{labelValor}</label>
+
+                    <div className="input-moeda-movimentacao">
+                        <NumericFormat
+                            id="valor-movimentacao"
+                            thousandSeparator="."
+                            decimalSeparator=","
+                            decimalScale={2}
+                            fixedDecimalScale
+                            allowNegative={false}
+                            prefix="R$ "
+                            placeholder="R$ 0,00"
+                            value={valor}
+                            onValueChange={(valores) => setValor(valores.value)}
+                            autoFocus
+                            disabled={salvando}
+                        />
+                    </div>
+                </div>
+
+                {rendimento && (
+                    <div className="campo-modal-movimentacao">
+                        <label htmlFor="referencia-rendimento">Mês de referência</label>
+
+                        <input
+                            id="referencia-rendimento"
+
+                            type="month"
+
+                            value={referencia}
+
+                            onChange={(event) => setReferencia(event.target.value)}
+
+                            disabled={salvando}
+                        />
+                    </div>
+                )}
+
+                <div className={`aviso-modal-movimentacao ${classeTipo}`}>{textoAviso}</div>
+
+                <div className="acoes-modal-movimentacao">
                     <button
                         type="button"
 
-                        className="fechar-modal-movimentacao"
+                        className="cancelar-modal-movimentacao"
 
                         onClick={onClose}
 
                         disabled={salvando}
                     >
-                        <RiCloseLine />
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+
+                        className={`salvar-modal-movimentacao ${classeTipo}`}
+
+                        disabled={salvando}
+                    >
+                        {salvando ? "Salvando..." : textoBotao}
                     </button>
                 </div>
-
-                {/* FORM */}
-
-                <form
-                    className="conteudo-modal-movimentacao"
-
-                    onSubmit={enviarFormulario}
-                >
-                    {erro && <div className="erro-modal-movimentacao">{erro}</div>}
-
-                    {/* VALOR */}
-
-                    <div className="campo-modal-movimentacao">
-                        <label htmlFor="valor-movimentacao">{labelValor}</label>
-
-                        <div className="input-moeda-movimentacao">
-                            <NumericFormat
-                                id="valor-movimentacao"
-                                thousandSeparator="."
-                                decimalSeparator=","
-                                decimalScale={2}
-                                fixedDecimalScale
-                                allowNegative={false}
-                                prefix="R$ "
-                                placeholder="R$ 0,00"
-                                value={valor}
-                                onValueChange={(valores) => setValor(valores.value)}
-                                autoFocus
-                                disabled={salvando}
-                            />
-                        </div>
-                    </div>
-
-                    {/* REFERÊNCIA DO RENDIMENTO */}
-
-                    {rendimento && (
-                        <div className="campo-modal-movimentacao">
-                            <label htmlFor="referencia-rendimento">Mês de referência</label>
-
-                            <input
-                                id="referencia-rendimento"
-
-                                type="month"
-
-                                value={referencia}
-
-                                onChange={(event) => setReferencia(event.target.value)}
-
-                                disabled={salvando}
-                            />
-                        </div>
-                    )}
-
-                    {/* AVISO */}
-
-                    <div className={`aviso-modal-movimentacao ${classeTipo}`}>{textoAviso}</div>
-
-                    {/* BOTÕES */}
-
-                    <div className="acoes-modal-movimentacao">
-                        <button
-                            type="button"
-
-                            className="cancelar-modal-movimentacao"
-
-                            onClick={onClose}
-
-                            disabled={salvando}
-                        >
-                            Cancelar
-                        </button>
-
-                        <button
-                            type="submit"
-
-                            className={`salvar-modal-movimentacao ${classeTipo}`}
-
-                            disabled={salvando}
-                        >
-                            {salvando ? "Salvando..." : textoBotao}
-                        </button>
-                    </div>
-                </form>
+            </form>
         </ModalOverlay>
     );
 }

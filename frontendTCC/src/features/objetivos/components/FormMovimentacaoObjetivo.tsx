@@ -126,209 +126,193 @@ function FormMovimentacaoObjetivo({
             bloqueado={salvando}
             travarScroll
         >
-                {/* CABEÇALHO */}
-
-                <header
-                    className="
+            <header
+                className="
                         form-movimentacao-objetivo-cabecalho
                     "
-                >
-                    <div>
-                        <span
-                            className="
+            >
+                <div>
+                    <span
+                        className="
                                 form-movimentacao-objetivo-subtitulo
                             "
-                        >
-                            {nomeObjetivo}
-                        </span>
+                    >
+                        {nomeObjetivo}
+                    </span>
 
-                        <h2>{deposito ? "Adicionar valor" : "Retirar valor"}</h2>
-                    </div>
+                    <h2>{deposito ? "Adicionar valor" : "Retirar valor"}</h2>
+                </div>
 
-                    <button
-                        type="button"
-                        className="
+                <button
+                    type="button"
+                    className="
                             form-movimentacao-objetivo-fechar
                         "
-                        onClick={onClose}
-                        disabled={salvando}
-                    >
-                        <RiCloseLine />
-                    </button>
-                </header>
+                    onClick={onClose}
+                    disabled={salvando}
+                >
+                    <RiCloseLine />
+                </button>
+            </header>
 
-                <form
-                    className="
+            <form
+                className="
                         form-movimentacao-objetivo-conteudo
                     "
-                    onSubmit={salvar}
-                >
-                    {/* ÍCONE */}
-
-                    <div
-                        className={`
+                onSubmit={salvar}
+            >
+                <div
+                    className={`
                             form-movimentacao-objetivo-destaque
 
                             ${deposito ? "deposito" : "retirada"}
                         `}
-                    >
-                        <span>{deposito ? <RiAddCircleLine /> : <RiSubtractLine />}</span>
+                >
+                    <span>{deposito ? <RiAddCircleLine /> : <RiSubtractLine />}</span>
 
-                        <div>
-                            <strong>
-                                {deposito ? "Depósito no objetivo" : "Retirada do objetivo"}
-                            </strong>
+                    <div>
+                        <strong>
+                            {deposito ? "Depósito no objetivo" : "Retirada do objetivo"}
+                        </strong>
 
-                            <small>
-                                {deposito
-                                    ? "O valor será reservado para esta meta."
-                                    : "O valor será devolvido ao seu saldo."}
-                            </small>
-                        </div>
-                    </div>
-
-                    {/* SALDO */}
-
-                    <div className="form-movimentacao-objetivo-saldo">
-                        <span>
+                        <small>
                             {deposito
-                                ? "Saldo disponível na conta"
-                                : "Saldo disponível no objetivo"}
-                        </span>
+                                ? "O valor será reservado para esta meta."
+                                : "O valor será devolvido ao seu saldo."}
+                        </small>
+                    </div>
+                </div>
+
+                <div className="form-movimentacao-objetivo-saldo">
+                    <span>
+                        {deposito ? "Saldo disponível na conta" : "Saldo disponível no objetivo"}
+                    </span>
+
+                    <strong>
+                        R${" "}
+                        {(deposito ? saldoConta : saldoObjetivo).toLocaleString("pt-BR", {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                        })}
+                    </strong>
+                </div>
+
+                {deposito && valorNumerico > saldoConta && (
+                    <div className="form-movimentacao-objetivo-aviso">
+                        Saldo insuficiente. Você possui{" "}
+                        <strong>
+                            R${" "}
+                            {saldoConta.toLocaleString("pt-BR", {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                            })}
+                        </strong>{" "}
+                        disponíveis na conta.
+                    </div>
+                )}
+
+                {deposito && valorNumerico > 0 && valorNumerico <= saldoConta && (
+                    <div className="form-movimentacao-objetivo-pos">
+                        <span>Saldo após o depósito</span>
 
                         <strong>
                             R${" "}
-                            {(deposito ? saldoConta : saldoObjetivo).toLocaleString("pt-BR", {
+                            {(saldoConta - valorNumerico).toLocaleString("pt-BR", {
                                 minimumFractionDigits: 2,
                                 maximumFractionDigits: 2,
                             })}
                         </strong>
                     </div>
+                )}
 
-                    {deposito && valorNumerico > saldoConta && (
-                        <div className="form-movimentacao-objetivo-aviso">
-                            Saldo insuficiente. Você possui{" "}
-                            <strong>
-                                R${" "}
-                                {saldoConta.toLocaleString("pt-BR", {
-                                    minimumFractionDigits: 2,
-                                    maximumFractionDigits: 2,
-                                })}
-                            </strong>{" "}
-                            disponíveis na conta.
-                        </div>
-                    )}
-
-                    {deposito && valorNumerico > 0 && valorNumerico <= saldoConta && (
-                        <div className="form-movimentacao-objetivo-pos">
-                            <span>Saldo após o depósito</span>
-
-                            <strong>
-                                R${" "}
-                                {(saldoConta - valorNumerico).toLocaleString("pt-BR", {
-                                    minimumFractionDigits: 2,
-                                    maximumFractionDigits: 2,
-                                })}
-                            </strong>
-                        </div>
-                    )}
-
-                    {/* INPUT */}
+                <div
+                    className="
+                            form-movimentacao-objetivo-campo
+                        "
+                >
+                    <label htmlFor="valor-movimentacao-objetivo">Valor</label>
 
                     <div
                         className="
-                            form-movimentacao-objetivo-campo
-                        "
-                    >
-                        <label htmlFor="valor-movimentacao-objetivo">Valor</label>
-
-                        <div
-                            className="
                                 form-movimentacao-objetivo-input
                             "
-                        >
-                            <NumericFormat
-                                id="valor-movimentacao-objetivo"
-                                value={valor}
-                                thousandSeparator="."
-                                decimalSeparator=","
-                                decimalScale={2}
-                                fixedDecimalScale
-                                allowNegative={false}
-                                prefix="R$ "
-                                placeholder="R$ 0,00"
-                                autoFocus
-                                disabled={salvando}
-                                onValueChange={(valores) => {
-                                    setValor(valores.value);
+                    >
+                        <NumericFormat
+                            id="valor-movimentacao-objetivo"
+                            value={valor}
+                            thousandSeparator="."
+                            decimalSeparator=","
+                            decimalScale={2}
+                            fixedDecimalScale
+                            allowNegative={false}
+                            prefix="R$ "
+                            placeholder="R$ 0,00"
+                            autoFocus
+                            disabled={salvando}
+                            onValueChange={(valores) => {
+                                setValor(valores.value);
 
-                                    setErro("");
-                                }}
-                            />
-                        </div>
+                                setErro("");
+                            }}
+                        />
                     </div>
+                </div>
 
-                    {!deposito && valorNumerico > saldoObjetivo && (
-                        <div
-                            className="
+                {!deposito && valorNumerico > saldoObjetivo && (
+                    <div
+                        className="
                                     form-movimentacao-objetivo-aviso
                                 "
-                        >
-                            Você possui apenas{" "}
-                            <strong>
-                                R${" "}
-                                {saldoObjetivo.toLocaleString("pt-BR", {
-                                    minimumFractionDigits: 2,
-                                    maximumFractionDigits: 2,
-                                })}
-                            </strong>{" "}
-                            guardados neste objetivo.
-                        </div>
-                    )}
+                    >
+                        Você possui apenas{" "}
+                        <strong>
+                            R${" "}
+                            {saldoObjetivo.toLocaleString("pt-BR", {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                            })}
+                        </strong>{" "}
+                        guardados neste objetivo.
+                    </div>
+                )}
 
-                    {erro && (
-                        <div
-                            className="
+                {erro && (
+                    <div
+                        className="
                                     form-movimentacao-objetivo-erro
                                 "
-                        >
-                            {erro}
-                        </div>
-                    )}
+                    >
+                        {erro}
+                    </div>
+                )}
 
-                    {/* AÇÕES */}
-
-                    <footer
-                        className="
+                <footer
+                    className="
                             form-movimentacao-objetivo-acoes
                         "
-                    >
-                        <button
-                            type="button"
-                            className="
+                >
+                    <button
+                        type="button"
+                        className="
                                 form-movimentacao-objetivo-cancelar
                             "
-                            onClick={onClose}
-                            disabled={salvando}
-                        >
-                            Cancelar
-                        </button>
+                        onClick={onClose}
+                        disabled={salvando}
+                    >
+                        Cancelar
+                    </button>
 
-                        <button
-                            type="submit"
-                            className="
+                    <button
+                        type="submit"
+                        className="
                                 form-movimentacao-objetivo-salvar
                             "
-                            disabled={salvando || !valorValido}
-                        >
-                            {salvando
-                                ? "Salvando..."
-                                : deposito
-                                  ? "Adicionar valor"
-                                  : "Retirar valor"}
-                        </button>
-                    </footer>
-                </form>
+                        disabled={salvando || !valorValido}
+                    >
+                        {salvando ? "Salvando..." : deposito ? "Adicionar valor" : "Retirar valor"}
+                    </button>
+                </footer>
+            </form>
         </ModalOverlay>
     );
 }

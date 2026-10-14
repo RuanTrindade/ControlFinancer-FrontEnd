@@ -1,4 +1,3 @@
-/* OVERLAY */
 .loading-overlay {
     position: absolute;
     inset: 0;
@@ -15,7 +14,7 @@
 .dark .loading-overlay {
     background: transparent;
 }
-/* SPINNER */
+
 .loading-spinner {
     width: 68px;
     height: 68px;
@@ -26,7 +25,7 @@
     animation: girar 0.8s linear infinite;
     box-shadow: 0 0 24px rgba(34, 197, 94, 0.16);
 }
-/* ANIMAÇÃO */
+
 @keyframes girar {
     from {
         transform: rotate(0deg);

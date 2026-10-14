@@ -1,6 +1,3 @@
-/* =========================
-   PÁGINA
-========================= */
 .pagina-objetivo-detalhe {
     width: 100%;
 }
@@ -16,17 +13,13 @@
 .dark .titulo-detalhe {
     color: white;
 }
-/* =========================
-   GRID
-========================= */
+
 .detalhe-grid {
     display: grid;
     grid-template-columns: 400px 1fr;
     gap: 24px;
 }
-/* =========================
-   CARD ESQUERDO
-========================= */
+
 .resumo-card {
     background: white;
     border-radius: 28px;
@@ -37,9 +30,7 @@
 .dark .resumo-card {
     background: var(--cinza-800);
 }
-/* =========================
-   CABEÇALHO
-========================= */
+
 .resumo-card h2 {
     text-align: center;
     font-size: 28px;
@@ -65,9 +56,7 @@
 .dark .resumo-info {
     color: white;
 }
-/* =========================
-   GRÁFICO
-========================= */
+
 .progresso-circular {
     width: 220px;
     height: 220px;
@@ -93,9 +82,7 @@
     background: var(--cinza-800);
     color: white;
 }
-/* =========================
-   VALOR GUARDADO
-========================= */
+
 .valor-atual {
     margin-top: 26px;
     text-align: center;
@@ -112,9 +99,7 @@
 .dark .valor-atual span {
     color: var(--cinza-400);
 }
-/* =========================
-   TEXTO INFERIOR
-========================= */
+
 .objetivo-dica {
     margin-top: 36px;
     display: flex;
@@ -137,9 +122,7 @@
 .dark .objetivo-dica strong {
     color: white;
 }
-/* =========================
-   CARD DIREITO
-========================= */
+
 .movimentacoes-card {
     background: white;
     border-radius: 28px;
@@ -152,9 +135,7 @@
 .dark .movimentacoes-card {
     background: var(--cinza-800);
 }
-/* =========================
-   TOPO
-========================= */
+
 .movimentacoes-topo {
     display: flex;
     justify-content: space-between;
@@ -168,9 +149,7 @@
 .dark .movimentacoes-topo h2 {
     color: white;
 }
-/* =========================
-   BOTÕES
-========================= */
+
 .movimentacoes-acoes {
     display: flex;
     gap: 12px;
@@ -199,18 +178,14 @@
 .btn-saque:hover {
     transform: translateY(-2px);
 }
-/* =========================
-   LISTA
-========================= */
+
 .lista-movimentacoes {
     display: flex;
     flex-direction: column;
     gap: 14px;
     flex: 1;
 }
-/* =========================
-   ITEM
-========================= */
+
 .movimentacao-item {
     background: var(--slate-50);
     border-radius: 18px;
@@ -226,9 +201,7 @@
 .dark .movimentacao-item {
     background: var(--cinza-900);
 }
-/* =========================
-   INFO MOVIMENTAÇÃO
-========================= */
+
 .movimentacao-info {
     display: flex;
     align-items: center;
@@ -269,9 +242,7 @@
 .dark .movimentacao-dados span {
     color: var(--cinza-400);
 }
-/* =========================
-   VALOR
-========================= */
+
 .valor-movimentacao {
     font-size: 18px;
     font-weight: 700;
@@ -282,9 +253,7 @@
 .valor-movimentacao.saque {
     color: var(--vermelho-500);
 }
-/* =========================
-   AÇÕES
-========================= */
+
 .movimentacao-acoes {
     display: flex;
     gap: 10px;
@@ -303,9 +272,7 @@
 .dark .movimentacao-acoes button:hover {
     color: white;
 }
-/* =========================
-   AJUSTES DO GRÁFICO REAL
-========================= */
+
 .titulo-detalhe {
     border: none;
     background: transparent;
@@ -343,9 +310,7 @@
 .objetivo-dica p {
     margin: 3px 0 0;
 }
-/* =========================
-   RESPONSIVO
-========================= */
+
 @media (max-width: 1100px) {
     .detalhe-grid {
         grid-template-columns: 1fr;
@@ -355,9 +320,7 @@
         min-height: auto;
     }
 }
-/* =========================
-   TOPO DA PÁGINA
-========================= */
+
 .objetivo-detalhe-topo {
     position: relative;
     display: flex;
@@ -369,9 +332,7 @@
 .objetivo-detalhe-topo .titulo-detalhe {
     margin-bottom: 0;
 }
-/* =========================
-   MENU OBJETIVO
-========================= */
+
 .menu-objetivo-container {
     position: relative;
 }
@@ -397,7 +358,7 @@
     background: var(--cinza-100);
     color: var(--cinza-900);
 }
-/* MENU */
+
 .menu-objetivo-opcoes {
     position: absolute;
     top: calc(100% + 8px);
@@ -440,9 +401,7 @@
 .menu-objetivo-opcoes .opcao-excluir:hover {
     background: var(--vermelho-50);
 }
-/* =========================
-   DARK
-========================= */
+
 .dark .btn-menu-objetivo {
     background: var(--cinza-800);
     color: var(--slate-300);
@@ -468,9 +427,7 @@
 .dark .menu-objetivo-opcoes .opcao-excluir:hover {
     background: rgba(127, 29, 29, 0.25);
 }
-/* ===================================================
-   PAGINAÇÃO DAS MOVIMENTAÇÕES
-=================================================== */
+
 .paginacao-movimentacoes {
     width: 100%;
     margin-top: auto;

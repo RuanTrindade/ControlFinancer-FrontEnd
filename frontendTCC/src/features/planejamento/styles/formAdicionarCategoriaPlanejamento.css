@@ -1,6 +1,3 @@
-/* =========================================================
-   OVERLAY
-========================================================= */
 .form-adicionar-categoria-overlay {
     position: fixed;
     inset: 0;
@@ -13,9 +10,7 @@
     backdrop-filter: blur(5px);
     animation: aparecer-overlay-planejamento 0.2s ease;
 }
-/* =========================================================
-   MODAL
-========================================================= */
+
 .form-adicionar-categoria-modal {
     width: 100%;
     max-width: 620px;
@@ -33,9 +28,7 @@
     background: var(--slate-900);
     border-color: var(--cinza-800);
 }
-/* =========================================================
-   CABEÇALHO
-========================================================= */
+
 .form-adicionar-categoria-cabecalho {
     position: relative;
     display: flex;
@@ -77,9 +70,7 @@
 .dark .form-adicionar-categoria-cabecalho h2 {
     color: var(--slate-50);
 }
-/* =========================================================
-   FECHAR
-========================================================= */
+
 .form-adicionar-categoria-fechar {
     width: 40px;
     height: 40px;
@@ -110,16 +101,12 @@
     background: var(--slate-700);
     color: var(--branco);
 }
-/* =========================================================
-   CONTEÚDO
-========================================================= */
+
 .form-adicionar-categoria-conteudo {
     padding: 24px 26px 26px;
     overflow-y: auto;
 }
-/* =========================================================
-   CAMPO
-========================================================= */
+
 .form-adicionar-categoria-campo {
     margin-bottom: 22px;
 }
@@ -133,9 +120,7 @@
 .dark .form-adicionar-categoria-campo label {
     color: var(--slate-300);
 }
-/* =========================================================
-   ERRO
-========================================================= */
+
 .form-adicionar-categoria-erro {
     margin-bottom: 18px;
     padding: 12px 14px;
@@ -150,9 +135,7 @@
     background: rgba(127, 29, 29, 0.2);
     color: var(--vermelho-300);
 }
-/* =========================================================
-   SELECT DE CATEGORIA
-========================================================= */
+
 .planejamento-categoria-select {
     position: relative;
     width: 100%;
@@ -199,9 +182,7 @@
     border-color: var(--violeta-600);
     background: var(--cinza-900);
 }
-/* =========================================================
-   CONTEÚDO DO SELECT
-========================================================= */
+
 .planejamento-categoria-select-conteudo {
     min-width: 0;
     display: flex;
@@ -255,9 +236,7 @@
 .planejamento-categoria-select-seta.girada {
     transform: rotate(180deg);
 }
-/* =========================================================
-   OPÇÕES DO SELECT
-========================================================= */
+
 .planejamento-categoria-select-opcoes {
     position: absolute;
     z-index: 100;
@@ -319,9 +298,7 @@
 .dark .planejamento-categoria-select-vazio {
     color: var(--slate-400);
 }
-/* =========================================================
-   SCROLLBAR DO SELECT
-========================================================= */
+
 .planejamento-categoria-select-opcoes::-webkit-scrollbar {
     width: 6px;
 }
@@ -332,9 +309,7 @@
 .planejamento-categoria-select-opcoes::-webkit-scrollbar-track {
     background: transparent;
 }
-/* =========================================================
-   TOTAL
-========================================================= */
+
 .planejamento-total {
     display: flex;
     flex-direction: column;
@@ -367,9 +342,7 @@
     font-size: 18px;
     font-weight: 750;
 }
-/* =========================================================
-   CATEGORIA SELECIONADA + VALOR
-========================================================= */
+
 .planejamento-categoria-valor {
     display: grid;
     grid-template-columns:
@@ -421,9 +394,7 @@
     color: var(--cinza-400);
     font-size: 11px;
 }
-/* =========================================================
-   INPUT DO VALOR
-========================================================= */
+
 .planejamento-input-valor {
     min-height: 48px;
     display: flex;
@@ -477,9 +448,7 @@
 .planejamento-input-valor input::placeholder {
     color: var(--cinza-400);
 }
-/* =========================================================
-   CATEGORIAS RESTANTES
-========================================================= */
+
 .planejamento-categorias-restantes {
     display: flex;
     align-items: center;
@@ -542,9 +511,7 @@
 .dark .planejamento-categorias-restantes-valor {
     color: var(--slate-50);
 }
-/* =========================================================
-   AVISO DE EXCEDENTE
-========================================================= */
+
 .planejamento-aviso-excedente {
     margin-top: 12px;
     padding: 11px 13px;
@@ -562,9 +529,7 @@
     background: rgba(22, 101, 52, 0.18);
     color: var(--verde-300);
 }
-/* =========================================================
-   AÇÕES
-========================================================= */
+
 .form-adicionar-categoria-acoes {
     display: flex;
     justify-content: flex-end;
@@ -623,9 +588,7 @@
     cursor: not-allowed;
     box-shadow: none;
 }
-/* =========================================================
-   RESPONSIVO
-========================================================= */
+
 @media (max-width: 620px) {
     .form-adicionar-categoria-overlay {
         align-items: flex-end;
@@ -669,9 +632,7 @@
         flex-direction: column;
     }
 }
-/* =========================================================
-   ANIMAÇÕES
-========================================================= */
+
 @keyframes aparecer-overlay-planejamento {
     from {
         opacity: 0;
